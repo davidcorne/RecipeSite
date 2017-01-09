@@ -14,7 +14,7 @@ const searchTemplate = pug.compileFile('search.pug');
 
 //=============================================================================
 // List all files in a directory in Node.js recursively in a synchronous fashion
-let walkSync = function(dir, filelist) {
+const walkSync = function(dir, filelist) {
     const files = fs.readdirSync(dir);
     filelist = filelist || [];
     files.forEach(function(file) {
@@ -28,12 +28,12 @@ let walkSync = function(dir, filelist) {
 };
 
 //=============================================================================
-let pathToLabel = function(pth) {
+const pathToLabel = function(pth) {
     return path.basename(pth, path.extname(pth));
 }
 
 //=============================================================================
-let generateFileList = function() {
+const generateFileList = function() {
     const files = [];
     walkSync('public/recipes', files);
     const fileList = [];
@@ -73,15 +73,15 @@ let generateFileList = function() {
 }
 
 //=============================================================================
-let generateIndex = function(response) {
-    let locals = {
+const generateIndex = function(response) {
+    const locals = {
         recipes: generateFileList()
     };
     response.send(indexTemplate(locals));
 };
 
 //=============================================================================
-let search = function(query) {
+const search = function(query) {
     const files = [];
     walkSync('public/recipes', files);
     const results = [];
@@ -120,7 +120,7 @@ app.get('/public/*', function(request, response) {
 
 //=============================================================================
 app.get('/search', function(request, response) {
-    let results = search(request.query.query);
+    const results = search(request.query.query);
     response.send(searchTemplate({results: results}));
 });
 
