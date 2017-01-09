@@ -1,0 +1,12 @@
+{
+  "name": "recipe-site",
+  "version": "0.0.1",
+  "description": "A website for easily viewing my recipes.",
+  "scripts": {},
+  "dependencies": {
+    "express": "*",
+    "mocha": "*",
+    "pug": "^2.0.0-beta6",
+    "urldecode": "^1.0.1"
+  }
+}

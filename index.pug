@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    title=Recipes
+    link(rel="stylesheet", type="text/css" href="public/resources/index.css")
+  body
+    include navigation-bar.pug
+
+    h1 Recipes
+    
+    include search-bar.pug
+    
+    ul
+      each item in recipes
+        li.listing 
+          a(href=item.path) #{item.label}
+    
