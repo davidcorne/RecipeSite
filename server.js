@@ -6,6 +6,8 @@ const decode = require('urldecode')
 const fs = require('fs');
 const path = require('path');
 
+app.set('port', (process.env.PORT || 3000));
+
 // Compile a function
 const indexTemplate = pug.compileFile('index.pug');
 const searchTemplate = pug.compileFile('search.pug');
@@ -123,7 +125,7 @@ app.get('/search', function(request, response) {
 });
 
 //=============================================================================
-http.listen(3000, function() {
-    console.log('Listening on *:3000');
+http.listen(app.get('port'), function() {
+    console.log('Listening on *:' + app.get('port'));
 });
 
