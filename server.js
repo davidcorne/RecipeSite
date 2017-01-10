@@ -16,7 +16,6 @@ const searchTemplate = pug.compileFile('search.pug');
 // List all files in a directory in Node.js recursively in a synchronous fashion
 const walkSync = function(dir, filelist) {
     const files = fs.readdirSync(dir);
-    filelist = filelist || [];
     files.forEach(function(file) {
         if (fs.statSync(path.join(dir, file)).isDirectory()) {
             filelist = walkSync(path.join(dir, file), filelist);
@@ -33,68 +32,36 @@ const pathToLabel = function(pth) {
 }
 
 //=============================================================================
+const directoryToItem = function(dir) {
+    const item = {
+        label: path.basename(dir),
+        files: [],
+        directories: []
+    };
+    const files = fs.readdirSync(dir);
+    files.forEach(function(file) {
+        if (fs.statSync(path.join(dir, file)).isDirectory()) {
+            item.directories.push(directoryToItem(path.join(dir, file)));
+        } else {
+            const pth = path.join(dir, file);
+            item.files.push({
+                path: pth,
+                label: pathToLabel(pth)
+            });
+        }
+    });
+    return item;
+};
+
+//=============================================================================
 const generateFileList = function() {
-    // <nnn> const files = [];
-    // <nnn> walkSync('public/recipes', files);
-    // <nnn> const fileList = [];
-    // <nnn> for (let i = 0; i < files.length; ++i) {
-    // <nnn>     fileList.push({
-    // <nnn>         label: pathToLabel(files[i]),
-    // <nnn>         path: files[i]
-    // <nnn>     });
-    // <nnn> }
-    // <nnn> return fileList;
-    // e.g.
-    const fileList = [
-       {
-           label: 'Dessert',
-           directories: [
-               {
-                   label: 'Sauce',
-                   directories: [],
-                   files: [
-                       {
-                           label: 'Sticky Toffee Sauce',
-                           path: 'public/recipes/Dessert/Sauce/Sticky Toffee Sauce.html'
-                       }
-                   ]
-               }
-           ],
-           files: [
-               {
-                   label: 'Caramel Shortbread',
-                   path: 'public/recipes/Dessert/Caramel Shortbread.html'
-               }
-           ]
-       },
-       {
-           label: 'Mains',
-           directories: [
-               {
-                   label: 'Vegan',
-                   directories: [],
-                   files: [
-                       {
-                           label: 'Paper?',
-                           path: 'public/recipes/Dessert/Sauce/Sticky Toffee Sauce.html'
-                       }
-                   ]
-               },
-               {
-                   label: 'Meat',
-                   directories: [],
-                   files: [
-                       {
-                           label: 'Gammon',
-                           path: 'public/recipes/Mains/Meat/Gammon.html'
-                       }
-                   ]
-               }
-           ],
-           files: []
-       }
-    ];
-    return fileList;           
+    const fileList = [];
+    const root = 'public/recipes';
+    const files = fs.readdirSync(root);
+    files.forEach(function(file) {
+        fileList.push(directoryToItem(path.join(root, file)));
+    });
+    return fileList;
 }
 
 //=============================================================================
