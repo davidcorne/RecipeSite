@@ -82,12 +82,13 @@ const generateIndex = function(response) {
 
 //=============================================================================
 const search = function(query) {
+    query = query.toLowerCase();
     const files = [];
     walkSync('public/recipes', files);
     const results = [];
     for (let i = 0; i < files.length; ++i) {
         if (path.extname(files[i]) === '.html') {
-            const contents = fs.readFileSync(files[i], 'utf8');
+            const contents = fs.readFileSync(files[i], 'utf8').toLowerCase();
             if (contents.indexOf(query) > -1) {
                 // make the context. Each line where the query appears.
                 const lines = contents.split(/\r?\n/);
