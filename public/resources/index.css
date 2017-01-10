@@ -15,7 +15,7 @@ h1, h2 {
     color: #3366FF;
 }
 
-div > h2 {
+div.sub > h2 {
     color: black;
     font-size: 1.17em;
     font-weight: bold;
