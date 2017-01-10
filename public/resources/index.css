@@ -61,3 +61,10 @@ th {
 table {
     border-collapse:collapse;
 }
+
+ul {
+    -webkit-columns: 3 250px;
+    -moz-columns: 3 250px;
+    columns: 3 250px;
+    list-style: none;
+}
