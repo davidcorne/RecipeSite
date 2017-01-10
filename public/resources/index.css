@@ -4,15 +4,6 @@ body {
     line-height: 1;
     max-width: 960px;
     padding: 30px;
-    counter-reset: section;
-}
-
-h2 {
-    counter-reset: sub-section;
-}
-
-h3 {
-    counter-reset: detail;
 }
 
 h1 {
@@ -21,22 +12,13 @@ h1 {
 }
 
 h1, h2 {
-    color: #3366FF
+    color: #3366FF;
 }
 
-h2:before {
-    content: counter(section) ". ";
-    counter-increment: section;  /* Add 1 to section */
-}
-
-h3:before {
-    content: counter(section) "." counter(sub-section) ". ";
-    counter-increment: sub-section;  /* Add 1 to sub-section */
-}
-
-h4:before {
-    content: counter(section) "." counter(sub-section) "." counter(detail) ". ";
-    counter-increment: detail;  /* Add 1 to detail */
+div > h2 {
+    color: black;
+    font-size: 1.17em;
+    font-weight: bold;
 }
 
 dl {
@@ -78,11 +60,4 @@ th {
 
 table {
     border-collapse:collapse;
-}
-
-ul {
-    -webkit-columns: 4 200px;
-    -moz-columns: 4 200px;
-    columns: 4 200px;
-    list-style: none;
 }

@@ -34,42 +34,67 @@ const pathToLabel = function(pth) {
 
 //=============================================================================
 const generateFileList = function() {
-    const files = [];
-    walkSync('public/recipes', files);
-    const fileList = [];
-    for (let i = 0; i < files.length; ++i) {
-        fileList.push({
-            label: pathToLabel(files[i]),
-            path: files[i]
-        });
-    }
-    return fileList;
+    // <nnn> const files = [];
+    // <nnn> walkSync('public/recipes', files);
+    // <nnn> const fileList = [];
+    // <nnn> for (let i = 0; i < files.length; ++i) {
+    // <nnn>     fileList.push({
+    // <nnn>         label: pathToLabel(files[i]),
+    // <nnn>         path: files[i]
+    // <nnn>     });
+    // <nnn> }
+    // <nnn> return fileList;
     // e.g.
-    // fileList = [
-    //     {
-    //         label: Dessert,
-    //         directories: [
-    //             {
-    //                 label: Sauce,
-    //                 directories: [],
-    //                 files: [
-    //                     {
-    //                         label: 'Sticky Toffee Sauce',
-    //                         path: 'public/recipes/Dessert/Sauce/Sticky Toffee Sauce.html'
-    //                     }
-    //                 ]
-    //             }
-    //         ],
-    //         files: [
-    //             {
-    //                 label: 'Caramel Shortbread',
-    //                 path: 'public/recipes/Dessert/Caramel Shortbread.html'
-    //             }
-    //         ]
-    //     }
-    // ]
-                
-           
+    const fileList = [
+       {
+           label: 'Dessert',
+           directories: [
+               {
+                   label: 'Sauce',
+                   directories: [],
+                   files: [
+                       {
+                           label: 'Sticky Toffee Sauce',
+                           path: 'public/recipes/Dessert/Sauce/Sticky Toffee Sauce.html'
+                       }
+                   ]
+               }
+           ],
+           files: [
+               {
+                   label: 'Caramel Shortbread',
+                   path: 'public/recipes/Dessert/Caramel Shortbread.html'
+               }
+           ]
+       },
+       {
+           label: 'Mains',
+           directories: [
+               {
+                   label: 'Vegan',
+                   directories: [],
+                   files: [
+                       {
+                           label: 'Paper?',
+                           path: 'public/recipes/Dessert/Sauce/Sticky Toffee Sauce.html'
+                       }
+                   ]
+               },
+               {
+                   label: 'Meat',
+                   directories: [],
+                   files: [
+                       {
+                           label: 'Gammon',
+                           path: 'public/recipes/Mains/Meat/Gammon.html'
+                       }
+                   ]
+               }
+           ],
+           files: []
+       }
+    ];
+    return fileList;           
 }
 
 //=============================================================================
