@@ -10,8 +10,8 @@ const fileList = require('./file-list');
 app.set('port', (process.env.PORT || 3000));
 
 // Compile a function
-const indexTemplate = pug.compileFile('index.pug');
-const searchTemplate = pug.compileFile('search.pug');
+const indexTemplate = pug.compileFile('template/index.pug');
+const searchTemplate = pug.compileFile('template/search.pug');
 
 //=============================================================================
 app.get('/', function(request, response) {
