@@ -13,9 +13,9 @@ html(lang="en")
     
     include search-bar.pug
     
-    ul#search-result
+    div#search-result
       each item in results
-        li
+        div
           h3.search-header
             a(href=item.path, target="_blank") #{item.label}
           p.display-path #{item.displayPath}
