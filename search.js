@@ -1,4 +1,4 @@
-"use strict"; 
+"use strict";
 const fs = require('fs');
 const path = require('path');
 const PDFParser = require("pdf2json");
@@ -87,11 +87,11 @@ const buildIndex = function() {
             });
         } else if (path.extname(file) === '.pdf') {
             const pdfParser = new PDFParser(this, 1);
-            readyFunction = addPdfToIndex(file, pdfParser);
+            const readyFunction = addPdfToIndex(file, pdfParser);
             pdfParser.on("pdfParser_dataReady", readyFunction);
             pdfParser.loadPDF(file);
         }
-    }    
+    }
 }
 
 module.exports.search = search;
