@@ -1,6 +1,11 @@
 "use strict"; 
 const fs = require('fs');
 const path = require('path');
+const PDFParser = require("pdf2json");
+
+// We add many events, node complains that this could be a memory
+// leak. Increase the number of max listeners before node complains.
+require('events').EventEmitter.prototype._maxListeners = 100;
 
 const utils = require('./utils');
 
@@ -45,6 +50,19 @@ const search = function(query) {
 }
 
 //=============================================================================
+const addPdfToIndex = function(file, pdfParser) {
+    // Return a closure containing the file and pdfParser, so that we can get
+    // the raw text and also know which file to associate it with.
+    return function(pdfData) {
+        index.push({
+            file: file,
+            content: pdfParser.getRawTextContent()
+        });
+        console.log('Parsed ' + file);
+    }
+}
+
+//=============================================================================
 const buildIndex = function() {
     const files = [];
     walkSync('public/recipes', files);
@@ -59,10 +77,13 @@ const buildIndex = function() {
                 });
             });
         } else if (path.extname(file) === '.pdf') {
-            
+            const pdfParser = new PDFParser(this, 1);
+            pdfParser.on("pdfParser_dataReady", addPdfToIndex(file, pdfParser));
+            pdfParser.loadPDF(file);
         }
     }    
 }
+
 
 module.exports.search = search;
 module.exports.buildIndex = buildIndex;

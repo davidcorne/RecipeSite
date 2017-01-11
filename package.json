@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "description": "A website for easily viewing my recipes.",
   "scripts": {
-      "start": "node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "*",
     "mocha": "*",
+    "pdf2json": "^1.1.7",
     "pug": "^2.0.0-beta6",
     "urldecode": "^1.0.1"
   }
