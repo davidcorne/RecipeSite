@@ -16,6 +16,7 @@ html(lang="en")
     ul#search-result
       each item in results
         li
-          a(href=item.path, target="_blank") #{item.label}
+          h3
+            a(href=item.path, target="_blank") #{item.label}
           each line in item.context
             p #{line}

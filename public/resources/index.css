@@ -73,5 +73,6 @@ ul {
 }
 
 span.query {
-    background-color: yellow;
+    font-weight:bold;
+    font-size:105%;
 }
