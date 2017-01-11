@@ -68,3 +68,9 @@ ul {
     columns: 3 250px;
     list-style: none;
 }
+
+ul#search-result {
+    -webkit-columns: 1;
+    -mox-columns: 1;
+    columns: 1;
+}

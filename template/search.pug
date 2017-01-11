@@ -10,9 +10,9 @@ html(lang="en")
     
     include search-bar.pug
     
-    ul
-    each item in results
-      li.search-result
-        a(href=item.path, target="_blank") #{item.label}
-        each line in item.context
-          p #{line}
+    ul#search-result
+      each item in results
+        li
+          a(href=item.path, target="_blank") #{item.label}
+          each line in item.context
+            p #{line}
