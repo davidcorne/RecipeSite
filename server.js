@@ -73,29 +73,37 @@ const generateIndex = function(response) {
 };
 
 //=============================================================================
+const searchText = function(query, file, results) {
+    const contents = fs.readFileSync(file, 'utf8').toLowerCase();
+    if (contents.indexOf(query) > -1) {
+        // make the context. Each line where the query appears.
+        const lines = contents.split(/\r?\n/);
+        const context = [];
+        for (let i = 0; i < lines.length; ++i) {
+            if (lines[i].indexOf(query) > -1) {
+                context.push(lines[i]);
+            }
+        }
+        results.push({
+            label: pathToLabel(file),
+            path: file,
+            context: context
+        });
+    }
+}
+
+//=============================================================================
 const search = function(query) {
     query = query.toLowerCase();
     const files = [];
     walkSync('public/recipes', files);
     const results = [];
     for (let i = 0; i < files.length; ++i) {
-        if (path.extname(files[i]) === '.html') {
-            const contents = fs.readFileSync(files[i], 'utf8').toLowerCase();
-            if (contents.indexOf(query) > -1) {
-                // make the context. Each line where the query appears.
-                const lines = contents.split(/\r?\n/);
-                const context = [];
-                for (let j = 0; j < lines.length; ++j) {
-                    if (lines[j].indexOf(query) > -1) {
-                        context.push(lines[j]);
-                    }
-                }
-                results.push({
-                    label: pathToLabel(files[i]),
-                    path: files[i],
-                    context: context
-                });
-            }
+        const file = files[i];
+        if (path.extname(file) === '.html') {
+            searchText(query, file, results);
+        } else if (path.extname(file) === '.pdf') {
+            
         }
     }
     return results;
