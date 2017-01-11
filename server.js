@@ -29,7 +29,10 @@ app.get('/public/*', function(request, response) {
 //=============================================================================
 app.get('/search', function(request, response) {
     const results = search.search(request.query.query);
-    response.send(searchTemplate({results: results}));
+    response.send(searchTemplate({
+        results: results,
+        query: request.query.query
+    }));
 });
 
 //=============================================================================
