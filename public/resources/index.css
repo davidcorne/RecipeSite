@@ -76,3 +76,22 @@ span.query {
     font-weight:bold;
     font-size:105%;
 }
+
+.search-header {
+    margin-bottom: 5px;
+}
+
+.search-header a {
+    text-decoration: none;
+}
+
+.search-header a:hover {
+    text-decoration: underline;
+}
+
+.display-path {
+    font-size:85%;
+    margin: 0;
+    margin-left: 6px;
+    color: #006621;
+}

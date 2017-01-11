@@ -32,6 +32,15 @@ const walkSync = function(dir, filelist) {
 };
 
 //=============================================================================
+const pathToDisplayPath = function(file) {
+    // comes in as public\recipes\A\B\C.X want to display A/B/C
+    let displayPath = file.replace(/\\/g, '/');
+    displayPath = displayPath.replace('public/recipes/', '');
+    displayPath = displayPath.replace(/\..*/, '');
+    return displayPath;
+}
+
+//=============================================================================
 const search = function(query) {
     query = query.toLowerCase();
     const results = [];
@@ -52,6 +61,7 @@ const search = function(query) {
             results.push({
                 label: utils.pathToLabel(item.file),
                 path: item.file,
+                displayPath: pathToDisplayPath(item.file),
                 context: context,
                 match: match
             });
