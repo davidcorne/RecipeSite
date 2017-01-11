@@ -35,5 +35,6 @@ app.get('/search', function(request, response) {
 //=============================================================================
 http.listen(app.get('port'), function() {
     console.log('Listening on *:' + app.get('port'));
+    search.buildIndex();
 });
 
