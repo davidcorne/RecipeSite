@@ -41,19 +41,27 @@ const search = function(query) {
             // make the context. Each line where the query appears.
             const lines = item.content.split(/\r?\n/);
             const context = [];
+            // A metric of how good a match it is
+            let match = 0;
             for (let i = 0; i < lines.length; ++i) {
                 if (lines[i].indexOf(query) > -1) {
+                    match += lines[i].length;
                     context.push(lines[i]);
                 }
             }
             results.push({
                 label: utils.pathToLabel(item.file),
                 path: item.file,
-                context: context
+                context: context,
+                match: match
             });
         }
     });
-    return results;
+    // Sort the results by the larger match is better (closer to the beginning)
+    const resultSorter = function(a, b) {
+        return b.match - a.match;
+    };
+    return results.sort(resultSorter);
 }
 
 //=============================================================================
