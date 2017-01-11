@@ -12,6 +12,13 @@ const utils = require('./utils');
 const index = [];
 
 //=============================================================================
+const addToIndex = function(file, content) {
+    index.push({
+        file: file,
+        content: content.toLowerCase()
+    });
+}
+//=============================================================================
 const walkSync = function(dir, filelist) {
     const files = fs.readdirSync(dir);
     files.forEach(function(file) {
@@ -54,10 +61,7 @@ const addPdfToIndex = function(file, pdfParser) {
     // Return a closure containing the file and pdfParser, so that we can get
     // the raw text and also know which file to associate it with.
     return function(pdfData) {
-        index.push({
-            file: file,
-            content: pdfParser.getRawTextContent()
-        });
+        addToIndex(file, pdfParser.getRawTextContent());
         console.log('Parsed ' + file);
     }
 }
@@ -71,10 +75,7 @@ const buildIndex = function() {
         if (path.extname(file) === '.html') {
             fs.readFile(file, 'utf8', function(error, content) {
                 if (error) throw error;
-                index.push({
-                    file: file,
-                    content: content.toLowerCase()
-                });
+                addToIndex(file, content);
             });
         } else if (path.extname(file) === '.pdf') {
             const pdfParser = new PDFParser(this, 1);
