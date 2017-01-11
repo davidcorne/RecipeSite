@@ -3,7 +3,7 @@ mixin directory(item)
   ul
     each file in item.files
       li
-        a(href=file.path) #{file.label}
+        a(href=file.path, target="_blank") #{file.label}
   div.sub
     each dir in item.directories
       +directory(dir)
