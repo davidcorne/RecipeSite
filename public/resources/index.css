@@ -77,16 +77,16 @@ span.query {
     font-size:105%;
 }
 
-.search-header {
-    margin-bottom: 5px;
-}
-
-.search-header a {
+a {
     text-decoration: none;
 }
 
-.search-header a:hover {
+a:hover {
     text-decoration: underline;
+}
+
+.search-header {
+    margin-bottom: 5px;
 }
 
 .display-path {
