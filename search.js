@@ -87,12 +87,12 @@ const buildIndex = function() {
             });
         } else if (path.extname(file) === '.pdf') {
             const pdfParser = new PDFParser(this, 1);
-            pdfParser.on("pdfParser_dataReady", addPdfToIndex(file, pdfParser));
+            readyFunction = addPdfToIndex(file, pdfParser);
+            pdfParser.on("pdfParser_dataReady", readyFunction);
             pdfParser.loadPDF(file);
         }
     }    
 }
-
 
 module.exports.search = search;
 module.exports.buildIndex = buildIndex;
