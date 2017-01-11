@@ -85,13 +85,20 @@ a:hover {
     text-decoration: underline;
 }
 
-.search-header {
-    margin-bottom: 5px;
-}
-
 .display-path {
     font-size:85%;
     margin: 0;
     margin-left: 6px;
+    margin-bottom: 10px;
     color: #006621;
 }
+
+p.line {
+    margin-bottom: 4px;
+    margin-top: 2px;
+}
+
+.search-header {
+    margin-bottom: 5px;
+}
+
