@@ -71,3 +71,7 @@ ul.recipe-list {
 ul {
     list-style: none;
 }
+
+span.query {
+    background-color: yellow;
+}
