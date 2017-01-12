@@ -16,7 +16,7 @@ const index = [];
 const addToIndex = function(file, content) {
     index.push({
         file: file,
-        content: content.toLowerCase()
+        content: content
     });
 }
 
@@ -52,7 +52,7 @@ const search = function(query) {
     query = query.toLowerCase();
     const results = [];
     index.forEach(function(item) {
-        if (item.content.indexOf(query) > -1) {
+        if (item.content.toLowerCase().indexOf(query) > -1) {
             // Found something
             // make the context. Each line where the query appears.
             const lines = item.content.split(/\r?\n/);
@@ -60,7 +60,7 @@ const search = function(query) {
             // A metric of how good a match it is
             let match = 0;
             for (let i = 0; i < lines.length; ++i) {
-                if (lines[i].indexOf(query) > -1) {
+                if (lines[i].toLowerCase().indexOf(query) > -1) {
                     match += lines[i].length;
                     context.push(lines[i]);
                 }

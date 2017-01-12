@@ -3,7 +3,7 @@ const highlight = {};
 
 //=============================================================================
 highlight.highlightSearchResults = function(query) {
-    const expression = new RegExp(query, 'g');
+    const expression = new RegExp('\(' + query + '\)', 'gi');
     const list = document.getElementById('search-result');
     if (list) {
         const paragraphs = list.getElementsByTagName('p');
@@ -11,7 +11,7 @@ highlight.highlightSearchResults = function(query) {
             const para = paragraphs[i];
             para.innerHTML = para.innerHTML.replace(
                 expression, 
-                '<span class=query>' + query + '</span>'
+                '<span class=query>$1</span>'
             );
         }
     }
