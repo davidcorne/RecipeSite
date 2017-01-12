@@ -17,10 +17,12 @@ const directoryToItem = function(dir) {
             item.directories.push(directoryToItem(path.join(dir, file)));
         } else {
             const pth = path.join(dir, file);
-            item.files.push({
-                path: pth,
-                label: utils.pathToLabel(pth)
-            });
+            if (path.extname(pth) !== '.cache') {
+                item.files.push({
+                    path: pth,
+                    label: utils.pathToLabel(pth)
+                });
+            }
         }
     });
     return item;

@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const PDFParser = require("pdf2json");
+const async = require('async');
 
 // We add many events, node complains that this could be a memory
 // leak. Increase the number of max listeners before node complains.
@@ -18,18 +19,24 @@ const addToIndex = function(file, content) {
         content: content.toLowerCase()
     });
 }
+
 //=============================================================================
-const walkSync = function(dir, filelist) {
-    const files = fs.readdirSync(dir);
-    files.forEach(function(file) {
-        if (fs.statSync(path.join(dir, file)).isDirectory()) {
-            filelist = walkSync(path.join(dir, file), filelist);
-        } else {
-            filelist.push(path.join(dir, file));
-        }
+const walk = function(dir, callback) {
+    fs.readdir(dir, function(error, files) {
+        if (error) throw error;
+        files.forEach(function(file) {
+            const fullPath = path.join(dir, file);
+            fs.stat(fullPath, function(error, stats) {
+                if (error) throw error;
+                if (stats.isDirectory()) {
+                    walk(fullPath, callback);
+                } else {
+                    callback(fullPath);
+                }
+            });
+        });
     });
-    return filelist;
-};
+}
 
 //=============================================================================
 const pathToDisplayPath = function(file) {
@@ -74,34 +81,86 @@ const search = function(query) {
     return results.sort(resultSorter);
 }
 
+// <nnn> //=============================================================================
+// <nnn> const addPdfToIndex = function(file, pdfParser, callback) {
+// <nnn>     // Return a closure containing the file and pdfParser, so that we can get
+// <nnn>     // the raw text and also know which file to associate it with.
+// <nnn>     return function(pdfData) {
+// <nnn>         addToIndex(file, pdfParser.getRawTextContent());
+// <nnn>         callback();
+// <nnn>         console.log('Parsed ' + file);
+// <nnn>     }
+// <nnn> }
+
 //=============================================================================
-const addPdfToIndex = function(file, pdfParser) {
-    // Return a closure containing the file and pdfParser, so that we can get
-    // the raw text and also know which file to associate it with.
-    return function(pdfData) {
-        addToIndex(file, pdfParser.getRawTextContent());
-        console.log('Parsed ' + file);
-    }
+const cachePath = function(file) {
+    return file.replace(/\..*/, '.cache');
+}
+
+// <nnn> //=============================================================================
+// <nnn> const cachePdfContent = function(file, callback) {
+// <nnn>     fs.stat(file, function(error, data) {
+        
+// <nnn>     });
+// <nnn>     const pdfParser = new PDFParser(this, 1);
+// <nnn>     const readyFunction = addPdfToIndex(file, pdfParser, callback);
+// <nnn>     pdfParser.on("pdfParser_dataReady", readyFunction);
+// <nnn>     pdfParser.loadPDF(file);
+    
+// <nnn> }
+
+//=============================================================================
+const getCacheContent = function(file, callback) {
+    callback(file + ' cached.');
+};
+
+//=============================================================================
+const cacheFile = function(file, callback) {
+    getCacheContent(file, function(content) {
+        fs.writeFile(cachePath(file), content, 'utf8', function(error) {
+            if (error) throw error;
+            callback(content);
+        });
+    });
+};
+
+//=============================================================================
+const checkFileCache = function(file, callback) {
+    fs.stat(file, function(error, fileStats) {
+        if (error) throw error;
+        fs.stat(cachePath(file), function(error, cacheStats) {
+            if (error && error.code === 'ENOENT') {
+                // The cache doesn't exist, make it.
+                console.log('Cache not found: ' + file);
+                cacheFile(file, callback);
+            } else {
+                // Check how up to date the cache is, compare the modification
+                // times.
+                if (cacheStats.mtime < fileStats.mtime) {
+                    // The file has been modified since the cache, update it.
+                    console.log('Cache out of date: ' + file);
+                    cacheFile(file, callback);
+                } else {
+                    // The cache is up to date, just read it
+                    fs.readFile(cachePath(file), 'utf8', function(error, content) {
+                        if (error) throw error;
+                        console.log('Cache up to date: ' + file);
+                        callback(content);
+                    });
+                }
+            }
+        });
+    });
 }
 
 //=============================================================================
 const buildIndex = function() {
     const files = [];
-    walkSync('public/recipes', files);
-    for (let i = 0; i < files.length; ++i) {
-        const file = files[i];
-        if (path.extname(file) === '.html') {
-            fs.readFile(file, 'utf8', function(error, content) {
-                if (error) throw error;
-                addToIndex(file, content);
-            });
-        } else if (path.extname(file) === '.pdf') {
-            const pdfParser = new PDFParser(this, 1);
-            const readyFunction = addPdfToIndex(file, pdfParser);
-            pdfParser.on("pdfParser_dataReady", readyFunction);
-            pdfParser.loadPDF(file);
-        }
-    }
+    walk('public/recipes', function(file) {
+        checkFileCache(file, function(content) {
+            addToIndex(file, content);
+        });
+    });
 }
 
 module.exports.search = search;
