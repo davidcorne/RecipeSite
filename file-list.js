@@ -31,10 +31,14 @@ const directoryToItem = function(dir) {
 //=============================================================================
 const generateFileList = function() {
     const fileList = [];
-    const root = 'public/recipes';
-    const files = fs.readdirSync(root);
+    const files = [
+        'public/recipes/Breakfast',
+        'public/recipes/Snack',
+        'public/recipes/Mains',
+        'public/recipes/Dessert'
+    ]
     files.forEach(function(file) {
-        fileList.push(directoryToItem(path.join(root, file)));
+        fileList.push(directoryToItem(file));
     });
     return fileList;
 }
