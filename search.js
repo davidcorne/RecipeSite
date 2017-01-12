@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 const fs = require('fs');
 const path = require('path');
-const PDFParser = require("pdf2json");
+const PDFParser = require('pdf2json');
 const jsdom = require('jsdom');
 
 const utils = require('./utils');
@@ -101,7 +101,7 @@ const getHtmlCacheContent = function(file, callback) {
 //=============================================================================
 const getPdfCacheContent = function(file, callback) {
     const pdfParser = new PDFParser(this, 1);
-    pdfParser.on("pdfParser_dataReady", function(pdfData) {
+    pdfParser.on('pdfParser_dataReady', function(pdfData) {
         callback(pdfParser.getRawTextContent());
     });
     pdfParser.loadPDF(file);

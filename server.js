@@ -1,4 +1,4 @@
-"use strict"; 
+'use strict'; 
 const app = require('express')();
 const http = require('http').Server(app);
 const pug = require('pug');
