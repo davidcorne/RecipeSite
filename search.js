@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const PDFParser = require("pdf2json");
-const async = require('async');
+const jsdom = require('jsdom');
 
 // We add many events, node complains that this could be a memory
 // leak. Increase the number of max listeners before node complains.
@@ -110,8 +110,34 @@ const cachePath = function(file) {
 // <nnn> }
 
 //=============================================================================
-const getCacheContent = function(file, callback) {
+const getHtmlCacheContent = function(file, callback) {
+    fs.readFile(file, 'utf8', function(error, content) {
+        if (error) throw error;
+        jsdom.env(content, function(error, window) {
+            let markdown = '';
+            const title = window.document.getElementsByTagName('title')[0];
+            markdown += title.innerHTML;
+            const xmp = window.document.getElementsByTagName('xmp')[0];
+            markdown += xmp.innerHTML;
+            window.close();
+            callback(markdown);
+        });
+    });
+};
+
+//=============================================================================
+const getPdfCacheContent = function(file, callback) {
     callback(file + ' cached.');
+};
+
+//=============================================================================
+const getCacheContent = function(file, callback) {
+    const extension = path.extname(file);
+    if (extension === '.html') {
+        getHtmlCacheContent(file, callback);
+    } else if (extension === '.pdf') {
+        getPdfCacheContent(file, callback);
+    }
 };
 
 //=============================================================================
@@ -157,9 +183,11 @@ const checkFileCache = function(file, callback) {
 const buildIndex = function() {
     const files = [];
     walk('public/recipes', function(file) {
-        checkFileCache(file, function(content) {
-            addToIndex(file, content);
-        });
+        if (path.extname(file) !== '.cache') {
+            checkFileCache(file, function(content) {
+                addToIndex(file, content);
+            });
+        }
     });
 }
 
