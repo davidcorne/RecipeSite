@@ -4,10 +4,6 @@ const path = require('path');
 const PDFParser = require("pdf2json");
 const jsdom = require('jsdom');
 
-// We add many events, node complains that this could be a memory
-// leak. Increase the number of max listeners before node complains.
-require('events').EventEmitter.prototype._maxListeners = 100;
-
 const utils = require('./utils');
 
 const index = [];
@@ -81,33 +77,10 @@ const search = function(query) {
     return results.sort(resultSorter);
 }
 
-// <nnn> //=============================================================================
-// <nnn> const addPdfToIndex = function(file, pdfParser, callback) {
-// <nnn>     // Return a closure containing the file and pdfParser, so that we can get
-// <nnn>     // the raw text and also know which file to associate it with.
-// <nnn>     return function(pdfData) {
-// <nnn>         addToIndex(file, pdfParser.getRawTextContent());
-// <nnn>         callback();
-// <nnn>         console.log('Parsed ' + file);
-// <nnn>     }
-// <nnn> }
-
 //=============================================================================
 const cachePath = function(file) {
     return file.replace(/\..*/, '.cache');
 }
-
-// <nnn> //=============================================================================
-// <nnn> const cachePdfContent = function(file, callback) {
-// <nnn>     fs.stat(file, function(error, data) {
-        
-// <nnn>     });
-// <nnn>     const pdfParser = new PDFParser(this, 1);
-// <nnn>     const readyFunction = addPdfToIndex(file, pdfParser, callback);
-// <nnn>     pdfParser.on("pdfParser_dataReady", readyFunction);
-// <nnn>     pdfParser.loadPDF(file);
-    
-// <nnn> }
 
 //=============================================================================
 const getHtmlCacheContent = function(file, callback) {
@@ -127,7 +100,11 @@ const getHtmlCacheContent = function(file, callback) {
 
 //=============================================================================
 const getPdfCacheContent = function(file, callback) {
-    callback(file + ' cached.');
+    const pdfParser = new PDFParser(this, 1);
+    pdfParser.on("pdfParser_dataReady", function(pdfData) {
+        callback(pdfParser.getRawTextContent());
+    });
+    pdfParser.loadPDF(file);
 };
 
 //=============================================================================
@@ -145,6 +122,7 @@ const cacheFile = function(file, callback) {
     getCacheContent(file, function(content) {
         fs.writeFile(cachePath(file), content, 'utf8', function(error) {
             if (error) throw error;
+            console.log('Cache written: ' + file);
             callback(content);
         });
     });
