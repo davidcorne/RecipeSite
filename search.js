@@ -6,16 +6,6 @@ const jsdom = require('jsdom');
 
 const utils = require('./utils');
 
-const index = [];
-
-//=============================================================================
-const addToIndex = function(file, content) {
-    index.push({
-        file: file,
-        content: content
-    });
-}
-
 //=============================================================================
 const walk = function(dir, callback) {
     fs.readdir(dir, function(error, files) {
@@ -44,7 +34,7 @@ const pathToDisplayPath = function(file) {
 }
 
 //=============================================================================
-const search = function(query) {
+const search = function(query, index) {
     query = query.toLowerCase();
     const results = [];
     index.forEach(function(item) {
@@ -158,12 +148,15 @@ const checkFileCache = function(file, callback) {
 }
 
 //=============================================================================
-const buildIndex = function() {
+const buildIndex = function(index) {
     const files = [];
     walk('public/recipes', function(file) {
         if (path.extname(file) !== '.cache') {
             checkFileCache(file, function(content) {
-                addToIndex(file, content);
+                index.push({
+                    file: file,
+                    content: content
+                });
             });
         }
     });

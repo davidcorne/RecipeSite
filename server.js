@@ -13,6 +13,8 @@ app.set('port', (process.env.PORT || 3000));
 const indexTemplate = pug.compileFile('template/index.pug');
 const searchTemplate = pug.compileFile('template/search.pug');
 
+const index = [];
+
 //=============================================================================
 app.get('/', function(request, response) {
     const locals = {
@@ -28,7 +30,7 @@ app.get('/public/*', function(request, response) {
 
 //=============================================================================
 app.get('/search', function(request, response) {
-    const results = search.search(request.query.query);
+    const results = search.search(request.query.query, index);
     response.send(searchTemplate({
         results: results,
         query: request.query.query
@@ -38,6 +40,6 @@ app.get('/search', function(request, response) {
 //=============================================================================
 http.listen(app.get('port'), function() {
     console.log('Listening on *:' + app.get('port'));
-    search.buildIndex();
+    search.buildIndex(index);
 });
 
