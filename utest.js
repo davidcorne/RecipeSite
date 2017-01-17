@@ -77,18 +77,18 @@ describe('Search', function() {
         //   - ordering the results by match number
         const expected = [
             {
-                label: 'd',
-                path:  path.join('A', 'C', 'd.path'),
+                label:       'd',
+                path:        path.join('A', 'C', 'd.path'),
                 displayPath: 'A/C/d',
-                context: ['This is FOUND, but longer!'],
-                match: 'This is FOUND, but longer!'.length
+                context:     ['This is FOUND, but longer!'],
+                match:       'This is FOUND, but longer!'.length
             },
             {
-                label: 'c',
-                path:  path.join('A', 'B', 'c.path'),
+                label:       'c',
+                path:        path.join('A', 'B', 'c.path'),
                 displayPath: 'A/B/c',
-                context: ['This is found'],
-                match: 'This is found'.length
+                context:     ['This is found'],
+                match:       'This is found'.length
             }
         ]
         assert.strictEqual(results.length, 2);
