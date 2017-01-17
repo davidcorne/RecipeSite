@@ -78,14 +78,14 @@ describe('Search', function() {
         const expected = [
             {
                 label: 'd',
-                path:  'A\\C\\d.path',
+                path:  path.join('A', 'C', 'd.path'),
                 displayPath: 'A/C/d',
                 context: ['This is FOUND, but longer!'],
                 match: 'This is FOUND, but longer!'.length
             },
             {
                 label: 'c',
-                path:  'A\\B\\c.path',
+                path:  path.join('A', 'B', 'c.path'),
                 displayPath: 'A/B/c',
                 context: ['This is found'],
                 match: 'This is found'.length
