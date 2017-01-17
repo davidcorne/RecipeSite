@@ -3,6 +3,7 @@ const rewire = require('rewire');
 const chai = require('chai');
 chai.use(require('chai-string'));
 const assert = chai.assert;
+const path = require('path');
 
 const searchModule = rewire('./search.js');
 
@@ -56,11 +57,11 @@ describe('Search', function() {
         
         const index = [
             {
-                file:    'A\\B\\c.path',
+                file:    path.join('A', 'B', 'c.path'),
                 content: 'This is found'
             },
             {
-                file:    'A\\C\\d.path',
+                file:    path.join('A', 'C', 'd.path'),
                 content: 'This is FOUND, but longer!'
             },
             {
