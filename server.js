@@ -1,22 +1,23 @@
 'use strict'; 
+const cluster = require('cluster');
 
-var cluster = require('cluster');
+const log = require('./log');
 
 if(cluster.isMaster) {
     const numWorkers = require('os').cpus().length;
 
-    console.log('Master cluster setting up ' + numWorkers + ' workers...');
+    log.info('Master cluster setting up ' + numWorkers + ' workers...');
 
     for(let i = 0; i < numWorkers; i++) {
         cluster.fork();
     }
 
     cluster.on('online', function(worker) {
-        console.log('Worker ' + worker.process.pid + ' is online');
+        log.info('Worker ' + worker.process.pid + ' is online');
     });
 
     cluster.on('exit', function(worker, code, signal) {
-        console.log(
+        log.info(
             'Worker ' + 
                 worker.process.pid +
                 ' died with code: '
@@ -24,7 +25,7 @@ if(cluster.isMaster) {
                 ', and signal: '
                 + signal
         );
-        console.log('Starting a new worker');
+        log.info('Starting a new worker');
         cluster.fork();
     });
 } else {
@@ -47,7 +48,7 @@ if(cluster.isMaster) {
     app.set('port', (process.env.PORT || 3000));
 
     app.get('/', function(request, response) {
-        console.log('Process ' + process.pid + ' request /');
+        log.debug('Request /');
         const locals = {
             recipes: fileList.generateFileList()
         };
@@ -55,12 +56,12 @@ if(cluster.isMaster) {
     });
 
     app.get('/public/*', function(request, response) {
-        console.log('Process ' + process.pid + ' request ' + request.path);
+        log.debug('Request ' + request.path);
         response.sendFile(__dirname + decode(request.path));
     });
 
     app.get('/search', function(request, response) {
-        console.log('Process ' + process.pid + ' request /search');
+        log.debug('Request ' + request.path);
         const results = search.search(request.query.query, index);
         response.send(searchTemplate({
             results: results,
@@ -69,7 +70,7 @@ if(cluster.isMaster) {
     });
 
     app.listen(app.get('port'), function() {
-        console.log('Process ' + process.pid + ' listening on *:' + app.get('port'));
+        log.info('Listening on *:' + app.get('port'));
     });
 
 }

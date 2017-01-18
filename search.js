@@ -5,6 +5,7 @@ const PDFParser = require('pdf2json');
 const jsdom = require('jsdom');
 
 const utils = require('./utils');
+const log = require('./log');
 
 //=============================================================================
 const walk = function(dir, callback) {
@@ -112,7 +113,7 @@ const cacheFile = function(file, callback) {
     getCacheContent(file, function(content) {
         fs.writeFile(cachePath(file), content, 'utf8', function(error) {
             if (error) throw error;
-            console.log('Cache written: ' + file);
+            log.debug('Cache written: ' + file);
             callback(content);
         });
     });
@@ -125,20 +126,20 @@ const checkFileCache = function(file, callback) {
         fs.stat(cachePath(file), function(error, cacheStats) {
             if (error && error.code === 'ENOENT') {
                 // The cache doesn't exist, make it.
-                console.log('Cache not found: ' + file);
+                log.silly('Cache not found: ' + file);
                 cacheFile(file, callback);
             } else {
                 // Check how up to date the cache is, compare the modification
                 // times.
                 if (cacheStats.mtime < fileStats.mtime) {
                     // The file has been modified since the cache, update it.
-                    console.log('Cache out of date: ' + file);
+                    log.silly('Cache out of date: ' + file);
                     cacheFile(file, callback);
                 } else {
                     // The cache is up to date, just read it
                     fs.readFile(cachePath(file), 'utf8', function(error, content) {
                         if (error) throw error;
-                        console.log('Cache up to date: ' + file);
+                        log.silly('Cache up to date: ' + file);
                         callback(content);
                     });
                 }
