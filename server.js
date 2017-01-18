@@ -1,45 +1,76 @@
 'use strict'; 
-const app = require('express')();
-const http = require('http').Server(app);
-const pug = require('pug');
-const decode = require('urldecode')
 
-const search = require('./search');
-const fileList = require('./file-list');
+var cluster = require('cluster');
 
-app.set('port', (process.env.PORT || 3000));
+if(cluster.isMaster) {
+    const numWorkers = require('os').cpus().length;
 
-// Compile a function
-const indexTemplate = pug.compileFile('template/index.pug');
-const searchTemplate = pug.compileFile('template/search.pug');
+    console.log('Master cluster setting up ' + numWorkers + ' workers...');
 
-const index = [];
+    for(let i = 0; i < numWorkers; i++) {
+        cluster.fork();
+    }
 
-//=============================================================================
-app.get('/', function(request, response) {
-    const locals = {
-        recipes: fileList.generateFileList()
-    };
-    response.send(indexTemplate(locals));
-});
+    cluster.on('online', function(worker) {
+        console.log('Worker ' + worker.process.pid + ' is online');
+    });
 
-//=============================================================================
-app.get('/public/*', function(request, response) {
-    response.sendFile(__dirname + decode(request.path));
-});
+    cluster.on('exit', function(worker, code, signal) {
+        console.log(
+            'Worker ' + 
+                worker.process.pid +
+                ' died with code: '
+                + code +
+                ', and signal: '
+                + signal
+        );
+        console.log('Starting a new worker');
+        cluster.fork();
+    });
+} else {
+    const express = require('express');
+    const pug = require('pug');
+    const decode = require('urldecode')
 
-//=============================================================================
-app.get('/search', function(request, response) {
-    const results = search.search(request.query.query, index);
-    response.send(searchTemplate({
-        results: results,
-        query: request.query.query
-    }));
-});
+    const search = require('./search');
+    const fileList = require('./file-list');
 
-//=============================================================================
-http.listen(app.get('port'), function() {
-    console.log('Listening on *:' + app.get('port'));
+    const index = [];
     search.buildIndex(index);
-});
+
+    // Compile a function
+    const indexTemplate = pug.compileFile('template/index.pug');
+    const searchTemplate = pug.compileFile('template/search.pug');
+
+
+    const app = express();
+    app.set('port', (process.env.PORT || 3000));
+
+    app.get('/', function(request, response) {
+        console.log('Process ' + process.pid + ' request /');
+        const locals = {
+            recipes: fileList.generateFileList()
+        };
+        response.send(indexTemplate(locals));
+    });
+
+    app.get('/public/*', function(request, response) {
+        console.log('Process ' + process.pid + ' request ' + request.path);
+        response.sendFile(__dirname + decode(request.path));
+    });
+
+    app.get('/search', function(request, response) {
+        console.log('Process ' + process.pid + ' request /search');
+        const results = search.search(request.query.query, index);
+        response.send(searchTemplate({
+            results: results,
+            query: request.query.query
+        }));
+    });
+
+    app.listen(app.get('port'), function() {
+        console.log('Process ' + process.pid + ' listening on *:' + app.get('port'));
+    });
+
+}
 
