@@ -4,7 +4,8 @@
   "description": "A website for easily viewing my recipes.",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha utest.js"
+    "test": "mocha utest.js",
+    "develop": "nodemon server.js"
   },
   "dependencies": {
     "chai": "^3.5.0",
@@ -16,5 +17,8 @@
     "pug": "^2.0.0-beta6",
     "rewire": "^2.5.2",
     "urldecode": "^1.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
