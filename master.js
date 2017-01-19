@@ -33,13 +33,12 @@ const startWorkers = function() {
 
 //=============================================================================
 const start = function() {
-    log.info('Master updating cache');
     const child = child_process.fork('build-cache.js');
     child.on('close', function(code) {
         if (code !== 0) {
             log.error('build-cache process ended with code ' + code);
         } else {
-            log.info('Cache updated.');
+            log.info('Cache built.');
             startWorkers();
         }
     });

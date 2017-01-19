@@ -81,6 +81,7 @@ const checkFileCache = function(file) {
 
 //=============================================================================
 const buildCache = function() {
+    log.info('Building cache');
     utils.walk('public/recipes', function(file) {
         if (path.extname(file) !== '.cache') {
             checkFileCache(file);
