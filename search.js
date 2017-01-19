@@ -174,14 +174,14 @@ const buildIndex = function(index) {
                 fs.stat(cacheFileName, function(error, stat) {
                     if (!error) {
                         // The cache exists, read it
-                    }
-                    fs.readFile(cachePath(file), 'utf8', function(error, content) {
-                        if (error) throw error;
-                        index.push({
-                            file: file,
-                            content: content
+                        fs.readFile(cachePath(file), 'utf8', function(error, content) {
+                            if (error) throw error;
+                            index.push({
+                                file: file,
+                                content: content
+                            });
                         });
-                    });
+                    }
                 });
             }
         }
