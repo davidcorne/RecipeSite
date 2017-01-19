@@ -16,22 +16,29 @@ const searchTemplate = pug.compileFile('template/search.pug');
 const app = express();
 app.set('port', (process.env.PORT || 3000));
 
+//=============================================================================
+const logRequest = function(request) {
+    log.debug('Request: ' + request.path + ' ' + JSON.stringify(request.query));
+}
 
+//=============================================================================
 app.get('/', function(request, response) {
-    log.debug('Request /');
+    logRequest(request);
     const locals = {
         recipes: fileList.generateFileList()
     };
     response.send(indexTemplate(locals));
 });
 
+//=============================================================================
 app.get('/public/*', function(request, response) {
-    log.debug('Request ' + request.path);
+    logRequest(request);
     response.sendFile(__dirname + decode(request.path));
 });
 
+//=============================================================================
 app.get('/search', function(request, response) {
-    log.debug('Request ' + request.path);
+    logRequest(request);
     const results = search.search(request.query.query, index);
     response.send(searchTemplate({
         results: results,
@@ -39,6 +46,7 @@ app.get('/search', function(request, response) {
     }));
 });
 
+//=============================================================================
 module.exports = function() {
     app.listen(app.get('port'), function() {
         log.info('Listening on *:' + app.get('port'));
