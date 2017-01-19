@@ -1,13 +1,12 @@
 'use strict';
 const cluster = require('cluster');
 const log = require('./log');
-const search = require('./search');
+const child_process = require('child_process')
 
 const numWorkers = require('os').cpus().length;
 
-module.exports = function() {
-    log.info('Master updating cache');
-    search.buildCache();
+//=============================================================================
+const startWorkers = function() {
     log.info('Master cluster setting up ' + numWorkers + ' workers...');
 
     for(let i = 0; i < numWorkers; i++) {
@@ -31,3 +30,19 @@ module.exports = function() {
         cluster.fork();
     });
 }
+
+//=============================================================================
+const start = function() {
+    log.info('Master updating cache');
+    const child = child_process.fork('build-cache.js');
+    child.on('close', function(code) {
+        if (code !== 0) {
+            log.error('build-cache process ended with code ' + code);
+        } else {
+            log.info('Cache updated.');
+            startWorkers();
+        }
+    });
+}
+
+module.exports = start;
