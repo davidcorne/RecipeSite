@@ -6,9 +6,10 @@ const assert = chai.assert;
 const path = require('path');
 
 const searchModule = rewire('./search.js');
+const buildCacheModule = rewire('./build-cache.js');
 
-const getHtmlCacheContent = searchModule.__get__('getHtmlCacheContent');
-const getPdfCacheContent = searchModule.__get__('getPdfCacheContent');
+const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent');
+const getPdfCacheContent = buildCacheModule.__get__('getPdfCacheContent');
 const search = searchModule.__get__('search');
 
 //=============================================================================
