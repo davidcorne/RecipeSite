@@ -16,6 +16,7 @@ const searchTemplate = pug.compileFile('template/search.pug');
 const app = express();
 app.set('port', (process.env.PORT || 3000));
 
+
 app.get('/', function(request, response) {
     log.debug('Request /');
     const locals = {
@@ -38,7 +39,9 @@ app.get('/search', function(request, response) {
     }));
 });
 
-app.listen(app.get('port'), function() {
-    log.info('Listening on *:' + app.get('port'));
-});
+module.exports = function() {
+    app.listen(app.get('port'), function() {
+        log.info('Listening on *:' + app.get('port'));
+    });
+};
 
