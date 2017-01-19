@@ -26,6 +26,19 @@ const walk = function(dir, callback) {
 }
 
 //=============================================================================
+const walkSync = function(dir, filelist) {
+    const files = fs.readdirSync(dir);
+    files.forEach(function(file) {
+        if (fs.statSync(path.join(dir, file)).isDirectory()) {
+            filelist = walkSync(path.join(dir, file), filelist);
+        } else {
+            filelist.push(path.join(dir, file));
+        }
+    });
+    return filelist;
+};
+
+//=============================================================================
 const pathToDisplayPath = function(file) {
     // comes in as public\recipes\A\B\C.X want to display A/B/C
     let displayPath = file.replace(/\\/g, '/');
@@ -113,7 +126,7 @@ const cacheFile = function(file) {
     getCacheContent(file, function(content) {
         fs.writeFile(cachePath(file), content, 'utf8', function(error) {
             if (error) throw error;
-            log.debug('Cache written: ' + file);
+            log.silly('Cache written: ' + file);
         });
     });
 };
@@ -145,18 +158,39 @@ const checkFileCache = function(file) {
 //=============================================================================
 const buildIndex = function(index) {
     const files = [];
-    walk('public/recipes', function(file) {
-        if (path.extname(file) === '.cache') {
-            // Read the cached file
-            fs.readFile(cachePath(file), 'utf8', function(error, content) {
-                if (error) throw error;
-                index.push({
-                    file: file,
-                    content: content
-                });
+    let count = 0;
+    walkSync('public/recipes', files);
+    files.forEach(function(file) {
+        if (path.extname(file) !== '.cache') {
+            // It's a file we need to make a cache for
+            ++count;
+        } else {
+            // Check we've not already cached it
+            const result = index.find(function(item) {
+                return item.file === file;
             });
+            if (!result) {
+                // If we've not got it already, read the cached file.
+                fs.readFile(cachePath(file), 'utf8', function(error, content) {
+                    if (error) throw error;
+                    index.push({
+                        file: file,
+                        content: content
+                    });
+                });
+            }
         }
     });
+    if (index.length === 0 || index.length < count) {
+        // Schedule another index build in 0.5 seconds
+        log.debug('Cache incomplete: index ' + index.length + ' count ' + count);
+        const closure = function() {
+            buildIndex(index);
+        }
+        setTimeout(closure, 500);
+    } else {
+        log.debug('Cache complete: index ' + index.length + ' count ' + count);
+    }
 }
 
 //=============================================================================
