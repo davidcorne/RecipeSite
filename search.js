@@ -108,6 +108,9 @@ const getPdfCacheContent = function(file, callback) {
     pdfParser.on('pdfParser_dataReady', function(pdfData) {
         callback(pdfParser.getRawTextContent());
     });
+    pdfParser.on("pdfParser_dataError", function(errData) {
+        log.error(errData);
+    });
     pdfParser.loadPDF(file);
 };
 
