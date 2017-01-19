@@ -164,18 +164,23 @@ const buildIndex = function(index) {
         if (path.extname(file) !== '.cache') {
             // It's a file we need to make a cache for
             ++count;
-        } else {
             // Check we've not already cached it
             const result = index.find(function(item) {
                 return item.file === file;
             });
             if (!result) {
                 // If we've not got it already, read the cached file.
-                fs.readFile(cachePath(file), 'utf8', function(error, content) {
-                    if (error) throw error;
-                    index.push({
-                        file: file,
-                        content: content
+                const cacheFileName = cachePath(file);
+                fs.stat(cacheFileName, function(error, stat) {
+                    if (!error) {
+                        // The cache exists, read it
+                    }
+                    fs.readFile(cachePath(file), 'utf8', function(error, content) {
+                        if (error) throw error;
+                        index.push({
+                            file: file,
+                            content: content
+                        });
                     });
                 });
             }
