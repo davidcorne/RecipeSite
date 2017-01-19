@@ -8,24 +8,6 @@ const utils = require('./utils');
 const log = require('./log');
 
 //=============================================================================
-const walk = function(dir, callback) {
-    fs.readdir(dir, function(error, files) {
-        if (error) throw error;
-        files.forEach(function(file) {
-            const fullPath = path.join(dir, file);
-            fs.stat(fullPath, function(error, stats) {
-                if (error) throw error;
-                if (stats.isDirectory()) {
-                    walk(fullPath, callback);
-                } else {
-                    callback(fullPath);
-                }
-            });
-        });
-    });
-}
-
-//=============================================================================
 const getHtmlCacheContent = function(file, callback) {
     fs.readFile(file, 'utf8', function(error, content) {
         if (error) throw error;
@@ -99,7 +81,7 @@ const checkFileCache = function(file) {
 
 //=============================================================================
 const buildCache = function() {
-    walk('public/recipes', function(file) {
+    utils.walk('public/recipes', function(file) {
         if (path.extname(file) !== '.cache') {
             checkFileCache(file);
         }
