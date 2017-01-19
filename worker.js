@@ -18,7 +18,9 @@ app.set('port', (process.env.PORT || 3000));
 
 //=============================================================================
 const logRequest = function(request) {
-    log.debug('Request: ' + request.path + ' ' + JSON.stringify(request.query));
+    log.debug(
+        'Request: ' + request.path + ' ' + JSON.stringify(request.query)
+    );
 }
 
 //=============================================================================
