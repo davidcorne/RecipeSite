@@ -109,39 +109,33 @@ const getCacheContent = function(file, callback) {
 };
 
 //=============================================================================
-const cacheFile = function(file, callback) {
+const cacheFile = function(file) {
     getCacheContent(file, function(content) {
         fs.writeFile(cachePath(file), content, 'utf8', function(error) {
             if (error) throw error;
             log.debug('Cache written: ' + file);
-            callback(content);
         });
     });
 };
 
 //=============================================================================
-const checkFileCache = function(file, callback) {
+const checkFileCache = function(file) {
     fs.stat(file, function(error, fileStats) {
         if (error) throw error;
         fs.stat(cachePath(file), function(error, cacheStats) {
             if (error && error.code === 'ENOENT') {
                 // The cache doesn't exist, make it.
                 log.silly('Cache not found: ' + file);
-                cacheFile(file, callback);
+                cacheFile(file);
             } else {
                 // Check how up to date the cache is, compare the modification
                 // times.
                 if (cacheStats.mtime < fileStats.mtime) {
                     // The file has been modified since the cache, update it.
                     log.silly('Cache out of date: ' + file);
-                    cacheFile(file, callback);
+                    cacheFile(file);
                 } else {
-                    // The cache is up to date, just read it
-                    fs.readFile(cachePath(file), 'utf8', function(error, content) {
-                        if (error) throw error;
-                        log.silly('Cache up to date: ' + file);
-                        callback(content);
-                    });
+                    log.silly('Cache up to date: ' + file);
                 }
             }
         });
@@ -152,8 +146,10 @@ const checkFileCache = function(file, callback) {
 const buildIndex = function(index) {
     const files = [];
     walk('public/recipes', function(file) {
-        if (path.extname(file) !== '.cache') {
-            checkFileCache(file, function(content) {
+        if (path.extname(file) === '.cache') {
+            // Read the cached file
+            fs.readFile(cachePath(file), 'utf8', function(error, content) {
+                if (error) throw error;
                 index.push({
                     file: file,
                     content: content
@@ -163,5 +159,15 @@ const buildIndex = function(index) {
     });
 }
 
+//=============================================================================
+const buildCache = function() {
+    walk('public/recipes', function(file) {
+        if (path.extname(file) !== '.cache') {
+            checkFileCache(file);
+        }
+    });
+};
+
 module.exports.search = search;
+module.exports.buildCache = buildCache;
 module.exports.buildIndex = buildIndex;
