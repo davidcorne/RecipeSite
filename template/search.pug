@@ -14,10 +14,13 @@ html(lang="en")
     include search-bar.pug
     
     div#search-result
-      each item in results
-        div
-          h3.search-header
-            a(href=item.path, target="_blank") #{item.label}
-          p.display-path #{item.displayPath}
-          each line in item.context
-            p.line #{line}
+      if results.length
+        each item in results
+          div
+            h3.search-header
+              a(href=item.path, target="_blank") #{item.label}
+            p.display-path #{item.displayPath}
+            each line in item.context
+              p.line #{line}
+      else
+        p Your seach - #{query} - did not match any documents.
