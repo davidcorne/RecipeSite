@@ -41,11 +41,19 @@ app.get('/public/*', function(request, response) {
 //=============================================================================
 app.get('/search', function(request, response) {
     logRequest(request);
-    const results = search.search(request.query.query, index);
-    response.send(searchTemplate({
-        results: results,
-        query: request.query.query
-    }));
+    if (index.length === 0) {
+        // Send a search results not ready signal
+        const searchNotReadyPage = 
+            pug.compileFile('template/search-not-ready.pug');
+        response.send(searchNotReadyPage());
+    } else {
+        // We've got a search index, actually search it.
+        const results = search.search(request.query.query, index);
+        response.send(searchTemplate({
+            results: results,
+            query: request.query.query
+        }));
+    }
 });
 
 //=============================================================================
