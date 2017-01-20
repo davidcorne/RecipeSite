@@ -62,10 +62,13 @@ app.get('/search', function(request, response) {
         response.send(searchNotReadyPage());
     } else {
         // We've got a search index, actually search it.
+        const start  = process.hrtime()
         const results = search.search(request.query.query, index);
+        const end = process.hrtime(start)[1]/1000000;
         response.send(searchTemplate({
             results: results,
-            query: request.query.query
+            query: request.query.query,
+            time: Math.round(end * 100) / 100
         }));
     }
 });

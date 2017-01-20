@@ -12,7 +12,7 @@ html(lang="en")
     h1 Results
     
     include search-bar.pug
-    
+    p#search-stats #{results.length} results (#{time} milliseconds)
     div#search-result
       if results.length
         each item in results

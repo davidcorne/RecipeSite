@@ -102,3 +102,9 @@ p.line {
     margin-bottom: 5px;
 }
 
+#search-stats {
+    color: #808080;
+    margin-top: 3px;
+    margin-left: 6px;
+    margin-bottom: 10px;
+}
