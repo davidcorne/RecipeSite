@@ -13,8 +13,22 @@ search.buildIndex(index);
 const indexTemplate = pug.compileFile('template/index.pug');
 const searchTemplate = pug.compileFile('template/search.pug');
 
+const messageMap = {
+    'reload-search-index': function() {search.buildIndex(index);}
+};
+
 const app = express();
 app.set('port', (process.env.PORT || 3000));
+
+//=============================================================================
+process.on('message', function(message) {
+    log.info('Recieved ' + message);
+    if (message in messageMap) {
+        messageMap[message]();
+    } else {
+        log.error('Unknown message "' + message + '"');
+    }
+});
 
 //=============================================================================
 const logRequest = function(request) {

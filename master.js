@@ -6,9 +6,7 @@ const child_process = require('child_process')
 const numWorkers = require('os').cpus().length;
 
 //=============================================================================
-const startWorkers = function(initialWorker) {
-    log.info('Master killing initial worker.');
-    initialWorker.kill('SIGTERM');
+const startWorkers = function() {
     log.info('Master cluster setting up ' + numWorkers + ' workers...');
 
     for(let i = 0; i < numWorkers; i++) {
@@ -35,22 +33,17 @@ const startWorkers = function(initialWorker) {
 
 //=============================================================================
 const start = function() {
-    // So we don't get it accidentally restarted, use child_process to start
-    // the initial worker. (exitedAfterDisconnect didn't get set properly)
-    const initialWorker = child_process.fork('worker.js');
-    initialWorker.on('error', function(code, signal) {
-        log.error('Inital worker error: code=' + code + ' signal=' + signal);
-    });
-    initialWorker.on('close', function(code) {
-        log.info('initialWorker closed.');
-    });
     const child = child_process.fork('build-cache.js');
     child.on('close', function(code) {
         if (code !== 0) {
             log.error('build-cache process ended with code ' + code);
         } else {
             log.info('Cache built.');
-            startWorkers(initialWorker);
+            // Send an event to each worker
+            for (const id in cluster.workers) {
+                cluster.workers[id].process.send('reload-search-index');
+            }
         }
     });
+    startWorkers();
 }();
