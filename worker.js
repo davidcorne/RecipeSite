@@ -5,6 +5,7 @@ const log = require('./log');
 
 const search = require('./search');
 const fileList = require('./file-list');
+const searchNotReadyPage = pug.compileFile('template/search-not-ready.pug');
 
 const index = [];
 
@@ -62,8 +63,6 @@ app.get('/search', function(request, response) {
     logRequest(request);
     if (index.length === 0) {
         // Send a search results not ready signal
-        const searchNotReadyPage = 
-            pug.compileFile('template/search-not-ready.pug');
         response.send(searchNotReadyPage());
     } else {
         // We've got a search index, actually search it.
