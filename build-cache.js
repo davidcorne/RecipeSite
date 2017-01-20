@@ -62,7 +62,7 @@ const checkFileCache = function(file) {
         fs.stat(utils.cachePath(file), function(error, cacheStats) {
             if (error && error.code === 'ENOENT') {
                 // The cache doesn't exist, make it.
-                log.silly('Cache not found: ' + file);
+                log.silly('Cache not made yet: ' + file);
                 cacheFile(file);
             } else {
                 // Check how up to date the cache is, compare the modification

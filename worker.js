@@ -49,9 +49,7 @@ app.get('/search', function(request, response) {
 });
 
 //=============================================================================
-module.exports = function() {
-    app.listen(app.get('port'), function() {
-        log.info('Listening on *:' + app.get('port'));
-    });
-};
+app.listen(app.get('port'), function() {
+    log.info('Listening on *:' + app.get('port'));
+});
 

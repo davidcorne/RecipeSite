@@ -54,14 +54,25 @@ const buildIndex = function(index) {
         if (path.extname(file) !== '.cache') {
             // Read the cached file.
             const cacheFileName = utils.cachePath(file);
-            fs.readFile(cacheFileName, 'utf8', function(error, content) {
-                if (error) throw error;
-                index.push({
-                    file: file,
-                    content: content
-                });
+            fs.stat(cacheFileName, function(error, cacheStats) {
+                if (error && error.code === 'ENOENT') {
+                    // The cache doesn't exist, make it.
+                    log.silly('Cache not found: ' + file);
+                } else {
+                    fs.readFile(
+                        cacheFileName, 
+                        'utf8', 
+                        function(error, content) {
+                            if (error) throw error;
+                            index.push({
+                                file: file,
+                                content: content
+                            });
+                        }
+                    );
+                }
             });
-        }
+        };
     });
 }
 
