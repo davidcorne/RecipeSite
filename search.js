@@ -50,6 +50,7 @@ const search = function(query, index) {
 
 //=============================================================================
 const buildIndex = function(index) {
+    log.debug('Building search index.');
     utils.walk('public/recipes', function(file) {
         if (path.extname(file) !== '.cache') {
             // Read the cached file.

@@ -7,15 +7,10 @@ const search = require('./search');
 const fileList = require('./file-list');
 
 const index = [];
-search.buildIndex(index);
 
 // Compile a function
 const indexTemplate = pug.compileFile('template/index.pug');
 const searchTemplate = pug.compileFile('template/search.pug');
-
-const messageMap = {
-    'reload-search-index': function() {search.buildIndex(index);}
-};
 
 const app = express();
 app.set('port', (process.env.PORT || 3000));
@@ -29,6 +24,16 @@ process.on('message', function(message) {
         log.error('Unknown message "' + message + '"');
     }
 });
+
+//=============================================================================
+const reloadSearchIndex = function() {
+    search.buildIndex(index);
+};
+
+//=============================================================================
+const messageMap = {
+    'reload-search-index': reloadSearchIndex
+};
 
 //=============================================================================
 const logRequest = function(request) {
