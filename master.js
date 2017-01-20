@@ -46,4 +46,6 @@ const start = function() {
         }
     });
     startWorkers();
-}();
+};
+
+module.exports = start;
