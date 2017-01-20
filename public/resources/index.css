@@ -108,3 +108,13 @@ p.line {
     margin-left: 6px;
     margin-bottom: 10px;
 }
+
+.input {
+    display: table;
+    margin: 0 auto;
+    width: 75%;
+}
+
+.search-bar {
+    width: 85%;
+}
