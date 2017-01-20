@@ -3,6 +3,8 @@ html(lang="en")
   head
     title=Recipes
     link(rel="stylesheet", type="text/css", href="public/resources/index.css")
+    script(type='text/javascript').
+      setTimeout(function() {window.location.reload(true);}, 1000);
   body
     include navigation-bar.pug
 
@@ -10,4 +12,6 @@ html(lang="en")
     
     include search-bar.pug
     
-    p I'm afraid search is not ready yet. Please reload in a few seconds.
+    p I'm afraid search is not ready yet. This page will update when it is ready.
+
+
