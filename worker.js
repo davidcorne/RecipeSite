@@ -27,13 +27,13 @@ process.on('message', function(message) {
 });
 
 //=============================================================================
-const reloadSearchIndex = function() {
+const loadSearchIndex = function() {
     search.buildIndex(index);
 };
 
 //=============================================================================
 const messageMap = {
-    'reload-search-index': reloadSearchIndex
+    'load-search-index': loadSearchIndex
 };
 
 //=============================================================================

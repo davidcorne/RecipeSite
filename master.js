@@ -41,7 +41,7 @@ const start = function() {
             log.info('Cache built.');
             // Send an event to each worker
             for (const id in cluster.workers) {
-                cluster.workers[id].process.send('reload-search-index');
+                cluster.workers[id].process.send('load-search-index');
             }
         }
     });
