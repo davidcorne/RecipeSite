@@ -18,7 +18,7 @@ app.set('port', (process.env.PORT || 3000));
 
 //=============================================================================
 process.on('message', function(message) {
-    log.info('Recieved ' + message);
+    log.debug('Recieved ' + message);
     if (message in messageMap) {
         messageMap[message]();
     } else {
