@@ -7,3 +7,5 @@ form.search(action="search")
       value=query
     ).search-bar
     input(type="submit", value="Go")
+    if results
+      p#search-stats #{results.length} results (#{time} milliseconds)
