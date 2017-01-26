@@ -21,7 +21,7 @@ cat << EOF > "${name}.html"
 
 </xmp>
 
-<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+<script src="/public/resources/strapdown.js"></script>
 </html>
 
 EOF
