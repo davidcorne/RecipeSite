@@ -33,7 +33,7 @@ const startWorkers = function() {
 
 //=============================================================================
 const start = function() {
-    const child = child_process.fork('build-cache.js');
+    const child = child_process.fork('run-build-cache.js');
     child.on('close', function(code) {
         if (code !== 0) {
             log.error('build-cache process ended with code ' + code);

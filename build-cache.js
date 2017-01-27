@@ -80,13 +80,13 @@ const checkFileCache = function(file) {
 }
 
 //=============================================================================
-const buildCache = function() {
-    log.info('Building cache');
-    utils.walk('public/recipes', function(file) {
+const buildCache = function(directory) {
+    log.info('Building cache of ' + directory);
+    utils.walk(directory, function(file) {
         if (path.extname(file) !== '.cache') {
             checkFileCache(file);
         }
     });
 };
 
-buildCache();
+module.exports.buildCache = buildCache;
