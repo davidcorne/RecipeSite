@@ -5,13 +5,13 @@ const log = require('./log');
 
 const search = require('./search');
 const fileList = require('./file-list');
-const searchNotReadyPage = pug.compileFile('template/search-not-ready.pug');
 
 const index = [];
 
 // Compile a function
 const indexTemplate = pug.compileFile('template/index.pug');
 const searchTemplate = pug.compileFile('template/search.pug');
+const searchNotReadyPage = pug.compileFile('template/search-not-ready.pug');
 
 const app = express();
 app.set('port', (process.env.PORT || 3000));
