@@ -57,8 +57,8 @@ const buildIndex = function(index) {
             const cacheFileName = utils.cachePath(file);
             fs.stat(cacheFileName, function(error, cacheStats) {
                 if (error && error.code === 'ENOENT') {
-                    // The cache doesn't exist, make it.
-                    log.silly('Cache not found: ' + file);
+                    // The cache doesn't exist, it should have been!
+                    log.error('Cache not found: ' + file);
                 } else {
                     fs.readFile(
                         cacheFileName, 
