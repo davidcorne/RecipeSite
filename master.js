@@ -48,4 +48,4 @@ const start = function() {
     startWorkers();
 };
 
-module.exports = start;
+module.exports.start = start;

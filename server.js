@@ -2,8 +2,8 @@
 const cluster = require('cluster');
 
 if(cluster.isMaster) {
-    require('./master')();
+    require('./master').start();
 } else {
-    require('./worker')();
+    require('./worker').start();
 }
 
