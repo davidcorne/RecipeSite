@@ -49,32 +49,40 @@ const search = function(query, index) {
 }
 
 //=============================================================================
-const buildIndex = function(index) {
+const readCacheFile = function(index, file) {
+    if (path.extname(file) !== '.cache') {
+        // Read the cached file.
+        const cacheFileName = utils.cachePath(file);
+        fs.stat(cacheFileName, function(error, cacheStats) {
+            if (error && error.code === 'ENOENT') {
+                // The cache doesn't exist, it should have been!
+                log.error('Cache not found: ' + file);
+            } else {
+                fs.readFile(
+                    cacheFileName, 
+                    'utf8', 
+                    function(error, content) {
+                        if (error) throw error;
+                        index.push({
+                            file: file,
+                            content: content
+                        });
+                    }
+                );
+            }
+        });
+    };
+
+};
+
+//=============================================================================
+const buildIndex = function(index, end) {
     log.debug('Building search index.');
-    utils.walk('public/recipes', function(file) {
-        if (path.extname(file) !== '.cache') {
-            // Read the cached file.
-            const cacheFileName = utils.cachePath(file);
-            fs.stat(cacheFileName, function(error, cacheStats) {
-                if (error && error.code === 'ENOENT') {
-                    // The cache doesn't exist, it should have been!
-                    log.error('Cache not found: ' + file);
-                } else {
-                    fs.readFile(
-                        cacheFileName, 
-                        'utf8', 
-                        function(error, content) {
-                            if (error) throw error;
-                            index.push({
-                                file: file,
-                                content: content
-                            });
-                        }
-                    );
-                }
-            });
-        };
-    });
+    utils.walk(
+        'public/recipes', 
+        function(file) {readCacheFile(index, file);},
+        end
+    );
 }
 
 module.exports.search = search;
