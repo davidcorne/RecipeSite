@@ -14,6 +14,9 @@ const searchTemplate = pug.compileFile('template/search.pug');
 const searchNotReadyPage = pug.compileFile('template/search-not-ready.pug');
 
 const app = express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
 app.set('port', (process.env.PORT || 3000));
 
 //=============================================================================
@@ -27,8 +30,19 @@ process.on('message', function(message) {
 });
 
 //=============================================================================
+io.on('connection', function(socket) {
+    log.debug('Socket connected.');
+    socket.on('disconnect', function() {
+        log.debug('Socket disconnected.');
+    });
+});
+
+//=============================================================================
 const loadSearchIndex = function() {
-    search.buildIndex(index);
+    search.buildIndex(index, function() {
+        log.debug('Cache built');
+        io.emit('index-ready');
+    });
 };
 
 //=============================================================================
@@ -79,7 +93,7 @@ app.get('/search', function(request, response) {
 
 //=============================================================================
 const start = function() {
-    app.listen(app.get('port'), function() {
+    http.listen(app.get('port'), function() {
         log.info('Listening on *:' + app.get('port'));
     });
 }

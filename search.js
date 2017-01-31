@@ -49,32 +49,42 @@ const search = function(query, index) {
 }
 
 //=============================================================================
-const buildIndex = function(index) {
+const readCacheFile = function(index, file, done) {
+    if (path.extname(file) !== '.cache') {
+        // Read the cached file.
+        const cacheFileName = utils.cachePath(file);
+        fs.stat(cacheFileName, function(error, cacheStats) {
+            if (error && error.code === 'ENOENT') {
+                // The cache doesn't exist, it should have been!
+                log.error('Cache not found: ' + file);
+                done();
+            } else {
+                fs.readFile(
+                    cacheFileName, 
+                    'utf8', 
+                    function(error, content) {
+                        if (error) throw error;
+                        index.push({
+                            file: file,
+                            content: content
+                        });
+                        done();
+                    }
+                );
+            }
+        });
+    } else {
+        done();
+    }
+};
+
+//=============================================================================
+const buildIndex = function(index, end) {
+    const readFileCallback = function(file, done) {
+        readCacheFile(index, file, done);
+    }
     log.debug('Building search index.');
-    utils.walk('public/recipes', function(file) {
-        if (path.extname(file) !== '.cache') {
-            // Read the cached file.
-            const cacheFileName = utils.cachePath(file);
-            fs.stat(cacheFileName, function(error, cacheStats) {
-                if (error && error.code === 'ENOENT') {
-                    // The cache doesn't exist, it should have been!
-                    log.error('Cache not found: ' + file);
-                } else {
-                    fs.readFile(
-                        cacheFileName, 
-                        'utf8', 
-                        function(error, content) {
-                            if (error) throw error;
-                            index.push({
-                                file: file,
-                                content: content
-                            });
-                        }
-                    );
-                }
-            });
-        };
-    });
+    utils.walk('public/recipes', readFileCallback, end);
 }
 
 module.exports.search = search;

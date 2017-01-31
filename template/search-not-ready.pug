@@ -1,9 +1,10 @@
 doctype html
-html(lang="en")
+html(lang='en')
   head
     title=Recipes
-    link(rel="stylesheet", type="text/css", href="public/resources/index.css")
-    script(type='text/javascript', src="public/resources/search-not-ready.js")
+    link(rel='stylesheet', type='text/css', href='public/resources/index.css')
+    script(type='text/javascript', src='/socket.io/socket.io.js')
+    script(type='text/javascript', src='public/resources/search-not-ready.js')
   body
     include navigation-bar.pug
 

@@ -2,22 +2,30 @@
 
 const path = require('path');
 const fs = require('fs');
+const async = require('async');
 
 //=============================================================================
-const walk = function(dir, callback) {
-    fs.readdir(dir, function(error, files) {
+var walkSync = function(dir, filelist) {
+    const files = fs.readdirSync(dir);
+    files.forEach(function(file) {
+        if (fs.statSync(path.join(dir, file)).isDirectory()) {
+            filelist = walkSync(path.join(dir, file), filelist);
+        } else {
+            filelist.push(path.join(dir, file));
+        }
+    });
+    return filelist;
+};
+
+//=============================================================================
+const walk = function(dir, callback, end) {
+    // Get a list of files in sync, then operate on them in an async fashion
+    const files = walkSync(dir, []);
+    async.each(files, function(file, done) {
+        callback(file, done);
+    }, function(error) {
         if (error) throw error;
-        files.forEach(function(file) {
-            const fullPath = path.join(dir, file);
-            fs.stat(fullPath, function(error, stats) {
-                if (error) throw error;
-                if (stats.isDirectory()) {
-                    walk(fullPath, callback);
-                } else {
-                    callback(fullPath);
-                }
-            });
-        });
+        if (end) end();
     });
 }
 
