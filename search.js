@@ -49,7 +49,7 @@ const search = function(query, index) {
 }
 
 //=============================================================================
-const readCacheFile = function(index, file) {
+const readCacheFile = function(index, file, done) {
     if (path.extname(file) !== '.cache') {
         // Read the cached file.
         const cacheFileName = utils.cachePath(file);
@@ -57,6 +57,7 @@ const readCacheFile = function(index, file) {
             if (error && error.code === 'ENOENT') {
                 // The cache doesn't exist, it should have been!
                 log.error('Cache not found: ' + file);
+                done();
             } else {
                 fs.readFile(
                     cacheFileName, 
@@ -67,22 +68,23 @@ const readCacheFile = function(index, file) {
                             file: file,
                             content: content
                         });
+                        done();
                     }
                 );
             }
         });
-    };
-
+    } else {
+        done();
+    }
 };
 
 //=============================================================================
 const buildIndex = function(index, end) {
+    const readFileCallback = function(file, done) {
+        readCacheFile(index, file, done);
+    }
     log.debug('Building search index.');
-    utils.walk(
-        'public/recipes', 
-        function(file) {readCacheFile(index, file);},
-        end
-    );
+    utils.walk('public/recipes', readFileCallback, end);
 }
 
 module.exports.search = search;
