@@ -56,8 +56,7 @@ const readCacheFile = function(index, file, done) {
         const cacheFileName = utils.cachePath(file);
         fs.stat(cacheFileName, function(error, cacheStats) {
             if (error && error.code === 'ENOENT') {
-                // The cache doesn't exist, it should have been!
-                log.error('Cache not found: ' + file);
+                // The cache doesn't exist, we could be in a partial search.
                 done();
             } else {
                 fs.readFile(
