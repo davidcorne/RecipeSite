@@ -7,16 +7,33 @@ const numWorkers = (process.env.WORKERS || require('os').cpus().length);
 
 //=============================================================================
 const startWorkers = function() {
-    log.info('Master cluster setting up ' + numWorkers + ' workers...');
-
-    for(let i = 0; i < numWorkers; i++) {
-        cluster.fork();
+    // cluster.workers has no length, or keys.length
+    let currentWorkers = 0;
+    for (const id in cluster.workers) {
+        ++currentWorkers;
     }
+    const workersToSetup = numWorkers - currentWorkers;
+    log.info('Master cluster setting up ' + workersToSetup + ' more workers');
 
+    // Add a hook to the online event, whenever we get a new worker we want it
+    // to read the search index.
     cluster.on('online', function(worker) {
-        log.info('Worker ' + worker.process.pid + ' is online');
+        worker.process.send('load-search-index');
     });
 
+    for(let i = 0; i < workersToSetup; i++) {
+        cluster.fork();
+    }
+}
+
+//=============================================================================
+const startInitialWorkers = function() {
+    // Start two workers initially, so that the pdf reading/socket
+    // communication doesn't use too much RAM on the free hosting we use.
+    log.info('Master cluster setting up initial workers.');
+    cluster.on('online', function(worker) {
+        log.info('Worker ' + worker.process.pid + ' is online.');
+    });
     cluster.on('exit', function(worker, code, signal) {
         log.info(
             'Worker ' + 
@@ -26,9 +43,13 @@ const startWorkers = function() {
                 ', and signal: '
                 + signal
         );
-        log.info('Starting a new worker');
+        log.info('Starting a new worker.');
         cluster.fork();
     });
+    // Make 2 workers, unless we have fewer cores.
+    for (let i = 0; i < Math.min(2, numWorkers); ++i) {
+        cluster.fork();
+    }
 }
 
 //=============================================================================
@@ -43,9 +64,10 @@ const start = function() {
             for (const id in cluster.workers) {
                 cluster.workers[id].process.send('load-search-index');
             }
+            startWorkers();
         }
     });
-    startWorkers();
+    startInitialWorkers();
 };
 
 module.exports.start = start;
