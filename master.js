@@ -67,6 +67,14 @@ const start = function() {
             startWorkers();
         }
     });
+    child.on('message', function(messsage) {
+        if (messsage === 'partial-cache') {
+            // Notify the workers
+            for (const id in cluster.workers) {
+                cluster.workers[id].process.send('partial-load-search-index');
+            }
+        }
+    });
     startInitialWorkers();
 };
 

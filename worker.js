@@ -1,3 +1,4 @@
+'use strict';
 const express = require('express');
 const pug = require('pug');
 const decode = require('urldecode')
@@ -7,17 +8,20 @@ const log = require('./log');
 const search = require('./search');
 const fileList = require('./file-list');
 
-const index = [];
+let index = [];
 
 // Compile a function
 const indexTemplate = pug.compileFile('template/index.pug');
 const searchTemplate = pug.compileFile('template/search.pug');
 const searchNotReadyPage = pug.compileFile('template/search-not-ready.pug');
+const partialLoadTemplate = pug.compileFile('template/partial-search.pug');
 
 const app = express();
 const http = require('http').Server(app);
 
 app.set('port', (process.env.PORT || 3000));
+
+let partialLoad = false;
 
 //=============================================================================
 process.on('message', function(message) {
@@ -31,14 +35,24 @@ process.on('message', function(message) {
 
 //=============================================================================
 const loadSearchIndex = function() {
+    partialLoad = false;
+    index = [];
     search.buildIndex(index, function() {
         log.debug('Cache built');
     });
 };
 
 //=============================================================================
+const partialLoadSearchIndex = function() {
+    partialLoad = true;
+    index = [];
+    search.buildIndex(index, function(){});
+};
+
+//=============================================================================
 const messageMap = {
-    'load-search-index': loadSearchIndex
+    'load-search-index': loadSearchIndex,
+    'partial-load-search-index': partialLoadSearchIndex
 };
 
 //=============================================================================
@@ -67,14 +81,15 @@ app.get('/public/*', function(request, response) {
 app.get('/search', function(request, response) {
     logRequest(request);
     if (index.length === 0) {
-        // Send a search results not ready signal
+        // Send a search results not ready signal.
         response.send(searchNotReadyPage());
     } else {
         // We've got a search index, actually search it.
         const timer = utils.timer().start();
         const results = search.search(request.query.query, index);
         timer.stop();
-        response.send(searchTemplate({
+        const template = partialLoad ? partialLoadTemplate : searchTemplate;
+        response.send(template({
             results: results,
             query: request.query.query,
             time: timer.milliseconds

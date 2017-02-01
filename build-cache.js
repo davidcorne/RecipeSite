@@ -68,6 +68,7 @@ const cacheFile = function(file) {
         fs.writeFile(utils.cachePath(file), content, 'utf8', function(error) {
             if (error) throw error;
             log.silly('Cache written: ' + file);
+            process.send('partial-cache');
         });
     });
 };
