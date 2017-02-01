@@ -7,6 +7,8 @@ const jsdom = require('jsdom');
 const utils = require('./utils');
 const log = require('./log');
 
+const pdfQueue = [];
+
 //=============================================================================
 const getHtmlCacheContent = function(file, callback) {
     fs.readFile(file, 'utf8', function(error, content) {
@@ -23,17 +25,29 @@ const getHtmlCacheContent = function(file, callback) {
     });
 };
 
+
 //=============================================================================
 const getPdfCacheContent = function(file, callback) {
+    log.silly('Caching ' + file);
     const pdfParser = new PDFParser(this, 1);
     pdfParser.on('pdfParser_dataReady', function(pdfData) {
         callback(pdfParser.getRawTextContent());
+        getNextPdf(callback);
     });
     pdfParser.on('pdfParser_dataError', function(errData) {
         log.error(errData);
+        getNextPdf(callback);
     });
     pdfParser.loadPDF(file);
 };
+
+//=============================================================================
+const getNextPdf = function(callback) {
+    if (pdfQueue.length) {
+        const file = pdfQueue.pop();
+        getPdfCacheContent(file, callback);
+    }
+}
 
 //=============================================================================
 const getCacheContent = function(file, callback) {
@@ -41,7 +55,10 @@ const getCacheContent = function(file, callback) {
     if (extension === '.html') {
         getHtmlCacheContent(file, callback);
     } else if (extension === '.pdf') {
-        getPdfCacheContent(file, callback);
+        pdfQueue.push(file);
+        if (pdfQueue.length === 1) {
+            getNextPdf(callback);
+        }
     }
 };
 
