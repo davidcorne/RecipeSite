@@ -28,8 +28,8 @@ const startWorkers = function() {
 
 //=============================================================================
 const startInitialWorkers = function() {
-    // Start two workers initially, so that the pdf reading/socket
-    // communication doesn't use too much RAM on the free hosting we use.
+    // Start two workers initially, so that the pdf reading communication
+    // doesn't use too much RAM on the free hosting we use.
     log.info('Master cluster setting up initial workers.');
     cluster.on('online', function(worker) {
         log.info('Worker ' + worker.process.pid + ' is online.');
