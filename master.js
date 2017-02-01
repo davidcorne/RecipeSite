@@ -47,7 +47,7 @@ const startInitialWorkers = function() {
         cluster.fork();
     });
     // Make 2 workers, unless we have fewer cores.
-    for (let i = 0; i < Math.min(2, numWorkers); ++i) {
+    for (let i = 0; i < Math.min(1, numWorkers); ++i) {
         cluster.fork();
     }
 }
