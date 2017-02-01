@@ -39,6 +39,20 @@ const cachePath = function(file) {
     return file.replace(/\..*/, '.cache');
 }
 
+//=============================================================================
+const timer = function() {
+    this.start = function() {
+        this.time = process.hrtime();
+        return this;
+    };
+    this.stop = function() {
+        const end = process.hrtime(this.time)[1]/1000000;
+        this.milliseconds = Math.round(end * 100) / 100;
+    }
+    return this;
+}
+
 module.exports.pathToLabel = pathToLabel;
 module.exports.cachePath = cachePath;
 module.exports.walk = walk;
+module.exports.timer = timer;

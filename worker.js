@@ -1,6 +1,7 @@
 const express = require('express');
 const pug = require('pug');
 const decode = require('urldecode')
+const utils = require('./utils');
 const log = require('./log');
 
 const search = require('./search');
@@ -15,7 +16,6 @@ const searchNotReadyPage = pug.compileFile('template/search-not-ready.pug');
 
 const app = express();
 const http = require('http').Server(app);
-const io = require('socket.io')(http);
 
 app.set('port', (process.env.PORT || 3000));
 
@@ -30,18 +30,9 @@ process.on('message', function(message) {
 });
 
 //=============================================================================
-io.on('connection', function(socket) {
-    log.debug('Socket connected.');
-    socket.on('disconnect', function() {
-        log.debug('Socket disconnected.');
-    });
-});
-
-//=============================================================================
 const loadSearchIndex = function() {
     search.buildIndex(index, function() {
         log.debug('Cache built');
-        io.emit('index-ready');
     });
 };
 
@@ -80,13 +71,13 @@ app.get('/search', function(request, response) {
         response.send(searchNotReadyPage());
     } else {
         // We've got a search index, actually search it.
-        const start  = process.hrtime()
+        const timer = utils.timer().start();
         const results = search.search(request.query.query, index);
-        const end = process.hrtime(start)[1]/1000000;
+        timer.stop();
         response.send(searchTemplate({
             results: results,
             query: request.query.query,
-            time: Math.round(end * 100) / 100
+            time: timer.milliseconds
         }));
     }
 });

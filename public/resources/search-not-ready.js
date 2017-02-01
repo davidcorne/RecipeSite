@@ -1,9 +1,4 @@
 //=============================================================================
-// The search index hasn't been built yet, connect to a socket and be notified
-// when to refresh.
+// The search index hasn't been built yet, refresh every second
 
-const socket = io();
-socket.on('index-ready', function() {
-    // The index is ready, refresh the page.
-    window.location.reload(true);
-});
+setTimeout(function() {window.location.reload(true);}, 1000);
