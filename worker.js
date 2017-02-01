@@ -8,7 +8,7 @@ const log = require('./log');
 const search = require('./search');
 const fileList = require('./file-list');
 
-let index = [];
+let index = {};
 
 // Compile a function
 const indexTemplate = pug.compileFile('template/index.pug');
@@ -36,7 +36,6 @@ process.on('message', function(message) {
 //=============================================================================
 const loadSearchIndex = function() {
     partialLoad = false;
-    index = [];
     search.buildIndex(index, function() {
         log.debug('Cache built');
     });
@@ -45,7 +44,6 @@ const loadSearchIndex = function() {
 //=============================================================================
 const partialLoadSearchIndex = function() {
     partialLoad = true;
-    index = [];
     search.buildIndex(index, function(){});
 };
 
@@ -80,7 +78,7 @@ app.get('/public/*', function(request, response) {
 //=============================================================================
 app.get('/search', function(request, response) {
     logRequest(request);
-    if (index.length === 0) {
+    if (Object.keys(index).length === 0) {
         // Send a search results not ready signal.
         response.send(searchNotReadyPage());
     } else {

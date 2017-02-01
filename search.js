@@ -18,11 +18,12 @@ const pathToDisplayPath = function(file) {
 const search = function(query, index) {
     query = query.toLowerCase();
     const results = [];
-    index.forEach(function(item) {
-        if (item.content.toLowerCase().indexOf(query) > -1) {
+    for (const file in index) {
+        const content = index[file];
+        if (content.toLowerCase().indexOf(query) > -1) {
             // Found something
             // make the context. Each line where the query appears.
-            const lines = item.content.split(/\r?\n/);
+            const lines = content.split(/\r?\n/);
             const context = [];
             // A metric of how good a match it is
             let match = 0;
@@ -33,14 +34,14 @@ const search = function(query, index) {
                 }
             }
             results.push({
-                label: utils.pathToLabel(item.file),
-                path: item.file,
-                displayPath: pathToDisplayPath(item.file),
+                label: utils.pathToLabel(file),
+                path: file,
+                displayPath: pathToDisplayPath(file),
                 context: context,
                 match: match
             });
         }
-    });
+    }
     // Sort the results by the larger match is better (closer to the beginning)
     const resultSorter = function(a, b) {
         return b.match - a.match;
@@ -64,10 +65,7 @@ const readCacheFile = function(index, file, done) {
                     'utf8', 
                     function(error, content) {
                         if (error) throw error;
-                        index.push({
-                            file: file,
-                            content: content
-                        });
+                        index[file] = content;
                         done();
                     }
                 );

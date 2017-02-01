@@ -56,20 +56,11 @@ describe('Search', function() {
     }
     it('search', function() {
         
-        const index = [
-            {
-                file:    path.join('A', 'B', 'c.path'),
-                content: 'This is found'
-            },
-            {
-                file:    path.join('A', 'C', 'd.path'),
-                content: 'This is FOUND, but longer!'
-            },
-            {
-                file:    'c',
-                content: 'This is foand'
-            },
-        ];
+        const index = {};
+        index[path.join('A', 'B', 'c.path')] = 'This is found';
+        index[path.join('A', 'C', 'd.path')] = 'This is FOUND, but longer!';
+        index['c'] = 'This is foand';
+
         const results = search('found', index);
         // This tests:
         //   - finding the label
