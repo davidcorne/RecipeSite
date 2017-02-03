@@ -36,15 +36,13 @@ process.on('message', function(message) {
 //=============================================================================
 const loadSearchIndex = function() {
     partialLoad = false;
-    search.buildIndex(index, function() {
-        log.debug('Cache built');
-    });
+    search.buildIndex(index);
 };
 
 //=============================================================================
 const partialLoadSearchIndex = function() {
     partialLoad = true;
-    search.buildIndex(index, function(){});
+    search.buildIndex(index);
 };
 
 //=============================================================================
