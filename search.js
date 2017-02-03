@@ -50,14 +50,13 @@ const search = function(query, index) {
 }
 
 //=============================================================================
-const readCacheFile = function(index, file, done) {
+const readCacheFile = function(index, file) {
     if (path.extname(file) !== '.cache') {
         // Read the cached file.
         const cacheFileName = utils.cachePath(file);
         fs.stat(cacheFileName, function(error, cacheStats) {
             if (error && error.code === 'ENOENT') {
                 // The cache doesn't exist, we could be in a partial search.
-                done();
             } else {
                 fs.readFile(
                     cacheFileName, 
@@ -65,20 +64,17 @@ const readCacheFile = function(index, file, done) {
                     function(error, content) {
                         if (error) throw error;
                         index[file] = content;
-                        done();
                     }
                 );
             }
         });
-    } else {
-        done();
     }
 };
 
 //=============================================================================
 const buildIndex = function(index) {
-    const readFileCallback = function(file, done) {
-        readCacheFile(index, file, done);
+    const readFileCallback = function(file) {
+        readCacheFile(index, file);
     }
     log.debug('Building search index.');
     utils.walk('public/recipes', readFileCallback);
