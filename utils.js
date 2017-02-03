@@ -23,9 +23,6 @@ const walk = function(dir, callback, end) {
     const files = walkSync(dir, []);
     async.each(files, function(file, done) {
         callback(file, done);
-    }, function(error) {
-        if (error) throw error;
-        if (end) end();
     });
 }
 

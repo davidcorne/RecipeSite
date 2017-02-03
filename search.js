@@ -76,12 +76,12 @@ const readCacheFile = function(index, file, done) {
 };
 
 //=============================================================================
-const buildIndex = function(index, end) {
+const buildIndex = function(index) {
     const readFileCallback = function(file, done) {
         readCacheFile(index, file, done);
     }
     log.debug('Building search index.');
-    utils.walk('public/recipes', readFileCallback, end);
+    utils.walk('public/recipes', readFileCallback);
 }
 
 module.exports.search = search;
