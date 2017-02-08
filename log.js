@@ -1,3 +1,5 @@
+'use strict';
+
 const winston = require('winston');
 
 // We want info to be the default logging level
