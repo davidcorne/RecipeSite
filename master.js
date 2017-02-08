@@ -55,6 +55,7 @@ const startInitialWorkers = function() {
 
 //=============================================================================
 const start = function() {
+    startInitialWorkers();
     const child = child_process.fork('run-build-cache.js');
     child.on('close', function(code) {
         if (code !== 0) {
@@ -76,7 +77,6 @@ const start = function() {
             }
         }
     });
-    startInitialWorkers();
 };
 
 module.exports.start = start;
