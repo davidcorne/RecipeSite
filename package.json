@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "express": "*",
+    "graceful-fs": "^4.1.11",
     "jsdom": "^9.9.1",
     "pdf2json": "^1.1.7",
     "pug": "^2.0.0-beta6",

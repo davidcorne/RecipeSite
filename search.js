@@ -1,5 +1,5 @@
 'use strict';
-const fs = require('fs');
+const fs = require('graceful-fs');
 const path = require('path');
 
 const utils = require('./utils');

@@ -1,5 +1,5 @@
 'use strict'
-const fs = require('fs');
+const fs = require('graceful-fs');
 const path = require('path');
 const PDFParser = require('pdf2json');
 const jsdom = require('jsdom');
@@ -68,7 +68,10 @@ const cacheFile = function(file) {
         fs.writeFile(utils.cachePath(file), content, 'utf8', function(error) {
             if (error) throw error;
             log.silly('Cache written: ' + file);
-            process.send('partial-cache');
+            // If we are in a child process
+            if (process.send) {
+                process.send('partial-cache');
+            }
         });
     });
 };
