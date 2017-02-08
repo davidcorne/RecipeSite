@@ -2,8 +2,9 @@
 const cluster = require('cluster');
 const log = require('./log');
 const child_process = require('child_process')
+const os = require('os');
 
-const numWorkers = (process.env.WORKERS || require('os').cpus().length);
+const numWorkers = (process.env.WORKERS || os.cpus().length);
 
 //=============================================================================
 const startWorkers = function() {
