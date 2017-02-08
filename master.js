@@ -36,13 +36,13 @@ const startInitialWorkers = function() {
         log.info('Worker ' + worker.process.pid + ' is online.');
     });
     cluster.on('exit', function(worker, code, signal) {
+        // You only get one of code and signal, only display one.
         log.info(
             'Worker ' + 
                 worker.process.pid +
-                ' died with code: '
-                + code +
-                ', and signal: '
-                + signal
+                ' died ('
+                + (code || signal)
+                + ')'
         );
         log.info('Starting a new worker.');
         cluster.fork();
