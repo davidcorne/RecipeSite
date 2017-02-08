@@ -7,3 +7,17 @@ html(lang="en")
     include navigation-bar.pug
 
     h1 Conversion
+
+    div.conversions
+      select#ingredient
+        option(value="", disabled="disabled", selected="selected") Ingredient
+        each item in conversions
+          option(value=item.ingredient) #{item.ingredient}
+      input
+      select#convert-from
+        option(value="", disabled="disabled", selected="selected") Unit
+      input
+      select#convert-to
+        option(value="", disabled="disabled", selected="selected") Unit
+
+

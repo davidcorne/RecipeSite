@@ -150,3 +150,10 @@ p.line {
 #navigation-bar a:hover, #navigation-bar a:active{
     background-color: #DDDDDD;
 }
+
+/*===========================================================================*/
+/* The conversion style */
+
+.conversion {
+    float: left;
+}

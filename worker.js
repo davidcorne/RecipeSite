@@ -71,7 +71,20 @@ app.get('/', function(request, response) {
 //=============================================================================
 app.get('/conversion', function(request, response) {
     logRequest(request);
-    response.send(conversionTemplate({}));
+    // A list of the conversions that we cover.
+    const conversions = [
+        {
+            ingredient: 'Flour',
+            type:       'weight',
+            cup:        136
+        },
+        {
+            ingredient: 'Almond Milk',
+            type:       'volume',
+            cup:        240
+        },
+    ];
+    response.send(conversionTemplate({conversions: conversions}));
 });
 
 //=============================================================================
