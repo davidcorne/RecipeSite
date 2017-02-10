@@ -16,11 +16,11 @@ html(lang="en")
         option(value="", disabled="disabled", selected="selected") Ingredient
         each item in conversions
           option(value=item.ingredient) #{item.ingredient}
-      input
-      select#convert-from
+      input#user-input(oninput="Conversion.update();", type="number")
+      select#convert-from(onchange="Conversion.rateChange();")
         option(value="", disabled="disabled", selected="selected") Unit
-      input
-      select#convert-to
+      input#output(readonly="readonly")
+      select#convert-to(onchange="Conversion.rateChange();")
         option(value="", disabled="disabled", selected="selected") Unit
 
 
