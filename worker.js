@@ -4,6 +4,7 @@ const pug = require('pug');
 const decode = require('urldecode')
 const utils = require('./utils');
 const log = require('./log');
+const conversion = require('./conversion');
 
 const search = require('./search');
 const fileList = require('./file-list');
@@ -72,19 +73,7 @@ app.get('/', function(request, response) {
 app.get('/conversion', function(request, response) {
     logRequest(request);
     // A list of the conversions that we cover.
-    const conversions = [
-        {
-            ingredient: 'Flour',
-            type:       'weight',
-            cup:        136
-        },
-        {
-            ingredient: 'Almond Milk',
-            type:       'volume',
-            cup:        240
-        },
-    ];
-    response.send(conversionTemplate({conversions: conversions}));
+    response.send(conversionTemplate({conversions: conversion.conversions}));
 });
 
 //=============================================================================
