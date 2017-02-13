@@ -4,6 +4,7 @@ const pug = require('pug');
 const decode = require('urldecode')
 const utils = require('./utils');
 const log = require('./log');
+const conversion = require('./conversion');
 
 const search = require('./search');
 const fileList = require('./file-list');
@@ -15,6 +16,7 @@ const indexTemplate = pug.compileFile('template/index.pug');
 const searchTemplate = pug.compileFile('template/search.pug');
 const searchNotReadyPage = pug.compileFile('template/search-not-ready.pug');
 const partialLoadTemplate = pug.compileFile('template/partial-search.pug');
+const conversionTemplate = pug.compileFile('template/conversion.pug');
 
 const app = express();
 const http = require('http').Server(app);
@@ -65,6 +67,13 @@ app.get('/', function(request, response) {
         recipes: fileList.generateFileList()
     };
     response.send(indexTemplate(locals));
+});
+
+//=============================================================================
+app.get('/conversion', function(request, response) {
+    logRequest(request);
+    // A list of the conversions that we cover.
+    response.send(conversionTemplate({conversions: conversion.conversions}));
 });
 
 //=============================================================================

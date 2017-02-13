@@ -1,3 +1,6 @@
+/*===========================================================================*/
+/* General style */
+
 body {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     color: #444444;
@@ -117,4 +120,40 @@ p.line {
 
 .search-bar {
     width: 85%;
+}
+
+/*===========================================================================*/
+/* Navigation bar */
+#navigation-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#navigation-bar li {
+    border: 1px solid #C0C0C0;
+    float: left;
+}
+
+#navigation-bar a:link, #navigation-bar a:visited {
+    display: block;
+    width: 120px;
+    font-weight: bold;
+    color: #3366FF;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#navigation-bar a:hover, #navigation-bar a:active{
+    background-color: #DDDDDD;
+}
+
+/*===========================================================================*/
+/* The conversion style */
+
+.conversion {
+    float: left;
 }
