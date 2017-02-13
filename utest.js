@@ -4,16 +4,17 @@ const chai = require('chai');
 chai.use(require('chai-string'));
 const assert = chai.assert;
 const path = require('path');
+const request = require('supertest');
+const async = require('async');
 
 const searchModule = rewire('./search.js');
 const buildCacheModule = rewire('./build-cache.js');
-
-const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent');
-const getPdfCacheContent = buildCacheModule.__get__('getPdfCacheContent');
-const search = searchModule.__get__('search');
+const workerModule = rewire('./worker.js');
 
 //=============================================================================
 describe('Caches', function() {
+    const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent');
+    const getPdfCacheContent = buildCacheModule.__get__('getPdfCacheContent');
     it('HTML cache', function(done) {
         getHtmlCacheContent('test_data/test_recipe.html', (content) => {
             var expected = `Test Recipe Title
@@ -55,7 +56,7 @@ describe('Search', function() {
         }
     }
     it('search', function() {
-        
+        const search = searchModule.__get__('search');
         const index = {};
         index[path.join('A', 'B', 'c.path')] = 'This is found';
         index[path.join('A', 'C', 'd.path')] = 'This is FOUND, but longer!';
@@ -86,5 +87,39 @@ describe('Search', function() {
         assert.strictEqual(results.length, 2);
         assert.searchResultEqual(results[0], expected[0]);
         assert.searchResultEqual(results[1], expected[1]);
+    });
+});
+
+//=============================================================================
+describe('Routing', function() {
+    it('Existing', function(done) {
+        const app = workerModule.__get__('app');
+        const server = app.listen(3000);
+        
+        // Respondes to all the routes.
+        async.series([
+            (cb) => {request(server).get('/').expect(200, cb);},
+            (cb) => {request(server).get('/conversion').expect(200, cb);},
+            (cb) => {request(server).get('/public/resources/index.css').expect(200, cb);},
+            (cb) => {request(server).get('/search').expect(200, cb);}
+        ], function(error) {
+            if (error) throw error;
+            server.close(done);
+        });
+        
+    });
+    it('Non-existing', function(done) {
+        // Try to get some non-existant routes
+        const app = workerModule.__get__('app');
+        const server = app.listen(3000);
+        
+        // Respondes to all the routes.
+        async.series([
+            (cb) => {request(server).get('/adsadsahdjasvdb').expect(404, cb);},
+            (cb) => {request(server).get('/public/non-existing').expect(404, cb);},
+        ], function(error) {
+            if (error) throw error;
+            server.close(done);
+        });
     });
 });
