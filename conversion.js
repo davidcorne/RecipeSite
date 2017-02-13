@@ -18,62 +18,62 @@ module.exports.conversions = [
     {
         ingredient: 'Sugar',
         type:       'weight',
-        cup:        0
+        cup:        225
     },
     {
         ingredient: 'Double Cream',
         type:       'volume',
-        cup:        0
+        cup:        240
     },
     {
         ingredient: 'Dulce de Leche',
         type:       'weight',
-        cup:        0
+        cup:        304
     },
     {
         ingredient: 'Grand Marnier',
         type:       'volume',
-        cup:        0
+        cup:        240
     },
     {
         ingredient: 'White Chocolate',
         type:       'weight',
-        cup:        0
+        cup:        175
     },
     {
         ingredient: 'Breadcrumbs',
         type:       'weight',
-        cup:        0
+        cup:        125
     },
     {
         ingredient: 'Parmesan',
         type:       'weight',
-        cup:        0
+        cup:        100
     },
     {
         ingredient: 'Chives',
         type:       'weight',
-        cup:        0
+        cup:        48
     },
     {
         ingredient: 'Butter',
         type:       'weight',
-        cup:        0
+        cup:        225
     },
     {
         ingredient: 'Maple Syrup',
         type:       'volume',
-        cup:        0
+        cup:        240
     },
     {
         ingredient: 'Vinegar',
         type:       'volume',
-        cup:        0
+        cup:        240
     },
     {
         ingredient: 'Peanut Butter',
         type:       'weight',
-        cup:        0
+        cup:        250
     },
 ].sort(sorter);
 
