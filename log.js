@@ -6,13 +6,18 @@ const winston = require('winston');
 winston.level = (process.env.LOG_LEVEL || 'info');
 
 const log = function(level, string) {
-    winston.log(level, string, {
-        process: process.pid
-    });
 }
 
-module.exports.error = (string) => {log('error', string);}
-module.exports.warn =  (string) => {log('warn', string);}
-module.exports.info =  (string) => {log('info', string);}
-module.exports.debug = (string) => {log('debug', string);}
-module.exports.silly = (string) => {log('silly', string);}
+const logFunction = function(level) {
+    // Return a log function for that level
+    return function(string, extra) {
+        extra = extra ? extra : {};
+        extra['process'] = process.pid;
+        winston.log(level, string, extra);
+    }
+}
+module.exports.error = logFunction('error');
+module.exports.warn =  logFunction('warn');
+module.exports.info =  logFunction('info');
+module.exports.debug = logFunction('debug');
+module.exports.silly = logFunction('silly');
