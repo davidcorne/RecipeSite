@@ -97,12 +97,15 @@ describe('Routing', function() {
         const server = app.listen();
         
         // Respondes to all the routes.
-        async.series([
-            (cb) => {request(server).get('/').expect(200, cb);},
-            (cb) => {request(server).get('/conversion').expect(200, cb);},
-            (cb) => {request(server).get('/public/resources/index.css').expect(200, cb);},
-            (cb) => {request(server).get('/search').expect(200, cb);}
-        ], function(error) {
+        const testRoute = function(route, callback) {
+            request(server).get(route).expect(200, callback);
+        };
+        async.each([
+            '/',
+            '/conversion',
+            '/public/resources/index.css',
+            '/search'
+        ], testRoute, function(error) {
             if (error) throw error;
             server.close(done);
         });
@@ -114,10 +117,13 @@ describe('Routing', function() {
         const server = app.listen();
         
         // Respondes to all the routes.
-        async.series([
-            (cb) => {request(server).get('/adsadsahdjasvdb').expect(404, cb);},
-            (cb) => {request(server).get('/public/non-existing').expect(404, cb);},
-        ], function(error) {
+        const test404 = function(route, callback) {
+            request(server).get(route).expect(404, callback);
+        };
+        async.each([
+            '/adsadsahdjasvdb',
+            '/public/non-existant',
+        ], test404, function(error) {
             if (error) throw error;
             server.close(done);
         });
