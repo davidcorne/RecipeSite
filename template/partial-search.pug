@@ -16,14 +16,4 @@ html(lang="en")
 
     p The search is not complete, here are the first few results.
 
-    div#search-result
-      if results.length
-        each item in results
-          div
-            h3.search-header
-              a(href=item.path, target="_blank") #{item.label}
-            p.display-path #{item.displayPath}
-            each line in item.context
-              p.line #{line}
-      else
-        p Your seach - #{query} - did not match any documents.
+    include search-results.pug

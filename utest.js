@@ -138,11 +138,28 @@ describe('Routing', function() {
         workerModule.__set__('index', index);
 
         const server = app.listen();
-        
-        request(server).get('/search?query=always').expect(200, function(error, response) {
+        const runTest = function(callback) {
+            request(server).get('/search?query=always').expect(200, function(error, response) {
+                if (error) throw error;
+                assert.include(
+                    response.text,
+                    'Your search - always - did not match any documents.'
+                );
+                callback();
+            });
+        }
+        async.series([
+            (cb) => {
+                runTest(cb);
+            },
+            (cb) => {
+                workerModule.__set__('partialLoad', true);
+                runTest(cb);
+            }                
+        ], function(error) {
             if (error) throw error;
-            assert.include(response.text, 'Your search - always - did not match any documents.');
             // Clean up after ourselves
+            workerModule.__set__('partialLoad', false);
             workerModule.__set__('index', {});
             done();
         });
@@ -169,7 +186,8 @@ describe('Routing', function() {
         };
         const testThis = function(callback) {
             request(server).get('/search?query=this').expect(200, function(error, response) {
-                // We care that it found 2 things, and it gives you text from both.
+                // We care that it found 2 things, and it gives you text from
+                // both.
                 assert.include(response.text, '2 results');
                 assert.include(response.text, 'test 1');
                 assert.include(response.text, 'test 2');
@@ -179,9 +197,27 @@ describe('Routing', function() {
                 callback();
             });
         };
+        const testPartial = function(callback) {
+            // Set the partial load flag
+            workerModule.__set__('partialLoad', true);
+            request(server).get('/search?query=bean').expect(200, function(error, response) {
+                // We care that it found 1 things, and it recognises that it's
+                // a partial search.
+                assert.include(response.text, '1 result');
+                assert.include(response.text, 'test 1');
+                assert.include(response.text, 'The context of this bean');
+                assert.notInclude(response.text, 'Not this line though.');
+                assert.include(
+                    response.text,
+                    'The search is not complete, here are the first few results.'
+                );
+                callback();
+            });
+        };
         async.series([
             testBean,
-            testThis
+            testThis,
+            testPartial
         ], function(error) {
             if (error) throw error;
             // Clean up after ourselves
