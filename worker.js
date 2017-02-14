@@ -2,10 +2,11 @@
 const express = require('express');
 const pug = require('pug');
 const decode = require('urldecode')
+const fs = require('fs');
+
 const utils = require('./utils');
 const log = require('./log');
 const conversion = require('./conversion');
-
 const search = require('./search');
 const fileList = require('./file-list');
 
@@ -92,7 +93,14 @@ app.get('/conversion', function(request, response) {
 //=============================================================================
 app.get('/public/*', function(request, response) {
     logRequest(request);
-    response.sendFile(__dirname + decode(request.path));
+    const filePath = __dirname + decode(request.path);
+    fs.stat(filePath, function(error, stats) {
+        if (error) {
+            response.status(404).send('Resource not found');
+        } else {
+            response.sendFile(filePath);
+        }
+    });
 });
 
 //=============================================================================
