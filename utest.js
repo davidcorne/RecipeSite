@@ -122,4 +122,28 @@ describe('Routing', function() {
             server.close(done);
         });
     });
+    it('Search not ready', function(done) {
+        const app = workerModule.__get__('app');
+        const server = app.listen();
+        request(server).get('/search?query=bean').expect(200, function(error, response) {
+            assert.include(response.text, 'Search results are not ready yet.');
+            assert.include(response.text, 'public/resources/search-not-ready.js');
+            done();
+        });
+    });
+    it('Search not found', function(done) {
+        const app = workerModule.__get__('app');
+        const index = {};
+        index['test 1'] = 'never found';
+        workerModule.__set__('index', index);
+
+        const server = app.listen();
+        
+        request(server).get('/search?query=always').expect(200, function(error, response) {
+            assert.include(response.text, 'Your search - always - did not match any documents.');
+            // Clean up after ourselves
+            workerModule.__set__('index', {});
+            done();
+        });
+    });
 });
