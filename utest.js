@@ -174,7 +174,7 @@ describe('Routing', function() {
         request(server).get('/search?query=bean').expect(200, function(error, response) {
             if (error) throw error;
             // We care that it found 1 thing, and it gives you context.
-            assert.include(response.text, '1 results');
+            assert.include(response.text, '1 result');
             assert.include(response.text, 'test 1');
             assert.include(response.text, 'The context of this bean');
             assert.notInclude(response.text, 'Not this line though.');
