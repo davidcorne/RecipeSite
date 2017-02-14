@@ -155,8 +155,19 @@ describe('Routing', function() {
         workerModule.__set__('index', index);
 
         const server = app.listen();
-
-        const searchTwo = function() {
+        
+        const testBean = function(callback) {
+            request(server).get('/search?query=bean').expect(200, function(error, response) {
+                if (error) throw error;
+                // We care that it found 1 thing, and it gives you context.
+                assert.include(response.text, '1 result');
+                assert.include(response.text, 'test 1');
+                assert.include(response.text, 'The context of this bean');
+                assert.notInclude(response.text, 'Not this line though.');
+                callback();
+            });
+        };
+        const testThis = function(callback) {
             request(server).get('/search?query=this').expect(200, function(error, response) {
                 // We care that it found 2 things, and it gives you text from both.
                 assert.include(response.text, '2 results');
@@ -165,21 +176,17 @@ describe('Routing', function() {
                 assert.include(response.text, 'The context of this bean');
                 assert.include(response.text, 'Not this line though.');
                 assert.include(response.text, 'this baen.');
-                // Clean up after ourselves
-                workerModule.__set__('index', {});
-                done();
+                callback();
             });
-        }
-
-        request(server).get('/search?query=bean').expect(200, function(error, response) {
+        };
+        async.series([
+            testBean,
+            testThis
+        ], function(error) {
             if (error) throw error;
-            // We care that it found 1 thing, and it gives you context.
-            assert.include(response.text, '1 result');
-            assert.include(response.text, 'test 1');
-            assert.include(response.text, 'The context of this bean');
-            assert.notInclude(response.text, 'Not this line though.');
-            // Run the second search
-            searchTwo();
+            // Clean up after ourselves
+            workerModule.__set__('index', {});
+            done();
         });
     });
 });
