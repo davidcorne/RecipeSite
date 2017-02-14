@@ -94,7 +94,7 @@ describe('Search', function() {
 describe('Routing', function() {
     it('Existing', function(done) {
         const app = workerModule.__get__('app');
-        const server = app.listen(3000);
+        const server = app.listen();
         
         // Respondes to all the routes.
         async.series([
@@ -111,7 +111,7 @@ describe('Routing', function() {
     it('Non-existing', function(done) {
         // Try to get some non-existant routes
         const app = workerModule.__get__('app');
-        const server = app.listen(3000);
+        const server = app.listen();
         
         // Respondes to all the routes.
         async.series([
