@@ -146,4 +146,24 @@ describe('Routing', function() {
             done();
         });
     });
+    it('Search found', function(done) {
+        const app = workerModule.__get__('app');
+        const index = {};
+        index['test 1'] = 'The context of a bean\nNot this line though.';
+        index['test 2'] = 'baen';
+        workerModule.__set__('index', index);
+
+        const server = app.listen();
+
+        request(server).get('/search?query=bean').expect(200, function(error, response) {
+            // We care that it found 1 thing, and it gives you context.
+            assert.include(response.text, '1 results');
+            assert.include(response.text, 'test 1');
+            assert.include(response.text, 'The context of a bean');
+            assert.notInclude(response.text, 'Not this line though.');
+            // Clean up after ourselves
+            workerModule.__set__('index', {});
+            done();
+        });
+    });
 });
