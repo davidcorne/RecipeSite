@@ -38,7 +38,7 @@ const startInitialWorkers = function() {
     cluster.on('exit', function(worker, code, signal) {
         // You only get one of code and signal, only display one.
         log.info(
-            'Worker ' + 
+            'Worker ' +
                 worker.process.pid +
                 ' died ('
                 + (code || signal)

@@ -59,8 +59,8 @@ const readCacheFile = function(index, file) {
                 // The cache doesn't exist, we could be in a partial search.
             } else {
                 fs.readFile(
-                    cacheFileName, 
-                    'utf8', 
+                    cacheFileName,
+                    'utf8',
                     function(error, content) {
                         if (error) throw error;
                         index[file] = content;

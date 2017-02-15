@@ -20,7 +20,7 @@ describe('Caches', function() {
             var expected = `Test Recipe Title
 # Test Recipe #
 
-## Ingredients 
+## Ingredients
 
 - Something
 
@@ -95,7 +95,7 @@ describe('Routing', function() {
     it('Existing', function(done) {
         const app = workerModule.__get__('app');
         const server = app.listen();
-        
+
         // Respondes to all the routes.
         const testRoute = function(route, callback) {
             request(server).get(route).expect(200, callback);
@@ -109,13 +109,13 @@ describe('Routing', function() {
             if (error) throw error;
             server.close(done);
         });
-        
+
     });
     it('Non-existing', function(done) {
         // Try to get some non-existant routes
         const app = workerModule.__get__('app');
         const server = app.listen();
-        
+
         // Respondes to all the routes.
         const test404 = function(route, callback) {
             request(server).get(route).expect(404, callback);
@@ -161,7 +161,7 @@ describe('Routing', function() {
             (cb) => {
                 workerModule.__set__('partialLoad', true);
                 runTest(cb);
-            }                
+            }
         ], function(error) {
             if (error) throw error;
             // Clean up after ourselves
@@ -178,7 +178,7 @@ describe('Routing', function() {
         workerModule.__set__('index', index);
 
         const server = app.listen();
-        
+
         const testFull = function(callback) {
             request(server).get('/search?query=a').expect(200, function(error, response) {
                 if (error) throw error;

@@ -83,9 +83,9 @@ app.get('/conversion', function(request, response) {
     logRequest(request);
     // A list of the conversions that we cover.
     sendTemplate(
-        request, 
-        response, 
-        'conversion', 
+        request,
+        response,
+        'conversion',
         {conversions: conversion.conversions}
     );
 });
