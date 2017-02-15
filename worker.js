@@ -110,14 +110,14 @@ const routeFile = function(request, response, callback) {
 
 //=============================================================================
 const routeEmbedPdf = function(request, response) {
-    const filePath = __dirname + decode(request.path);
-    const pdfPath = filePath.replace('.pdfembed', '.pdf');
-    handleFile(pdfPath, response, function(foundFile) {
+    const pdfPath = decode(request.path).replace('.pdfembed', '.pdf');
+    const filePath = __dirname + pdfPath;
+    handleFile(filePath, response, function(foundFile) {
         sendTemplate(
             request,
             response,
             'embed-pdf',
-            {label: utils.pathToLabel(foundFile), path: foundFile}
+            {label: utils.pathToLabel(pdfPath), path: pdfPath}
         );
     });
 }
