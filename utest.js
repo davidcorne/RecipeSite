@@ -179,6 +179,16 @@ describe('Routing', function() {
 
         const server = app.listen();
         
+        const testFull = function(callback) {
+            request(server).get('/search?query=a').expect(200, function(error, response) {
+                if (error) throw error;
+                // we care that there were some results, and that it wasn't a
+                // partial seach.
+                assert.include(response.text, '2 results');
+                assert.notInclude(response.text, 'not complete');
+                callback();
+            });
+        }
         const testBean = function(callback) {
             request(server).get('/search?query=bean').expect(200, function(error, response) {
                 if (error) throw error;
@@ -221,6 +231,7 @@ describe('Routing', function() {
             });
         };
         async.series([
+            testFull,
             testBean,
             testThis,
             testPartial
