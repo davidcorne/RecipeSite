@@ -17,14 +17,7 @@ const directoryToItem = function(dir) {
             item.directories.push(directoryToItem(path.join(dir, file)));
         } else {
             const pth = path.join(dir, file);
-            const extension = path.extname(pth)
-            if (extension === '.pdf') {
-                // 
-                item.files.push({
-                    path: pth.replace('.pdf', '.pdfembed'),
-                    label: utils.pathToLabel(pth)
-                });
-            } else if (extension !== '.cache') {
+            if (path.extname(pth) !== '.cache') {
                 item.files.push({
                     path: pth,
                     label: utils.pathToLabel(pth)

@@ -19,7 +19,6 @@ const templates = {
     'search-not-ready': pug.compileFile('template/search-not-ready.pug'),
     'partial-load': pug.compileFile('template/partial-search.pug'),
     'conversion': pug.compileFile('template/conversion.pug'),
-    'embed-pdf': pug.compileFile('template/embed-pdf.pug'),
 };
 
 const app = express();
@@ -92,46 +91,16 @@ app.get('/conversion', function(request, response) {
 });
 
 //=============================================================================
-const handleFile = function(filePath, response, callback) {
+app.get('/public/*', function(request, response) {
+    logRequest(request);
+    const filePath = __dirname + decode(request.path);
     fs.stat(filePath, function(error, stats) {
         if (error) {
             response.status(404).send('Resource not found');
         } else {
-            callback(filePath);
+            response.sendFile(filePath);
         }
     });
-}
-
-//=============================================================================
-const routeFile = function(request, response, callback) {
-    const filePath = __dirname + decode(request.path);
-    handleFile(filePath, response, callback);
-}
-
-//=============================================================================
-const routeEmbedPdf = function(request, response) {
-    const pdfPath = decode(request.path).replace('.pdfembed', '.pdf');
-    const filePath = __dirname + pdfPath;
-    handleFile(filePath, response, function(foundFile) {
-        sendTemplate(
-            request,
-            response,
-            'embed-pdf',
-            {label: utils.pathToLabel(pdfPath), path: pdfPath}
-        );
-    });
-}
-
-//=============================================================================
-app.get('/public/*.:extension', function(request, response) {
-    logRequest(request);
-    if (request.params.extension === 'pdfembed') {
-        routeEmbedPdf(request, response);
-    } else {
-        routeFile(request, response, function(filePath) {
-            response.sendFile(filePath);
-        });
-    }
 });
 
 //=============================================================================
