@@ -106,20 +106,21 @@ app.get('/public/*', function(request, response) {
 //=============================================================================
 app.get('/search', function(request, response) {
     logRequest(request);
+    const data = {
+        query: request.query.query
+    };
     if (Object.keys(index).length === 0) {
         // Send a search results not ready signal.
-        sendTemplate(request, response, 'search-not-ready', {});
+        sendTemplate(request, response, 'search-not-ready', data);
     } else {
         // We've got a search index, actually search it.
         const timer = utils.timer().start();
         const results = search.search(request.query.query, index);
         timer.stop();
         const key = partialLoad ? 'partial-load' : 'search';
-        sendTemplate(request, response, key, {
-            results: results,
-            query: request.query.query,
-            time: timer.milliseconds
-        });
+        data['results'] = results;
+        data['time'] = timer.milliseconds;
+        sendTemplate(request, response, key, data);
     }
 });
 
