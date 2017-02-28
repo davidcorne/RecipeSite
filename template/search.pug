@@ -1,15 +1,12 @@
-doctype html
-html(lang="en")
-  head
-    title=Recipes
-    link(rel="stylesheet", type="text/css", href="/public/resources/index.css")
-    script(src="/public/resources/highlight-search.js")
-  body(
-    onload='highlight.highlightSearchResults("' + query + '");'
-  )
-    include navigation-bar.pug
+extends layout.pug
 
-    h1 Results
-    
-    include search-bar.pug
-    include search-results.pug
+block scripts
+    script(src="/public/resources/highlight-search.js")
+
+block content
+  include navigation-bar.pug
+
+  h1 Results
+  
+  include search-bar.pug
+  include search-results.pug

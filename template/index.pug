@@ -1,3 +1,5 @@
+extends layout.pug
+
 mixin directory(item)
   h2 #{item.label}
   ul.recipe-list
@@ -8,18 +10,13 @@ mixin directory(item)
     each dir in item.directories
       +directory(dir)
 
-doctype html
-html(lang="en")
-  head
-    title=Recipes
-    link(rel="stylesheet", type="text/css" href="/public/resources/index.css")
-  body
-    include navigation-bar.pug
+block content
+  include navigation-bar.pug
 
-    h1 Recipes
-    
-    include search-bar.pug
-    
-    each item in recipes
-      +directory(item)
+  h1 Recipes
+  
+  include search-bar.pug
+  
+  each item in recipes
+    +directory(item)
     

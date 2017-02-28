@@ -1,16 +1,15 @@
-doctype html
-html(lang='en')
-  head
-    title=Recipes
-    link(rel='stylesheet', type='text/css', href='public/resources/index.css')
-    script(type='text/javascript', src='public/resources/search-not-ready.js')
-  body
-    include navigation-bar.pug
+extends layout.pug
 
-    h1 Results
-    
-    include search-bar.pug
-    
-    p Search results are not ready yet. This page will update when they are.
+block scripts
+    script(type='text/javascript', src='public/resources/search-not-ready.js')
+
+block content
+  include navigation-bar.pug
+
+  h1 Results
+  
+  include search-bar.pug
+  
+  p Search results are not ready yet. This page will update when they are.
 
 
