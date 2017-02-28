@@ -1,16 +1,7 @@
-extends layout.pug
+extends search.pug
 
-block scripts
-    script(src="/public/resources/highlight-search.js")
-    script(type='text/javascript', src='public/resources/search-not-ready.js')
+block append scripts
+  script(type='text/javascript', src='public/resources/search-not-ready.js')
 
-block content
-  include navigation-bar.pug
-
-  h1 Results
-  
-  include search-bar.pug
-
+block prepend results
   p The search is not complete, here are the first few results.
-
-  include search-results.pug

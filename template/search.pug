@@ -2,6 +2,12 @@ extends layout.pug
 
 block scripts
     script(src="/public/resources/highlight-search.js")
+    script.
+      window.addEventListener(
+        'load',
+        function() {highlight.highlightSearchResults("#{query}");}, 
+        false
+      );
 
 block content
   include navigation-bar.pug
@@ -9,4 +15,6 @@ block content
   h1 Results
   
   include search-bar.pug
-  include search-results.pug
+
+  block results
+    include search-results.pug
