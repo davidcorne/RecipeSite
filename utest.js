@@ -227,6 +227,7 @@ describe('Routing', function() {
                     response.text,
                     'The search is not complete, here are the first few results.'
                 );
+                workerModule.__set__('partialLoad', false);
                 callback();
             });
         };
