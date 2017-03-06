@@ -18,10 +18,12 @@ const directoryToItem = function(dir) {
         } else {
             const pth = path.join(dir, file);
             if (path.extname(pth) !== '.cache') {
-                item.files.push({
-                    path: pth,
-                    label: utils.pathToLabel(pth)
-                });
+                if (pth.substr(pth.length - 1) !== '~') {
+                    item.files.push({
+                        path: pth,
+                        label: utils.pathToLabel(pth)
+                    });
+                }
             }
         }
     });
@@ -35,7 +37,8 @@ const generateFileList = function() {
         'public/recipes/Breakfast',
         'public/recipes/Snack',
         'public/recipes/Mains',
-        'public/recipes/Dessert'
+        'public/recipes/Dessert',
+        'public/recipes/Sous Vide'
     ]
     files.forEach(function(file) {
         fileList.push(directoryToItem(file));
