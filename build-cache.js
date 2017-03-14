@@ -50,6 +50,13 @@ const getNextPdf = function(callback) {
 }
 
 //=============================================================================
+const getOtherCacheContent = function(file, callback) {
+    // We don't know how to get content from this file (it's probably an
+    // image) so settle for returning the file name.
+    callback(utils.pathToLabel(file));
+}
+
+//=============================================================================
 const getCacheContent = function(file, callback) {
     const extension = path.extname(file);
     if (extension === '.html') {
@@ -59,6 +66,10 @@ const getCacheContent = function(file, callback) {
         if (pdfQueue.length === 1) {
             getNextPdf(callback);
         }
+    } else {
+        // Not a html or pdf, we don't know exactly how to get content from it
+        // (it's probably a picture). So treat it as "other"
+        getOtherCacheContent(file, callback);
     }
 };
 

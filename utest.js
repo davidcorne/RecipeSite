@@ -15,6 +15,7 @@ const workerModule = rewire('./worker.js');
 describe('Caches', function() {
     const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent');
     const getPdfCacheContent = buildCacheModule.__get__('getPdfCacheContent');
+    const getOtherCacheContent = buildCacheModule.__get__('getOtherCacheContent');
     it('HTML cache', function(done) {
         getHtmlCacheContent('test_data/test_recipe.html', (content) => {
             var expected = `Test Recipe Title
@@ -38,6 +39,12 @@ describe('Caches', function() {
             assert.include(content, 'Ingredients');
             assert.include(content, 'Something');
             assert.include(content, 'Test the recipe.');
+            done();
+        });
+    });
+    it('Other cache', function(done) {
+        getOtherCacheContent('test_data/test_recipe.pdf', (content) => {
+            assert.strictEqual(content, 'test_recipe');
             done();
         });
     });
