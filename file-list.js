@@ -38,7 +38,7 @@ const generateFileList = function() {
         'public/recipes/Snack',
         'public/recipes/Mains',
         'public/recipes/Dessert',
-        'public/recipes/Sous Vide'
+        'public/recipes/Other'
     ]
     files.forEach(function(file) {
         fileList.push(directoryToItem(file));
