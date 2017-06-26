@@ -35,7 +35,6 @@ const generateFileList = function() {
     const fileList = [];
     const files = [
         'public/recipes/Breakfast',
-        'public/recipes/Snack',
         'public/recipes/Mains',
         'public/recipes/Dessert',
         'public/recipes/Other'
