@@ -62,10 +62,11 @@ const getCacheContent = function(file, callback) {
     if (extension === '.html') {
         getHtmlCacheContent(file, callback);
     } else if (extension === '.pdf') {
-        pdfQueue.push(file);
-        if (pdfQueue.length === 1) {
-            getNextPdf(callback);
-        }
+		// Don't do PDFs yet
+//        pdfQueue.push(file);
+//        if (pdfQueue.length === 1) {
+//            getNextPdf(callback);
+//        }
     } else {
         // Not a html or pdf, we don't know exactly how to get content from it
         // (it's probably a picture). So treat it as "other"
