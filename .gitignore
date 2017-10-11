@@ -1,5 +1,3 @@
 *~
 node_modules/*
 npm-debug.log
-# No longer keep the cache files
-*.cache
