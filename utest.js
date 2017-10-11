@@ -134,6 +134,16 @@ describe('Search', function() {
         assert.searchResultEqual(results[0], expected[0]);
         assert.searchResultEqual(results[1], expected[1]);
     });
+    it('read cache', function(done) {
+        const readCacheFile = searchModule.__get__('readCacheFile');
+        const index = {};
+        readCacheFile(index, 'test_data/test_cache.html', function(content) {
+            console.log(content);
+            assert.notInclude(content, 'fbdc7648558d2e55237f92296d61958f');
+            assert.include(content, '# BBQ Marinade');
+            done();
+        });
+    });
 });
 
 //=============================================================================

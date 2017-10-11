@@ -50,7 +50,7 @@ const search = function(query, index) {
 }
 
 //=============================================================================
-const readCacheFile = function(index, file) {
+const readCacheFile = function(index, file, callback) {
     if (path.extname(file) !== '.cache') {
         // Read the cached file.
         const cacheFileName = utils.cachePath(file);
@@ -63,7 +63,9 @@ const readCacheFile = function(index, file) {
                     'utf8',
                     function(error, content) {
                         if (error) throw error;
-                        index[file] = content;
+                        // We don't want the first line, as it's the hash
+                        const hashless = content.split('\n').slice(1).join('\n');
+                        callback(hashless);
                     }
                 );
             }
@@ -74,7 +76,9 @@ const readCacheFile = function(index, file) {
 //=============================================================================
 const buildIndex = function(index) {
     const readFileCallback = function(file) {
-        readCacheFile(index, file);
+        readCacheFile(index, file, function(content) {
+            index[file] = content;
+        });
     }
     log.debug('Building search index.');
     utils.walk('public/recipes', readFileCallback);
