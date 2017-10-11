@@ -1,14 +1,12 @@
 'use strict';
-// <nnn> const rewire = require('rewire');
 const chai = require('chai');
-// <nnn> chai.use(require('chai-string'));
 const assert = chai.assert;
-// <nnn> const path = require('path');
 const fs = require('fs');
-// <nnn> const request = require('supertest');
-const utils = require('./utils');
 const async = require('async');
+const md5 = require('md5-file');
+const firstline = require('firstline');
 
+const utils = require('./utils');
 const fileList = require('./file-list');
 
 console.log('Running Integration Tests');
@@ -27,17 +25,19 @@ describe('Cache', function() {
         const directories = fileList.generateFileList();
         directories.forEach(recursor);
         const test = function(path, callback) {
-            fs.stat(path, function(error, fileStats) {
-                if (error) callback(error);
-                fs.stat(utils.cachePath(path), function(error, cacheStats) {
-                    assert.isNull(error, 'The cache files should exist.');
-                    // <nnn> assert.isAtLeast(
-                    // <nnn>     cacheStats.mtime,
-                    // <nnn>     fileStats.mtime,
-                    // <nnn>     'Cache should be newer than the file.'
-                    // <nnn> );
+            const cache = utils.cachePath(path);
+            assert.isOk(fs.existsSync(cache));
+            // Check it has the correct hash
+            md5(path, function(error, hash) {
+                assert.isNull(error);
+                const check = function(line) {
+                    assert.strictEqual(hash, line);
                     callback();
-                });
+                }
+                const errorThrow = function(err) {
+                    throw err;
+                }
+                firstline(cache).then(check, errorThrow);
             });
         }
         async.each(paths, test, function(error) {
