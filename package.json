@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A website for easily viewing my recipes.",
   "engines": {
-      "node": "8.1.4"
+    "node": "8.1.4"
   },
   "scripts": {
     "start": "node server.js",
@@ -16,6 +16,7 @@
     "express": "*",
     "graceful-fs": "^4.1.11",
     "jsdom": "^9.9.1",
+    "md5-file": "^3.2.3",
     "pdf2json": "^1.1.7",
     "pug": "^2.0.0-beta6",
     "urldecode": "^1.0.1",

@@ -6,6 +6,7 @@ const assert = chai.assert;
 const path = require('path');
 const request = require('supertest');
 const async = require('async');
+const fs = require('fs');
 
 const searchModule = rewire('./search.js');
 const buildCacheModule = rewire('./build-cache.js');
@@ -18,6 +19,7 @@ describe('Caches', function() {
     const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent');
     const getPdfCacheContent = buildCacheModule.__get__('getPdfCacheContent');
     const getOtherCacheContent = buildCacheModule.__get__('getOtherCacheContent');
+    const cacheFile = buildCacheModule.__get__('cacheFile');
     it('HTML cache', function(done) {
         getHtmlCacheContent('test_data/test_recipe.html', (content) => {
             var expected = `Test Recipe Title
@@ -48,6 +50,41 @@ describe('Caches', function() {
         getOtherCacheContent('test_data/test_recipe.pdf', (content) => {
             assert.strictEqual(content, 'test_recipe');
             done();
+        });
+    });
+    const testPDFCacheWriting = function(callback) {
+        cacheFile('test_data/test_recipe.pdf', function() {
+            const cache = 'test_data/test_recipe.cache';
+            assert.isOk(fs.existsSync);
+            fs.readFile(cache, 'utf8', function(error, content) {
+                if (error) throw error;
+                assert.include(content, 'fbdc7648558d2e55237f92296d61958f');
+                fs.unlink(cache, function(error) {
+                    if (error) throw error
+                    callback();
+                });
+            });
+        });
+    }
+    const testHTMLCacheWriting = function(callback) {
+        cacheFile('test_data/test_recipe.html', function() {
+            const cache = 'test_data/test_recipe.cache';
+            assert.isOk(fs.existsSync(cache));
+            fs.readFile(cache, 'utf8', function(error, content) {
+                if (error) throw error;
+                assert.include(content, '912dc7447439d9bff54b1002b538db24');
+                fs.unlink(cache, function(error) {
+                    if (error) throw error
+                    callback();
+                });
+            });
+        });
+    }
+    it('Cache writing', function(done) {
+        testHTMLCacheWriting(function() {
+            testPDFCacheWriting(function() {
+                done();
+            });
         });
     });
 });

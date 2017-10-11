@@ -3,6 +3,7 @@ const fs = require('graceful-fs');
 const path = require('path');
 const PDFParser = require('pdf2json');
 const jsdom = require('jsdom');
+const md5 = require('md5-file');
 
 const utils = require('./utils');
 const log = require('./log');
@@ -74,35 +75,42 @@ const getCacheContent = function(file, callback) {
 };
 
 //=============================================================================
-const cacheFile = function(file) {
+const cacheFile = function(file, callback) {
     getCacheContent(file, function(content) {
-        fs.writeFile(utils.cachePath(file), content, 'utf8', function(error) {
+        md5(file, function(error, hash) {
             if (error) throw error;
-            log.silly('Cache written: ' + file);
-            // If we are in a child process
-            if (process.send) {
-                process.send('partial-cache');
-            }
+            content = hash + '\n' + content;
+            fs.writeFile(utils.cachePath(file), content, 'utf8', function(error) {
+                if (error) throw error;
+                log.silly('Cache written: ' + file);
+                callback();
+            });
         });
     });
 };
 
 //=============================================================================
 const checkFileCache = function(file) {
+    const cached = function() {
+        // If we are in a child process
+        if (process.send) {
+            process.send('partial-cache');
+        }
+    }    
     fs.stat(file, function(error, fileStats) {
         if (error) throw error;
         fs.stat(utils.cachePath(file), function(error, cacheStats) {
             if (error && error.code === 'ENOENT') {
                 // The cache doesn't exist, make it.
                 log.silly('Cache not made yet: ' + file);
-                cacheFile(file);
+                cacheFile(file, cached);
             } else {
                 // Check how up to date the cache is, compare the modification
                 // times.
                 if (cacheStats.mtime < fileStats.mtime) {
                     // The file has been modified since the cache, update it.
                     log.silly('Cache out of date: ' + file);
-                    cacheFile(file);
+                    cacheFile(file, cached);
                 } else {
                     log.silly('Cache up to date: ' + file);
                 }
