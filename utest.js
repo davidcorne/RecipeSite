@@ -11,6 +11,8 @@ const searchModule = rewire('./search.js');
 const buildCacheModule = rewire('./build-cache.js');
 const workerModule = rewire('./worker.js');
 
+console.log('Running Unit Tests');
+
 //=============================================================================
 describe('Caches', function() {
     const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent');

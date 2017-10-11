@@ -7,7 +7,9 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "mocha utest.js",
+    "test": "mocha utest.js && mocha itest.js",
+    "itest": "mocha itest.js",
+    "utest": "mocha utest.js",
     "develop": "nodemon server.js"
   },
   "dependencies": {
