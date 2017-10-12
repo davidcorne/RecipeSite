@@ -138,7 +138,6 @@ describe('Search', function() {
         const readCacheFile = searchModule.__get__('readCacheFile');
         const index = {};
         readCacheFile(index, 'test_data/test_cache.html', function(content) {
-            console.log(content);
             assert.notInclude(content, 'fbdc7648558d2e55237f92296d61958f');
             assert.include(content, '# BBQ Marinade');
             done();
