@@ -15,7 +15,6 @@ const startWorkers = function() {
     }
     const workersToSetup = numWorkers - currentWorkers;
     log.info('Master cluster setting up ' + workersToSetup + ' more workers');
-
     // Add a hook to the online event, whenever we get a new worker we want it
     // to read the search index.
     cluster.on('online', function(worker) {
@@ -55,6 +54,7 @@ const startInitialWorkers = function() {
 
 //=============================================================================
 const start = function() {
+    log.info('Logging level: ' + log.level());
     startInitialWorkers();
     const child = child_process.fork('run-build-cache.js');
     child.on('close', function(code) {

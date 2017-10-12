@@ -16,8 +16,14 @@ const logFunction = function(level) {
         winston.log(level, string, extra);
     }
 }
+
+const level = function() {
+    return winston.level;
+}
+
 module.exports.error = logFunction('error');
 module.exports.warn =  logFunction('warn');
 module.exports.info =  logFunction('info');
 module.exports.debug = logFunction('debug');
 module.exports.silly = logFunction('silly');
+module.exports.level = level;
