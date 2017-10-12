@@ -4,6 +4,7 @@ const path = require('path');
 const PDFParser = require('pdf2json');
 const jsdom = require('jsdom');
 const md5 = require('md5-file');
+const firstline = require('firstline');
 
 const utils = require('./utils');
 const log = require('./log');
@@ -90,6 +91,39 @@ const cacheFile = function(file, callback) {
 };
 
 //=============================================================================
+const cacheUpdate = function(file, callback) {
+    const cachePath = utils.cachePath(file);
+    fs.stat(cachePath, function(error, cacheStats) {
+        if (error && error.code === 'ENOENT') {
+            // The cache doesn't exist, make it.
+            log.silly('Cache not made yet: ' + file);
+            callback(true);
+        } else if (error) {
+            // Another error is a real error!
+            throw error;
+        } else {
+            // Check the md5 hashs match
+            const cacheMd5 = firstline(cachePath);
+            md5(file, function(error, hash) {
+                if (error) throw error;
+                cacheMd5.then(function(cacheHash) {
+                    if (cacheHash === hash) {
+                        log.silly('Cache up to date: ' + file);
+                        callback(false);
+                    } else {
+                        log.silly('Cache out of date: ' + file);
+                        callback(true);
+                    }
+                }, function(err) {
+                    throw err;
+                });
+                
+            });
+        }
+    });
+}
+
+//=============================================================================
 const checkFileCache = function(file) {
     const cached = function() {
         // If we are in a child process
@@ -97,25 +131,13 @@ const checkFileCache = function(file) {
             process.send('partial-cache');
         }
     }    
+    cacheUpdate(file, function(update) {
+        if (update) {
+            cacheFile(file, cached);
+        }
+    });
     fs.stat(file, function(error, fileStats) {
         if (error) throw error;
-        fs.stat(utils.cachePath(file), function(error, cacheStats) {
-            if (error && error.code === 'ENOENT') {
-                // The cache doesn't exist, make it.
-                log.silly('Cache not made yet: ' + file);
-                cacheFile(file, cached);
-            } else {
-                // Check how up to date the cache is, compare the modification
-                // times.
-                if (cacheStats.mtime < fileStats.mtime) {
-                    // The file has been modified since the cache, update it.
-                    log.silly('Cache out of date: ' + file);
-                    cacheFile(file, cached);
-                } else {
-                    log.silly('Cache up to date: ' + file);
-                }
-            }
-        });
     });
 }
 
