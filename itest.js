@@ -31,7 +31,11 @@ describe('Cache', function() {
             md5(path, function(error, hash) {
                 assert.isNull(error);
                 const check = function(line) {
-                    assert.strictEqual(hash, line);
+                    assert.strictEqual(
+                        hash,
+                        line,
+                        'Hash is incorrect for ' + path
+                    );
                     callback();
                 }
                 const errorThrow = function(err) {
