@@ -26,7 +26,10 @@ describe('Cache', function() {
         directories.forEach(recursor);
         const test = function(path, callback) {
             const cache = utils.cachePath(path);
-            assert.isOk(fs.existsSync(cache));
+            assert.isOk(
+                fs.existsSync(cache),
+                'Cache for ' + path + ' doesn\'t exist'
+            );
             // Check it has the correct hash
             md5(path, function(error, hash) {
                 assert.isNull(error);
