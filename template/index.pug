@@ -1,7 +1,7 @@
 extends layout.pug
 
 mixin directory(item)
-  h2 #{item.label}
+  h2(id=item.label) #{item.label}
   ul.recipe-list
     each file in item.files
       li
