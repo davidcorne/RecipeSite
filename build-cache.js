@@ -16,6 +16,7 @@ const getHtmlCacheContent = function(file, callback) {
     fs.readFile(file, 'utf8', function(error, content) {
         if (error) throw error;
         jsdom.env(content, function(error, window) {
+            if (error) throw error;
             let markdown = '';
             const title = window.document.getElementsByTagName('title')[0];
             markdown += title.innerHTML;
