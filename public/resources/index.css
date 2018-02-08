@@ -84,6 +84,10 @@ a {
     text-decoration: none;
 }
 
+li {
+    margin-bottom: 7px;
+}
+
 a:hover {
     text-decoration: underline;
 }
