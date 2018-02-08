@@ -66,9 +66,9 @@ table {
 }
 
 ul.recipe-list {
-    -webkit-columns: 3 250px;
-    -moz-columns: 3 250px;
-    columns: 3 250px;
+    -webkit-column-width: 275px;
+    -moz-column-width: 275px;
+    column-width: 275px;
 }
 
 ul {
