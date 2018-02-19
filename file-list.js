@@ -4,17 +4,24 @@ const path = require('path');
 
 const utils = require('./utils');
 
+const BASEPATH = 'public/recipes';
+
 //=============================================================================
-const directoryToItem = function(dir) {
+const directoryToItem = function(relativeDirectory) {
+    // Make the id so that it's the relative directory name, but sanitised
+    // without spaces or slashes that you can't use in a url.
+    const id = relativeDirectory.replace(/[ \\\/]/g,'_').toLowerCase();
     const item = {
-        label: path.basename(dir),
+        label: path.basename(relativeDirectory),
+        id: id,
         files: [],
         directories: []
     };
+    const dir = path.join(BASEPATH, relativeDirectory);
     const files = fs.readdirSync(dir);
     files.forEach(function(file) {
         if (fs.statSync(path.join(dir, file)).isDirectory()) {
-            item.directories.push(directoryToItem(path.join(dir, file)));
+            item.directories.push(directoryToItem(path.join(relativeDirectory, file)));
         } else {
             const pth = path.join(dir, file);
             if (path.extname(pth) !== '.cache') {
@@ -34,10 +41,10 @@ const directoryToItem = function(dir) {
 const generateFileList = function() {
     const fileList = [];
     const files = [
-        'public/recipes/Breakfast',
-        'public/recipes/Mains',
-        'public/recipes/Dessert',
-        'public/recipes/Other'
+        'Breakfast',
+        'Mains',
+        'Dessert',
+        'Other'
     ]
     files.forEach(function(file) {
         fileList.push(directoryToItem(file));
