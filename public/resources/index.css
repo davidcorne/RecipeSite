@@ -1,6 +1,11 @@
 /*===========================================================================*/
 /* General style */
 
+.inactiveLink {
+   pointer-events: none;
+   cursor: default;
+}
+
 body {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     color: #444444;
@@ -24,6 +29,17 @@ div.sub > h2 {
     font-weight: bold;
 }
 
+.contents h2 {
+    color: black;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+.contents .sub {
+    color: black;
+    font-size: 1.17em;
+    font-weight: bold;
+}
 dl {
     margin-bottom:50px;
 }

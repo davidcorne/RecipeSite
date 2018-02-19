@@ -1,0 +1,14 @@
+extends layout.pug
+
+mixin directory(item)
+  h2
+    a(href="/#" + item.id) #{item.label}
+  div.sub
+    each dir in item.directories
+      +directory(dir)
+
+block content
+  div.contents
+    each item in recipes
+      +directory(item)
+    
