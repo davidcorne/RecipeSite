@@ -15,7 +15,6 @@ let index = {};
 // Compile a function
 const templates = {
     'index': pug.compileFile('template/index.pug'),
-    'content': pug.compileFile('template/content.pug'),
     'search': pug.compileFile('template/search.pug'),
     'search-not-ready': pug.compileFile('template/search-not-ready.pug'),
     'partial-load': pug.compileFile('template/partial-search.pug'),
@@ -77,15 +76,6 @@ app.get('/', function(request, response) {
         recipes: fileList.generateFileList()
     };
     sendTemplate(request, response, 'index', locals);
-});
-
-//=============================================================================
-app.get('/content', function(request, response) {
-    logRequest(request);
-    const locals = {
-        recipes: fileList.generateFileList()
-    };
-    response.send(pug.compileFile('template/content.pug')(locals));
 });
 
 //=============================================================================
