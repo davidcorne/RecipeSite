@@ -1,6 +1,4 @@
-extends layout.pug
-
-mixin directory(item)
+mixin content_directory(item)
   div.header
     a(href="/#" + item.id) #{item.label}
   if item.directories.length
@@ -8,9 +6,8 @@ mixin directory(item)
       each dir in item.directories
         a(href="/#" + dir.id) #{dir.label}
 
-block content
-  div#contents
-    h2 Contents
-    each item in recipes
-      +directory(item)
+div#contents
+  h2 Contents
+  each item in recipes
+    +content_directory(item)
     
