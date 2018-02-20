@@ -29,17 +29,6 @@ div.sub > h2 {
     font-weight: bold;
 }
 
-.contents h2 {
-    color: black;
-    font-size: 1.17em;
-    font-weight: bold;
-}
-
-.contents .sub {
-    color: black;
-    font-size: 1.17em;
-    font-weight: bold;
-}
 dl {
     margin-bottom:50px;
 }
@@ -140,6 +129,42 @@ p.line {
 
 .search-bar {
     width: 85%;
+}
+
+/*===========================================================================*/
+/* Contents */
+#contents {
+    overflow: hidden;
+    padding: 30px;
+    text-align: center;
+}
+
+#contents a {
+    color: #3366FF;
+    display: inline-block;
+    font-weight: bold;
+    padding: 4px;
+    font-size: 1.17em;
+    font-weight: bold;
+    margin: auto;
+    width: 100px;
+}
+
+#contents > div.sub a {
+    color: black;
+}
+
+#contents a:link, #navigation-bar a:visited {
+    text-decoration: none;
+}
+
+#contents a:hover, #navigation-bar a:active{
+    background-color: #DDDDDD;
+}
+
+#contents > div.sub {
+    margin: auto;
+    width: 80%;
 }
 
 /*===========================================================================*/

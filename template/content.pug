@@ -1,14 +1,16 @@
 extends layout.pug
 
 mixin directory(item)
-  h2
+  div.header
     a(href="/#" + item.id) #{item.label}
-  div.sub
-    each dir in item.directories
-      +directory(dir)
+  if item.directories.length
+    div.sub
+      each dir in item.directories
+        a(href="/#" + dir.id) #{dir.label}
 
 block content
-  div.contents
+  div#contents
+    h2 Contents
     each item in recipes
       +directory(item)
     
