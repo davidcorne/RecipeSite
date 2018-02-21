@@ -133,6 +133,17 @@ p.line {
 
 /*===========================================================================*/
 /* Contents */
+details {
+    color: #3366FF;
+    padding-bottom: 10px;
+}
+
+summary{
+  outline:none;
+  cursor: pointer;
+  font-size: 1.5em
+}
+
 #contents {
     overflow: hidden;
     padding: 30px;
@@ -160,6 +171,7 @@ p.line {
 
 #contents a:hover, #navigation-bar a:active{
     background-color: #DDDDDD;
+    border-radius: 25px;
 }
 
 #contents > div.sub {
