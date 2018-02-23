@@ -19,6 +19,8 @@ cat << EOF > "${name}.html"
 
 ## Method ## 
 
+°C
+
 </xmp>
 
 <script src="/public/resources/strapdown.js"></script>
