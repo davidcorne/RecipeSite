@@ -6,9 +6,7 @@ mixin content_directory(item)
       each dir in item.directories
         a(href="/#" + dir.id) #{dir.label}
 
-details
-  summary Contents
-  div#contents
-    each item in recipes
-      +content_directory(item)
+div#contents
+  each item in recipes
+    +content_directory(item)
     
