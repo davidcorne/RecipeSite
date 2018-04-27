@@ -34,7 +34,9 @@ const getPdfCacheContent = function(file, callback) {
     log.silly('Caching ' + file);
     const pdfParser = new PDFParser(this, 1);
     pdfParser.on('pdfParser_dataReady', function(pdfData) {
-        callback(pdfParser.getRawTextContent());
+        const text = pdfParser.getRawTextContent();
+        const content = utils.pathToLabel(file) + '\n' + text;
+        callback(content);
         getNextPdf(callback);
     });
     pdfParser.on('pdfParser_dataError', function(errData) {

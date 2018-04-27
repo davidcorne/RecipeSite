@@ -43,6 +43,7 @@ describe('Caches', function() {
             assert.include(content, 'Ingredients');
             assert.include(content, 'Something');
             assert.include(content, 'Test the recipe.');
+            assert.include(content, 'test_recipe');
             done();
         });
     });
