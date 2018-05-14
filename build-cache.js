@@ -21,7 +21,10 @@ const getHtmlCacheContent = function(file, callback) {
             const title = window.document.getElementsByTagName('title')[0];
             markdown += title.innerHTML;
             const xmp = window.document.getElementsByTagName('xmp')[0];
-            markdown += xmp.innerHTML;
+            // Some are just HTML, they won't have a markdown element.
+            if (xmp) {
+                markdown += xmp.innerHTML;
+            }
             window.close();
             callback(markdown);
         });
