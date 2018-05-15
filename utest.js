@@ -21,7 +21,7 @@ describe('Caches', function() {
     const getOtherCacheContent = buildCacheModule.__get__('getOtherCacheContent');
     const cacheFile = buildCacheModule.__get__('cacheFile');
     it('HTML cache', function(done) {
-        getHtmlCacheContent('test_data/test_recipe.html', (content) => {
+        getHtmlCacheContent('test_data/generic/test_recipe.html', (content) => {
             var expected = `Test Recipe Title
 # Test Recipe #
 
@@ -38,7 +38,7 @@ describe('Caches', function() {
         });
     });
     it('PDF cache', function(done) {
-        getPdfCacheContent('test_data/test_recipe.pdf', (content) => {
+        getPdfCacheContent('test_data/generic/test_recipe.pdf', (content) => {
             assert.include(content, 'Test Recipe');
             assert.include(content, 'Ingredients');
             assert.include(content, 'Something');
@@ -48,14 +48,14 @@ describe('Caches', function() {
         });
     });
     it('Other cache', function(done) {
-        getOtherCacheContent('test_data/test_recipe.pdf', (content) => {
+        getOtherCacheContent('test_data/generic/test_tree/test_recipe.pdf', (content) => {
             assert.strictEqual(content, 'test_recipe');
             done();
         });
     });
     const testPDFCacheWriting = function(callback) {
-        cacheFile('test_data/test_recipe.pdf', function() {
-            const cache = 'test_data/test_recipe.cache';
+        cacheFile('test_data/generic/test_recipe.pdf', function() {
+            const cache = 'test_data/generic/test_recipe.cache';
             assert.isOk(fs.existsSync);
             fs.readFile(cache, 'utf8', function(error, content) {
                 if (error) throw error;
@@ -68,8 +68,8 @@ describe('Caches', function() {
         });
     }
     const testHTMLCacheWriting = function(callback) {
-        cacheFile('test_data/test_recipe.html', function() {
-            const cache = 'test_data/test_recipe.cache';
+        cacheFile('test_data/generic/test_recipe.html', function() {
+            const cache = 'test_data/generic/test_recipe.cache';
             assert.isOk(fs.existsSync(cache));
             fs.readFile(cache, 'utf8', function(error, content) {
                 if (error) throw error;
@@ -138,7 +138,7 @@ describe('Search', function() {
     it('read cache', function(done) {
         const readCacheFile = searchModule.__get__('readCacheFile');
         const index = {};
-        readCacheFile(index, 'test_data/test_cache.html', function(content) {
+        readCacheFile(index, 'test_data/generic/test_cache.html', function(content) {
             assert.notInclude(content, 'fbdc7648558d2e55237f92296d61958f');
             assert.include(content, '# BBQ Marinade');
             done();
