@@ -9,6 +9,7 @@ const path = require('path');
 
 const utils = require('./utils');
 const fileList = require('./file-list');
+const buildCache = require('./build-cache');
 
 console.log('Running Integration Tests');
 
@@ -96,4 +97,21 @@ describe('Cache', function() {
             done();
         });
     });
+    it('Don\'t delete cache content', function(done) {
+        const cache = 'test_data/clear_cache_tree/test_recipe.cache';
+        if (fs.existsSync(cache)) {
+            fs.unlinkSync(cache);
+        }
+        // fs.watch('test_data/clear_cache_tree/', function (eventType, filename) {
+        //     if (filename === 'test_recipe.cache') {
+
+        //     }
+        // })
+        fs.watchFile(cache, function(current, previous) {
+            console.log('%j', current);
+            console.log('%j', previous);
+            //assert.equal(current.size, 50);
+        })
+        buildCache.buildCache('test_data/clear_cache_tree');
+    })
 });
