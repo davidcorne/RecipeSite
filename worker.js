@@ -29,6 +29,18 @@ app.set('port', (process.env.PORT || 3000));
 let partialLoad = false;
 
 //=============================================================================
+const loadSearchIndex = function() {
+    partialLoad = false;
+    search.buildIndex(index);
+};
+
+//=============================================================================
+const partialLoadSearchIndex = function() {
+    partialLoad = true;
+    search.buildIndex(index);
+};
+
+//=============================================================================
 const messageMap = {
     'load-search-index': loadSearchIndex,
     'partial-load-search-index': partialLoadSearchIndex
@@ -43,18 +55,6 @@ process.on('message', function(message) {
         log.error('Unknown message "' + message + '"');
     }
 });
-
-//=============================================================================
-const loadSearchIndex = function() {
-    partialLoad = false;
-    search.buildIndex(index);
-};
-
-//=============================================================================
-const partialLoadSearchIndex = function() {
-    partialLoad = true;
-    search.buildIndex(index);
-};
 
 //=============================================================================
 const logRequest = function(request) {
