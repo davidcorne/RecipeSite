@@ -29,6 +29,12 @@ app.set('port', (process.env.PORT || 3000));
 let partialLoad = false;
 
 //=============================================================================
+const messageMap = {
+    'load-search-index': loadSearchIndex,
+    'partial-load-search-index': partialLoadSearchIndex
+};
+
+//=============================================================================
 process.on('message', function(message) {
     log.debug('Recieved ' + message);
     if (message in messageMap) {
@@ -48,12 +54,6 @@ const loadSearchIndex = function() {
 const partialLoadSearchIndex = function() {
     partialLoad = true;
     search.buildIndex(index);
-};
-
-//=============================================================================
-const messageMap = {
-    'load-search-index': loadSearchIndex,
-    'partial-load-search-index': partialLoadSearchIndex
 };
 
 //=============================================================================
