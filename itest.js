@@ -112,7 +112,8 @@ describe('Cache', function() {
                 const content = fs.readFileSync(path, 'utf8');
                 let matches = content.match(nonUnicodeFractionSpaceBefore);
                 if (matches) console.log(matches);
-                const errorMessage = 'A recipe contains a non-unicode fraction. file: ' + path;
+                const errorMessage = 
+                    'A recipe contains a non-unicode fraction. file: ' + path;
                 assert.isNull(matches, errorMessage);
                 matches = content.match(nonUnicodeFractionSpaceAfter);
                 if (matches) console.log(matches);
