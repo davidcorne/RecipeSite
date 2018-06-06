@@ -96,4 +96,33 @@ describe('Cache', function() {
             done();
         });
     });
+    it('Ensure unicode fractions', function(done) {
+        // This ensures that in each html recipe, I'm using unicode fractions
+        // e.g. ¼, ⅓, ½ rather than 1/4, 1/3, 1/2
+        // because it displays better on the site.
+        const paths = walkSync('./public/recipes');
+        // This will check each file twice, but it's not slow
+        
+        // I want to match [0-9]/[0-9] but that matches quite a few URLs
+        // so use 2 regexes and match space before and after
+        const nonUnicodeFractionSpaceBefore = new RegExp('\\s[0-9]/[0-9]');
+        const nonUnicodeFractionSpaceAfter = new RegExp('[0-9]/[0-9]\\s');
+        const test = function(path, callback) {
+            if (path.endsWith('.html')) {
+                const content = fs.readFileSync(path, 'utf8');
+                let matches = content.match(nonUnicodeFractionSpaceBefore);
+                if (matches) console.log(matches);
+                const errorMessage = 'A recipe contains a non-unicode fraction. file: ' + path;
+                assert.isNull(matches, errorMessage);
+                matches = content.match(nonUnicodeFractionSpaceAfter);
+                if (matches) console.log(matches);
+                assert.isNull(matches, errorMessage);
+            }
+            callback();
+        };
+        async.each(paths, test, function(error) {
+            assert.isNull(error);
+            done();
+        });
+    });
 });
