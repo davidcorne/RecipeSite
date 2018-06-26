@@ -30,6 +30,7 @@
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
     "rewire": "^2.5.2",
+    "standard": "^11.0.1",
     "supertest": "^3.0.0"
   }
 }
