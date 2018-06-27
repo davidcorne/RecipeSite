@@ -1,4 +1,5 @@
 'use strict'
+/* global describe, it */
 const chai = require('chai')
 const assert = chai.assert
 const fs = require('fs')

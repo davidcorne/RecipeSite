@@ -1,4 +1,5 @@
 'use strict'
+/* global describe, it */
 const rewire = require('rewire')
 const chai = require('chai')
 chai.use(require('chai-string'))
