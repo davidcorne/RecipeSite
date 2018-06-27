@@ -7,11 +7,7 @@ const os = require('os')
 const numWorkers = (process.env.WORKERS || os.cpus().length)
 
 const startWorkers = function () {
-  // cluster.workers has no length, or keys.length
-  let currentWorkers = 0
-  for (const id in cluster.workers) {
-    ++currentWorkers
-  }
+  let currentWorkers = Object.keys(cluster.workers).length
   const workersToSetup = numWorkers - currentWorkers
   log.info('Master cluster setting up ' + workersToSetup + ' more workers')
   // Add a hook to the online event, whenever we get a new worker we want it
