@@ -9,7 +9,7 @@ const BASEPATH = 'public/recipes'
 const directoryToItem = function (relativeDirectory) {
   // Make the id so that it's the relative directory name, but sanitised
   // without spaces or slashes that you can't use in a url.
-  const id = relativeDirectory.replace(/[ \\\/]/g, '_').toLowerCase()
+  const id = relativeDirectory.replace(/[ \\\\/]/g, '_').toLowerCase()
   const item = {
     label: path.basename(relativeDirectory),
     id: id,
