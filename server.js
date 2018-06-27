@@ -1,9 +1,8 @@
-'use strict';
-const cluster = require('cluster');
+'use strict'
+const cluster = require('cluster')
 
-if(cluster.isMaster) {
-    require('./master').start();
+if (cluster.isMaster) {
+  require('./master').start()
 } else {
-    require('./worker').start();
+  require('./worker').start()
 }
-
