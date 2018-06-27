@@ -89,13 +89,13 @@ const cacheFile = function (file, callback) {
   })
 }
 
-const cacheUpdate = function (file, callback) {
+const cacheUpdate = function (file, updateFile) {
   const cachePath = utils.cachePath(file)
   fs.stat(cachePath, function (error, cacheStats) {
     if (error && error.code === 'ENOENT') {
       // The cache doesn't exist, make it.
       log.silly('Cache not made yet: ' + file)
-      callback(true)
+      updateFile(true)
     } else if (error) {
       // Another error is a real error!
       throw error
@@ -107,10 +107,10 @@ const cacheUpdate = function (file, callback) {
         cacheMd5.then(function (cacheHash) {
           if (cacheHash === hash) {
             log.silly('Cache up to date: ' + file)
-            callback(false)
+            updateFile(false)
           } else {
             log.silly('Cache out of date: ' + file)
-            callback(true)
+            updateFile(true)
           }
         }, function (err) {
           throw err
