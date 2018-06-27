@@ -2,6 +2,7 @@
 const express = require('express')
 const pug = require('pug')
 const decode = require('urldecode')
+const path = require('path')
 const fs = require('fs')
 
 const utils = require('./utils')
@@ -84,7 +85,7 @@ app.get('/conversion', function (request, response) {
 
 app.get('/public/*', function (request, response) {
   logRequest(request)
-  const filePath = __dirname + decode(request.path)
+  const filePath = path.join(__dirname, decode(request.path))
   fs.stat(filePath, function (error, stats) {
     if (error) {
       response.status(404).send('Resource not found')
