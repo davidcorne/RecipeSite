@@ -185,6 +185,7 @@ describe('Routing', function () {
     const app = workerModule.__get__('app')
     const server = app.listen()
     request(server).get('/search?query=bean').expect(200, function (error, response) {
+      if (error) throw error
       assert.include(response.text, 'Search results are not ready yet.')
       assert.include(response.text, 'public/resources/search-not-ready.js')
       done()
@@ -255,6 +256,7 @@ describe('Routing', function () {
     }
     const testThis = function (callback) {
       request(server).get('/search?query=this').expect(200, function (error, response) {
+        if (error) throw error
         // We care that it found 2 things, and it gives you text from
         // both.
         assert.include(response.text, '2 results')
@@ -270,6 +272,7 @@ describe('Routing', function () {
       // Set the partial load flag
       workerModule.__set__('partialLoad', true)
       request(server).get('/search?query=bean').expect(200, function (error, response) {
+        if (error) throw error
         // We care that it found 1 things, and it recognises that it's
         // a partial search.
         assert.include(response.text, '1 result')
