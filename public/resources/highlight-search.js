@@ -2,7 +2,7 @@
 const highlight = {}
 
 highlight.highlightSearchResults = function (query) {
-  const expression = new RegExp('\(' + query + '\)', 'gi')
+  const expression = new RegExp('(' + query + ')', 'gi')
   const list = document.getElementById('search-result')
   if (list) {
     const paragraphs = list.getElementsByTagName('p')
