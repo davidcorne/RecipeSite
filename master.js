@@ -1,12 +1,12 @@
 'use strict'
 const cluster = require('cluster')
 const log = require('./log')
-const child_process = require('child_process')
+const childProcess = require('child_process')
 const os = require('os')
 
 const numWorkers = (process.env.WORKERS || os.cpus().length)
 
-//= ============================================================================
+//=============================================================================
 const startWorkers = function () {
   // cluster.workers has no length, or keys.length
   let currentWorkers = 0
@@ -56,7 +56,7 @@ const startInitialWorkers = function () {
 const start = function () {
   log.info('Logging level: ' + log.level())
   startInitialWorkers()
-  const child = child_process.fork('run-build-cache.js')
+  const child = childProcess.fork('run-build-cache.js')
   child.on('close', function (code) {
     if (code !== 0) {
       log.error('build-cache process ended with code ' + code)
