@@ -1,7 +1,6 @@
-//= ============================================================================
+
 const highlight = {}
 
-//= ============================================================================
 highlight.highlightSearchResults = function (query) {
   const expression = new RegExp('\(' + query + '\)', 'gi')
   const list = document.getElementById('search-result')

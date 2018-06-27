@@ -6,7 +6,6 @@ const os = require('os')
 
 const numWorkers = (process.env.WORKERS || os.cpus().length)
 
-//=============================================================================
 const startWorkers = function () {
   // cluster.workers has no length, or keys.length
   let currentWorkers = 0
@@ -26,7 +25,6 @@ const startWorkers = function () {
   }
 }
 
-//= ============================================================================
 const startInitialWorkers = function () {
   // Start two workers initially, so that the pdf reading communication
   // doesn't use too much RAM on the free hosting we use.
@@ -52,7 +50,6 @@ const startInitialWorkers = function () {
   }
 }
 
-//= ============================================================================
 const start = function () {
   log.info('Logging level: ' + log.level())
   startInitialWorkers()

@@ -11,7 +11,6 @@ const log = require('./log')
 
 const pdfQueue = []
 
-//= ============================================================================
 const getHtmlCacheContent = function (file, callback) {
   fs.readFile(file, 'utf8', function (error, content) {
     if (error) throw error
@@ -31,7 +30,6 @@ const getHtmlCacheContent = function (file, callback) {
   })
 }
 
-//= ============================================================================
 const getPdfCacheContent = function (file, callback) {
   log.silly('Caching ' + file)
   const pdfParser = new PDFParser(this, 1)
@@ -48,7 +46,6 @@ const getPdfCacheContent = function (file, callback) {
   pdfParser.loadPDF(file)
 }
 
-//= ============================================================================
 const getNextPdf = function (callback) {
   if (pdfQueue.length) {
     const file = pdfQueue.pop()
@@ -56,14 +53,12 @@ const getNextPdf = function (callback) {
   }
 }
 
-//= ============================================================================
 const getOtherCacheContent = function (file, callback) {
   // We don't know how to get content from this file (it's probably an
   // image) so settle for returning the file name.
   callback(utils.pathToLabel(file))
 }
 
-//= ============================================================================
 const getCacheContent = function (file, callback) {
   const extension = path.extname(file)
   if (extension === '.html') {
@@ -80,7 +75,6 @@ const getCacheContent = function (file, callback) {
   }
 }
 
-//= ============================================================================
 const cacheFile = function (file, callback) {
   getCacheContent(file, function (content) {
     md5(file, function (error, hash) {
@@ -95,7 +89,6 @@ const cacheFile = function (file, callback) {
   })
 }
 
-//= ============================================================================
 const cacheUpdate = function (file, callback) {
   const cachePath = utils.cachePath(file)
   fs.stat(cachePath, function (error, cacheStats) {
@@ -127,7 +120,6 @@ const cacheUpdate = function (file, callback) {
   })
 }
 
-//= ============================================================================
 const checkFileCache = function (file) {
   const cached = function () {
     // If we are in a child process
@@ -145,7 +137,6 @@ const checkFileCache = function (file) {
   })
 }
 
-//= ============================================================================
 const buildCache = function (directory) {
   log.info('Building cache of ' + directory)
   utils.walk(directory, function (file) {

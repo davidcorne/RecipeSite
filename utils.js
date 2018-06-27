@@ -3,7 +3,6 @@
 const path = require('path')
 const fs = require('graceful-fs')
 
-//= ============================================================================
 const walk = function (dir, callback) {
   fs.readdir(dir, function (error, files) {
     if (error) throw error
@@ -21,17 +20,14 @@ const walk = function (dir, callback) {
   })
 }
 
-//= ============================================================================
 const pathToLabel = function (pth) {
   return path.basename(pth, path.extname(pth))
 }
 
-//= ============================================================================
 const cachePath = function (file) {
   return file.replace(/\..*/, '.cache')
 }
 
-//= ============================================================================
 const timer = function () {
   this.start = function () {
     this.time = process.hrtime()

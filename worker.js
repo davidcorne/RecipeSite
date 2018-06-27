@@ -28,25 +28,21 @@ app.set('port', (process.env.PORT || 3000))
 
 let partialLoad = false
 
-//= ============================================================================
 const loadSearchIndex = function () {
   partialLoad = false
   search.buildIndex(index)
 }
 
-//= ============================================================================
 const partialLoadSearchIndex = function () {
   partialLoad = true
   search.buildIndex(index)
 }
 
-//= ============================================================================
 const messageMap = {
   'load-search-index': loadSearchIndex,
   'partial-load-search-index': partialLoadSearchIndex
 }
 
-//= ============================================================================
 process.on('message', function (message) {
   log.debug('Recieved ' + message)
   if (message in messageMap) {
@@ -56,20 +52,17 @@ process.on('message', function (message) {
   }
 })
 
-//= ============================================================================
 const logRequest = function (request) {
   log.debug(
     'Request: ' + request.path + ' ' + JSON.stringify(request.query)
   )
 }
 
-//= ============================================================================
 const sendTemplate = function (request, response, key, data) {
   // don't do anything fancy yet
   response.send(templates[key](data))
 }
 
-//= ============================================================================
 app.get('/', function (request, response) {
   logRequest(request)
   const locals = {
@@ -78,7 +71,6 @@ app.get('/', function (request, response) {
   sendTemplate(request, response, 'index', locals)
 })
 
-//= ============================================================================
 app.get('/conversion', function (request, response) {
   logRequest(request)
   // A list of the conversions that we cover.
@@ -90,7 +82,6 @@ app.get('/conversion', function (request, response) {
   )
 })
 
-//= ============================================================================
 app.get('/public/*', function (request, response) {
   logRequest(request)
   const filePath = __dirname + decode(request.path)
@@ -103,7 +94,6 @@ app.get('/public/*', function (request, response) {
   })
 })
 
-//= ============================================================================
 app.get('/search', function (request, response) {
   logRequest(request)
   const data = {
@@ -124,7 +114,6 @@ app.get('/search', function (request, response) {
   }
 })
 
-//= ============================================================================
 const start = function () {
   http.listen(app.get('port'), function () {
     log.info('Listening on *:' + app.get('port'))

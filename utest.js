@@ -15,7 +15,6 @@ const workerModule = rewire('./worker.js')
 
 console.log('Running Unit Tests')
 
-//= ============================================================================
 describe('Caches', function () {
   const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent')
   const getPdfCacheContent = buildCacheModule.__get__('getPdfCacheContent')
@@ -91,7 +90,6 @@ describe('Caches', function () {
   })
 })
 
-//= ============================================================================
 describe('Search', function () {
   assert.searchResultEqual = function (result, expected) {
     assert.strictEqual(result.label, expected.label)
@@ -147,7 +145,6 @@ describe('Search', function () {
   })
 })
 
-//= ============================================================================
 describe('Routing', function () {
   it('Existing', function (done) {
     const app = workerModule.__get__('app')

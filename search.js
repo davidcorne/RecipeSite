@@ -5,7 +5,6 @@ const path = require('path')
 const utils = require('./utils')
 const log = require('./log')
 
-//= ============================================================================
 const pathToDisplayPath = function (file) {
   // comes in as public\recipes\A\B\C.X want to display A/B/C
   let displayPath = file.replace(/\\/g, '/')
@@ -14,7 +13,6 @@ const pathToDisplayPath = function (file) {
   return displayPath
 }
 
-//= ============================================================================
 const search = function (query, index) {
   query = query.toLowerCase()
   const results = []
@@ -49,7 +47,6 @@ const search = function (query, index) {
   return results.sort(resultSorter)
 }
 
-//= ============================================================================
 const readCacheFile = function (index, file, callback) {
   if (path.extname(file) !== '.cache') {
     // Read the cached file.
@@ -73,7 +70,6 @@ const readCacheFile = function (index, file, callback) {
   }
 }
 
-//= ============================================================================
 const buildIndex = function (index) {
   const readFileCallback = function (file) {
     readCacheFile(index, file, function (content) {

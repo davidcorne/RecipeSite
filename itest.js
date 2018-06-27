@@ -13,7 +13,6 @@ const fileList = require('./file-list')
 
 console.log('Running Integration Tests')
 
-//= ============================================================================
 // I would put this in utils, but I don't want this called in a non-test.
 const walkSync = function (dir, paths) {
   if (!paths) paths = []
@@ -29,7 +28,6 @@ const walkSync = function (dir, paths) {
   return paths
 }
 
-//= ============================================================================
 describe('Cache', function () {
   it('Up to date', function (done) {
     let paths = []

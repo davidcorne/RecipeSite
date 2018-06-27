@@ -6,7 +6,6 @@ const utils = require('./utils')
 
 const BASEPATH = 'public/recipes'
 
-//= ============================================================================
 const directoryToItem = function (relativeDirectory) {
   // Make the id so that it's the relative directory name, but sanitised
   // without spaces or slashes that you can't use in a url.
@@ -37,7 +36,6 @@ const directoryToItem = function (relativeDirectory) {
   return item
 }
 
-//= ============================================================================
 const generateFileList = function () {
   const fileList = []
   const files = [
