@@ -5,7 +5,9 @@ const fs = require('graceful-fs')
 
 const walk = function (dir, callback) {
   fs.readdir(dir, function (error, files) {
-    if (error) throw error
+    if (error) {
+      throw error
+    }
     files.forEach(function (file) {
       const fullPath = path.join(dir, file)
       fs.stat(fullPath, function (error, stats) {
