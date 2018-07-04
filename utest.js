@@ -150,7 +150,7 @@ describe('Routing', function () {
     const app = workerModule.__get__('app')
     const server = app.listen()
 
-    // Respondes to all the routes.
+    // Responds to all the routes.
     const testRoute = function (route, callback) {
       request(server).get(route).expect(200, callback)
     }
@@ -165,11 +165,11 @@ describe('Routing', function () {
     })
   })
   it('Non-existing', function (done) {
-    // Try to get some non-existant routes
+    // Try to get some non-existent routes
     const app = workerModule.__get__('app')
     const server = app.listen()
 
-    // Respondes to all the routes.
+    // Responds to all the routes.
     const test404 = function (route, callback) {
       request(server).get(route).expect(404, callback)
     }
@@ -237,7 +237,7 @@ describe('Routing', function () {
       request(server).get('/search?query=a').expect(200, function (error, response) {
         if (error) throw error
         // we care that there were some results, and that it wasn't a
-        // partial seach.
+        // partial search.
         assert.include(response.text, '2 results')
         assert.notInclude(response.text, 'not complete')
         callback()
