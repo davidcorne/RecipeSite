@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "mocha utest.js && mocha itest.js",
+    "test": "standard && mocha utest.js && mocha itest.js",
     "itest": "mocha itest.js",
     "utest": "mocha utest.js",
     "develop": "nodemon server.js"
@@ -30,6 +30,12 @@
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
     "rewire": "^2.5.2",
+    "standard": "^11.0.1",
     "supertest": "^3.0.0"
+  },
+  "standard": {
+    "ignore": [
+      "public/resources/strapdown.js"
+    ]
   }
 }
