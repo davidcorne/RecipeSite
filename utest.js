@@ -20,7 +20,6 @@ describe('Caches', function () {
   const getPdfCacheContent = buildCacheModule.__get__('getPdfCacheContent')
   const getOtherCacheContent = buildCacheModule.__get__('getOtherCacheContent')
   const cacheFile = buildCacheModule.__get__('cacheFile')
-    const checkFileCache = buildCacheModule.__get__('checkFileCache');
   it('HTML cache', function (done) {
     getHtmlCacheContent('test_data/generic/test_recipe.html', (content) => {
       var expected = `Test Recipe Title
@@ -89,9 +88,10 @@ describe('Caches', function () {
       })
     })
   })
-    it('Don\'t delete cache content', function() {
-        fs.unlinkSync('test_data/clear_cache_tree/test_recipe.cache')
-    })
+  it('Don\'t delete cache content', function () {
+    // fs.unlinkSync('test_data/clear_cache_tree/test_recipe.cache')
+  })
+})
 
 describe('Search', function () {
   assert.searchResultEqual = function (result, expected) {
