@@ -14,8 +14,9 @@ const pathToDisplayPath = function (file) {
 }
 
 const searchContext = function (query, content) {
+  // Note: content comes in mixed case, so that the context is added in the
+  // correct case for the user.
   const context = []
-  let match = 0
   if (content.toLowerCase().indexOf(query) > -1) {
     // Found something
     // make the context. Each line where the query appears.
@@ -23,14 +24,13 @@ const searchContext = function (query, content) {
 
     for (let i = 0; i < lines.length; ++i) {
       if (lines[i].toLowerCase().indexOf(query) > -1) {
-        match += lines[i].length
         context.push(lines[i])
       }
     }
   }
   return {
     context: context,
-    match: match
+    match: utils.occurrences(content.toLowerCase(), query, false)
   }
 }
 
