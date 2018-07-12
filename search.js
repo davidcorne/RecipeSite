@@ -13,29 +13,45 @@ const pathToDisplayPath = function (file) {
   return displayPath
 }
 
+const searchContext = function (query, content) {
+  const context = []
+  let match = 0
+  if (content.toLowerCase().indexOf(query) > -1) {
+    // Found something
+    // make the context. Each line where the query appears.
+    const lines = content.split(/\r?\n/)
+
+    for (let i = 0; i < lines.length; ++i) {
+      if (lines[i].toLowerCase().indexOf(query) > -1) {
+        match += lines[i].length
+        context.push(lines[i])
+      }
+    }
+  }
+  return {
+    context: context,
+    match: match
+  }
+}
+
 const search = function (query, index) {
   query = query.toLowerCase()
   const results = []
   for (const file in index) {
     const content = index[file]
-    if (content.toLowerCase().indexOf(query) > -1) {
-      // Found something
-      // make the context. Each line where the query appears.
-      const lines = content.split(/\r?\n/)
-      const context = []
-      // A metric of how good a match it is
-      let match = 0
-      for (let i = 0; i < lines.length; ++i) {
-        if (lines[i].toLowerCase().indexOf(query) > -1) {
-          match += lines[i].length
-          context.push(lines[i])
-        }
-      }
+    // A metric of how good a match it is
+    let match = 0
+
+    // Search the file
+    const contextResult = searchContext(query, content)
+    match += contextResult.match
+
+    if (match > 0) {
       results.push({
         label: utils.pathToLabel(file),
         path: file,
         displayPath: pathToDisplayPath(file),
-        context: context,
+        context: contextResult.context,
         match: match
       })
     }
