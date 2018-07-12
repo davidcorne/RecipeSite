@@ -42,6 +42,12 @@ const search = function (query, index) {
     // A metric of how good a match it is
     let match = 0
 
+    // Search the file path for the query
+    if (file.toLowerCase().indexOf(query) > -1) {
+      // As the search query is in the title, I think it's pretty related to
+      // the search, give it a high gearing
+      match += 20
+    }
     // Search the file
     const contextResult = searchContext(query, content)
     match += contextResult.match
