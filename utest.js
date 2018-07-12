@@ -108,7 +108,7 @@ describe('Search', function () {
     const search = searchModule.__get__('search')
     const index = {}
     index[path.join('A', 'B', 'c.path')] = 'This is found'
-    index[path.join('A', 'C', 'd.path')] = 'This is FOUND, but longer!'
+    index[path.join('A', 'C', 'd.path')] = 'This is FOUND, but more found!'
     index['c'] = 'This is foand'
 
     const results = search('found', index)
@@ -122,15 +122,15 @@ describe('Search', function () {
         label: 'd',
         path: path.join('A', 'C', 'd.path'),
         displayPath: 'A/C/d',
-        context: ['This is FOUND, but longer!'],
-        match: 'This is FOUND, but longer!'.length
+        context: ['This is FOUND, but more found!'],
+        match: 2 // 2 instances of found
       },
       {
         label: 'c',
         path: path.join('A', 'B', 'c.path'),
         displayPath: 'A/B/c',
         context: ['This is found'],
-        match: 'This is found'.length
+        match: 1 // 1 instance of found
       }
     ]
     assert.strictEqual(results.length, 2)
@@ -145,6 +145,17 @@ describe('Search', function () {
       assert.include(content, '# BBQ Marinade')
       done()
     })
+  })
+  it('title weight', function () {
+    const search = searchModule.__get__('search')
+    const index = {}
+    index['apple'] = 'title not included'
+    index['title not in data'] = 'but it does have apple'
+    const results = search('apple', index)
+    assert.strictEqual(results.length, 2)
+    // The result with the query in the title, should be first
+    assert.strictEqual(results[0].label, 'apple')
+    assert.strictEqual(results[1].label, 'title not in data')
   })
 })
 
