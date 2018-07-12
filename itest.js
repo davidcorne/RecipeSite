@@ -97,6 +97,7 @@ describe('Cache', function () {
   })
   it('Don\'t delete cache content', function (done) {
     const cache = 'test_data/clear_cache_tree/test_recipe.cache'
+    // If the data file still exists, delete it.
     if (fs.existsSync(cache)) {
       fs.unlinkSync(cache)
     }
@@ -129,7 +130,7 @@ describe('Cache', function () {
         let matches = content.match(nonUnicodeFractionSpaceBefore)
         if (matches) console.log(matches)
         const errorMessage =
-                    'A recipe contains a non-unicode fraction. file: ' + path
+          'A recipe contains a non-unicode fraction. file: ' + path
         assert.isNull(matches, errorMessage)
         matches = content.match(nonUnicodeFractionSpaceAfter)
         if (matches) console.log(matches)
