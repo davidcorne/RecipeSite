@@ -143,6 +143,17 @@ describe('Search', function () {
       done()
     })
   })
+  it('title weight', function () {
+    const search = searchModule.__get__('search')
+    const index = {}
+    index['apple'] = 'title not included'
+    index['title not in data'] = 'but it does have apple'
+    const results = search('apple', index)
+    assert.strictEqual(results.length, 2)
+    // The result with the query in the title, should be first
+    assert.strictEqual(results[0].label, 'apple')
+    assert.strictEqual(results[1].label, 'title not in data')
+  })
 })
 
 describe('Routing', function () {
