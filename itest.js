@@ -1,5 +1,5 @@
 'use strict'
-/* global describe, it */
+/* global describe, it, after */
 const chai = require('chai')
 const assert = chai.assert
 const fs = require('fs')
@@ -7,9 +7,14 @@ const async = require('async')
 const md5 = require('md5-file')
 const firstline = require('firstline')
 const path = require('path')
+const winston = require('winston')
 
 const utils = require('./utils')
 const fileList = require('./file-list')
+const buildCache = require('./build-cache')
+
+// Turn off application logging
+winston.level = 'silent'
 
 console.log('Running Integration Tests')
 
@@ -94,6 +99,40 @@ describe('Cache', function () {
       done()
     })
   })
+  after(function () {
+    const cache = 'test_data/clear_cache_tree/test_recipe.cache'
+    if (fs.existsSync(cache)) {
+      fs.unlinkSync(cache)
+    }
+  })
+  it('Don\'t delete cache content', function (done) {
+    const html = 'test_data/clear_cache_tree/test_recipe.html'
+    const tilda = html + '~'
+    const cache = 'test_data/clear_cache_tree/test_recipe.cache'
+    // There shouldn't be an existing cache file
+    if (fs.existsSync(cache)) {
+      fs.unlinkSync(cache)
+    }
+    // Create the temp file
+    if (!fs.existsSync(tilda)) {
+      fs.closeSync(fs.openSync(tilda, 'w'))
+    }
+    const path = 'test_data/clear_cache_tree/'
+    // Watch for the single change event we should get
+    const watcher = fs.watch(path, function (eventType, filename) {
+      if (eventType === 'change') {
+        const stats = fs.statSync(path + filename)
+        // The hash and the title are 44 bytes, add some wiggle room
+        // (The expected value is 128, but I think that'll be a fragile test)
+        assert.isAbove(stats.size, 50)
+        // Do some cleanup
+        watcher.close()
+        done()
+      }
+    })
+
+    buildCache.buildCache('test_data/clear_cache_tree')
+  })
   it('Ensure unicode fractions', function (done) {
     // This ensures that in each html recipe, I'm using unicode fractions
     // e.g. ¼, ⅓, ½ rather than 1/4, 1/3, 1/2
@@ -111,7 +150,7 @@ describe('Cache', function () {
         let matches = content.match(nonUnicodeFractionSpaceBefore)
         if (matches) console.log(matches)
         const errorMessage =
-                    'A recipe contains a non-unicode fraction. file: ' + path
+          'A recipe contains a non-unicode fraction. file: ' + path
         assert.isNull(matches, errorMessage)
         matches = content.match(nonUnicodeFractionSpaceAfter)
         if (matches) console.log(matches)

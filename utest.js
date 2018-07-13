@@ -88,6 +88,9 @@ describe('Caches', function () {
       })
     })
   })
+  it('Don\'t delete cache content', function () {
+    // fs.unlinkSync('test_data/clear_cache_tree/test_recipe.cache')
+  })
 })
 
 describe('Search', function () {
