@@ -72,8 +72,11 @@ const getCacheContent = function (file, callback) {
     }
   } else {
     // Not a html or pdf, we don't know exactly how to get content from it
-    // (it's probably a picture). So treat it as "other"
-    getOtherCacheContent(file, callback)
+    // (it's probably a picture). So treat it as "other". However we need to
+    // ensure that it's not a backup file
+    if (file.slice(-1) !== '~') {
+      getOtherCacheContent(file, callback)
+    }
   }
 }
 
