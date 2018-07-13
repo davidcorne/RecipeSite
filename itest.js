@@ -7,10 +7,14 @@ const async = require('async')
 const md5 = require('md5-file')
 const firstline = require('firstline')
 const path = require('path')
+const winston = require('winston')
 
 const utils = require('./utils')
 const fileList = require('./file-list')
 const buildCache = require('./build-cache')
+
+// Turn off application logging
+winston.level = 'silent'
 
 console.log('Running Integration Tests')
 
