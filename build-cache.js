@@ -144,11 +144,7 @@ const checkFileCache = function (file) {
 
 const buildCache = function (directory) {
   log.info('Building cache of ' + directory)
-  utils.walk(directory, function (file) {
-    if (path.extname(file) !== '.cache') {
-      checkFileCache(file)
-    }
-  })
+  utils.foreachRecipe(directory, checkFileCache)
 }
 
 module.exports.buildCache = buildCache

@@ -74,8 +74,17 @@ function occurrences (string, subString, allowOverlapping) {
   return n
 }
 
+const foreachRecipe = function (directory, predicate) {
+  walk(directory, function (file) {
+    if (path.extname(file) !== '.cache') {
+      predicate(file)
+    }
+  })
+}
+
 module.exports.occurrences = occurrences
 module.exports.pathToLabel = pathToLabel
 module.exports.cachePath = cachePath
 module.exports.walk = walk
 module.exports.timer = timer
+module.exports.foreachRecipe = foreachRecipe
