@@ -76,7 +76,9 @@ function occurrences (string, subString, allowOverlapping) {
 
 const foreachRecipe = function (directory, predicate) {
   walk(directory, function (file) {
-    if (path.extname(file) !== '.cache') {
+    // Recipes are either html, pdf or jpg
+    const extension = path.extname(file)
+    if (extension === '.html' || extension === '.pdf' || extension === '.jpg') {
       predicate(file)
     }
   })
