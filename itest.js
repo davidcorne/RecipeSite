@@ -8,10 +8,12 @@ const md5 = require('md5-file')
 const firstline = require('firstline')
 const path = require('path')
 const winston = require('winston')
+const rewire = require('rewire')
 
 const utils = require('./utils')
-// const fileList = require('./file-list')
 const buildCache = require('./build-cache')
+
+const metadatahModule = rewire('./metadata.js')
 
 // Turn off application logging
 winston.level = 'silent'
@@ -167,6 +169,15 @@ describe('Cache', function () {
     async.each(paths, test, function (error) {
       assert.isNull(error)
       done()
+    })
+  })
+})
+describe('Metadata', function () {
+  const metadataPath = metadatahModule.__get__('metadataPath')
+  it('Present', function () {
+    foreachRecipeSync(function (recipePath) {
+      const path = metadataPath(recipePath)
+      assert.isTrue(fs.existsSync(path))
     })
   })
 })
