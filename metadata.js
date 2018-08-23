@@ -25,8 +25,12 @@ const schema = {
 }
 
 const validMetadata = function (metadata) {
-  const validator = new jsonschema.Validator()
-  return validator.validate(metadata, schema).valid
+  let valid = false
+  if (metadata) {
+    const validator = new jsonschema.Validator()
+    valid = validator.validate(metadata, schema).valid
+  }
+  return valid
 }
 
 const metadataPath = function (recipePath) {

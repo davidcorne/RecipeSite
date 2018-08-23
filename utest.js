@@ -398,5 +398,6 @@ describe('Metadata', function () {
       'type': 'recipe'
     }
     assert.isFalse(validMetadata(m))
+    assert.isFalse(validMetadata(undefined))
   })
 })
