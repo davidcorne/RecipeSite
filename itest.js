@@ -10,7 +10,7 @@ const path = require('path')
 const winston = require('winston')
 
 const utils = require('./utils')
-const fileList = require('./file-list')
+// const fileList = require('./file-list')
 const buildCache = require('./build-cache')
 
 // Turn off application logging
@@ -36,14 +36,9 @@ const walkSync = function (dir, paths) {
 describe('Cache', function () {
   it('Up to date', function (done) {
     let paths = []
-    const recursor = function (directory) {
-      directory.files.forEach(function (file) {
-        paths.push(file.path)
-      })
-      directory.directories.forEach(recursor)
-    }
-    const directories = fileList.generateFileList()
-    directories.forEach(recursor)
+    utils.foreachRecipe('public/recipes', function (path) {
+      paths.push(path)
+    })
     const test = function (path, callback) {
       const cache = utils.cachePath(path)
       assert.isOk(
@@ -88,6 +83,8 @@ describe('Cache', function () {
           }
         }
         assert.isOk(exists, 'Recipe doesn\'t exist for ' + path)
+      } else if (path.endsWith('_metadata.json')) {
+        // Don't do anything for meta data
       } else {
         const cache = utils.cachePath(path)
         assert.isOk(fs.existsSync(cache))
