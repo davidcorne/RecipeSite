@@ -22,7 +22,7 @@ const schema = {
 }
 
 const validMetadata = function (metadata) {
-  return false;
+  return false
 }
 
 const metadataPath = function (recipePath) {
