@@ -324,5 +324,79 @@ describe('Metadata', function () {
       'type': 'recipe'
     }
     assert.isTrue(validMetadata(m))
+    m = {
+      'diet': [],
+      'cuisine': [],
+      'type': 'manual'
+    }
+    assert.isTrue(validMetadata(m))
+    m = {
+      'diet': [],
+      'cuisine': [],
+      'type': 'chart'
+    }
+    assert.isTrue(validMetadata(m))
+    m = {
+      'diet': ['Vegan'],
+      'cuisine': [],
+      'type': 'manual'
+    }
+    assert.isTrue(validMetadata(m))
+    m = {
+      'diet': ['Vegan', 'GF'],
+      'cuisine': ['japanese'],
+      'type': 'manual'
+    }
+    assert.isTrue(validMetadata(m))
+
+    // Now for untrue values
+    // Missing data
+    m = {
+      'diet': [],
+      'cuisine': []
+    }
+    assert.isFalse(validMetadata(m))
+    m = {
+      'diet': [],
+      'type': 'recipe'
+    }
+    assert.isFalse(validMetadata(m))
+    m = {
+      'cuisine': [],
+      'type': 'recipe'
+    }
+    assert.isFalse(validMetadata(m))
+    m = {
+      'type': 'recipe'
+    }
+    assert.isFalse(validMetadata(m))
+    m = {
+      'diet': []
+    }
+    m = {
+    }
+    assert.isFalse(validMetadata(m))
+
+    // Incorrect data
+    m = {
+      'diet': [],
+      'cuisine': [4],
+      'type': 'recipe'
+    }
+    assert.isFalse(validMetadata(m))
+
+    m = {
+      'diet': [],
+      'cuisine': [],
+      'type': 'recip'
+    }
+    assert.isFalse(validMetadata(m))
+
+    m = {
+      'diet': 'Vegan',
+      'cuisine': [],
+      'type': 'recipe'
+    }
+    assert.isFalse(validMetadata(m))
   })
 })
