@@ -33,10 +33,19 @@ const walkSync = function (dir, paths) {
   return paths
 }
 
+const foreachRecipeSync = function (predicate) {
+  const paths = walkSync('public/recipes')
+  paths.forEach(function (path) {
+    if (utils.isRecipe(path)) {
+      predicate(path)
+    }
+  })
+}
+
 describe('Cache', function () {
   it('Up to date', function (done) {
     let paths = []
-    utils.foreachRecipe('public/recipes', function (path) {
+    foreachRecipeSync(function (path) {
       paths.push(path)
     })
     const test = function (path, callback) {
