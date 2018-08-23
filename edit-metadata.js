@@ -3,14 +3,9 @@ const utils = require('./utils')
 const metadata = require('./metadata')
 
 utils.foreachRecipe('public/recipes', function (recipePath) {
-  const recipeMetadata = {
-    'diet': [],
-    'cuisine': [],
-    'type': 'recipe'
+  const md = metadata.readMetadataSync(recipePath)
+  if (recipePath.search('Vegan') !== -1) {
+    md['diet'].push('vegan')
   }
-  //   if (recipePath.search('Vegan') !== -1) {
-  //     console.log(metadataPath)
-  //     metadata['diet'].push('vegan')
-  //   }
-  metadata.writeMetadataSync(recipePath, recipeMetadata)
+  metadata.writeMetadataSync(recipePath, md)
 })
