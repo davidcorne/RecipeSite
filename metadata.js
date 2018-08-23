@@ -1,12 +1,29 @@
 'use strict'
 const fs = require('graceful-fs')
-// const path = require('path')
-// const PDFParser = require('pdf2json')
-// const jsdom = require('jsdom')
-// const md5 = require('md5-file')
-// const firstline = require('firstline')
 
-// const utils = require('./utils')
+const schema = {
+  'id': '/RecipeMetadata',
+  'type': 'object',
+  'properties': {
+    'diet': {
+      'type': 'array',
+      'items': {'type': 'string'}
+    },
+    'cuisine': {
+      'type': 'array',
+      'items': {'type': 'string'}
+    },
+    'type': {
+      'type': 'string',
+      'enum': ['recipe', 'manual', 'chart']
+    }
+  },
+  'required': ['diet', 'cuisine', 'type']
+}
+
+const validMetadata = function (metadata) {
+  return false;
+}
 
 const metadataPath = function (recipePath) {
   return recipePath.replace(/\..*/, '_metadata.json')

@@ -12,6 +12,7 @@ const fs = require('fs')
 const searchModule = rewire('./search.js')
 const buildCacheModule = rewire('./build-cache.js')
 const workerModule = rewire('./worker.js')
+const metadataModule = rewire('./metadata.js')
 
 console.log('Running Unit Tests')
 
@@ -312,5 +313,16 @@ describe('Routing', function () {
       workerModule.__set__('index', {})
       done()
     })
+  })
+})
+describe('Metadata', function () {
+  it('Schema', function () {
+    const validMetadata = metadataModule.__get__('validMetadata')
+    let m = {
+      'diet': [],
+      'cuisine': [],
+      'type': 'recipe'
+    }
+    assert.isTrue(validMetadata(m))
   })
 })
