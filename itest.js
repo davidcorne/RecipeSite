@@ -12,6 +12,7 @@ const rewire = require('rewire')
 
 const utils = require('./utils')
 const buildCache = require('./build-cache')
+const metadata = require('./metadata')
 
 const metadataModule = rewire('./metadata.js')
 
@@ -176,10 +177,17 @@ describe('Recipes', function () {
 })
 describe('Metadata', function () {
   const metadataPath = metadataModule.__get__('metadataPath')
+  const validMetadata = metadataModule.__get__('validMetadata')
   it('Present', function () {
     foreachRecipeSync(function (recipePath) {
       const path = metadataPath(recipePath)
       assert.isTrue(fs.existsSync(path))
+    })
+  })
+  it('Correct', function () {
+    foreachRecipeSync(function (recipePath) {
+      const md = metadata.readMetadataSync(recipePath)
+      assert.isTrue(validMetadata(md), 'Invalid metadata for: ' + recipePath)
     })
   })
 })

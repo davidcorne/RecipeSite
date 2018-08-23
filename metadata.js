@@ -37,8 +37,18 @@ const metadataPath = function (recipePath) {
   return recipePath.replace(/\..*/, '_metadata.json')
 }
 
-const metadata = function (recipePath) {
-
+const readMetadataSync = function (recipePath) {
+  const filePath = metadataPath(recipePath)
+  const content = fs.readFileSync(filePath, 'utf8')
+  if (content) {
+    const metadata = JSON.parse(content)
+    if (metadata) {
+      const valid = validMetadata(metadata)
+      if (valid) {
+        return metadata
+      }
+    }
+  }
 }
 
 const writeMetadataSync = function (recipePath, metadata) {
@@ -55,5 +65,5 @@ const writeMetadataSync = function (recipePath, metadata) {
   return success
 }
 
-module.exports.metadata = metadata
+module.exports.readMetadataSync = readMetadataSync
 module.exports.writeMetadataSync = writeMetadataSync
