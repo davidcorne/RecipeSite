@@ -13,7 +13,7 @@ const rewire = require('rewire')
 const utils = require('./utils')
 const buildCache = require('./build-cache')
 
-const metadatahModule = rewire('./metadata.js')
+const metadataModule = rewire('./metadata.js')
 
 // Turn off application logging
 winston.level = 'silent'
@@ -173,7 +173,7 @@ describe('Cache', function () {
   })
 })
 describe('Metadata', function () {
-  const metadataPath = metadatahModule.__get__('metadataPath')
+  const metadataPath = metadataModule.__get__('metadataPath')
   it('Present', function () {
     foreachRecipeSync(function (recipePath) {
       const path = metadataPath(recipePath)
