@@ -133,6 +133,8 @@ describe('Cache', function () {
 
     buildCache.buildCache('test_data/clear_cache_tree')
   })
+})
+describe('Recipes', function () {
   it('Ensure unicode fractions', function (done) {
     // This ensures that in each html recipe, I'm using unicode fractions
     // e.g. ¼, ⅓, ½ rather than 1/4, 1/3, 1/2
