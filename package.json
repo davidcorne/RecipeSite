@@ -17,6 +17,7 @@
     "firstline": "^1.2.1",
     "graceful-fs": "^4.1.11",
     "jsdom": "^9.9.1",
+    "jsonschema": "^1.2.4",
     "md5-file": "^3.2.3",
     "pdf2json": "^1.1.7",
     "pug": "^2.0.0-beta6",
