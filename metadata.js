@@ -1,5 +1,8 @@
 'use strict'
 const fs = require('graceful-fs')
+const jsonschema = require('jsonschema')
+
+const log = require('./log')
 
 const schema = {
   'id': '/RecipeMetadata',
@@ -22,7 +25,8 @@ const schema = {
 }
 
 const validMetadata = function (metadata) {
-  return false
+  const validator = new jsonschema.Validator()
+  return validator.validate(metadata, schema).valid
 }
 
 const metadataPath = function (recipePath) {
