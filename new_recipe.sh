@@ -19,7 +19,7 @@ cat << EOF > "${name}.html"
 
 ## Method ## 
 
-°C
+°C ½ ¼
 
 </xmp>
 
