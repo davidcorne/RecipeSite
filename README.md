@@ -2,9 +2,9 @@
 
 This is an unorignally named site to organise my recipes. It's built with node.js, and one of the nicest things about it is the ability to search anything on it. This used to be slow, so now the search index is cached in git rather than generating it (a better solution is make the site generic, and have a separate database for both recipes and searching).
 
-## Hosted
+## Hosting
 
-There is an instance of this hosted [here](https://salty-harbor-48823.herokuapp.com).
+I use heroku to host an instance of this [here](https://salty-harbor-48823.herokuapp.com).
 
 ## CI
 
