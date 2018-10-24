@@ -24,6 +24,21 @@ const schema = {
   'required': ['diet', 'cuisine', 'type']
 }
 
+const defaultMetadata = {
+  'diet': [],
+  'cuisine': [],
+  'type': 'recipe'
+}
+
+const initialiseMetadata = function (recipePath) {
+  writeMetadataSync(recipePath, defaultMetadata)
+}
+
+const metadataExists = function (recipePath) {
+  const filePath = metadataPath(recipePath)
+  return fs.existsSync(filePath)
+}
+
 const validMetadata = function (metadata) {
   let valid = false
   if (metadata) {
@@ -67,3 +82,5 @@ const writeMetadataSync = function (recipePath, metadata) {
 
 module.exports.readMetadataSync = readMetadataSync
 module.exports.writeMetadataSync = writeMetadataSync
+module.exports.metadataExists = metadataExists
+module.exports.initialiseMetadata = initialiseMetadata
