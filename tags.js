@@ -56,6 +56,20 @@ const readTagsSync = function (recipePath) {
   }
 }
 
+const readTags = function (recipePath, callback) {
+  const filePath = tagsPath(recipePath)
+  fs.readFile(filePath, 'utf8', function (error, content) {
+    if (error) throw error
+    const tags = JSON.parse(content)
+    if (tags) {
+      const valid = validTags(tags)
+      if (valid) {
+        callback(tags.tags)
+      }
+    }
+  })
+}
+
 const writeTagsSync = function (recipePath, tags) {
   let success = false
   if (validTags(tags)) {
@@ -74,3 +88,4 @@ module.exports.readTagsSync = readTagsSync
 module.exports.writeTagsSync = writeTagsSync
 module.exports.tagsExists = tagsExists
 module.exports.initialiseTags = initialiseTags
+module.exports.readTags = readTags
