@@ -12,9 +12,9 @@ const rewire = require('rewire')
 
 const utils = require('./utils')
 const buildCache = require('./build-cache')
-const metadata = require('./metadata')
+const tags = require('./tags')
 
-const metadataModule = rewire('./metadata.js')
+const tagsModule = rewire('./tags.js')
 
 // Turn off application logging
 winston.level = 'silent'
@@ -95,7 +95,7 @@ describe('Cache', function () {
           }
         }
         assert.isOk(exists, 'Recipe doesn\'t exist for ' + path)
-      } else if (path.endsWith('_metadata.json')) {
+      } else if (path.endsWith('_tags.json')) {
         // Don't do anything for meta data
       } else {
         const cache = utils.cachePath(path)
@@ -175,19 +175,19 @@ describe('Recipes', function () {
     })
   })
 })
-describe('Metadata', function () {
-  const metadataPath = metadataModule.__get__('metadataPath')
-  const validMetadata = metadataModule.__get__('validMetadata')
+describe('tags', function () {
+  const tagsPath = tagsModule.__get__('tagsPath')
+  const validTags = tagsModule.__get__('validTags')
   it('Present', function () {
     foreachRecipeSync(function (recipePath) {
-      const path = metadataPath(recipePath)
+      const path = tagsPath(recipePath)
       assert.isTrue(fs.existsSync(path))
     })
   })
   it('Correct', function () {
     foreachRecipeSync(function (recipePath) {
-      const md = metadata.readMetadataSync(recipePath)
-      assert.isTrue(validMetadata(md), 'Invalid metadata for: ' + recipePath)
+      const t = tags.readTagsSync(recipePath)
+      assert.isTrue(validTags(t), 'Invalid tags for: ' + recipePath)
     })
   })
 })
