@@ -1,14 +1,17 @@
 'use strict'
 const utils = require('./utils')
-const metadata = require('./metadata')
+const tags = require('./tags')
 
 utils.foreachRecipe('public/recipes', function (recipePath) {
-  if (!metadata.metadataExists(recipePath)) {
-    metadata.initialiseMetadata(recipePath)
+  if (!tags.tagsExists(recipePath)) {
+    tags.initialiseTags(recipePath)
   }
-  const md = metadata.readMetadataSync(recipePath)
+  const t = tags.readTagsSync(recipePath)
   if (recipePath.search('Vegan') !== -1) {
-    md['diet'].push('vegan')
+    const recipeTags = t['tags']
+    if (!recipeTags.includes('vegan')) {
+      recipeTags.push('vegan')
+    }
   }
-  metadata.writeMetadataSync(recipePath, md)
+  tags.writeTagsSync(recipePath, t)
 })
