@@ -51,7 +51,7 @@ const search = function (query, index) {
       match += 20
     }
     item.tags.forEach(function (tag) {
-      if (tag.toLowerCase().indexOf(query) > -1) {
+      if (tag.indexOf(query) > -1) {
         match += 5
       }
     })
