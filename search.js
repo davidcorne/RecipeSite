@@ -49,6 +49,9 @@ const search = function (query, index) {
       // the search, give it a high gearing
       match += 20
     }
+    if (item.tags.includes(query)) {
+      match += 5
+    }
     // Search the file
     const contextResult = searchContext(query, content)
     match += contextResult.match

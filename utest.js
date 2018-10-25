@@ -178,6 +178,26 @@ describe('Search', function () {
     assert.strictEqual(results[0].label, 'apple')
     assert.strictEqual(results[1].label, 'title not in data')
   })
+  it('tags weight', function () {
+    const search = searchModule.__get__('search')
+    const index = [
+      {
+        'file': '1',
+        'content': 'This recipe is of type TAG, it is a TAG recipe.',
+        'tags': []
+      },
+      {
+        'file': '2',
+        'content': 'but it does have apple',
+        'tags': ['tag']
+      }
+    ]
+    const results = search('TAG', index)
+    assert.strictEqual(results.length, 2)
+    // The result with the query in the tags, should be first
+    assert.strictEqual(results[0].label, '2')
+    assert.strictEqual(results[1].label, '1')
+  })
 })
 
 describe('Routing', function () {
