@@ -37,16 +37,20 @@ const searchContext = function (query, content) {
 const search = function (query, index) {
   query = query.toLowerCase()
   const results = []
-  for (const file in index) {
-    const content = index[file]
+  index.forEach(function (item) {
+    const content = item.content
     // A metric of how good a match it is
     let match = 0
 
     // Search the file path for the query
+    const file = item.file
     if (file.toLowerCase().indexOf(query) > -1) {
       // As the search query is in the title, I think it's pretty related to
       // the search, give it a high gearing
       match += 20
+    }
+    if (item.tags.includes(query)) {
+      match += 5
     }
     // Search the file
     const contextResult = searchContext(query, content)
@@ -61,7 +65,7 @@ const search = function (query, index) {
         match: match
       })
     }
-  }
+  })
   // Sort the results by the larger match is better (closer to the beginning)
   const resultSorter = function (a, b) {
     return b.match - a.match
@@ -69,8 +73,8 @@ const search = function (query, index) {
   return results.sort(resultSorter)
 }
 
-const readCacheFile = function (index, file, callback) {
-  if (path.extname(file) !== '.cache') {
+const readCacheFile = function (file, callback) {
+  if (path.extname(file) !== '.cache' && path.extname(file) !== '.tags') {
     // Read the cached file.
     const cacheFileName = utils.cachePath(file)
     fs.stat(cacheFileName, function (error, cacheStats) {
@@ -94,8 +98,12 @@ const readCacheFile = function (index, file, callback) {
 
 const buildIndex = function (index) {
   const readFileCallback = function (file) {
-    readCacheFile(index, file, function (content) {
-      index[file] = content
+    readCacheFile(file, function (content) {
+      index.push({
+        'file': file,
+        'content': content,
+        'tags': []
+      })
     })
   }
   log.debug('Building search index.')

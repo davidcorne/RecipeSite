@@ -8,10 +8,13 @@ const md5 = require('md5-file')
 const firstline = require('firstline')
 const path = require('path')
 const winston = require('winston')
+const rewire = require('rewire')
 
 const utils = require('./utils')
-const fileList = require('./file-list')
 const buildCache = require('./build-cache')
+const tags = require('./tags')
+
+const tagsModule = rewire('./tags.js')
 
 // Turn off application logging
 winston.level = 'silent'
@@ -33,17 +36,21 @@ const walkSync = function (dir, paths) {
   return paths
 }
 
+const foreachRecipeSync = function (predicate) {
+  const paths = walkSync('public/recipes')
+  paths.forEach(function (path) {
+    if (utils.isRecipe(path)) {
+      predicate(path)
+    }
+  })
+}
+
 describe('Cache', function () {
   it('Up to date', function (done) {
     let paths = []
-    const recursor = function (directory) {
-      directory.files.forEach(function (file) {
-        paths.push(file.path)
-      })
-      directory.directories.forEach(recursor)
-    }
-    const directories = fileList.generateFileList()
-    directories.forEach(recursor)
+    foreachRecipeSync(function (path) {
+      paths.push(path)
+    })
     const test = function (path, callback) {
       const cache = utils.cachePath(path)
       assert.isOk(
@@ -88,6 +95,8 @@ describe('Cache', function () {
           }
         }
         assert.isOk(exists, 'Recipe doesn\'t exist for ' + path)
+      } else if (path.endsWith('_tags.json')) {
+        // Don't do anything for meta data
       } else {
         const cache = utils.cachePath(path)
         assert.isOk(fs.existsSync(cache))
@@ -163,6 +172,22 @@ describe('Recipes', function () {
     async.each(paths, test, function (error) {
       assert.isNull(error)
       done()
+    })
+  })
+})
+describe('tags', function () {
+  const tagsPath = tagsModule.__get__('tagsPath')
+  const validTags = tagsModule.__get__('validTags')
+  it('Present', function () {
+    foreachRecipeSync(function (recipePath) {
+      const path = tagsPath(recipePath)
+      assert.isTrue(fs.existsSync(path))
+    })
+  })
+  it('Correct', function () {
+    foreachRecipeSync(function (recipePath) {
+      const t = tags.readTagsSync(recipePath)
+      assert.isTrue(validTags(t), 'Invalid tags for: ' + recipePath)
     })
   })
 })

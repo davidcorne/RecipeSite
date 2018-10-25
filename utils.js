@@ -74,8 +74,23 @@ function occurrences (string, subString, allowOverlapping) {
   return n
 }
 
+const isRecipe = function (file) {
+  const extension = path.extname(file)
+  // Recipes are either html, pdf or jpg
+  return extension === '.html' || extension === '.pdf' || extension === '.jpg'
+}
+const foreachRecipe = function (directory, predicate) {
+  walk(directory, function (file) {
+    if (isRecipe(file)) {
+      predicate(file)
+    }
+  })
+}
+
 module.exports.occurrences = occurrences
 module.exports.pathToLabel = pathToLabel
 module.exports.cachePath = cachePath
 module.exports.walk = walk
 module.exports.timer = timer
+module.exports.foreachRecipe = foreachRecipe
+module.exports.isRecipe = isRecipe
