@@ -107,10 +107,22 @@ describe('Search', function () {
   }
   it('search', function () {
     const search = searchModule.__get__('search')
-    const index = {}
-    index[path.join('A', 'B', 'c.path')] = 'This is found'
-    index[path.join('A', 'C', 'd.path')] = 'This is FOUND, but more found!'
-    index['c'] = 'This is foand'
+    const index = []
+    index.push({
+      'file': path.join('A', 'B', 'c.path'),
+      'content': 'This is found',
+      'tags': []
+    })
+    index.push({
+      'file': path.join('A', 'C', 'd.path'),
+      'content': 'This is FOUND, but more found!',
+      'tags': []
+    })
+    index.push({
+      'file': 'c',
+      'content': 'This is foand',
+      'tags': []
+    })
 
     const results = search('found', index)
     // This tests:
@@ -140,8 +152,7 @@ describe('Search', function () {
   })
   it('read cache', function (done) {
     const readCacheFile = searchModule.__get__('readCacheFile')
-    const index = {}
-    readCacheFile(index, 'test_data/generic/test_cache.html', function (content) {
+    readCacheFile('test_data/generic/test_cache.html', function (content) {
       assert.notInclude(content, 'fbdc7648558d2e55237f92296d61958f')
       assert.include(content, '# BBQ Marinade')
       done()
@@ -149,9 +160,18 @@ describe('Search', function () {
   })
   it('title weight', function () {
     const search = searchModule.__get__('search')
-    const index = {}
-    index['apple'] = 'title not included'
-    index['title not in data'] = 'but it does have apple'
+    const index = [
+      {
+        'file': 'apple',
+        'content': 'title not included',
+        'tags': []
+      },
+      {
+        'file': 'title not in data',
+        'content': 'but it does have apple',
+        'tags': []
+      }
+    ]
     const results = search('apple', index)
     assert.strictEqual(results.length, 2)
     // The result with the query in the title, should be first
@@ -208,8 +228,13 @@ describe('Routing', function () {
   })
   it('Search not found', function (done) {
     const app = workerModule.__get__('app')
-    const index = {}
-    index['test 1'] = 'never found'
+    const index = [
+      {
+        'file': 'test 1',
+        'content': 'never found',
+        'tags': []
+      }
+    ]
     workerModule.__set__('index', index)
 
     const server = app.listen()
@@ -235,15 +260,24 @@ describe('Routing', function () {
       if (error) throw error
       // Clean up after ourselves
       workerModule.__set__('partialLoad', false)
-      workerModule.__set__('index', {})
+      workerModule.__set__('index', [])
       done()
     })
   })
   it('Search found', function (done) {
     const app = workerModule.__get__('app')
-    const index = {}
-    index['test 1'] = 'The context of this bean\nNot this line though.'
-    index['test 2'] = 'this baen.'
+    const index = [
+      {
+        'file': 'test 1',
+        'content': 'The context of this bean\nNot this line though.',
+        'tags': []
+      },
+      {
+        'file': 'test 2',
+        'content': 'this baen.',
+        'tags': []
+      }
+    ]
     workerModule.__set__('index', index)
 
     const server = app.listen()
@@ -310,7 +344,7 @@ describe('Routing', function () {
     ], function (error) {
       if (error) throw error
       // Clean up after ourselves
-      workerModule.__set__('index', {})
+      workerModule.__set__('index', [])
       done()
     })
   })

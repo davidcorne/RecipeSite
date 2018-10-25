@@ -11,7 +11,7 @@ const conversion = require('./conversion')
 const search = require('./search')
 const fileList = require('./file-list')
 
-let index = {}
+let index = []
 
 // Compile a function
 const templates = {
