@@ -4,6 +4,7 @@ const path = require('path')
 
 const utils = require('./utils')
 const log = require('./log')
+const tags = require('./tags')
 
 const pathToDisplayPath = function (file) {
   // comes in as public\recipes\A\B\C.X want to display A/B/C
@@ -99,10 +100,12 @@ const readCacheFile = function (file, callback) {
 const buildIndex = function (index) {
   const readFileCallback = function (file) {
     readCacheFile(file, function (content) {
-      index.push({
-        'file': file,
-        'content': content,
-        'tags': []
+      tags.readTags(file, function (tags) {
+        index.push({
+          'file': file,
+          'content': content,
+          'tags': []
+        })
       })
     })
   }
