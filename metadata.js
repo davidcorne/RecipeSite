@@ -5,82 +5,72 @@ const jsonschema = require('jsonschema')
 const log = require('./log')
 
 const schema = {
-  'id': '/RecipeMetadata',
+  'id': '/Recipetags',
   'type': 'object',
   'properties': {
-    'diet': {
+    'tags': {
       'type': 'array',
       'items': {'type': 'string'}
-    },
-    'cuisine': {
-      'type': 'array',
-      'items': {'type': 'string'}
-    },
-    'type': {
-      'type': 'string',
-      'enum': ['recipe', 'manual', 'chart']
     }
   },
-  'required': ['diet', 'cuisine', 'type']
+  'required': ['tags']
 }
 
-const defaultMetadata = {
-  'diet': [],
-  'cuisine': [],
-  'type': 'recipe'
+const defaultTags = {
+  'tags': []
 }
 
-const initialiseMetadata = function (recipePath) {
-  writeMetadataSync(recipePath, defaultMetadata)
+const initialiseTags = function (recipePath) {
+  writeTagsSync(recipePath, defaultTags)
 }
 
-const metadataExists = function (recipePath) {
-  const filePath = metadataPath(recipePath)
+const tagsExists = function (recipePath) {
+  const filePath = tagsPath(recipePath)
   return fs.existsSync(filePath)
 }
 
-const validMetadata = function (metadata) {
+const validTags = function (tags) {
   let valid = false
-  if (metadata) {
+  if (tags) {
     const validator = new jsonschema.Validator()
-    valid = validator.validate(metadata, schema).valid
+    valid = validator.validate(tags, schema).valid
   }
   return valid
 }
 
-const metadataPath = function (recipePath) {
-  return recipePath.replace(/\..*/, '_metadata.json')
+const tagsPath = function (recipePath) {
+  return recipePath.replace(/\..*/, '.tags')
 }
 
-const readMetadataSync = function (recipePath) {
-  const filePath = metadataPath(recipePath)
+const readTagsSync = function (recipePath) {
+  const filePath = tagsPath(recipePath)
   const content = fs.readFileSync(filePath, 'utf8')
   if (content) {
-    const metadata = JSON.parse(content)
-    if (metadata) {
-      const valid = validMetadata(metadata)
+    const tags = JSON.parse(content)
+    if (tags) {
+      const valid = validTags(tags)
       if (valid) {
-        return metadata
+        return tags
       }
     }
   }
 }
 
-const writeMetadataSync = function (recipePath, metadata) {
+const writeTagsSync = function (recipePath, tags) {
   let success = false
-  if (validMetadata(metadata)) {
-    const filePath = metadataPath(recipePath)
-    const data = JSON.stringify(metadata)
+  if (validTags(tags)) {
+    const filePath = tagsPath(recipePath)
+    const data = JSON.stringify(tags)
     fs.writeFileSync(filePath, data, 'utf8')
-    log.info('Metadata written for ' + filePath)
+    log.info('Tags written for ' + filePath)
     success = true
   } else {
-    log.error('Metadata is invalid: ' + JSON.stringify(metadata))
+    log.error('Tags is invalid: ' + JSON.stringify(tags))
   }
   return success
 }
 
-module.exports.readMetadataSync = readMetadataSync
-module.exports.writeMetadataSync = writeMetadataSync
-module.exports.metadataExists = metadataExists
-module.exports.initialiseMetadata = initialiseMetadata
+module.exports.readTagsSync = readTagsSync
+module.exports.writeTagsSync = writeTagsSync
+module.exports.tagsExists = tagsExists
+module.exports.initialiseTags = initialiseTags
