@@ -198,6 +198,24 @@ describe('Search', function () {
     assert.strictEqual(results[0].label, '2')
     assert.strictEqual(results[1].label, '1')
   })
+  it('tags partial match', function () {
+    const search = searchModule.__get__('search')
+    const index = [
+      {
+        'file': '1',
+        'content': 'Nothing',
+        'tags': []
+      },
+      {
+        'file': '2',
+        'content': 'but it does have apple',
+        'tags': ['tag']
+      }
+    ]
+    const results = search('ag', index)
+    assert.strictEqual(results.length, 1)
+    assert.strictEqual(results[0].label, '2')
+  })
 })
 
 describe('Routing', function () {
