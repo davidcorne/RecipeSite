@@ -188,6 +188,10 @@ describe('tags', function () {
     foreachRecipeSync(function (recipePath) {
       const t = tags.readTagsSync(recipePath)
       assert.isTrue(validTags(t), 'Invalid tags for: ' + recipePath)
+      // Ensure that the tags are lower case
+      t.tags.forEach(tag => {
+        assert.strictEqual(tag, tag.toLowerCase())
+      })
     })
   })
 })
