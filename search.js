@@ -104,7 +104,7 @@ const buildIndex = function (index) {
         index.push({
           'file': file,
           'content': content,
-          'tags': []
+          'tags': tags
         })
       })
     })
