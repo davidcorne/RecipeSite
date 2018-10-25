@@ -12,7 +12,7 @@ const fs = require('fs')
 const searchModule = rewire('./search.js')
 const buildCacheModule = rewire('./build-cache.js')
 const workerModule = rewire('./worker.js')
-const metadataModule = rewire('./metadata.js')
+const tagsModule = rewire('./tags.js')
 
 console.log('Running Unit Tests')
 
@@ -315,101 +315,46 @@ describe('Routing', function () {
     })
   })
 })
-describe('Metadata', function () {
+describe('tags', function () {
   it('Schema', function () {
-    const validMetadata = metadataModule.__get__('validMetadata')
-    let m = {
-      'diet': [],
-      'cuisine': [],
-      'type': 'recipe'
+    const validtags = tagsModule.__get__('validTags')
+    // Some valid options
+    let t = {
+      'tags': ['vegan', 'gout']
     }
-    assert.isTrue(validMetadata(m))
-    m = {
-      'diet': [],
-      'cuisine': [],
-      'type': 'manual'
+    assert.isTrue(validtags(t))
+    t = {
+      'tags': []
     }
-    assert.isTrue(validMetadata(m))
-    m = {
-      'diet': [],
-      'cuisine': [],
-      'type': 'chart'
-    }
-    assert.isTrue(validMetadata(m))
-    m = {
-      'diet': ['Vegan'],
-      'cuisine': [],
-      'type': 'manual'
-    }
-    assert.isTrue(validMetadata(m))
-    m = {
-      'diet': ['Vegan', 'GF'],
-      'cuisine': ['japanese'],
-      'type': 'manual'
-    }
-    assert.isTrue(validMetadata(m))
-
-    // Now for untrue values
-    // Missing data
-    m = {
-      'diet': [],
-      'cuisine': []
-    }
-    assert.isFalse(validMetadata(m))
-    m = {
-      'diet': [],
-      'type': 'recipe'
-    }
-    assert.isFalse(validMetadata(m))
-    m = {
-      'cuisine': [],
-      'type': 'recipe'
-    }
-    assert.isFalse(validMetadata(m))
-    m = {
-      'type': 'recipe'
-    }
-    assert.isFalse(validMetadata(m))
-    m = {
-      'diet': []
-    }
-    m = {
-    }
-    assert.isFalse(validMetadata(m))
-
     // Incorrect data
-    m = {
+    t = {
       'diet': [],
       'cuisine': [4],
       'type': 'recipe'
     }
-    assert.isFalse(validMetadata(m))
+    assert.isFalse(validtags(t))
 
-    m = {
-      'diet': [],
-      'cuisine': [],
-      'type': 'recip'
+    t = {
+      'tags': [1]
     }
-    assert.isFalse(validMetadata(m))
+    assert.isFalse(validtags(t))
 
-    m = {
-      'diet': 'Vegan',
-      'cuisine': [],
-      'type': 'recipe'
+    t = {
+      'tags': 'vegan'
     }
-    assert.isFalse(validMetadata(m))
-    assert.isFalse(validMetadata(undefined))
+    assert.isFalse(validtags(t))
+    assert.isFalse(validtags(undefined))
   })
   it('Reading', function () {
-    const readMetadataSync = metadataModule.__get__('readMetadataSync')
-    const md = readMetadataSync('test_data/generic/test.html')
-    assert.strictEqual(md['diet'].length, 2)
-    assert.strictEqual(md['diet'][0], 'gout')
-    assert.strictEqual(md['diet'][1], 'vegan')
-    assert.strictEqual(md['cuisine'].length, 3)
-    assert.strictEqual(md['cuisine'][0], 'fusion')
-    assert.strictEqual(md['cuisine'][1], 'italian')
-    assert.strictEqual(md['cuisine'][2], 'japanese')
-    assert.strictEqual(md['type'], 'recipe')
+    const readTagsSync = tagsModule.__get__('readTagsSync')
+    const t = readTagsSync('test_data/generic/test.html')
+    assert.strictEqual(t['diet'].length, 2)
+    assert.strictEqual(t['diet'][0], 'gout')
+    assert.strictEqual(t['diet'][1], 'vegan')
+    assert.strictEqual(t['cuisine'].length, 3)
+    assert.strictEqual(t['cuisine'][0], 'fusion')
+    assert.strictEqual(t['cuisine'][1], 'italian')
+    assert.strictEqual(t['cuisine'][2], 'japanese')
+    assert.strictEqual(t['type'], 'recipe')
   })
 })
