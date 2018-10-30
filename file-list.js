@@ -23,7 +23,8 @@ const directoryToItem = function (relativeDirectory) {
       item.directories.push(directoryToItem(path.join(relativeDirectory, file)))
     } else {
       const pth = path.join(dir, file)
-      if (path.extname(pth) !== '.cache') {
+      const extension = path.extname(pth)
+      if (extension !== '.cache' && extension !== '.tags'  ) {
         if (pth.substr(pth.length - 1) !== '~') {
           item.files.push({
             path: pth,
