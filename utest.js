@@ -216,6 +216,28 @@ describe('Search', function () {
     assert.strictEqual(results.length, 1)
     assert.strictEqual(results[0].label, '2')
   })
+  it('Build Index', function (done) {
+    const buildIndex = searchModule.__get__('buildIndex')
+    let index = []
+    buildIndex('test_data/build_index_root', index)
+    const testIndex = function () {
+      assert.strictEqual(index.length, 1)
+      const testRecipe = index[0]
+      const filePath = path.join('test_data', 'build_index_root', 'TestRecipe.html')
+      assert.strictEqual(testRecipe.file, filePath)
+      const stringIndex = testRecipe.content.indexOf('Combine the test and the recipes together in a blender.')
+      assert.isAbove(stringIndex, -1)
+      assert.strictEqual(testRecipe.tags.length, 2)
+      done()
+    }
+    const waitForIndex = function () {
+      if (index.length === 1) {
+        testIndex()
+      }
+      setTimeout(waitForIndex, 100)
+    }
+    waitForIndex()
+  })
 })
 
 describe('Routing', function () {
@@ -385,28 +407,6 @@ describe('Routing', function () {
       workerModule.__set__('index', [])
       done()
     })
-  })
-  it('Build Index', function (done) {
-    const buildIndex = searchModule.__get__('buildIndex')
-    let index = []
-    buildIndex('test_data/build_index_root', index)
-    const testIndex = function () {
-      assert.strictEqual(index.length, 1)
-      const testRecipe = index[0]
-      const filePath = path.join('test_data', 'build_index_root', 'TestRecipe.html')
-      assert.strictEqual(testRecipe.file, filePath)
-      const stringIndex = testRecipe.content.indexOf('Combine the test and the recipes together in a blender.')
-      assert.isAbove(stringIndex, -1)
-      assert.strictEqual(testRecipe.tags.length, 2)
-      done()
-    }
-    const waitForIndex = function () {
-      if (index.length === 1) {
-        testIndex()
-      }
-      setTimeout(waitForIndex, 100)
-    }
-    waitForIndex()
   })
 })
 describe('tags', function () {
