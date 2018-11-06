@@ -126,14 +126,19 @@ app.get('/search', function (request, response) {
   }
 })
 
-const start = function () {
-  // Load the dictionary
+const loadDictionary = function () {
   dictionary(function (error, dict) {
     if (error) {
       throw error
     }
     spell = nspell(dict)
+    spell.add('halloumi')
   })
+}
+
+const start = function () {
+  // Load the dictionary
+  loadDictionary()
   http.listen(app.get('port'), function () {
     log.info('Listening on *:' + app.get('port'))
   })
