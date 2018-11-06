@@ -452,7 +452,8 @@ describe('tags', function () {
   })
   it('Reading', function (done) {
     const readTags = tagsModule.__get__('readTags')
-    readTags('test_data/generic/test.html', function (tags) {
+    readTags('test_data/generic/test.html', function (allTags) {
+      const tags = allTags.tags
       assert.strictEqual(tags.length, 5)
       assert.isTrue(tags.includes('gout'))
       assert.isTrue(tags.includes('vegan'))

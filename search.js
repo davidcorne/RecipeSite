@@ -106,7 +106,7 @@ const buildIndex = function (path, index) {
         index.push({
           'file': file,
           'content': content,
-          'tags': tags
+          'tags': tags.tags
         })
       })
     })
