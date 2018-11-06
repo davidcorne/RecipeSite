@@ -417,7 +417,7 @@ describe('tags', function () {
     assert.isFalse(validtags(t))
     assert.isFalse(validtags(undefined))
   })
-  it('Reading', function () {
+  it('Reading Sync', function () {
     const readTagsSync = tagsModule.__get__('readTagsSync')
     const t = readTagsSync('test_data/generic/test.html')
     const recipeTags = t['tags']
@@ -427,5 +427,17 @@ describe('tags', function () {
     assert.isTrue(recipeTags.includes('FODMAP'))
     assert.isTrue(recipeTags.includes('fusion'))
     assert.isTrue(recipeTags.includes('italian'))
+  })
+  it('Reading', function (done) {
+    const readTags = tagsModule.__get__('readTags')
+    readTags('test_data/generic/test.html', function (tags) {
+      assert.strictEqual(tags.length, 5)
+      assert.isTrue(tags.includes('gout'))
+      assert.isTrue(tags.includes('vegan'))
+      assert.isTrue(tags.includes('FODMAP'))
+      assert.isTrue(tags.includes('fusion'))
+      assert.isTrue(tags.includes('italian'))
+      done()
+    })
   })
 })
