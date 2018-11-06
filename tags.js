@@ -42,17 +42,21 @@ const tagsPath = function (recipePath) {
   return recipePath.replace(/\..*/, '.tags')
 }
 
+const doReadTags = function (content) {
+  const tags = JSON.parse(content)
+  if (tags) {
+    const valid = validTags(tags)
+    if (valid) {
+      return tags
+    }
+  }
+}
+
 const readTagsSync = function (recipePath) {
   const filePath = tagsPath(recipePath)
   const content = fs.readFileSync(filePath, 'utf8')
   if (content) {
-    const tags = JSON.parse(content)
-    if (tags) {
-      const valid = validTags(tags)
-      if (valid) {
-        return tags
-      }
-    }
+    return doReadTags(content)
   }
 }
 
@@ -60,13 +64,7 @@ const readTags = function (recipePath, callback) {
   const filePath = tagsPath(recipePath)
   fs.readFile(filePath, 'utf8', function (error, content) {
     if (error) throw error
-    const tags = JSON.parse(content)
-    if (tags) {
-      const valid = validTags(tags)
-      if (valid) {
-        callback(tags.tags)
-      }
-    }
+    callback(doReadTags(content).tags)
   })
 }
 
