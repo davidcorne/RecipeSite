@@ -99,7 +99,7 @@ const readCacheFile = function (file, callback) {
   }
 }
 
-const buildIndex = function (index) {
+const buildIndex = function (path, index) {
   const readFileCallback = function (file) {
     readCacheFile(file, function (content) {
       tags.readTags(file, function (tags) {
@@ -112,7 +112,7 @@ const buildIndex = function (index) {
     })
   }
   log.debug('Building search index.')
-  utils.walk('public/recipes', readFileCallback)
+  utils.walk(path, readFileCallback)
 }
 
 module.exports.search = search
