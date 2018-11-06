@@ -12,6 +12,7 @@ const search = require('./search')
 const fileList = require('./file-list')
 
 let index = []
+const recipeRoot = 'public/recipes'
 
 // Compile a function
 const templates = {
@@ -31,12 +32,12 @@ let partialLoad = false
 
 const loadSearchIndex = function () {
   partialLoad = false
-  search.buildIndex(index)
+  search.buildIndex(recipeRoot, index)
 }
 
 const partialLoadSearchIndex = function () {
   partialLoad = true
-  search.buildIndex(index)
+  search.buildIndex(recipeRoot, index)
 }
 
 const messageMap = {

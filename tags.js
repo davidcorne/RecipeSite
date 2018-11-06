@@ -64,7 +64,7 @@ const readTags = function (recipePath, callback) {
   const filePath = tagsPath(recipePath)
   fs.readFile(filePath, 'utf8', function (error, content) {
     if (error) throw error
-    callback(doReadTags(content).tags)
+    callback(doReadTags(content))
   })
 }
 
