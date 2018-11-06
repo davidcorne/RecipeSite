@@ -386,6 +386,22 @@ describe('Routing', function () {
       done()
     })
   })
+  it('Build Index', function (done) {
+    const buildIndex = searchModule.__get__('buildIndex')
+    let index = []
+    buildIndex('test_data/build_index_root', index)
+    const testIndex = function () {
+      assert.strictEqual(index.length, 1)
+      done()
+    }
+    const waitForIndex = function () {
+      if (index.length === 1) {
+        testIndex()
+      }
+      setTimeout(waitForIndex, 100)
+    }
+    waitForIndex()
+  })
 })
 describe('tags', function () {
   it('Schema', function () {
