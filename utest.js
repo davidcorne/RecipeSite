@@ -392,6 +392,12 @@ describe('Routing', function () {
     buildIndex('test_data/build_index_root', index)
     const testIndex = function () {
       assert.strictEqual(index.length, 1)
+      const testRecipe = index[0]
+      const filePath = path.join('test_data', 'build_index_root', 'TestRecipe.html')
+      assert.strictEqual(testRecipe.file, filePath)
+      const stringIndex = testRecipe.content.indexOf('Combine the test and the recipes together in a blender.')
+      assert.isAbove(stringIndex, -1)
+      assert.strictEqual(testRecipe.tags.length, 2)
       done()
     }
     const waitForIndex = function () {
