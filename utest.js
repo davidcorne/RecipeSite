@@ -220,12 +220,7 @@ describe('Search', function () {
     const buildIndex = searchModule.__get__('buildIndex')
     let index = []
     buildIndex('test_data/build_index_root', index)
-    let inFunction = false
     const testIndex = function () {
-      if (inFunction) {
-        return
-      }
-      inFunction = true
       assert.strictEqual(index.length, 1)
       const testRecipe = index[0]
       const filePath = path.join('test_data', 'build_index_root', 'TestRecipe.html')
@@ -238,6 +233,7 @@ describe('Search', function () {
     const waitForIndex = function () {
       if (index.length === 1) {
         testIndex()
+        return
       }
       setTimeout(waitForIndex, 10)
     }
