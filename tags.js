@@ -20,8 +20,8 @@ const defaultTags = {
   'tags': []
 }
 
-const initialiseTags = function (recipePath) {
-  writeTagsSync(recipePath, defaultTags)
+const tagsPath = function (recipePath) {
+  return recipePath.replace(/\..*/, '.tags')
 }
 
 const tagsExists = function (recipePath) {
@@ -36,10 +36,6 @@ const validTags = function (tags) {
     valid = validator.validate(tags, schema).valid
   }
   return valid
-}
-
-const tagsPath = function (recipePath) {
-  return recipePath.replace(/\..*/, '.tags')
 }
 
 const doReadTags = function (content) {
@@ -63,7 +59,9 @@ const readTagsSync = function (recipePath) {
 const readTags = function (recipePath, callback) {
   const filePath = tagsPath(recipePath)
   fs.readFile(filePath, 'utf8', function (error, content) {
-    if (error) throw error
+    if (error) {
+      throw error
+    }
     callback(doReadTags(content))
   })
 }
@@ -80,6 +78,10 @@ const writeTagsSync = function (recipePath, tags) {
     log.error('Tags is invalid: ' + JSON.stringify(tags))
   }
   return success
+}
+
+const initialiseTags = function (recipePath) {
+  writeTagsSync(recipePath, defaultTags)
 }
 
 module.exports.readTagsSync = readTagsSync

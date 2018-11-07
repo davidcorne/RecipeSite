@@ -23,14 +23,14 @@ const searchContext = function (query, content) {
     // make the context. Each line where the query appears.
     const lines = content.split(/\r?\n/)
 
-    for (let i = 0; i < lines.length; ++i) {
-      if (lines[i].toLowerCase().indexOf(query) > -1) {
-        context.push(lines[i])
+    lines.forEach(function (line) {
+      if (line.toLowerCase().indexOf(query) > -1) {
+        context.push(line)
       }
-    }
+    })
   }
   return {
-    context: context,
+    context,
     match: utils.occurrences(content.toLowerCase(), query, false)
   }
 }
@@ -65,7 +65,7 @@ const search = function (query, index) {
         path: file,
         displayPath: pathToDisplayPath(file),
         context: contextResult.context,
-        match: match
+        match
       })
     }
   })
@@ -88,7 +88,9 @@ const readCacheFile = function (file, callback) {
           cacheFileName,
           'utf8',
           function (error, content) {
-            if (error) throw error
+            if (error) {
+              throw error
+            }
             // We don't want the first line, as it's the hash
             const hashless = content.split('\n').slice(1).join('\n')
             callback(hashless)
@@ -104,8 +106,8 @@ const buildIndex = function (path, index) {
     readCacheFile(file, function (content) {
       tags.readTags(file, function (tags) {
         index.push({
-          'file': file,
-          'content': content,
+          file,
+          content,
           'tags': tags.tags
         })
       })

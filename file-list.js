@@ -12,7 +12,7 @@ const directoryToItem = function (relativeDirectory) {
   const id = relativeDirectory.replace(/[ \\\\/]/g, '_').toLowerCase()
   const item = {
     label: path.basename(relativeDirectory),
-    id: id,
+    id,
     files: [],
     directories: []
   }
