@@ -272,8 +272,11 @@ describe('Search', function () {
       assert.isNotNull(data.time)
 
       // There won't actually be a spelling module set up
-      assert.strictEqual(data.suggestions, [])
-      assert.strictEqual(data.result.length, 1)
+      assert.strictEqual(data.suggestions.length, 0)
+      assert.strictEqual(data.results.length, 1)
+      assert.strictEqual(data.results[0].label, '1')
+      assert.strictEqual(data.results[0].context.length, 1)
+      assert.strictEqual(data.results[0].context[0], 'Nothing')
     } finally {
       // Reset what we've changed
       workerModule.__set__('index', [])
