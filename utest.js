@@ -59,10 +59,14 @@ describe('Caches', function () {
       const cache = 'test_data/generic/test_recipe.cache'
       assert.isOk(fs.existsSync)
       fs.readFile(cache, 'utf8', function (error, content) {
-        if (error) throw error
+        if (error) {
+          throw error
+        }
         assert.include(content, 'fbdc7648558d2e55237f92296d61958f')
         fs.unlink(cache, function (error) {
-          if (error) throw error
+          if (error) {
+            throw error
+          }
           callback()
         })
       })
