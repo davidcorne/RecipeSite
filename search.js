@@ -30,7 +30,7 @@ const searchContext = function (query, content) {
     })
   }
   return {
-    context: context,
+    context,
     match: utils.occurrences(content.toLowerCase(), query, false)
   }
 }
@@ -65,7 +65,7 @@ const search = function (query, index) {
         path: file,
         displayPath: pathToDisplayPath(file),
         context: contextResult.context,
-        match: match
+        match
       })
     }
   })
@@ -104,8 +104,8 @@ const buildIndex = function (path, index) {
     readCacheFile(file, function (content) {
       tags.readTags(file, function (tags) {
         index.push({
-          'file': file,
-          'content': content,
+          file,
+          content,
           'tags': tags.tags
         })
       })
