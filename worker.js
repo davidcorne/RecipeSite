@@ -100,6 +100,22 @@ app.get('/public/*', function (request, response) {
   })
 })
 
+const searchIndex = function (data) {
+  // We've got a search index, actually search it.
+  const timer = utils.timer().start()
+  const results = search.search(data.query, index)
+  timer.stop()
+  data['key'] = partialLoad ? 'partial-load' : 'search'
+  // See if it's well spelled, as long as we've loaded a spellchecker
+  let suggestions = []
+  if (spell) {
+    suggestions = spell.suggest(data.query)
+  }
+  data['suggestions'] = suggestions
+  data['results'] = results
+  data['time'] = timer.milliseconds
+}
+
 app.get('/search', function (request, response) {
   logRequest(request)
   const data = {
@@ -109,20 +125,8 @@ app.get('/search', function (request, response) {
     // Send a search results not ready signal.
     sendTemplate(request, response, 'search-not-ready', data)
   } else {
-    // We've got a search index, actually search it.
-    const timer = utils.timer().start()
-    const results = search.search(data.query, index)
-    timer.stop()
-    const key = partialLoad ? 'partial-load' : 'search'
-    // See if it's well spelled, as long as we've loaded a spellchecker
-    let suggestions = []
-    if (spell) {
-      suggestions = spell.suggest(data.query)
-    }
-    data['suggestions'] = suggestions
-    data['results'] = results
-    data['time'] = timer.milliseconds
-    sendTemplate(request, response, key, data)
+    searchIndex(data)
+    sendTemplate(request, response, data.key, data)
   }
 })
 
