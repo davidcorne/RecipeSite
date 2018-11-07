@@ -23,11 +23,11 @@ const searchContext = function (query, content) {
     // make the context. Each line where the query appears.
     const lines = content.split(/\r?\n/)
 
-    for (let i = 0; i < lines.length; ++i) {
-      if (lines[i].toLowerCase().indexOf(query) > -1) {
-        context.push(lines[i])
+    lines.forEach(function (line) {
+      if (line.toLowerCase().indexOf(query) > -1) {
+        context.push(line)
       }
-    }
+    })
   }
   return {
     context: context,
