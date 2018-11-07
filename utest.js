@@ -247,6 +247,31 @@ describe('Search', function () {
     }
     waitForIndex()
   })
+  it('Integrated search', function () {
+    const index = [
+      {
+        'file': '1',
+        'content': 'Nothing',
+        'tags': []
+      },
+      {
+        'file': '2',
+        'content': 'but it does have apple',
+        'tags': ['tag']
+      }
+    ]
+    workerModule.__set__('index', index)
+    const searchIndex = workerModule.__get__('searchIndex')
+
+    let data = {'query': 'nothing'}
+    searchIndex(data)
+    assert.isNotNull(data.key)
+    assert.isNotNull(data.suggestions)
+    assert.isNotNull(data.results)
+    assert.isNotNull(data.time)
+    // Reset what we've changed
+    workerModule.__set__('index', [])
+  })
 })
 
 describe('Routing', function () {
