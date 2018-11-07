@@ -88,7 +88,9 @@ const readCacheFile = function (file, callback) {
           cacheFileName,
           'utf8',
           function (error, content) {
-            if (error) throw error
+            if (error) {
+              throw error
+            }
             // We don't want the first line, as it's the hash
             const hashless = content.split('\n').slice(1).join('\n')
             callback(hashless)
