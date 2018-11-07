@@ -1,3 +1,11 @@
+div#spelling-suggestions
+  if suggestions.length
+    p Did you mean: 
+      - for (var i = 0; i < suggestions.length; i++)
+        - const url = "/search?query=" + suggestions[i]
+        a(href=url) #{suggestions[i]}
+        if (i < suggestions.length - 1)
+          |, 
 div#search-result
   if results.length
     each item in results

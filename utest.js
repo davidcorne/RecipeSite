@@ -409,6 +409,37 @@ describe('Routing', function () {
       done()
     })
   })
+  it('Spelling suggestions', function (done) {
+    const app = workerModule.__get__('app')
+    const loadDictionary = workerModule.__get__('loadDictionary')
+    const index = [
+      {
+        'file': 'test',
+        'content': 'irrelevant',
+        'tags': []
+      }
+    ]
+    workerModule.__set__('index', index)
+    loadDictionary()
+    const testSuggestions = function () {
+      const server = app.listen()
+      request(server).get('/search?query=hallo').expect(200, function (error, response) {
+        if (error) throw error
+        // There should have been a spelling correction suggested
+        assert.include(response.text, 'hello')
+        done()
+      })
+    }
+    const waitForSpell = function () {
+      const spell = workerModule.__get__('spell')
+      if (spell) {
+        testSuggestions()
+        return
+      }
+      setTimeout(waitForSpell, 10)
+    }
+    waitForSpell()
+  })
 })
 describe('tags', function () {
   it('Schema', function () {

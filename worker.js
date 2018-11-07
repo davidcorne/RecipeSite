@@ -4,6 +4,8 @@ const pug = require('pug')
 const decode = require('urldecode')
 const path = require('path')
 const fs = require('fs')
+const dictionary = require('dictionary-en-gb')
+const nspell = require('nspell')
 
 const utils = require('./utils')
 const log = require('./log')
@@ -13,6 +15,8 @@ const fileList = require('./file-list')
 
 let index = []
 const recipeRoot = 'public/recipes'
+
+let spell = null
 
 // Compile a function
 const templates = {
@@ -96,6 +100,22 @@ app.get('/public/*', function (request, response) {
   })
 })
 
+const searchIndex = function (data) {
+  // We've got a search index, actually search it.
+  const timer = utils.timer().start()
+  const results = search.search(data.query, index)
+  timer.stop()
+  data['key'] = partialLoad ? 'partial-load' : 'search'
+  // See if it's well spelled, as long as we've loaded a spellchecker
+  let suggestions = []
+  if (spell) {
+    suggestions = spell.suggest(data.query)
+  }
+  data['suggestions'] = suggestions
+  data['results'] = results
+  data['time'] = timer.milliseconds
+}
+
 app.get('/search', function (request, response) {
   logRequest(request)
   const data = {
@@ -105,18 +125,24 @@ app.get('/search', function (request, response) {
     // Send a search results not ready signal.
     sendTemplate(request, response, 'search-not-ready', data)
   } else {
-    // We've got a search index, actually search it.
-    const timer = utils.timer().start()
-    const results = search.search(request.query.query, index)
-    timer.stop()
-    const key = partialLoad ? 'partial-load' : 'search'
-    data['results'] = results
-    data['time'] = timer.milliseconds
-    sendTemplate(request, response, key, data)
+    searchIndex(data)
+    sendTemplate(request, response, data.key, data)
   }
 })
 
+const loadDictionary = function () {
+  dictionary(function (error, dict) {
+    if (error) {
+      throw error
+    }
+    spell = nspell(dict)
+    spell.add('halloumi')
+  })
+}
+
 const start = function () {
+  // Load the dictionary
+  loadDictionary()
   http.listen(app.get('port'), function () {
     log.info('Listening on *:' + app.get('port'))
   })
