@@ -17,7 +17,9 @@ const getHtmlCacheContent = function (file, callback) {
       throw error
     }
     jsdom.env(content, function (error, window) {
-      if (error) throw error
+      if (error) {
+        throw error
+      }
       let markdown = ''
       const title = window.document.getElementsByTagName('title')[0]
       markdown += title.innerHTML
@@ -83,10 +85,14 @@ const getCacheContent = function (file, callback) {
 const cacheFile = function (file, callback) {
   getCacheContent(file, function (content) {
     md5(file, function (error, hash) {
-      if (error) throw error
+      if (error) {
+        throw error
+      }
       content = hash + '\n' + content
       fs.writeFile(utils.cachePath(file), content, 'utf8', function (error) {
-        if (error) throw error
+        if (error) {
+          throw error
+        }
         log.silly('Cache written: ' + file)
         callback()
       })
@@ -108,7 +114,9 @@ const cacheUpdate = function (file, updateFile) {
       // Check the md5 hashs match
       const cacheMd5 = firstline(cachePath)
       md5(file, function (error, hash) {
-        if (error) throw error
+        if (error) {
+          throw error
+        }
         cacheMd5.then(function (cacheHash) {
           if (cacheHash === hash) {
             log.silly('Cache up to date: ' + file)
@@ -138,7 +146,9 @@ const checkFileCache = function (file) {
     }
   })
   fs.stat(file, function (error, fileStats) {
-    if (error) throw error
+    if (error) {
+      throw error
+    }
   })
 }
 

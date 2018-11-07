@@ -11,7 +11,9 @@ const walk = function (dir, callback) {
     files.forEach(function (file) {
       const fullPath = path.join(dir, file)
       fs.stat(fullPath, function (error, stats) {
-        if (error) throw error
+        if (error) {
+          throw error
+        }
         if (stats.isDirectory()) {
           walk(fullPath, callback)
         } else {

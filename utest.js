@@ -77,10 +77,14 @@ describe('Caches', function () {
       const cache = 'test_data/generic/test_recipe.cache'
       assert.isOk(fs.existsSync(cache))
       fs.readFile(cache, 'utf8', function (error, content) {
-        if (error) throw error
+        if (error) {
+          throw error
+        }
         assert.include(content, '912dc7447439d9bff54b1002b538db24')
         fs.unlink(cache, function (error) {
-          if (error) throw error
+          if (error) {
+            throw error
+          }
           callback()
         })
       })
@@ -260,7 +264,9 @@ describe('Routing', function () {
       '/public/resources/index.css',
       '/search'
     ], testRoute, function (error) {
-      if (error) throw error
+      if (error) {
+        throw error
+      }
       server.close(done)
     })
   })
@@ -277,7 +283,9 @@ describe('Routing', function () {
       '/adsadsahdjasvdb',
       '/public/non-existant'
     ], test404, function (error) {
-      if (error) throw error
+      if (error) {
+        throw error
+      }
       server.close(done)
     })
   })
@@ -285,7 +293,9 @@ describe('Routing', function () {
     const app = workerModule.__get__('app')
     const server = app.listen()
     request(server).get('/search?query=bean').expect(200, function (error, response) {
-      if (error) throw error
+      if (error) {
+        throw error
+      }
       assert.include(response.text, 'Search results are not ready yet.')
       assert.include(response.text, 'public/resources/search-not-ready.js')
       done()
@@ -305,7 +315,9 @@ describe('Routing', function () {
     const server = app.listen()
     const runTest = function (callback) {
       request(server).get('/search?query=always').expect(200, function (error, response) {
-        if (error) throw error
+        if (error) {
+          throw error
+        }
         assert.include(
           response.text,
           'Your search - always - did not match any documents.'
@@ -322,7 +334,9 @@ describe('Routing', function () {
         runTest(cb)
       }
     ], function (error) {
-      if (error) throw error
+      if (error) {
+        throw error
+      }
       // Clean up after ourselves
       workerModule.__set__('partialLoad', false)
       workerModule.__set__('index', [])
@@ -349,7 +363,9 @@ describe('Routing', function () {
 
     const testFull = function (callback) {
       request(server).get('/search?query=a').expect(200, function (error, response) {
-        if (error) throw error
+        if (error) {
+          throw error
+        }
         // we care that there were some results, and that it wasn't a
         // partial search.
         assert.include(response.text, '2 results')
@@ -359,7 +375,9 @@ describe('Routing', function () {
     }
     const testBean = function (callback) {
       request(server).get('/search?query=bean').expect(200, function (error, response) {
-        if (error) throw error
+        if (error) {
+          throw error
+        }
         // We care that it found 1 thing, and it gives you context.
         assert.include(response.text, '1 result')
         assert.include(response.text, 'test 1')
@@ -370,7 +388,9 @@ describe('Routing', function () {
     }
     const testThis = function (callback) {
       request(server).get('/search?query=this').expect(200, function (error, response) {
-        if (error) throw error
+        if (error) {
+          throw error
+        }
         // We care that it found 2 things, and it gives you text from
         // both.
         assert.include(response.text, '2 results')
@@ -386,7 +406,9 @@ describe('Routing', function () {
       // Set the partial load flag
       workerModule.__set__('partialLoad', true)
       request(server).get('/search?query=bean').expect(200, function (error, response) {
-        if (error) throw error
+        if (error) {
+          throw error
+        }
         // We care that it found 1 things, and it recognises that it's
         // a partial search.
         assert.include(response.text, '1 result')
@@ -407,7 +429,9 @@ describe('Routing', function () {
       testThis,
       testPartial
     ], function (error) {
-      if (error) throw error
+      if (error) {
+        throw error
+      }
       // Clean up after ourselves
       workerModule.__set__('index', [])
       done()
@@ -428,7 +452,9 @@ describe('Routing', function () {
     const testSuggestions = function () {
       const server = app.listen()
       request(server).get('/search?query=hallo').expect(200, function (error, response) {
-        if (error) throw error
+        if (error) {
+          throw error
+        }
         // There should have been a spelling correction suggested
         assert.include(response.text, 'hello')
         done()
