@@ -34,6 +34,7 @@ const setupCallbacks = function () {
   // Add a hook to the online event, whenever we get a new worker we want it
   // to read the search index.
   cluster.on('online', function (worker) {
+    worker.process.send('read-commit-tag')
     worker.process.send('load-search-index')
   })
 }
