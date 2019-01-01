@@ -17,6 +17,7 @@ let index = []
 const recipeRoot = 'public/recipes'
 
 let spell = null
+let hash = null
 
 // Compile a function
 const templates = {
@@ -37,6 +38,16 @@ let partialLoad = false
 const loadSearchIndex = function () {
   partialLoad = false
   search.buildIndex(recipeRoot, index)
+  // HUGE HACK
+  fs.readFile('.git/HEAD', function (error, contents) {
+    if (error) throw error
+    const branch = utils.stripNewLine(contents.toString('utf8').split(' ')[1])
+    const branchFile = path.join('.git', branch)
+    fs.readFile(branchFile, function (error, commit) {
+      if (error) throw error
+      hash = utils.stripNewLine(commit.toString('utf8'))
+    })
+  })
 }
 
 const partialLoadSearchIndex = function () {
@@ -66,6 +77,8 @@ const logRequest = function (request) {
 
 const sendTemplate = function (request, response, key, data) {
   // don't do anything fancy yet
+  data['hash'] = hash
+  console.log(data)
   response.send(templates[key](data))
 }
 
