@@ -89,10 +89,6 @@ const foreachRecipe = function (directory, predicate) {
   })
 }
 
-const stripNewLine = function (stringIn) {
-  return stringIn.replace(/\r?\n|\r/g, '')
-}
-
 module.exports.occurrences = occurrences
 module.exports.pathToLabel = pathToLabel
 module.exports.cachePath = cachePath
@@ -100,4 +96,3 @@ module.exports.walk = walk
 module.exports.timer = timer
 module.exports.foreachRecipe = foreachRecipe
 module.exports.isRecipe = isRecipe
-module.exports.stripNewLine = stripNewLine
