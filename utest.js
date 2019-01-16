@@ -13,6 +13,7 @@ const searchModule = rewire('./search.js')
 const buildCacheModule = rewire('./build-cache.js')
 const workerModule = rewire('./worker.js')
 const tagsModule = rewire('./tags.js')
+const newRecipeModule = rewire('./new_recipe.js')
 
 console.log('Running Unit Tests')
 
@@ -559,5 +560,11 @@ describe('tags', function () {
       assert.isTrue(tags.includes('italian'))
       done()
     })
+  })
+})
+describe('new_recipe', function () {
+  const recipeFileName = newRecipeModule.__get__('recipeFileName')
+  it('Recipe file name', function () {
+    assert.strictEqual('hi.html', recipeFileName('hi'))
   })
 })

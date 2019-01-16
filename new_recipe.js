@@ -3,7 +3,11 @@
 const fs = require('fs')
 const path = require('path')
 
-const newRecipe = function (name) {
+const recipeFileName = function (name) {
+  return name + '.html'
+}
+
+const newRecipe = function (name, directory, callback) {
   const html = `<!DOCTYPE html>
   <html>
   <head>
@@ -28,13 +32,8 @@ const newRecipe = function (name) {
   </html>
   
   `
-  const fileName = name + '.html'
-  fs.writeFile(fileName, html, function (error) {
-    if (error) {
-      throw error
-    }
-    console.log('Wrote', fileName)
-  })
+  const fileName = path.join(directory, recipeFileName(name))
+  fs.writeFile(fileName, html, callback)
 }
 
 const main = function () {
@@ -43,7 +42,12 @@ const main = function () {
     .version('1.0.0')
     .parse(process.argv)
   program.args.forEach(recipe => {
-    newRecipe(recipe)
+    newRecipe(recipe, '.', function (error) {
+      if (error) {
+        throw error
+      }
+      console.log('Wrote', recipe)
+    })
   })
 }
 
