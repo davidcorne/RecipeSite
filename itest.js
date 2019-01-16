@@ -15,6 +15,7 @@ const buildCache = require('./build-cache')
 const tags = require('./tags')
 
 const tagsModule = rewire('./tags.js')
+const newRecipeModule = rewire('./new_recipe.js')
 
 // Turn off application logging
 winston.level = 'silent'
@@ -191,6 +192,31 @@ describe('tags', function () {
       // Ensure that the tags are lower case
       t.tags.forEach(tag => {
         assert.strictEqual(tag, tag.toLowerCase())
+      })
+    })
+  })
+})
+describe('new_recipe', function () {
+  it('build new recipe', function (done) {
+    const newRecipe = newRecipeModule.__get__('newRecipe')
+    const recipeFileName = newRecipeModule.__get__('recipeFileName')
+    const name = 'This is a new recipe'
+    const fileName = recipeFileName(name)
+    newRecipe(name, '.', function (error) {
+      assert.isNull(error)
+      fs.readFile(fileName, function (error, buffer) {
+        assert.isNull(error)
+        const content = buffer.toString('utf8')
+
+        // The recipe should have the recipe name as a title and header
+        assert.include(content, '<title>' + name + '</title>')
+        assert.include(content, '# ' + name + ' #')
+
+        // Clean up after the test, then we're done
+        fs.unlink(fileName, function (error) {
+          assert.isNull(error)
+          done()
+        })
       })
     })
   })
