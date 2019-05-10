@@ -17,16 +17,16 @@ const newRecipe = function (name, directory, callback) {
   <title>` + name + `</title>
   
   <xmp theme="cerulean" style="display:none;">
-  # ` + name + ` # 
-  
-  ## Ingredients ## 
-  
-  
-  ## Method ## 
-  
-  °C ½ ¼
-  
-  </xmp>
+# ` + name + ` # 
+
+## Ingredients ## 
+
+
+## Method ## 
+
+°C ½ ¼
+
+</xmp>
   
   <script src="/public/resources/strapdown.js"></script>
   </html>
