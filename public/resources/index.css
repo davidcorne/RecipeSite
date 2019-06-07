@@ -217,8 +217,11 @@ summary{
 
 /*===========================================================================*/
 /* Debug style */
-#debug {
+.debug {
     color: red;
+}
+
+#debug-view {
     font-weight: bold;
     padding: 4px;
     padding-left: 300px;

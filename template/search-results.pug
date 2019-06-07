@@ -13,6 +13,8 @@ div#search-result
         h3.search-header
           a(href=item.path, target="_blank") #{item.label}
         p.display-path #{item.displayPath}
+        if debugView
+          p.debug Match: #{item.match}
         each line in item.context
           p.line #{line}
   else
