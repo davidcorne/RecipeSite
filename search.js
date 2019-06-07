@@ -6,6 +6,13 @@ const utils = require('./utils')
 const log = require('./log')
 const tags = require('./tags')
 
+const matchingConstants = {
+  SingleInstance: 1,
+  WholePhrase: 4,
+  FileName: 40,
+  Tag: 10
+}
+
 const pathToDisplayPath = function (file) {
   // comes in as public\recipes\A\B\C.X want to display A/B/C
   let displayPath = file.replace(/\\/g, '/')
@@ -44,12 +51,12 @@ const searchContext = function (query, content) {
     const lowerLine = line.toLowerCase()
     queryArray.forEach(queryPart => {
       if (lowerLine.indexOf(queryPart) > -1) {
-        match += utils.occurrences(lowerLine, queryPart, false)
+        match += (matchingConstants.SingleInstance * utils.occurrences(lowerLine, queryPart, false))
       }
     })
     // find the whole phrase
     if (lowerLine.indexOf(query) > -1) {
-      match += 4
+      match += matchingConstants.WholePhrase
     }
     context.push(line)
   })
@@ -73,11 +80,11 @@ const search = function (query, index) {
     if (file.toLowerCase().indexOf(query) > -1) {
       // As the search query is in the title, I think it's pretty related to
       // the search, give it a high gearing
-      match += 40
+      match += matchingConstants.FileName
     }
     item.tags.forEach(function (tag) {
       if (tag.indexOf(query) > -1) {
-        match += 10
+        match += matchingConstants.Tag
       }
     })
     // Search the file
