@@ -63,7 +63,7 @@ const searchContext = function (query, content) {
 
   return {
     context: context,
-    match: match // utils.occurrences(content.toLowerCase(), query, false)
+    match: match
   }
 }
 
