@@ -44,7 +44,7 @@ const searchContext = function (query, content) {
     const lowerLine = line.toLowerCase()
     queryArray.forEach(queryPart => {
       if (lowerLine.indexOf(queryPart) > -1) {
-        match += 1
+        match += utils.occurrences(lowerLine, queryPart, false)
       }
     })
     // find the whole phrase
