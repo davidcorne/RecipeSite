@@ -47,13 +47,14 @@ const searchContext = function (query, content) {
   const keys = Object.keys(contextMap).sort()
   const context = []
   const lowerContextArray = []
+  const singleInstanceFactor = (matchingConstants.SingleInstance / queryArray.length)
   let match = 0
   keys.forEach(key => {
     const line = contextMap[key]
     const lowerLine = line.toLowerCase()
     queryArray.forEach(queryPart => {
       if (lowerLine.indexOf(queryPart) > -1) {
-        match += (matchingConstants.SingleInstance * utils.occurrences(lowerLine, queryPart, false))
+        match += singleInstanceFactor * utils.occurrences(lowerLine, queryPart, false)
       }
     })
     // find the whole phrase
