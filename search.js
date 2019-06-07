@@ -8,9 +8,10 @@ const tags = require('./tags')
 
 const matchingConstants = {
   SingleInstance: 1,
+  AllUsed: 10,
   WholePhrase: 4,
   FileName: 40,
-  Tag: 10
+  Tag: 20
 }
 
 const pathToDisplayPath = function (file) {
@@ -45,6 +46,7 @@ const searchContext = function (query, content) {
   // Also build the context array at this point
   const keys = Object.keys(contextMap).sort()
   const context = []
+  const lowerContextArray = []
   let match = 0
   keys.forEach(key => {
     const line = contextMap[key]
@@ -59,8 +61,21 @@ const searchContext = function (query, content) {
       match += matchingConstants.WholePhrase
     }
     context.push(line)
+    lowerContextArray.push(lowerLine)
   })
 
+  const lowerContext = lowerContextArray.join('\n')
+  // Find if each component of the phrase was used. Just look in the context so you're searching less
+  let allUsed = true
+  queryArray.forEach(word => {
+    // If we don't find it, set it false and stop
+    if (lowerContext.indexOf(word) === -1) {
+      allUsed = false
+    }
+  })
+  if (allUsed) {
+    match += matchingConstants.AllUsed
+  }
   return {
     context: context,
     match: match
