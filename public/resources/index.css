@@ -214,3 +214,14 @@ summary{
 .conversion {
     float: left;
 }
+
+/*===========================================================================*/
+/* Debug style */
+#debug {
+    color: red;
+    font-weight: bold;
+    padding: 4px;
+    padding-left: 300px;
+    margin: 0px;
+    margin-bottom: 7px;
+}
