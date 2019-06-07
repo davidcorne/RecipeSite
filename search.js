@@ -17,21 +17,46 @@ const pathToDisplayPath = function (file) {
 const searchContext = function (query, content) {
   // Note: content comes in mixed case, so that the context is added in the
   // correct case for the user.
-  const context = []
-  if (content.toLowerCase().indexOf(query) > -1) {
-    // Found something
-    // make the context. Each line where the query appears.
-    const lines = content.split(/\r?\n/)
+  const contextMap = {}
+  const lowerContent = content.toLowerCase()
+  const queryArray = query.split(' ')
+  const lines = content.split(/\r?\n/)
 
-    lines.forEach(function (line) {
-      if (line.toLowerCase().indexOf(query) > -1) {
-        context.push(line)
+  // Gather all of the context
+  queryArray.forEach(part => {
+    if (lowerContent.indexOf(part) > -1) {
+      // Found something
+      for (const [index, line] of lines.entries()) {
+        if (line.toLowerCase().indexOf(part) > -1) {
+          contextMap[index] = line
+        }
+      }
+    }
+  })
+
+  // Now work out how well it matches, 1 point for each mention of each word, 4 for each whole phrase.
+  // Also build the context array at this point
+  const keys = Object.keys(contextMap).sort()
+  const context = []
+  let match = 0
+  keys.forEach(key => {
+    const line = contextMap[key]
+    const lowerLine = line.toLowerCase()
+    queryArray.forEach(queryPart => {
+      if (lowerLine.indexOf(queryPart) > -1) {
+        match += utils.occurrences(lowerLine, queryPart, false)
       }
     })
-  }
+    // find the whole phrase
+    if (lowerLine.indexOf(query) > -1) {
+      match += 4
+    }
+    context.push(line)
+  })
+
   return {
-    context,
-    match: utils.occurrences(content.toLowerCase(), query, false)
+    context: context,
+    match: match // utils.occurrences(content.toLowerCase(), query, false)
   }
 }
 
@@ -48,11 +73,11 @@ const search = function (query, index) {
     if (file.toLowerCase().indexOf(query) > -1) {
       // As the search query is in the title, I think it's pretty related to
       // the search, give it a high gearing
-      match += 20
+      match += 40
     }
     item.tags.forEach(function (tag) {
       if (tag.indexOf(query) > -1) {
-        match += 5
+        match += 10
       }
     })
     // Search the file

@@ -108,7 +108,6 @@ describe('Search', function () {
     assert.strictEqual(result.label, expected.label)
     assert.strictEqual(result.path, expected.path)
     assert.strictEqual(result.displayPath, expected.displayPath)
-    assert.strictEqual(result.match, expected.match)
     assert.strictEqual(result.context.length, expected.context.length)
     for (let i = 0; i < expected.context.length; ++i) {
       assert.strictEqual(result.context[i], expected.context[i])
@@ -144,15 +143,13 @@ describe('Search', function () {
         label: 'd',
         path: path.join('A', 'C', 'd.path'),
         displayPath: 'A/C/d',
-        context: ['This is FOUND, but more found!'],
-        match: 2 // 2 instances of found
+        context: ['This is FOUND, but more found!']
       },
       {
         label: 'c',
         path: path.join('A', 'B', 'c.path'),
         displayPath: 'A/B/c',
-        context: ['This is found'],
-        match: 1 // 1 instance of found
+        context: ['This is found']
       }
     ]
     assert.strictEqual(results.length, 2)
@@ -282,6 +279,36 @@ describe('Search', function () {
       // Reset what we've changed
       workerModule.__set__('index', [])
     }
+  })
+  it('Multiple terms', function () {
+    const search = searchModule.__get__('search')
+    const index = []
+    index.push({
+      'file': 'one',
+      'content': 'lorum keyword ipsum\nother other stuff',
+      'tags': []
+    })
+    index.push({
+      'file': 'two',
+      'content': 'keyword other\nlorum ipsum',
+      'tags': []
+    })
+    index.push({
+      'file': 'three',
+      'content': 'keyword',
+      'tags': []
+    })
+    index.push({
+      'file': 'four',
+      'content': 'No match here',
+      'tags': []
+    })
+    const results = search('keyword other', index)
+    assert.strictEqual(results.length, 3)
+    // Should rank finding the whole phrase higher than finding it separated. It should rank finding only some of the words lowest.
+    assert.strictEqual(results[0].label, 'two')
+    assert.strictEqual(results[1].label, 'one')
+    assert.strictEqual(results[2].label, 'three')
   })
 })
 
