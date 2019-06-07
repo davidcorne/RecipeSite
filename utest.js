@@ -283,6 +283,36 @@ describe('Search', function () {
       workerModule.__set__('index', [])
     }
   })
+  it('Multiple terms', function () {
+    const search = searchModule.__get__('search')
+    const index = []
+    index.push({
+      'file': 'one',
+      'content': 'lorum keyword ipsum\nother other stuff',
+      'tags': []
+    })
+    index.push({
+      'file': 'two',
+      'content': 'keyword other\nlorum ipsum',
+      'tags': []
+    })
+    index.push({
+      'file': 'three',
+      'content': 'keyword',
+      'tags': []
+    })
+    index.push({
+      'file': 'four',
+      'content': 'No match here',
+      'tags': []
+    })
+    const results = search('keyword other', index)
+    assert.strictEqual(results.length, 3)
+    // Should rank finding the whole phrase higher than finding it separated. It should rank finding only some of the words lowest.
+    assert.strictEqual(results[0].label, 'two')
+    assert.strictEqual(results[1].label, 'one')
+    assert.strictEqual(results[2].label, 'three')
+  })
 })
 
 describe('Routing', function () {
