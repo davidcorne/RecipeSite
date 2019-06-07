@@ -27,7 +27,7 @@ const searchContext = function (query, content) {
     if (lowerContent.indexOf(part) > -1) {
       // Found something
       for (const [index, line] of lines.entries()) {
-        if (line.toLowerCase().indexOf(query) > -1) {
+        if (line.toLowerCase().indexOf(part) > -1) {
           contextMap[index] = line
         }
       }
