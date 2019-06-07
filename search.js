@@ -73,11 +73,11 @@ const search = function (query, index) {
     if (file.toLowerCase().indexOf(query) > -1) {
       // As the search query is in the title, I think it's pretty related to
       // the search, give it a high gearing
-      match += 20
+      match += 40
     }
     item.tags.forEach(function (tag) {
       if (tag.indexOf(query) > -1) {
-        match += 5
+        match += 10
       }
     })
     // Search the file
