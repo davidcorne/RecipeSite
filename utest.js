@@ -108,7 +108,6 @@ describe('Search', function () {
     assert.strictEqual(result.label, expected.label)
     assert.strictEqual(result.path, expected.path)
     assert.strictEqual(result.displayPath, expected.displayPath)
-    assert.strictEqual(result.match, expected.match)
     assert.strictEqual(result.context.length, expected.context.length)
     for (let i = 0; i < expected.context.length; ++i) {
       assert.strictEqual(result.context[i], expected.context[i])
@@ -144,15 +143,13 @@ describe('Search', function () {
         label: 'd',
         path: path.join('A', 'C', 'd.path'),
         displayPath: 'A/C/d',
-        context: ['This is FOUND, but more found!'],
-        match: 2 // 2 instances of found
+        context: ['This is FOUND, but more found!']
       },
       {
         label: 'c',
         path: path.join('A', 'B', 'c.path'),
         displayPath: 'A/B/c',
-        context: ['This is found'],
-        match: 1 // 1 instance of found
+        context: ['This is found']
       }
     ]
     assert.strictEqual(results.length, 2)
