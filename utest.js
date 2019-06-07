@@ -310,6 +310,32 @@ describe('Search', function () {
     assert.strictEqual(results[1].label, 'one')
     assert.strictEqual(results[2].label, 'three')
   })
+  it('Multiple terms all used', function () {
+    // This tests that if you search using multiple terms, it ranks results which has
+    // all of the terms present higher.
+    const search = searchModule.__get__('search')
+    const index = []
+    index.push({
+      'file': 'one',
+      'content': 'aa cc',
+      'tags': []
+    })
+    index.push({
+      'file': 'two',
+      'content': 'bb bb bb cc',
+      'tags': []
+    })
+    index.push({
+      'file': 'three',
+      'content': 'bb aa cc',
+      'tags': []
+    })
+    const results = search('aa bb', index)
+    assert.strictEqual(results.length, 3)
+    assert.strictEqual(results[0].label, 'three')
+    assert.strictEqual(results[1].label, 'two')
+    assert.strictEqual(results[2].label, 'one')
+  })
 })
 
 describe('Routing', function () {
