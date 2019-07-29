@@ -1,8 +1,8 @@
 
 const highlight = {}
 
-highlight.highlightSearchResults = function (query) {
-  const expression = new RegExp('(' + query + ')', 'gi')
+highlight.highlightWord = function (word) {
+  const expression = new RegExp('(' + word + ')', 'gi')
   const list = document.getElementById('search-result')
   if (list) {
     const paragraphs = list.getElementsByTagName('p')
@@ -14,4 +14,11 @@ highlight.highlightSearchResults = function (query) {
       )
     }
   }
+}
+
+highlight.highlightSearchResults = function (query) {
+  const querySplit = query.split(' ')
+  querySplit.forEach(word => {
+    highlight.highlightWord(word)
+  })
 }

@@ -33,6 +33,7 @@ const http = require('http').Server(app)
 app.set('port', (process.env.PORT || 3000))
 
 let partialLoad = false
+let debugView = false
 
 const loadSearchIndex = function () {
   partialLoad = false
@@ -58,19 +59,20 @@ process.on('message', function (message) {
   }
 })
 
-const logRequest = function (request) {
+const onRequest = function (request) {
   log.debug(
     'Request: ' + request.path + ' ' + JSON.stringify(request.query)
   )
+  debugView = 'debug' in request.query
 }
 
 const sendTemplate = function (request, response, key, data) {
-  // don't do anything fancy yet
+  data.debugView = debugView
   response.send(templates[key](data))
 }
 
 app.get('/', function (request, response) {
-  logRequest(request)
+  onRequest(request)
   const locals = {
     recipes: fileList.generateFileList()
   }
@@ -78,7 +80,7 @@ app.get('/', function (request, response) {
 })
 
 app.get('/conversion', function (request, response) {
-  logRequest(request)
+  onRequest(request)
   // A list of the conversions that we cover.
   sendTemplate(
     request,
@@ -89,7 +91,7 @@ app.get('/conversion', function (request, response) {
 })
 
 app.get('/public/*', function (request, response) {
-  logRequest(request)
+  onRequest(request)
   const filePath = path.join(__dirname, decode(request.path))
   fs.stat(filePath, function (error, stats) {
     if (error) {
@@ -117,7 +119,7 @@ const searchIndex = function (data) {
 }
 
 app.get('/search', function (request, response) {
-  logRequest(request)
+  onRequest(request)
   const data = {
     query: request.query.query
   }
