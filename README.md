@@ -2,6 +2,13 @@
 
 This is an unorignally named site to organise my recipes. It's built with node.js, and one of the nicest things about it is the ability to search anything on it. This used to be slow, so now the search index is cached in git rather than generating it (a better solution is make the site generic, and have a separate database for both recipes and searching).
 
+## Docker
+
+If you want to use docker for this, you'll want commands like:
+
+- `docker build -t recipe-site .`
+- `docker run -p <your-port>:8080 recipe-site`, e.g. `docker run -p 3000:8080 recipe-site`
+
 ## Hosting
 
 I use heroku to host an instance of this [here](https://salty-harbor-48823.herokuapp.com).
