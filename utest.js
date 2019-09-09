@@ -594,6 +594,44 @@ describe('Routing', function () {
     }
     waitForSpell()
   })
+  it('Malformed search', function (done) {
+    const app = workerModule.__get__('app')
+    const loadDictionary = workerModule.__get__('loadDictionary')
+    const index = [
+      {
+        'file': 'A',
+        'content': 'Some content',
+        'tags': []
+      },
+      {
+        'file': 'B',
+        'content': 'Some more content',
+        'tags': []
+      }
+    ]
+    workerModule.__set__('index', index)
+    loadDictionary()
+    const testSuggestions = function () {
+      const server = app.listen()
+      request(server).get('/search?query=Brownie+').expect(200, function (error, response) {
+        if (error) {
+          throw error
+        }
+        // We expect to not get any search results back
+        assert.include(response.text, '0 results')
+        done()
+      })
+    }
+    const waitForSpell = function () {
+      const spell = workerModule.__get__('spell')
+      if (spell) {
+        testSuggestions()
+        return
+      }
+      setTimeout(waitForSpell, 10)
+    }
+    waitForSpell()
+  })
 })
 describe('tags', function () {
   it('Schema', function () {
