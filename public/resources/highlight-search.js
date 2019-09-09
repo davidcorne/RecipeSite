@@ -17,7 +17,7 @@ highlight.highlightWord = function (word) {
 }
 
 highlight.highlightSearchResults = function (query) {
-  const querySplit = query.split(' ')
+  const querySplit = query.trim().split(' ')
   querySplit.forEach(word => {
     highlight.highlightWord(word)
   })
