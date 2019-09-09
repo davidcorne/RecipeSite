@@ -336,6 +336,41 @@ describe('Search', function () {
     assert.strictEqual(results[1].label, 'two')
     assert.strictEqual(results[2].label, 'one')
   })
+  it('Trailing and leading space', function () {
+    // This tests that if you search something with a trailing or leading space, it will return sensible results
+    const search = searchModule.__get__('search')
+    const index = []
+    index.push({
+      'file': 'one',
+      'content': 'There is no sensible result here',
+      'tags': []
+    })
+    index.push({
+      'file': 'two',
+      'content': 'More random strings',
+      'tags': []
+    })
+    {
+      // Trailing
+      const results = search('Not found ', index)
+      assert.strictEqual(results.length, 0)
+    }
+    {
+      // Leading
+      const results = search(' Not found', index)
+      assert.strictEqual(results.length, 0)
+    }
+    {
+      // Both
+      const results = search(' Not found ', index)
+      assert.strictEqual(results.length, 0)
+    }
+    {
+      // An actual result
+      const results = search(' More random ', index)
+      assert.strictEqual(results.length, 1)
+    }
+  })
 })
 
 describe('Routing', function () {
@@ -546,6 +581,44 @@ describe('Routing', function () {
         }
         // There should have been a spelling correction suggested
         assert.include(response.text, 'hello')
+        done()
+      })
+    }
+    const waitForSpell = function () {
+      const spell = workerModule.__get__('spell')
+      if (spell) {
+        testSuggestions()
+        return
+      }
+      setTimeout(waitForSpell, 10)
+    }
+    waitForSpell()
+  })
+  it('Malformed search', function (done) {
+    const app = workerModule.__get__('app')
+    const loadDictionary = workerModule.__get__('loadDictionary')
+    const index = [
+      {
+        'file': 'A',
+        'content': 'Some content',
+        'tags': []
+      },
+      {
+        'file': 'B',
+        'content': 'Some more content',
+        'tags': []
+      }
+    ]
+    workerModule.__set__('index', index)
+    loadDictionary()
+    const testSuggestions = function () {
+      const server = app.listen()
+      request(server).get('/search?query=Brownie+').expect(200, function (error, response) {
+        if (error) {
+          throw error
+        }
+        // We expect to not get any search results back
+        assert.include(response.text, '0 results')
         done()
       })
     }
