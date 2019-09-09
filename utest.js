@@ -336,6 +336,41 @@ describe('Search', function () {
     assert.strictEqual(results[1].label, 'two')
     assert.strictEqual(results[2].label, 'one')
   })
+  it('Trailing and leading space', function () {
+    // This tests that if you search something with a trailing or leading space, it will return sensible results
+    const search = searchModule.__get__('search')
+    const index = []
+    index.push({
+      'file': 'one',
+      'content': 'There is no sensible result here',
+      'tags': []
+    })
+    index.push({
+      'file': 'two',
+      'content': 'More random strings',
+      'tags': []
+    })
+    {
+      // Trailing
+      const results = search('Not found ', index)
+      assert.strictEqual(results.length, 0)
+    }
+    {
+      // Leading
+      const results = search(' Not found', index)
+      assert.strictEqual(results.length, 0)
+    }
+    {
+      // Both
+      const results = search(' Not found ', index)
+      assert.strictEqual(results.length, 0)
+    }
+    {
+      // An actual result
+      const results = search(' More random ', index)
+      assert.strictEqual(results.length, 1)
+    }
+  })
 })
 
 describe('Routing', function () {
