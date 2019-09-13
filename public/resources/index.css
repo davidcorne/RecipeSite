@@ -235,7 +235,7 @@ summary{
 /* the footer. */
 #page-container {
     position: relative;
-    min-height: 100vh;
+    min-height: 95vh;
 }
 
 #content-wrap {
@@ -249,4 +249,5 @@ summary{
     position: absolute;
     bottom: 0;
     height: 2.5rem;
+    width: 100%;
 }
