@@ -111,7 +111,6 @@ a:hover {
     font-size:85%;
     margin: 0;
     margin-left: 6px;
-    margin-bottom: 10px;
     color: #006621;
     display: inline;
 }
@@ -123,6 +122,10 @@ p.line {
 
 .collapse {
     display: none;
+}
+
+.search-details {
+    margin-bottom: 10px;
 }
 
 .search-context {
