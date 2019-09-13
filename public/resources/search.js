@@ -32,16 +32,20 @@ search.addCollapseListeners = function () {
     if (height > 230) {
       // This is a large search, limit it's height and show it's collapse button
       context.style.maxHeight = search.maxHeight
-      const button = context.previousElementSibling
-      button.style.display = 'block'
+      // Find the search details
+      let searchDetails = context.previousElementSibling
+      while (searchDetails.className !== 'search-details') {
+        searchDetails = searchDetails.previousElementSibling
+      }
+      const button = searchDetails.firstChild
+      button.style.display = 'inline'
       button.addEventListener('click', function () {
-        let searchContext = this.nextElementSibling
         // Flip the search context size between collapsed and expanded
-        if (searchContext.style.maxHeight === 'none') {
-          searchContext.style.maxHeight = search.maxHeight
+        if (context.style.maxHeight === 'none') {
+          context.style.maxHeight = search.maxHeight
           this.innerHTML = '+'
         } else {
-          searchContext.style.maxHeight = 'none'
+          context.style.maxHeight = 'none'
           this.innerHTML = '-'
         }
       })

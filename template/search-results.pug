@@ -12,10 +12,11 @@ div#search-result
       div
         h3.search-header
           a(href=item.path, target="_blank") #{item.label}
-        p.display-path #{item.displayPath}
+        div.search-details
+          button.collapse +
+          p.display-path #{item.displayPath}
         if debugView
           p.debug Match: #{item.match}
-        button.collapse +
         div.search-context
           each line in item.context
             p.line #{line}
