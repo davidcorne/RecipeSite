@@ -34,6 +34,7 @@ app.set('port', (process.env.PORT || 3000))
 
 let partialLoad = false
 let debugView = false
+let gitCommitSha = ''
 
 const loadSearchIndex = function () {
   partialLoad = false
@@ -51,11 +52,13 @@ const messageMap = {
 }
 
 process.on('message', function (message) {
-  log.debug('Recieved ' + message)
+  log.debug('Recieved ' + JSON.stringify(message))
   if (message in messageMap) {
     messageMap[message]()
+  } else if (message.git_commit_sha) {
+    gitCommitSha = message.git_commit_sha
   } else {
-    log.error('Unknown message "' + message + '"')
+    log.error('Unknown message "' + JSON.stringify(message) + '"')
   }
 })
 
@@ -68,6 +71,7 @@ const onRequest = function (request) {
 
 const sendTemplate = function (request, response, key, data) {
   data.debugView = debugView
+  data.git_commit_sha = gitCommitSha
   response.send(templates[key](data))
 }
 
