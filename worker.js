@@ -56,7 +56,7 @@ process.on('message', function (message) {
   if (message in messageMap) {
     messageMap[message]()
   } else if (message.git_commit_sha) {
-    gitCommitSha = message.git_sha_commit
+    gitCommitSha = message.git_commit_sha
   } else {
     log.error('Unknown message "' + JSON.stringify(message) + '"')
   }
@@ -71,6 +71,7 @@ const onRequest = function (request) {
 
 const sendTemplate = function (request, response, key, data) {
   data.debugView = debugView
+  data.git_commit_sha = gitCommitSha
   response.send(templates[key](data))
 }
 
