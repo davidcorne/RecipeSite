@@ -20,5 +20,12 @@ div#search-result
         div.search-context
           each line in item.context
             p.line #{line}
+    div.page-numbers
+      if results_length > 20
+        - const pages = Math.floor(results_length / 20)
+        - let n = 1
+        while n < pages
+          a(href="/search?query=" + query + "&page=" + n) #{n}
+          - n++
   else
     p Your search - #{query} - did not match any documents.
