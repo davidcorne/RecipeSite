@@ -23,19 +23,29 @@ search.highlight.highlightSearchResults = function (query) {
   })
 }
 
+search.maxHeight = '230px'
+
 search.addCollapseListeners = function () {
-  const buttons = document.getElementsByClassName('collapse')
-  for (let button of buttons) {
-    button.addEventListener('click', function () {
-      let searchContext = this.nextElementSibling
-      if (searchContext.style.maxHeight === 'none') {
-        searchContext.style.maxHeight = '230px'
-        this.innerHTML = '+'
-      } else {
-        searchContext.style.maxHeight = 'none'
-        this.innerHTML = '-'
-      }
-    })
+  const searchContexts = document.getElementsByClassName('search-context')
+  for (let context of searchContexts) {
+    const height = context.clientHeight
+    if (height > 230) {
+      // This is a large search, limit it's height and show it's collapse button
+      context.style.maxHeight = search.maxHeight
+      const button = context.previousElementSibling
+      button.style.display = 'block'
+      button.addEventListener('click', function () {
+        let searchContext = this.nextElementSibling
+        // Flip the search context size between collapsed and expanded
+        if (searchContext.style.maxHeight === 'none') {
+          searchContext.style.maxHeight = search.maxHeight
+          this.innerHTML = '+'
+        } else {
+          searchContext.style.maxHeight = 'none'
+          this.innerHTML = '-'
+        }
+      })
+    }
   }
 }
 
