@@ -228,3 +228,25 @@ summary{
     margin: 0px;
     margin-bottom: 7px;
 }
+
+
+/*===========================================================================*/
+/* Add a page container and content wrapping container to properly position */
+/* the footer. */
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
+
+/*===========================================================================*/
+/* Footer style */
+#footer {
+    color: #3366FF;
+    position: absolute;
+    bottom: 0;
+    height: 2.5rem;
+}
