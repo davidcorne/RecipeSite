@@ -55,7 +55,7 @@ process.on('message', function (message) {
   if (message in messageMap) {
     messageMap[message]()
   } else {
-    log.error('Unknown message "' + message + '"')
+    log.error('Unknown message "' + JSON.stringify(message) + '"')
   }
 })
 
