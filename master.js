@@ -42,12 +42,18 @@ const setupCallbacks = function () {
 }
 
 const getGitCommitShaSync = function () {
-  const rev = fs.readFileSync('.git/HEAD').toString()
-  if (rev.indexOf(':') === -1) {
-    return rev
+  if (process.env.HEROKU_SLUG_COMMIT) {
+    // We're in the Heroku environment, just get it from the meta-data
+    return process.env.HEROKU_SLUG_COMMIT
   } else {
-    const branch = rev.substring(5).trim()
-    return fs.readFileSync('.git/' + branch).toString().trim()
+    // We're not in Heroku, read the git file ourselves
+    const rev = fs.readFileSync('.git/HEAD').toString()
+    if (rev.indexOf(':') === -1) {
+      return rev
+    } else {
+      const branch = rev.substring(5).trim()
+      return fs.readFileSync('.git/' + branch).toString().trim()
+    }
   }
 }
 
