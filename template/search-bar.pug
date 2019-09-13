@@ -9,5 +9,5 @@ form.search(action="search")
     ).search-bar
     input(type="submit", value="Go")
     if results
-      - const text = results.length === 1 ? 'result' : 'results';
+      - const text = results_length === 1 ? 'result' : 'results';
       p#search-stats #{results_length} #{text} (#{time} milliseconds)
