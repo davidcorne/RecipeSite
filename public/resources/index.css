@@ -111,13 +111,30 @@ a:hover {
     font-size:85%;
     margin: 0;
     margin-left: 6px;
-    margin-bottom: 10px;
     color: #006621;
+    display: inline;
 }
 
 p.line {
     margin-bottom: 4px;
     margin-top: 2px;
+}
+
+.collapse {
+    font-family: 'Courier New', Courier, monospace;
+    font-size:120%;
+    font-weight: bold;
+    color: #006621;
+    cursor: pointer;
+    display: none; /* Don't display a collapse button by default */
+}
+
+.search-details {
+    margin-bottom: 10px;
+}
+
+.search-context {
+    overflow: hidden;
 }
 
 .search-header {
