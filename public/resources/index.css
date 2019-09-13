@@ -121,7 +121,12 @@ p.line {
 }
 
 .collapse {
-    display: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:120%;
+    font-weight: bold;
+    color: #006621;
+    cursor: pointer;
+    display: none; /* Don't display a collapse button by default */
 }
 
 .search-details {
