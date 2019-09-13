@@ -10,4 +10,4 @@ form.search(action="search")
     input(type="submit", value="Go")
     if results
       - const text = results.length === 1 ? 'result' : 'results';
-      p#search-stats #{results.length} #{text} (#{time} milliseconds)
+      p#search-stats #{results_length} #{text} (#{time} milliseconds)
