@@ -1,6 +1,16 @@
 /*===========================================================================*/
 /* General style */
 
+.showOnMobile {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .showOnMobile {
+        display: block;
+    }
+}
+
 .inactiveLink {
    pointer-events: none;
    cursor: default;
@@ -227,4 +237,27 @@ summary{
     padding-left: 300px;
     margin: 0px;
     margin-bottom: 7px;
+}
+
+
+/*===========================================================================*/
+/* Add a page container and content wrapping container to properly position */
+/* the footer. */
+#page-container {
+    position: relative;
+    min-height: 95vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
+
+/*===========================================================================*/
+/* Footer style */
+#footer {
+    color: #3366FF;
+    position: absolute;
+    bottom: 0;
+    height: 2.5rem;
+    width: 100%;
 }
