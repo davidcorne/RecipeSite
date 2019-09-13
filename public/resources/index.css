@@ -120,6 +120,11 @@ p.line {
     margin-top: 2px;
 }
 
+.search-context {
+    max-height: 230px; /* Approximately 10 lines, this can cut text in half if there are line breaks. */
+    overflow: hidden;
+}
+
 .search-header {
     margin-bottom: 5px;
 }

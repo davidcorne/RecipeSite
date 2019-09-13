@@ -15,7 +15,9 @@ div#search-result
         p.display-path #{item.displayPath}
         if debugView
           p.debug Match: #{item.match}
-        each line in item.context
-          p.line #{line}
+        button.collapse +
+        div.search-context
+          each line in item.context
+            p.line #{line}
   else
     p Your search - #{query} - did not match any documents.
