@@ -1,7 +1,7 @@
+const search = {}
+search.highlight = {}
 
-const highlight = {}
-
-highlight.highlightWord = function (word) {
+search.highlight.highlightWord = function (word) {
   const expression = new RegExp('(' + word + ')', 'gi')
   const list = document.getElementById('search-result')
   if (list) {
@@ -16,9 +16,30 @@ highlight.highlightWord = function (word) {
   }
 }
 
-highlight.highlightSearchResults = function (query) {
+search.highlight.highlightSearchResults = function (query) {
   const querySplit = query.trim().split(' ')
   querySplit.forEach(word => {
-    highlight.highlightWord(word)
+    search.highlight.highlightWord(word)
   })
+}
+
+search.addCollapseListeners = function () {
+  const buttons = document.getElementsByClassName('collapse')
+  for (let button of buttons) {
+    button.addEventListener('click', function () {
+      let searchContext = this.nextElementSibling
+      if (searchContext.style.maxHeight === 'none') {
+        searchContext.style.maxHeight = '230px'
+        this.innerHTML = '+'
+      } else {
+        searchContext.style.maxHeight = 'none'
+        this.innerHTML = '-'
+      }
+    })
+  }
+}
+
+search.load = function (query) {
+  search.highlight.highlightSearchResults(query)
+  search.addCollapseListeners()
 }
