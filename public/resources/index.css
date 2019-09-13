@@ -1,6 +1,16 @@
 /*===========================================================================*/
 /* General style */
 
+.showOnMobile {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .showOnMobile {
+        display: block;
+    }
+}
+
 .inactiveLink {
    pointer-events: none;
    cursor: default;
