@@ -38,6 +38,7 @@ search.addCollapseListeners = function () {
         searchDetails = searchDetails.previousElementSibling
       }
       const button = searchDetails.firstChild
+      // Display the button
       button.style.display = 'inline'
       button.addEventListener('click', function () {
         // Flip the search context size between collapsed and expanded
