@@ -23,15 +23,42 @@ search.highlight.highlightSearchResults = function (query) {
   })
 }
 
-search.maxHeight = '230px'
+search.flipCollapseFunction = function (context, button) {
+  // Flip the search context size between collapsed and expanded
+  return () => {
+    if (button.innerHTML === '+') {
+      // Expand the items
+      search.expandChildren(context.childNodes)
+      button.innerHTML = '-'
+    } else {
+      // Collapse the items
+      search.collapseChildren(context.childNodes)
+      button.innerHTML = '+'
+    }
+  }
+}
+
+search.expandChildren = function (children) {
+  search.displayStyleChildren(children, 'block')
+}
+
+search.collapseChildren = function (children) {
+  search.displayStyleChildren(children, 'none')
+}
+
+search.displayStyleChildren = function (children, displayStyle) {
+  for (let i = 10; i < children.length; ++i) {
+    children[i].style.display = displayStyle
+  }
+}
 
 search.addCollapseListeners = function () {
   const searchContexts = document.getElementsByClassName('search-context')
   for (let context of searchContexts) {
-    const height = context.clientHeight
-    if (height > 230) {
-      // This is a large search, limit it's height and show it's collapse button
-      context.style.maxHeight = search.maxHeight
+    const children = context.childNodes
+    if (children.length > 10) {
+      // This is a large search, only show 10 children and show it's collapse button
+      search.collapseChildren(children)
       // Find the search details
       let searchDetails = context.previousElementSibling
       while (searchDetails.className !== 'search-details') {
@@ -40,16 +67,7 @@ search.addCollapseListeners = function () {
       const button = searchDetails.firstChild
       // Display the button
       button.style.display = 'inline'
-      button.addEventListener('click', function () {
-        // Flip the search context size between collapsed and expanded
-        if (context.style.maxHeight === 'none') {
-          context.style.maxHeight = search.maxHeight
-          this.innerHTML = '+'
-        } else {
-          context.style.maxHeight = 'none'
-          this.innerHTML = '-'
-        }
-      })
+      button.addEventListener('click', search.flipCollapseFunction(context, button))
     }
   }
 }
