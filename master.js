@@ -35,6 +35,7 @@ const setupCallbacks = function () {
   // to read the search index.
   cluster.on('online', function (worker) {
     worker.process.send('load-search-index')
+    worker.send({git_commit_sha: 'abc-123'})
   })
 }
 
