@@ -118,9 +118,15 @@ const searchIndex = function (data) {
     suggestions = spell.suggest(data.query)
   }
   data['suggestions'] = suggestions
-  data['results'] = results
   data['results_length'] = results.length
   data['time'] = timer.milliseconds
+  // slice the search data by the page
+  const bottom = (data.page - 1) * 20
+  const top = Math.min(data.page * 20, results.length)
+  data['results'] = results.slice(bottom, top)
+  // For display add 1, as they're not array indices.
+  data['bottom'] = bottom + 1
+  data['top'] = top
 }
 
 app.get('/search', function (request, response) {
@@ -134,10 +140,6 @@ app.get('/search', function (request, response) {
     sendTemplate(request, response, 'search-not-ready', data)
   } else {
     searchIndex(data)
-    // slice the search data by the page
-    const bottom = (data.page - 1) * 20
-    const top = Math.min(data.page * 20, data.results.length)
-    data.results = data.results.slice(bottom, top)
     sendTemplate(request, response, data.key, data)
   }
 })
