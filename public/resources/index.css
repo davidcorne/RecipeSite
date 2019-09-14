@@ -157,6 +157,24 @@ p.line {
 .search-bar {
     width: 85%;
 }
+/*===========================================================================*/
+/* Search page numbers */
+.page-numbers {
+    margin: 10px;
+}
+
+.page-numbers a {
+    font-size: 200%;
+    margin-right: 15px;
+}
+
+.page-numbers a:visited {
+    color: blue;
+}
+
+.page-numbers #current {
+    font-weight: bold;
+}
 
 /*===========================================================================*/
 /* Contents */

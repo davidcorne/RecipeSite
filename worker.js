@@ -119,19 +119,25 @@ const searchIndex = function (data) {
   }
   data['suggestions'] = suggestions
   data['results'] = results
+  data['results_length'] = results.length
   data['time'] = timer.milliseconds
 }
 
 app.get('/search', function (request, response) {
   onRequest(request)
   const data = {
-    query: request.query.query
+    query: request.query.query,
+    page: request.query.page ? request.query.page : 1
   }
   if (Object.keys(index).length === 0) {
     // Send a search results not ready signal.
     sendTemplate(request, response, 'search-not-ready', data)
   } else {
     searchIndex(data)
+    // slice the search data by the page
+    const bottom = (data.page - 1) * 20
+    const top = Math.min(data.page * 20, data.results.length)
+    data.results = data.results.slice(bottom, top)
     sendTemplate(request, response, data.key, data)
   }
 })
