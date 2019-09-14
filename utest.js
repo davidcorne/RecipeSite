@@ -262,7 +262,7 @@ describe('Search', function () {
       workerModule.__set__('index', index)
       const searchIndex = workerModule.__get__('searchIndex')
 
-      let data = {'query': 'nothing'}
+      let data = {'query': 'nothing', 'page': 1}
       searchIndex(data)
       assert.isNotNull(data.key)
       assert.isNotNull(data.suggestions)
