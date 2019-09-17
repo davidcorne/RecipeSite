@@ -13,8 +13,12 @@ div#search-result
         h3.search-header
           a(href=item.path, target="_blank") #{item.label}
         div.search-details
-          p.collapse +
-          p.display-path #{item.displayPath}
+          div
+            p.collapse +
+            p.display-path #{item.displayPath}
+          div.tags
+            each tag in item.tags
+              a.tag(href="/search?query=" + tag) #{tag}
         if debugView
           p.debug Match: #{item.match}
         div.search-context

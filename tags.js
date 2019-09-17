@@ -43,6 +43,7 @@ const doReadTags = function (content) {
   if (tags) {
     const valid = validTags(tags)
     if (valid) {
+      tags.tags.sort()
       return tags
     }
   }
