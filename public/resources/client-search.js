@@ -64,7 +64,7 @@ search.addCollapseListeners = function () {
       while (searchDetails.className !== 'search-details') {
         searchDetails = searchDetails.previousElementSibling
       }
-      const button = searchDetails.firstChild
+      const button = searchDetails.firstChild.firstChild
       // Display the button
       button.style.display = 'inline'
       button.addEventListener('click', search.flipCollapseFunction(context, button))
