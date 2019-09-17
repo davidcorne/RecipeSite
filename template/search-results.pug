@@ -15,6 +15,9 @@ div#search-result
         div.search-details
           p.collapse +
           p.display-path #{item.displayPath}
+          div.tags
+            each tag in item.tags
+              p.tag #{tag}
         if debugView
           p.debug Match: #{item.match}
         div.search-context
