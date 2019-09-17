@@ -107,6 +107,8 @@ a:hover {
     text-decoration: underline;
 }
 
+/*===========================================================================*/
+/* Search styling */
 .display-path {
     font-size:85%;
     margin: 0;
@@ -129,8 +131,6 @@ p.line {
     display: none; /* Don't display a collapse button by default */
 }
 
-/*===========================================================================*/
-/* Search styling */
 .search-details {
     margin-bottom: 10px;
 }
