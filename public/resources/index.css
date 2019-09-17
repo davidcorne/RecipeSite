@@ -176,6 +176,12 @@ p.line {
     color: white;
 }
 
+.tag:hover {
+    font-weight: bold;
+    padding: 4px;
+    text-decoration: none;
+}
+
 /*===========================================================================*/
 /* Search page numbers */
 .page-numbers {
