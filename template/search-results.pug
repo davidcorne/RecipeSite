@@ -18,7 +18,7 @@ div#search-result
             p.display-path #{item.displayPath}
           div.tags
             each tag in item.tags
-              p.tag #{tag}
+              a.tag(href="/search?query=" + tag) #{tag}
         if debugView
           p.debug Match: #{item.match}
         div.search-context
