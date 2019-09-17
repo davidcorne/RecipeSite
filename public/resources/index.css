@@ -129,6 +129,8 @@ p.line {
     display: none; /* Don't display a collapse button by default */
 }
 
+/*===========================================================================*/
+/* Search styling */
 .search-details {
     margin-bottom: 10px;
 }
@@ -255,7 +257,6 @@ summary{
 
 /*===========================================================================*/
 /* The conversion style */
-
 .conversion {
     float: left;
 }
