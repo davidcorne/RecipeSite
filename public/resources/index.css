@@ -112,7 +112,6 @@ a:hover {
 .display-path {
     font-size:85%;
     margin: 0;
-    margin-left: 6px;
     color: #006621;
     display: inline;
 }
@@ -128,10 +127,12 @@ p.line {
     font-weight: bold;
     color: #006621;
     cursor: pointer;
+    margin-right: 6px;
     display: none; /* Don't display a collapse button by default */
 }
 
 .search-details {
+    margin-left: 6px;
     margin-bottom: 10px;
 }
 
@@ -159,6 +160,22 @@ p.line {
 .search-bar {
     width: 85%;
 }
+
+.tags {
+    display: block;
+    margin-top: 5px;
+}
+
+.tag {
+    display: inline;
+    margin-right: 10px;
+    padding: 2px;
+    border: 2 solid #5f9be3;
+    border-radius: 6px;
+    background: #5f9be3;
+    color: white;
+}
+
 /*===========================================================================*/
 /* Search page numbers */
 .page-numbers {
