@@ -242,6 +242,9 @@ summary{
 #contents a:hover, #navigation-bar a:active{
     background-color: #DDDDDD;
 }
+#contents a:hover {
+    border-radius: 25px;
+}
 
 #contents > div.sub {
     margin: auto;
