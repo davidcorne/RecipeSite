@@ -29,7 +29,8 @@ const pathToLabel = function (pth) {
 }
 
 const changeExtension = function (fileName, newExtension) {
-  return fileName.replace(/\..*/, newExtension)
+  const position = fileName.lastIndexOf('.')
+  return fileName.substr(0, position < 0 ? fileName.length : position) + newExtension
 }
 
 const cachePath = function (file) {
