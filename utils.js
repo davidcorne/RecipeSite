@@ -28,8 +28,13 @@ const pathToLabel = function (pth) {
   return path.basename(pth, path.extname(pth))
 }
 
+const changeExtension = function (fileName, newExtension) {
+  const position = fileName.lastIndexOf('.')
+  return fileName.substr(0, position < 0 ? fileName.length : position) + newExtension
+}
+
 const cachePath = function (file) {
-  return file.replace(/\..*/, '.cache')
+  return changeExtension(file, '.cache')
 }
 
 const timer = function () {
@@ -92,6 +97,7 @@ const foreachRecipe = function (directory, predicate) {
 module.exports.occurrences = occurrences
 module.exports.pathToLabel = pathToLabel
 module.exports.cachePath = cachePath
+module.exports.changeExtension = changeExtension
 module.exports.walk = walk
 module.exports.timer = timer
 module.exports.foreachRecipe = foreachRecipe

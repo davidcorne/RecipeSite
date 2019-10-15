@@ -9,6 +9,8 @@ const request = require('supertest')
 const async = require('async')
 const fs = require('fs')
 
+const utils = require('./utils')
+
 const searchModule = rewire('./search.js')
 const buildCacheModule = rewire('./build-cache.js')
 const workerModule = rewire('./worker.js')
@@ -100,6 +102,14 @@ describe('Caches', function () {
   })
   it('Don\'t delete cache content', function () {
     // fs.unlinkSync('test_data/clear_cache_tree/test_recipe.cache')
+  })
+  it('CachePath', function () {
+    const one = utils.cachePath('one.pdf')
+    assert.strictEqual(one, 'one.cache')
+    const two = utils.cachePath('two')
+    assert.strictEqual(two, 'two.cache')
+    const three = utils.cachePath('three.etc.jpg')
+    assert.strictEqual(three, 'three.etc.cache')
   })
 })
 
@@ -686,6 +696,15 @@ describe('tags', function () {
       assert.isTrue(tags.includes('italian'))
       done()
     })
+  })
+  it('Tag file name', function () {
+    const tagsPath = tagsModule.__get__('tagsPath')
+    const one = tagsPath('one.pdf')
+    assert.strictEqual(one, 'one.tags')
+    const two = tagsPath('two')
+    assert.strictEqual(two, 'two.tags')
+    const three = tagsPath('three.etc.jpg')
+    assert.strictEqual(three, 'three.etc.tags')
   })
 })
 describe('new_recipe', function () {

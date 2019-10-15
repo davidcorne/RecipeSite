@@ -92,7 +92,7 @@ describe('Cache', function () {
         const recipeExtensions = ['.pdf', '.html', '.jpg']
         let exists = false
         for (let i = 0; i < recipeExtensions.length; ++i) {
-          const recipe = path.replace(/\..*/, recipeExtensions[i])
+          const recipe = utils.changeExtension(path, recipeExtensions[i])
           if (fs.existsSync(recipe)) {
             exists = true
           }
