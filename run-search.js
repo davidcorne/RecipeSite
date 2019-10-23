@@ -1,21 +1,30 @@
 #!/usr/bin/env node
 'use strict'
-
+const yargs = require('yargs')
 const search = require('./search')
 
+let index = []
+
 const runSearch = function (query) {
-  let index = []
+  const results = search.search(query, index)
+  results.forEach(result => {
+    console.log(result.label)
+  })
+}
+
+const runSearches = function (queries) {
   search.buildIndex('public/recipes', index)
-  const searchIndex = function () {
-    const results = search.search(query, index)
-    results.forEach(result => {
-      console.log(result.label)
+  const continueSearch = function () {
+    queries.forEach(query => {
+      console.log('Query:', query)
+      runSearch(query)
+      console.log('')
     })
   }
   let currentLength = 0
   const waitForIndex = function () {
     if (index.length > 0 && index.length === currentLength) {
-      searchIndex()
+      continueSearch()
       return
     }
     currentLength = index.length
@@ -24,4 +33,8 @@ const runSearch = function (query) {
   waitForIndex()
 }
 
-runSearch('peanut')
+const args = yargs // eslint-disable-line
+  .command('$0', 'Search the recipes')
+  .argv
+
+runSearches(args._)

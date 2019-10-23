@@ -34,7 +34,8 @@
     "nodemon": "^1.11.0",
     "rewire": "^2.5.2",
     "standard": "^11.0.1",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "yargs": "^14.2.0"
   },
   "standard": {
     "ignore": [
