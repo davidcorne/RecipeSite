@@ -12,12 +12,14 @@ const runSearch = function (query) {
       console.log(result.label)
     })
   }
+  let currentLength = 0
   const waitForIndex = function () {
-    if (index.length > 100) {
+    if (index.length > 0 && index.length === currentLength) {
       searchIndex()
       return
     }
-    setTimeout(waitForIndex, 50)
+    currentLength = index.length
+    setTimeout(waitForIndex, 10)
   }
   waitForIndex()
 }
