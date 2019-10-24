@@ -35,6 +35,8 @@ const runSearches = function (queries) {
 
 const args = yargs // eslint-disable-line
   .command('$0', 'Search the recipes')
+  .help()
+  .alias('h', 'help')
   .argv
 
 runSearches(args._)
