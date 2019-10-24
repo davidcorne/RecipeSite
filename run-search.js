@@ -23,6 +23,8 @@ const runSearches = function (queries) {
   }
   let currentLength = 0
   const waitForIndex = function () {
+    // Wait until 2 iterations of reading the search index have the same
+    // length, i.e. should be no more to fine.
     if (index.length > 0 && index.length === currentLength) {
       continueSearch()
       return
