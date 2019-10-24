@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict'
-const yargs = require('yargs')
+const commander = require('commander')
 const search = require('./search')
 
 let index = []
@@ -9,6 +9,11 @@ const runSearch = function (query) {
   const results = search.search(query, index)
   results.forEach(result => {
     console.log(result.label)
+    if (commander.context) {
+      result.context.forEach(line => {
+        console.log(' ', line)
+      })
+    }
   })
 }
 
@@ -23,6 +28,8 @@ const runSearches = function (queries) {
   }
   let currentLength = 0
   const waitForIndex = function () {
+    // Wait until 2 iterations of reading the search index have the same
+    // length, i.e. should be no more to fine.
     if (index.length > 0 && index.length === currentLength) {
       continueSearch()
       return
@@ -33,8 +40,8 @@ const runSearches = function (queries) {
   waitForIndex()
 }
 
-const args = yargs // eslint-disable-line
-  .command('$0', 'Search the recipes')
-  .argv
+commander
+  .option('-c, --context', 'show the context of the recipe')
+  .parse(process.argv)
 
-runSearches(args._)
+runSearches(commander.args)
