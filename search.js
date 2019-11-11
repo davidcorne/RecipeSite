@@ -113,6 +113,7 @@ const search = function (query, index) {
         path: file,
         displayPath: pathToDisplayPath(file),
         context: contextResult.context,
+        tags: item.tags,
         match
       })
     }

@@ -34,6 +34,7 @@ app.set('port', (process.env.PORT || 3000))
 
 let partialLoad = false
 let debugView = false
+let gitCommitSha = ''
 
 const loadSearchIndex = function () {
   partialLoad = false
@@ -51,11 +52,13 @@ const messageMap = {
 }
 
 process.on('message', function (message) {
-  log.debug('Recieved ' + message)
+  log.debug('Recieved ' + JSON.stringify(message))
   if (message in messageMap) {
     messageMap[message]()
+  } else if (message.git_commit_sha) {
+    gitCommitSha = message.git_commit_sha
   } else {
-    log.error('Unknown message "' + message + '"')
+    log.error('Unknown message "' + JSON.stringify(message) + '"')
   }
 })
 
@@ -68,6 +71,7 @@ const onRequest = function (request) {
 
 const sendTemplate = function (request, response, key, data) {
   data.debugView = debugView
+  data.git_commit_sha = gitCommitSha
   response.send(templates[key](data))
 }
 
@@ -114,14 +118,22 @@ const searchIndex = function (data) {
     suggestions = spell.suggest(data.query)
   }
   data['suggestions'] = suggestions
-  data['results'] = results
+  data['results_length'] = results.length
   data['time'] = timer.milliseconds
+  // slice the search data by the page
+  const bottom = (data.page - 1) * 20
+  const top = Math.min(data.page * 20, results.length)
+  data['results'] = results.slice(bottom, top)
+  // For display add 1, as they're not array indices.
+  data['bottom'] = bottom + 1
+  data['top'] = top
 }
 
 app.get('/search', function (request, response) {
   onRequest(request)
   const data = {
-    query: request.query.query
+    query: request.query.query,
+    page: request.query.page ? request.query.page : 1
   }
   if (Object.keys(index).length === 0) {
     // Send a search results not ready signal.

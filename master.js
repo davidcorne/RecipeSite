@@ -1,9 +1,11 @@
 'use strict'
 const cluster = require('cluster')
+const fs = require('fs')
 const log = require('./log')
 const os = require('os')
 
 const numWorkers = (process.env.WORKERS || os.cpus().length)
+let gitCommitSha
 
 const startWorkers = function () {
   let currentWorkers = Object.keys(cluster.workers).length
@@ -35,11 +37,29 @@ const setupCallbacks = function () {
   // to read the search index.
   cluster.on('online', function (worker) {
     worker.process.send('load-search-index')
+    worker.send({git_commit_sha: gitCommitSha})
   })
+}
+
+const getGitCommitShaSync = function () {
+  if (process.env.HEROKU_SLUG_COMMIT) {
+    // We're in the Heroku environment, just get it from the meta-data
+    return process.env.HEROKU_SLUG_COMMIT
+  } else {
+    // We're not in Heroku, read the git file ourselves
+    const rev = fs.readFileSync('.git/HEAD').toString()
+    if (rev.indexOf(':') === -1) {
+      return rev
+    } else {
+      const branch = rev.substring(5).trim()
+      return fs.readFileSync('.git/' + branch).toString().trim()
+    }
+  }
 }
 
 const start = function () {
   log.info('Logging level: ' + log.level())
+  gitCommitSha = getGitCommitShaSync()
   setupCallbacks()
   startWorkers()
 }

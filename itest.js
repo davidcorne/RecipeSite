@@ -47,6 +47,8 @@ const foreachRecipeSync = function (predicate) {
 }
 
 describe('Cache', function () {
+  // This can be pretty long running, especially if the files aren't in hte disk cache.
+  this.timeout(5000)
   it('Up to date', function (done) {
     let paths = []
     foreachRecipeSync(function (path) {
@@ -90,7 +92,7 @@ describe('Cache', function () {
         const recipeExtensions = ['.pdf', '.html', '.jpg']
         let exists = false
         for (let i = 0; i < recipeExtensions.length; ++i) {
-          const recipe = path.replace(/\..*/, recipeExtensions[i])
+          const recipe = utils.changeExtension(path, recipeExtensions[i])
           if (fs.existsSync(recipe)) {
             exists = true
           }

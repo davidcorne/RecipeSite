@@ -12,10 +12,25 @@ div#search-result
       div
         h3.search-header
           a(href=item.path, target="_blank") #{item.label}
-        p.display-path #{item.displayPath}
+        div.search-details
+          div
+            p.collapse +
+            p.display-path #{item.displayPath}
+          div.tags
+            each tag in item.tags
+              a.tag(href="/search?query=" + tag) #{tag}
         if debugView
           p.debug Match: #{item.match}
-        each line in item.context
-          p.line #{line}
+        div.search-context
+          each line in item.context
+            p.line #{line}
+    div.page-numbers
+      if results_length > 20
+        - const pages = Math.ceil(results_length / 20)
+        - let n = 1
+        while n <= pages
+          - const id = page === n.toString() ? 'current' : ''
+          a(href="/search?query=" + query + "&page=" + n, id=id) #{n}
+          - n++
   else
     p Your search - #{query} - did not match any documents.

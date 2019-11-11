@@ -3,6 +3,7 @@ const fs = require('graceful-fs')
 const jsonschema = require('jsonschema')
 
 const log = require('./log')
+const utils = require('./utils')
 
 const schema = {
   'id': '/Recipetags',
@@ -21,7 +22,7 @@ const defaultTags = {
 }
 
 const tagsPath = function (recipePath) {
-  return recipePath.replace(/\..*/, '.tags')
+  return utils.changeExtension(recipePath, '.tags')
 }
 
 const tagsExists = function (recipePath) {
@@ -43,6 +44,7 @@ const doReadTags = function (content) {
   if (tags) {
     const valid = validTags(tags)
     if (valid) {
+      tags.tags.sort()
       return tags
     }
   }
