@@ -381,6 +381,21 @@ describe('Search', function () {
       assert.strictEqual(results.length, 1)
     }
   })
+  it('Diacritics', function () {
+    const search = searchModule.__get__('search')
+    const index = [
+      {
+        'file': 'one',
+        'content': 'This is an original creme brulee',
+        'tags': []
+      }
+    ]
+    {
+      // Ensure we're trimming diacritics out of search terms, so it matches the asciish index we have.
+      const results = search('crème brûlée', index)
+      assert.strictEqual(results.length, 1)
+    }
+  })
 })
 
 describe('Routing', function () {
