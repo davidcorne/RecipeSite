@@ -88,6 +88,8 @@ const cacheFile = function (file, callback) {
       if (error) {
         throw error
       }
+      // Remove diacritics from the content
+      content = utils.removeDiacritic(content)
       // Now combine the hash, and write it all out.
       content = hash + '\n' + content
       fs.writeFile(utils.cachePath(file), content, 'utf8', function (error) {
