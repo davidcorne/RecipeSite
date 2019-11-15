@@ -3,3 +3,6 @@ node_modules/*
 npm-debug.log
 .vs/*
 .vscode/*
+
+# Don't save the unit test caches
+test_data/generic/test_recipe_diacritics.cache

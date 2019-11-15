@@ -129,8 +129,12 @@ describe('Caches', function () {
     const three = utils.cachePath('three.etc.jpg')
     assert.strictEqual(three, 'three.etc.cache')
   })
-  it('Cache diacritics', function () {
-
+  it('Cache diacritics', function (done) {
+    testHTMLCacheWriting(
+      'test_data/generic/test_recipe_diacritics.html',
+      ['This is a funky String'],
+      done
+    )
   })
 })
 
