@@ -84,7 +84,7 @@ const searchContext = function (query, content) {
 }
 
 const search = function (query, index) {
-  query = query.toLowerCase().trim()
+  query = utils.removeDiacritic(query.toLowerCase().trim())
   const results = []
   index.forEach(function (item) {
     const content = item.content
