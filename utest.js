@@ -108,17 +108,15 @@ describe('Caches', function () {
       })
     })
   }
-  it('Cache writing', function (done) {
-    const pdfTest = () => {
-      testPDFCacheWriting(function () {
-        done()
-      })
-    }
+  it('Html cache writing', function (done) {
     testHTMLCacheWriting(
       'test_data/generic/test_recipe.html',
       ['912dc7447439d9bff54b1002b538db24'],
-      pdfTest
+      done
     )
+  })
+  it('PDF cache writing', function (done) {
+    testPDFCacheWriting(done)
   })
   it('Don\'t delete cache content', function () {
     // fs.unlinkSync('test_data/clear_cache_tree/test_recipe.cache')
