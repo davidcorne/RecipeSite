@@ -94,6 +94,13 @@ const foreachRecipe = function (directory, predicate) {
   })
 }
 
+const removeDiacritic = function (string) {
+  // Normalise the content to NFC, and remove diacritics.
+  // e.g. 'brulée' -> 'brulee'
+  // See more: https://stackoverflow.com/a/37511463/1548429
+  return string.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+}
+
 module.exports.occurrences = occurrences
 module.exports.pathToLabel = pathToLabel
 module.exports.cachePath = cachePath
@@ -102,3 +109,4 @@ module.exports.walk = walk
 module.exports.timer = timer
 module.exports.foreachRecipe = foreachRecipe
 module.exports.isRecipe = isRecipe
+module.exports.removeDiacritic = removeDiacritic

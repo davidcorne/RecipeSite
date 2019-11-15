@@ -19,6 +19,19 @@ const newRecipeModule = rewire('./new_recipe.js')
 
 console.log('Running Unit Tests')
 
+describe('utils', function () {
+  it('remove diacritic', function () {
+    const testCases = [
+      ['café', 'cafe'],
+      ['brulée', 'brulee'],
+      ['schön', 'schon']
+    ]
+    testCases.forEach((testCase) => {
+      const result = utils.removeDiacritic(testCase[0])
+      assert.strictEqual(result, testCase[1])
+    })
+  })
+})
 describe('Caches', function () {
   const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent')
   const getPdfCacheContent = buildCacheModule.__get__('getPdfCacheContent')
