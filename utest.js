@@ -19,6 +19,19 @@ const newRecipeModule = rewire('./new_recipe.js')
 
 console.log('Running Unit Tests')
 
+describe('utils', function () {
+  it('remove diacritic', function () {
+    const testCases = [
+      ['café', 'cafe'],
+      ['brulée', 'brulee'],
+      ['schön', 'schon']
+    ]
+    testCases.forEach((testCase) => {
+      const result = utils.removeDiacritic(testCase[0])
+      assert.strictEqual(result, testCase[1])
+    })
+  })
+})
 describe('Caches', function () {
   const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent')
   const getPdfCacheContent = buildCacheModule.__get__('getPdfCacheContent')
@@ -75,15 +88,17 @@ describe('Caches', function () {
       })
     })
   }
-  const testHTMLCacheWriting = function (callback) {
-    cacheFile('test_data/generic/test_recipe.html', function () {
-      const cache = 'test_data/generic/test_recipe.cache'
+  const testHTMLCacheWriting = function (path, includedStrings, callback) {
+    cacheFile(path, function () {
+      const cache = utils.cachePath(path)
       assert.isOk(fs.existsSync(cache))
       fs.readFile(cache, 'utf8', function (error, content) {
         if (error) {
           throw error
         }
-        assert.include(content, '912dc7447439d9bff54b1002b538db24')
+        includedStrings.forEach((string) => {
+          assert.include(content, string)
+        })
         fs.unlink(cache, function (error) {
           if (error) {
             throw error
@@ -93,12 +108,15 @@ describe('Caches', function () {
       })
     })
   }
-  it('Cache writing', function (done) {
-    testHTMLCacheWriting(function () {
-      testPDFCacheWriting(function () {
-        done()
-      })
-    })
+  it('Html cache writing', function (done) {
+    testHTMLCacheWriting(
+      'test_data/generic/test_recipe.html',
+      ['912dc7447439d9bff54b1002b538db24'],
+      done
+    )
+  })
+  it('PDF cache writing', function (done) {
+    testPDFCacheWriting(done)
   })
   it('Don\'t delete cache content', function () {
     // fs.unlinkSync('test_data/clear_cache_tree/test_recipe.cache')
@@ -110,6 +128,13 @@ describe('Caches', function () {
     assert.strictEqual(two, 'two.cache')
     const three = utils.cachePath('three.etc.jpg')
     assert.strictEqual(three, 'three.etc.cache')
+  })
+  it('Cache diacritics', function (done) {
+    testHTMLCacheWriting(
+      'test_data/generic/test_recipe_diacritics.html',
+      ['This is a funky String'],
+      done
+    )
   })
 })
 
@@ -378,6 +403,21 @@ describe('Search', function () {
     {
       // An actual result
       const results = search(' More random ', index)
+      assert.strictEqual(results.length, 1)
+    }
+  })
+  it('Diacritics', function () {
+    const search = searchModule.__get__('search')
+    const index = [
+      {
+        'file': 'one',
+        'content': 'This is an original creme brulee',
+        'tags': []
+      }
+    ]
+    {
+      // Ensure we're trimming diacritics out of search terms, so it matches the asciish index we have.
+      const results = search('crème brûlée', index)
       assert.strictEqual(results.length, 1)
     }
   })
