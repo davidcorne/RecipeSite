@@ -88,9 +88,6 @@ const cacheFile = function (file, callback) {
       if (error) {
         throw error
       }
-      // Normalise the content to NFC, and remove diacritics to have things like searching for 'brulee' will find 'brulée'
-      // See more: https://stackoverflow.com/a/37511463/1548429
-      content.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
       // Now combine the hash, and write it all out.
       content = hash + '\n' + content
       fs.writeFile(utils.cachePath(file), content, 'utf8', function (error) {
