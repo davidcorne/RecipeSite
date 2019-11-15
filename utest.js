@@ -88,15 +88,17 @@ describe('Caches', function () {
       })
     })
   }
-  const testHTMLCacheWriting = function (callback) {
-    cacheFile('test_data/generic/test_recipe.html', function () {
-      const cache = 'test_data/generic/test_recipe.cache'
+  const testHTMLCacheWriting = function (path, includedStrings, callback) {
+    cacheFile(path, function () {
+      const cache = utils.cachePath(path)
       assert.isOk(fs.existsSync(cache))
       fs.readFile(cache, 'utf8', function (error, content) {
         if (error) {
           throw error
         }
-        assert.include(content, '912dc7447439d9bff54b1002b538db24')
+        includedStrings.forEach((string) => {
+          assert.include(content, string)
+        })
         fs.unlink(cache, function (error) {
           if (error) {
             throw error
@@ -107,11 +109,16 @@ describe('Caches', function () {
     })
   }
   it('Cache writing', function (done) {
-    testHTMLCacheWriting(function () {
+    const pdfTest = () => {
       testPDFCacheWriting(function () {
         done()
       })
-    })
+    }
+    testHTMLCacheWriting(
+      'test_data/generic/test_recipe.html',
+      ['912dc7447439d9bff54b1002b538db24'],
+      pdfTest
+    )
   })
   it('Don\'t delete cache content', function () {
     // fs.unlinkSync('test_data/clear_cache_tree/test_recipe.cache')
@@ -123,6 +130,9 @@ describe('Caches', function () {
     assert.strictEqual(two, 'two.cache')
     const three = utils.cachePath('three.etc.jpg')
     assert.strictEqual(three, 'three.etc.cache')
+  })
+  it('Cache diacritics', function () {
+
   })
 })
 
