@@ -406,7 +406,7 @@ describe('Search', function () {
       assert.strictEqual(results.length, 1)
     }
   })
-  it('Diacritics', function () {
+  it('Diacritics in content', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
@@ -419,6 +419,33 @@ describe('Search', function () {
       // Ensure we're trimming diacritics out of search terms, so it matches the asciish index we have.
       const results = search('crème brûlée', index)
       assert.strictEqual(results.length, 1)
+    }
+  })
+  it('Diacritics in file name', function () {
+    const search = searchModule.__get__('search')
+    const index = [
+      {
+        'file': 'Gruyère Chips',
+        'content': 'These are some chips made of cheese!',
+        'tags': []
+      }
+    ]
+    {
+      // Ensure that if we search for Gruyere, we find the recipe with Gruyère in the title.
+      const results = search('gruyere', index)
+      assert.strictEqual(results.length, 1)
+    }
+    index.push({
+      'file': 'Other Cheese',
+      'content': 'This recipe contains Gruyere',
+      'tags': []
+    })
+    {
+      // Ensure that the title is weighted correctly.
+      const results = search('gruyere', index)
+      assert.strictEqual(results.length, 2)
+      assert.strictEqual(results[0].label, 'Gruyère Chips')
+      assert.strictEqual(results[1].label, 'Other Cheese')
     }
   })
 })
