@@ -177,6 +177,26 @@ describe('Recipes', function () {
       done()
     })
   })
+  it('Ensure degrees', function (done) {
+    // This ensures that in each html recipe, I'm using the degrees symbol by temperatures.
+    const paths = walkSync('./public/recipes')
+    // This will check each file twice, but it's not slow
+
+    const noDegreesCelcius = new RegExp('[0-9][0-9]C')
+    const test = function (path, callback) {
+      if (path.endsWith('.html')) {
+        const content = fs.readFileSync(path, 'utf8')
+        let matches = content.match(noDegreesCelcius)
+        if (matches) console.log(matches)
+        assert.isNull(matches, 'A recipe should contain a degrees symbol. file: ' + path)
+      }
+      callback()
+    }
+    async.each(paths, test, function (error) {
+      assert.isNull(error)
+      done()
+    })
+  })
 })
 describe('tags', function () {
   const tagsPath = tagsModule.__get__('tagsPath')
