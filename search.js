@@ -93,7 +93,7 @@ const search = function (query, index) {
 
     // Search the file path for the query
     const file = item.file
-    if (file.toLowerCase().indexOf(query) > -1) {
+    if (utils.removeDiacritic(file.toLowerCase()).indexOf(query) > -1) {
       // As the search query is in the title, I think it's pretty related to
       // the search, give it a high gearing
       match += matchingConstants.FileName
