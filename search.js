@@ -73,7 +73,7 @@ const searchContext = function (query, content) {
       if (lowerLine.indexOf(queryPart) > -1) {
         match.singleInstanceCount += utils.occurrences(lowerLine, queryPart, false)
         // Now check if there is an instance of the whole word on this line
-        const wholeWordRegexp = new RegExp('\\b' + String(queryPart) + '\\b')
+        const wholeWordRegexp = new RegExp('\\b' + queryPart + '\\b')
         if (lowerLine.match(wholeWordRegexp)) {
           match.wholeWordCount += 1
         }
