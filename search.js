@@ -6,13 +6,26 @@ const utils = require('./utils')
 const log = require('./log')
 const tags = require('./tags')
 
-const matchingConstants = {
-  SingleInstance: 0.5,
-  WholeWord: 4,
-  AllUsed: 10,
-  WholePhrase: 5,
-  FileName: 40,
-  Tag: 20
+class Match {
+  constructor () {
+    this.singleInstanceCount = 0
+    this.wholePhraseCount = 0
+    this.tagCount = 0
+    this.allUsed = false
+    this.fileName = false
+  }
+
+  score () {
+    return (this.singleInstanceCount * 1) +
+           (this.wholePhraseCount * 4) +
+           (this.tagCount * 20) +
+           (this.allUsed ? 10 : 0) +
+           (this.fileName ? 40 : 0)
+  }
+
+  found () {
+    return this.score() > 0
+  }
 }
 
 const pathToDisplayPath = function (file) {
@@ -49,14 +62,14 @@ const searchContext = function (query, content) {
   const keys = Object.keys(contextMap).sort()
   const context = []
   const lowerContextArray = []
-  const singleInstanceFactor = (matchingConstants.SingleInstance / queryArray.length)
-  let match = 0
+  // const singleInstanceFactor = (matchingConstants.SingleInstance / queryArray.length)
+  const match = new Match()
   keys.forEach(key => {
     const line = contextMap[key]
     const lowerLine = line.toLowerCase()
     queryArray.forEach(queryPart => {
       if (lowerLine.indexOf(queryPart) > -1) {
-        match += singleInstanceFactor * utils.occurrences(lowerLine, queryPart, false)
+        match.singleInstanceCount += utils.occurrences(lowerLine, queryPart, false)
         // Now check if there is an instance of the whole word on this line
         const wholeWordRegexp = new RegExp('\\b' + String(queryPart) + '\\b')
         if (lowerLine.match(wholeWordRegexp)) {
@@ -66,7 +79,7 @@ const searchContext = function (query, content) {
     })
     // find the whole phrase
     if (lowerLine.indexOf(query) > -1) {
-      match += matchingConstants.WholePhrase
+      match.wholePhraseCount += 1
     }
     context.push(line)
     lowerContextArray.push(lowerLine)
@@ -82,7 +95,7 @@ const searchContext = function (query, content) {
     }
   })
   if (allUsed) {
-    match += matchingConstants.AllUsed
+    match.allUsed = true
   }
   return {
     context: context,
@@ -95,33 +108,32 @@ const search = function (query, index) {
   const results = []
   index.forEach(function (item) {
     const content = item.content
-    // A metric of how good a match it is
-    let match = 0
+    // Search the file
+    const contextResult = searchContext(query, content)
+    const match = contextResult.match
 
     // Search the file path for the query
     const file = item.file
     if (utils.removeDiacritic(file.toLowerCase()).indexOf(query) > -1) {
       // As the search query is in the title, I think it's pretty related to
       // the search, give it a high gearing
-      match += matchingConstants.FileName
+      match.fileName = true
     }
     item.tags.forEach(function (tag) {
       if (tag.indexOf(query) > -1) {
-        match += matchingConstants.Tag
+        match.tagCount += 1
       }
     })
-    // Search the file
-    const contextResult = searchContext(query, content)
-    match += contextResult.match
 
-    if (match > 0) {
+    if (match.found()) {
       results.push({
         label: utils.pathToLabel(file),
         path: file,
         displayPath: pathToDisplayPath(file),
         context: contextResult.context,
         tags: item.tags,
-        match
+        match: match.score(),
+        matchVerbose: match
       })
     }
   })
