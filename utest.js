@@ -448,6 +448,27 @@ describe('Search', function () {
       assert.strictEqual(results[1].label, 'Other Cheese')
     }
   })
+  it('Whole Word Matching', function () {
+    const search = searchModule.__get__('search')
+    const index = [
+      {
+        'file': '1',
+        'content': 'Maximum maximum',
+        'tags': []
+      },
+      {
+        'file': '2',
+        'content': 'mum',
+        'tags': []
+      }
+    ]
+
+    const results = search('mum', index)
+    assert.strictEqual(results.length, 2)
+    // Should rank 1 instance of mum, higher than 2 of maximum
+    assert.strictEqual(results[0].label, '2')
+    assert.strictEqual(results[1].label, '1')
+  })
 })
 
 describe('Routing', function () {

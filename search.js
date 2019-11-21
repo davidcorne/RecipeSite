@@ -9,6 +9,7 @@ const tags = require('./tags')
 class Match {
   constructor () {
     this.singleInstanceCount = 0
+    this.wholeWordCount = 0
     this.wholePhraseCount = 0
     this.tagCount = 0
     this.allUsed = false
@@ -17,6 +18,7 @@ class Match {
 
   score () {
     return (this.singleInstanceCount * 1) +
+           (this.wholeWordCount * 2) +
            (this.wholePhraseCount * 4) +
            (this.tagCount * 20) +
            (this.allUsed ? 10 : 0) +
@@ -56,7 +58,8 @@ const searchContext = function (query, content) {
     }
   })
 
-  // Now work out how well it matches, 1 point for each mention of each word, 4 for each whole phrase.
+  // Now work out how well it matches, points for each mention of each word, more points for each
+  // use of the whole phrase, and some points for the word appearing whole. e.g. mum not maximum.
   // Also build the context array at this point
   const keys = Object.keys(contextMap).sort()
   const context = []
@@ -69,10 +72,15 @@ const searchContext = function (query, content) {
     queryArray.forEach(queryPart => {
       if (lowerLine.indexOf(queryPart) > -1) {
         match.singleInstanceCount += utils.occurrences(lowerLine, queryPart, false)
+        // Now check if there is an instance of the whole word on this line
+        const wholeWordRegexp = new RegExp('\\b' + queryPart + '\\b')
+        if (lowerLine.match(wholeWordRegexp)) {
+          match.wholeWordCount += 1
+        }
       }
     })
-    // find the whole phrase
-    if (lowerLine.indexOf(query) > -1) {
+    // If it's a phrase, find if the whole phrase is used
+    if (queryArray.length > 1 && lowerLine.indexOf(query) > -1) {
       match.wholePhraseCount += 1
     }
     context.push(line)
