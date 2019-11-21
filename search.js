@@ -9,6 +9,7 @@ const tags = require('./tags')
 class Match {
   constructor () {
     this.singleInstanceCount = 0
+    this.wholeWordCount = 0
     this.wholePhraseCount = 0
     this.tagCount = 0
     this.allUsed = false
@@ -17,6 +18,7 @@ class Match {
 
   score () {
     return (this.singleInstanceCount * 1) +
+           (this.wholeWordCount * 2) +
            (this.wholePhraseCount * 4) +
            (this.tagCount * 20) +
            (this.allUsed ? 10 : 0) +
@@ -73,7 +75,7 @@ const searchContext = function (query, content) {
         // Now check if there is an instance of the whole word on this line
         const wholeWordRegexp = new RegExp('\\b' + String(queryPart) + '\\b')
         if (lowerLine.match(wholeWordRegexp)) {
-          match += matchingConstants.WholeWord
+          match.wholeWordCount += 1
         }
       }
     })
