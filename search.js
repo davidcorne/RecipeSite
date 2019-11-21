@@ -79,8 +79,8 @@ const searchContext = function (query, content) {
         }
       }
     })
-    // find the whole phrase
-    if (lowerLine.indexOf(query) > -1) {
+    // If it's a phrase, find if the whole phrase is used
+    if (queryArray.length > 1 && lowerLine.indexOf(query) > -1) {
       match.wholePhraseCount += 1
     }
     context.push(line)
