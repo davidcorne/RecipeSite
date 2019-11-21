@@ -8,9 +8,9 @@ const tags = require('./tags')
 
 const matchingConstants = {
   SingleInstance: 0.5,
-  WholeWord: 20,
+  WholeWord: 4,
   AllUsed: 10,
-  WholePhrase: 4,
+  WholePhrase: 5,
   FileName: 40,
   Tag: 20
 }
