@@ -7,7 +7,8 @@ const log = require('./log')
 const tags = require('./tags')
 
 const matchingConstants = {
-  SingleInstance: 1,
+  SingleInstance: 0.5,
+  WholeWord: 20,
   AllUsed: 10,
   WholePhrase: 4,
   FileName: 40,
@@ -42,7 +43,8 @@ const searchContext = function (query, content) {
     }
   })
 
-  // Now work out how well it matches, 1 point for each mention of each word, 4 for each whole phrase.
+  // Now work out how well it matches, points for each mention of each word, more points for each
+  // use of the whole phrase, and some points for the word appearing whole. e.g. mum not maximum.
   // Also build the context array at this point
   const keys = Object.keys(contextMap).sort()
   const context = []
@@ -55,6 +57,11 @@ const searchContext = function (query, content) {
     queryArray.forEach(queryPart => {
       if (lowerLine.indexOf(queryPart) > -1) {
         match += singleInstanceFactor * utils.occurrences(lowerLine, queryPart, false)
+        // Now check if there is an instance of the whole word on this line
+        const wholeWordRegexp = new RegExp('\\b' + String(queryPart) + '\\b')
+        if (lowerLine.match(wholeWordRegexp)) {
+          match += matchingConstants.WholeWord
+        }
       }
     })
     // find the whole phrase

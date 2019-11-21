@@ -462,6 +462,7 @@ describe('Search', function () {
         'tags': []
       }
     ]
+
     const results = search('mum', index)
     assert.strictEqual(results.length, 2)
     // Should rank 1 instance of mum, higher than 2 of maximum
