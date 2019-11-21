@@ -16,7 +16,11 @@ class Match {
   }
 
   score () {
-    return 5
+    return (this.singleInstanceCount * 1) +
+           (this.wholePhraseCount * 4) +
+           (this.tagCount * 20) +
+           (this.allUsed ? 10 : 0) +
+           (this.fileName ? 40 : 0)
   }
 
   found () {
