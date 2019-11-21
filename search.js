@@ -126,7 +126,8 @@ const search = function (query, index) {
         displayPath: pathToDisplayPath(file),
         context: contextResult.context,
         tags: item.tags,
-        match: match.score()
+        match: match.score(),
+        matchVerbose: match
       })
     }
   })

@@ -20,7 +20,8 @@ div#search-result
             each tag in item.tags
               a.tag(href="/search?query=" + tag) #{tag}
         if debugView
-          p.debug Match: #{item.match}
+          p.debug Score: #{item.match}
+          p.debug Match: #{JSON.stringify(item.matchVerbose)}
         div.search-context
           each line in item.context
             p.line #{line}
