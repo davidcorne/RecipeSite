@@ -30,10 +30,12 @@ search.flipCollapseFunction = function (context, button) {
       // Expand the items
       search.expandChildren(context.childNodes)
       button.innerHTML = '-'
+      button.title = 'Collapse search context'
     } else {
       // Collapse the items
       search.collapseChildren(context.childNodes)
       button.innerHTML = '+'
+      button.title = 'Expand search context'
     }
   }
 }

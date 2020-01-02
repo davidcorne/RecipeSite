@@ -14,7 +14,7 @@ div#search-result
           a(href=item.path, target="_blank") #{item.label}
         div.search-details
           div
-            p.collapse +
+            p.collapse(title="Expand search context") +
             p.display-path #{item.displayPath}
           div.tags
             each tag in item.tags
