@@ -9,7 +9,13 @@ block content
 
   h1 Conversion
 
-  div.conversions
+  div
+    ul
+      li
+        a Ingredients
+      li
+        a Cake Tins
+  div#ingredient-conversion.conversion
     select#ingredient(onchange="Conversion.onIngredientSelect(this);")
       option(value="", disabled="disabled", selected="selected") Ingredient
       each item in conversions
@@ -20,5 +26,6 @@ block content
     input#output(readonly="readonly")
     select#convert-to(onchange="Conversion.rateChange();")
       option(value="", disabled="disabled", selected="selected") Unit
-
+  div#cake-tin-conversion.conversion
+    input#user-input(oninput="Conversion.CakeTin.update();", type="number")
 
