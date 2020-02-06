@@ -1,6 +1,7 @@
 extends layout.pug
 
 block scripts
+  script(type='text/javascript', src='public/resources/conversion.js')
   script.
     Conversion.conversions = !{JSON.stringify(conversions)}
 
@@ -27,5 +28,12 @@ block content
     select#convert-to(onchange="Conversion.rateChange();")
       option(value="", disabled="disabled", selected="selected") Unit
   div#cake-tin-conversion.conversion
-    input#user-input(oninput="Conversion.CakeTin.update();", type="number")
-
+    select#ingredient(onchange="Conversion.CakeTin.(this);")
+      option(value="", selected="selected") Diameter
+      option(value="",) Radius
+    p Recipe tin
+    input#recipe-tin(oninput="Conversion.CakeTin.update();", type="number")
+    p Kitchen tin
+    input#kitchen-tin(oninput="Conversion.CakeTin.update();", type="number")
+    p Volume times
+    input#tin-output(readonly="readonly")
