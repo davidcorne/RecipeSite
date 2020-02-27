@@ -93,7 +93,8 @@ const getNewRecipes = function () {
       'label': utils.pathToLabel(item.file),
       'displayPath': utils.pathToDisplayPath(item.file),
       'context': '',
-      'tags': item.tags
+      'tags': item.tags,
+      'date': item.date
     })
   }
   return orderedRecipes

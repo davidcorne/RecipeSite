@@ -170,7 +170,8 @@ const buildIndex = function (path, index) {
         index.push({
           file,
           content,
-          'tags': tags.tags
+          'tags': tags.tags,
+          'date': tags.date
         })
       })
     })
