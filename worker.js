@@ -84,10 +84,25 @@ app.get('/', function (request, response) {
   sendTemplate(request, response, 'index', locals)
 })
 
+const getNewRecipes = function () {
+  const orderedRecipes = []
+  for (let i = 0; i < 30; ++i) {
+    const item = index[i]
+    orderedRecipes.push({
+      'file': item.file,
+      'label': utils.pathToLabel(item.file),
+      'displayPath': item.file, // pathToDisplayPath(file),
+      'context': '',
+      'tags': item.tags
+    })
+  }
+  return orderedRecipes
+}
+
 app.get('/new', function (request, response) {
   onRequest(request)
   const locals = {
-    recipes: fileList.generateFileList()
+    newRecipes: getNewRecipes()
   }
   sendTemplate(request, response, 'new', locals)
 })
