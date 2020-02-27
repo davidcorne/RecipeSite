@@ -12,7 +12,7 @@ const rewire = require('rewire')
 
 const utils = require('./utils')
 const buildCache = require('./build-cache')
-const tags = require('./tags')
+const tags = require('./metadata')
 
 const tagsModule = rewire('./tags.js')
 const newRecipeModule = rewire('./new_recipe.js')
