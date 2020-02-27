@@ -89,7 +89,7 @@ const getNewRecipes = function () {
   for (let i = 0; i < 30; ++i) {
     const item = index[i]
     orderedRecipes.push({
-      'file': item.file,
+      'path': item.file,
       'label': utils.pathToLabel(item.file),
       'displayPath': utils.pathToDisplayPath(item.file),
       'context': '',
