@@ -22,6 +22,7 @@ let spell = null
 const templates = {
   'index': pug.compileFile('template/index.pug'),
   'search': pug.compileFile('template/search.pug'),
+  'new': pug.compileFile('template/new.pug'),
   'search-not-ready': pug.compileFile('template/search-not-ready.pug'),
   'partial-load': pug.compileFile('template/partial-search.pug'),
   'conversion': pug.compileFile('template/conversion.pug')
@@ -81,6 +82,14 @@ app.get('/', function (request, response) {
     recipes: fileList.generateFileList()
   }
   sendTemplate(request, response, 'index', locals)
+})
+
+app.get('/new', function (request, response) {
+  onRequest(request)
+  const locals = {
+    recipes: fileList.generateFileList()
+  }
+  sendTemplate(request, response, 'new', locals)
 })
 
 app.get('/conversion', function (request, response) {
