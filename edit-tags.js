@@ -7,7 +7,8 @@ const initialiseAllTags = function () {
     if (!tags.tagsExists(recipePath)) {
       tags.initialiseTags(recipePath)
     }
-    const t = tags.readTagsSync(recipePath)
+    const ignoreErrors = true
+    const t = tags.readTagsSync(recipePath, ignoreErrors)
     if (recipePath.search('Vegan') !== -1) {
       const recipeTags = t['tags']
       if (!recipeTags.includes('vegan')) {
