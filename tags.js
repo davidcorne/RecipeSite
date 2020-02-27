@@ -47,7 +47,9 @@ const doReadTags = function (content) {
   const tags = JSON.parse(content)
   if (tags) {
     const valid = validTags(tags)
-    if (valid) {
+    if (!valid) {
+      throw new Error('Invalid tags')
+    } else {
       tags.tags.sort()
       return tags
     }
