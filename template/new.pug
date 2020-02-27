@@ -6,3 +6,8 @@ block content
   h1 New Recipes
   
   include search-bar.pug
+
+  div#search-result
+    if newRecipes.length
+      each item in newRecipes
+        include search-item.pug
