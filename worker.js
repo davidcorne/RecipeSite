@@ -85,9 +85,15 @@ app.get('/', function (request, response) {
 })
 
 const getNewRecipes = function () {
+  const orderPredicate = (a, b) => {
+    return a.date > b.date ? -1 : a.date < b.date ? 1 : 0
+  }
   const orderedRecipes = []
+  const orderedIndex = index.slice()
+  orderedIndex.sort(orderPredicate)
+
   for (let i = 0; i < 30; ++i) {
-    const item = index[i]
+    const item = orderedIndex[i]
     orderedRecipes.push({
       'path': item.file,
       'label': utils.pathToLabel(item.file),
