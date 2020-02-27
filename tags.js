@@ -12,13 +12,17 @@ const schema = {
     'tags': {
       'type': 'array',
       'items': {'type': 'string'}
+    },
+    'date': {
+      'type': 'string'
     }
   },
-  'required': ['tags']
+  'required': ['tags', 'date']
 }
 
 const defaultTags = {
-  'tags': []
+  'tags': [],
+  'date': ''
 }
 
 const tagsPath = function (recipePath) {
