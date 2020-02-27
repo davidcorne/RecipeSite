@@ -736,11 +736,13 @@ describe('tags', function () {
     const validtags = tagsModule.__get__('validTags')
     // Some valid options
     let t = {
-      'tags': ['vegan', 'gout']
+      'tags': ['vegan', 'gout'],
+      'date': 'a date'
     }
     assert.isTrue(validtags(t))
     t = {
-      'tags': []
+      'tags': [],
+      'date': 'a date'
     }
     // Incorrect data
     t = {
