@@ -22,6 +22,7 @@ let spell = null
 const templates = {
   'index': pug.compileFile('template/index.pug'),
   'search': pug.compileFile('template/search.pug'),
+  'new': pug.compileFile('template/new.pug'),
   'search-not-ready': pug.compileFile('template/search-not-ready.pug'),
   'partial-load': pug.compileFile('template/partial-search.pug'),
   'conversion': pug.compileFile('template/conversion.pug')
@@ -81,6 +82,36 @@ app.get('/', function (request, response) {
     recipes: fileList.generateFileList()
   }
   sendTemplate(request, response, 'index', locals)
+})
+
+const getNewRecipes = function () {
+  const orderPredicate = (a, b) => {
+    return a.date > b.date ? -1 : a.date < b.date ? 1 : 0
+  }
+  const orderedRecipes = []
+  const orderedIndex = index.slice()
+  orderedIndex.sort(orderPredicate)
+
+  for (let i = 0; i < 30; ++i) {
+    const item = orderedIndex[i]
+    orderedRecipes.push({
+      'path': item.file,
+      'label': utils.pathToLabel(item.file),
+      'displayPath': utils.pathToDisplayPath(item.file),
+      'context': '',
+      'tags': item.tags,
+      'date': item.date
+    })
+  }
+  return orderedRecipes
+}
+
+app.get('/new', function (request, response) {
+  onRequest(request)
+  const locals = {
+    newRecipes: getNewRecipes()
+  }
+  sendTemplate(request, response, 'new', locals)
 })
 
 app.get('/conversion', function (request, response) {
