@@ -773,6 +773,7 @@ describe('tags', function () {
     assert.isTrue(recipeTags.includes('FODMAP'))
     assert.isTrue(recipeTags.includes('fusion'))
     assert.isTrue(recipeTags.includes('italian'))
+    assert.strictEqual(t['date'], 'someday')
   })
   it('Reading', function (done) {
     const readTags = tagsModule.__get__('readTags')
@@ -784,6 +785,7 @@ describe('tags', function () {
       assert.isTrue(tags.includes('FODMAP'))
       assert.isTrue(tags.includes('fusion'))
       assert.isTrue(tags.includes('italian'))
+      assert.strictEqual(allTags['date'], 'someday')
       done()
     })
   })
