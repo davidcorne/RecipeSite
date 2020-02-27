@@ -30,14 +30,6 @@ class Match {
   }
 }
 
-const pathToDisplayPath = function (file) {
-  // comes in as public\recipes\A\B\C.X want to display A/B/C
-  let displayPath = file.replace(/\\/g, '/')
-  displayPath = displayPath.replace('public/recipes/', '')
-  displayPath = displayPath.replace(/\..*/, '')
-  return displayPath
-}
-
 const searchContext = function (query, content) {
   // Note: content comes in mixed case, so that the context is added in the
   // correct case for the user.
@@ -131,7 +123,7 @@ const search = function (query, index) {
       results.push({
         label: utils.pathToLabel(file),
         path: file,
-        displayPath: pathToDisplayPath(file),
+        displayPath: utils.pathToDisplayPath(file),
         context: contextResult.context,
         tags: item.tags,
         match: match.score(),

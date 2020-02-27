@@ -91,7 +91,7 @@ const getNewRecipes = function () {
     orderedRecipes.push({
       'file': item.file,
       'label': utils.pathToLabel(item.file),
-      'displayPath': item.file, // pathToDisplayPath(file),
+      'displayPath': utils.pathToDisplayPath(item.file),
       'context': '',
       'tags': item.tags
     })

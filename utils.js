@@ -109,6 +109,14 @@ const formatDate = function (date) {
     String(date.getDate()).padStart(2, '0')
 }
 
+const pathToDisplayPath = function (file) {
+  // comes in as public\recipes\A\B\C.X want to display A/B/C
+  let displayPath = file.replace(/\\/g, '/')
+  displayPath = displayPath.replace('public/recipes/', '')
+  displayPath = displayPath.replace(/\..*/, '')
+  return displayPath
+}
+
 module.exports.occurrences = occurrences
 module.exports.pathToLabel = pathToLabel
 module.exports.cachePath = cachePath
@@ -119,3 +127,4 @@ module.exports.foreachRecipe = foreachRecipe
 module.exports.isRecipe = isRecipe
 module.exports.removeDiacritic = removeDiacritic
 module.exports.formatDate = formatDate
+module.exports.pathToDisplayPath = pathToDisplayPath
