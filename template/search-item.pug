@@ -12,7 +12,5 @@ div
     p.debug Score: #{item.match}
     p.debug Match: #{JSON.stringify(item.matchVerbose)}
   div.search-context
-    // If we're looking at new recipes they won't have search context
-    if item.context
-      each line in item.context
-        p.line #{line}
+    each line in item.context
+      p.line #{line}
