@@ -11,6 +11,7 @@ div
   if debugView
     p.debug Score: #{item.match}
     p.debug Match: #{JSON.stringify(item.matchVerbose)}
+    p.debug Date: #{item.date}
   div.search-context
     each line in item.context
       p.line #{line}
