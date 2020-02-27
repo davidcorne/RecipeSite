@@ -92,7 +92,7 @@ const getNewRecipes = function () {
       'path': item.file,
       'label': utils.pathToLabel(item.file),
       'displayPath': utils.pathToDisplayPath(item.file),
-      'context': '',
+      'context': item.content.split('\n').slice(0, 10),
       'tags': item.tags
     })
   }
