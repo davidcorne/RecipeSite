@@ -43,24 +43,25 @@ const validTags = function (tags) {
   return valid
 }
 
-const doReadTags = function (content) {
+const doReadTags = function (content, ignoreErrors) {
   const tags = JSON.parse(content)
   if (tags) {
-    const valid = validTags(tags)
-    if (!valid) {
-      throw new Error('Invalid tags')
-    } else {
-      tags.tags.sort()
-      return tags
+    if (!ignoreErrors) {
+      const valid = validTags(tags)
+      if (!valid) {
+        throw new Error('Invalid tags')
+      }
     }
+    tags.tags.sort()
+    return tags
   }
 }
 
-const readTagsSync = function (recipePath) {
+const readTagsSync = function (recipePath, ignoreErrors) {
   const filePath = tagsPath(recipePath)
   const content = fs.readFileSync(filePath, 'utf8')
   if (content) {
-    return doReadTags(content)
+    return doReadTags(content, ignoreErrors)
   }
 }
 
