@@ -89,10 +89,7 @@ const writeTagsSync = function (recipePath, tags) {
 }
 
 const initialiseTags = function (recipePath) {
-  const tag = defaultTags
-  const date = new Date()
-  tag['date'] = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay()
-  writeTagsSync(recipePath, tag)
+  writeTagsSync(recipePath, defaultTags)
 }
 
 module.exports.readTagsSync = readTagsSync
