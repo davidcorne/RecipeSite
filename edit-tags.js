@@ -1,18 +1,18 @@
 'use strict'
 const utils = require('./utils')
-const tags = require('./tags')
+const metadata = require('./metadata')
 
-const initialiseAllTags = function () {
+const initialiseAllMetadata = function () {
   utils.foreachRecipe('public/recipes', function (recipePath) {
-    if (!tags.tagsExists(recipePath)) {
-      tags.initialiseTags(recipePath)
+    if (!metadata.tagsExists(recipePath)) {
+      metadata.initialiseMetadata(recipePath)
     }
     const ignoreErrors = true
-    const t = tags.readTagsSync(recipePath, ignoreErrors)
+    const t = metadata.readMetadataSync(recipePath, ignoreErrors)
     if (recipePath.search('Vegan') !== -1) {
-      const recipeTags = t['tags']
-      if (!recipeTags.includes('vegan')) {
-        recipeTags.push('vegan')
+      const recipeMetadata = t['tags']
+      if (!recipeMetadata.includes('vegan')) {
+        recipeMetadata.push('vegan')
       }
     }
     if (!t['date']) {
@@ -20,8 +20,8 @@ const initialiseAllTags = function () {
       const date = new Date()
       t['date'] = utils.formatDate(date)
     }
-    tags.writeTagsSync(recipePath, t)
+    metadata.writeMetadataSync(recipePath, t)
   })
 }
 
-module.exports.initialiseAllTags = initialiseAllTags
+module.exports.initialiseAllMetadata = initialiseAllMetadata

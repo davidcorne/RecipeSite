@@ -199,8 +199,8 @@ describe('Recipes', function () {
   })
 })
 describe('tags', function () {
-  const tagsPath = tagsModule.__get__('tagsPath')
-  const validTags = tagsModule.__get__('validTags')
+  const tagsPath = tagsModule.__get__('metadataPath')
+  const validMetadata = tagsModule.__get__('validMetadata')
   it('Present', function () {
     foreachRecipeSync(function (recipePath) {
       const path = tagsPath(recipePath)
@@ -209,8 +209,8 @@ describe('tags', function () {
   })
   it('Correct', function () {
     foreachRecipeSync(function (recipePath) {
-      const t = tags.readTagsSync(recipePath)
-      assert.isTrue(validTags(t), 'Invalid tags for: ' + recipePath)
+      const t = tags.readMetadataSync(recipePath)
+      assert.isTrue(validMetadata(t), 'Invalid tags for: ' + recipePath)
       // Ensure that the tags are lower case
       t.tags.forEach(tag => {
         assert.strictEqual(tag, tag.toLowerCase())

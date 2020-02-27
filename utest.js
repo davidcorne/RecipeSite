@@ -787,8 +787,8 @@ describe('tags', function () {
     assert.strictEqual(t['date'], 'someday')
   })
   it('Reading', function (done) {
-    const readTags = metadataModule.__get__('readTags')
-    readTags('test_data/generic/test.html', function (allTags) {
+    const readMetadata = metadataModule.__get__('readMetadata')
+    readMetadata('test_data/generic/test.html', function (allTags) {
       const tags = allTags.tags
       assert.strictEqual(tags.length, 5)
       assert.isTrue(tags.includes('gout'))
@@ -803,11 +803,11 @@ describe('tags', function () {
   it('Tag file name', function () {
     const metadataPath = metadataModule.__get__('metadataPath')
     const one = metadataPath('one.pdf')
-    assert.strictEqual(one, 'one.tags')
+    assert.strictEqual(one, 'one.metadata')
     const two = metadataPath('two')
-    assert.strictEqual(two, 'two.tags')
+    assert.strictEqual(two, 'two.metadata')
     const three = metadataPath('three.etc.jpg')
-    assert.strictEqual(three, 'three.etc.tags')
+    assert.strictEqual(three, 'three.etc.metadata')
   })
 })
 describe('new_recipe', function () {
