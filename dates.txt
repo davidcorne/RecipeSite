@@ -1,6 +1,6 @@
 fix_date()
 {
-    sed -i "$1" -e "s/}/,date:\"$2\"}/"
+    sed -i "$1" -e "s/}/,\"date\":\"$2\"}/"
 }
 
 fix_date "public/recipes/Breakfast/American Style Pancakes.tags" 2018-06-06
