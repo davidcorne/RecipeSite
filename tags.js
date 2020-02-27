@@ -14,7 +14,7 @@ const schema = {
       'items': {'type': 'string'}
     },
     'date': {
-      'type': 'string'
+      'type': 'string' // format YYY-MM-DD
     }
   },
   'required': ['tags', 'date']
@@ -89,7 +89,10 @@ const writeTagsSync = function (recipePath, tags) {
 }
 
 const initialiseTags = function (recipePath) {
-  writeTagsSync(recipePath, defaultTags)
+  const tag = defaultTags
+  const date = new Date()
+  tag['date'] = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay()
+  writeTagsSync(recipePath, tag)
 }
 
 module.exports.readTagsSync = readTagsSync
