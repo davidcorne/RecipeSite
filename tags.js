@@ -14,7 +14,7 @@ const schema = {
       'items': {'type': 'string'}
     },
     'date': {
-      'type': 'string' // format YYY-MM-DD
+      'type': 'string' // format YYYY-MM-DD
     }
   },
   'required': ['tags', 'date']
