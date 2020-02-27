@@ -101,6 +101,14 @@ const removeDiacritic = function (string) {
   return string.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
 
+const formatDate = function (date) {
+  return date.getFullYear() +
+    '-' +
+    String(date.getMonth() + 1).padStart(2, '0') +
+    '-' +
+    String(date.getDate()).padStart(2, '0')
+}
+
 module.exports.occurrences = occurrences
 module.exports.pathToLabel = pathToLabel
 module.exports.cachePath = cachePath
@@ -110,3 +118,4 @@ module.exports.timer = timer
 module.exports.foreachRecipe = foreachRecipe
 module.exports.isRecipe = isRecipe
 module.exports.removeDiacritic = removeDiacritic
+module.exports.formatDate = formatDate

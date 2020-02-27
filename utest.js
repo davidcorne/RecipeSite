@@ -31,6 +31,17 @@ describe('utils', function () {
       assert.strictEqual(result, testCase[1])
     })
   })
+  it('format date', function () {
+    // Note: for JS dates, months are indexed from 0
+    const testCases = [
+      [new Date(2015, 11, 28), '2015-12-28'],
+      [new Date(2020, 1, 1), '2020-02-01']
+    ]
+    testCases.forEach((testCase) => {
+      const result = utils.formatDate(testCase[0])
+      assert.strictEqual(result, testCase[1])
+    })
+  })
 })
 describe('Caches', function () {
   const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent')
