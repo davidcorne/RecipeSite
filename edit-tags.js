@@ -17,7 +17,7 @@ const initialiseAllTags = function () {
     if (!t['date']) {
       // New recipe with no date, write one now
       const date = new Date()
-      t['date'] = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay()
+      t['date'] = utils.formatDate(date)
     }
     tags.writeTagsSync(recipePath, t)
   })
