@@ -31,6 +31,17 @@ describe('utils', function () {
       assert.strictEqual(result, testCase[1])
     })
   })
+  it('format date', function () {
+    // Note: for JS dates, months are indexed from 0
+    const testCases = [
+      [new Date(2015, 11, 28), '2015-12-28'],
+      [new Date(2020, 1, 1), '2020-02-01']
+    ]
+    testCases.forEach((testCase) => {
+      const result = utils.formatDate(testCase[0])
+      assert.strictEqual(result, testCase[1])
+    })
+  })
 })
 describe('Caches', function () {
   const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent')
@@ -736,11 +747,13 @@ describe('tags', function () {
     const validtags = tagsModule.__get__('validTags')
     // Some valid options
     let t = {
-      'tags': ['vegan', 'gout']
+      'tags': ['vegan', 'gout'],
+      'date': 'a date'
     }
     assert.isTrue(validtags(t))
     t = {
-      'tags': []
+      'tags': [],
+      'date': 'a date'
     }
     // Incorrect data
     t = {
@@ -771,6 +784,7 @@ describe('tags', function () {
     assert.isTrue(recipeTags.includes('FODMAP'))
     assert.isTrue(recipeTags.includes('fusion'))
     assert.isTrue(recipeTags.includes('italian'))
+    assert.strictEqual(t['date'], 'someday')
   })
   it('Reading', function (done) {
     const readTags = tagsModule.__get__('readTags')
@@ -782,6 +796,7 @@ describe('tags', function () {
       assert.isTrue(tags.includes('FODMAP'))
       assert.isTrue(tags.includes('fusion'))
       assert.isTrue(tags.includes('italian'))
+      assert.strictEqual(allTags['date'], 'someday')
       done()
     })
   })
