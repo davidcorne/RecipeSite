@@ -84,12 +84,12 @@ APP.get('/', function (request, response) {
   sendTemplate(request, response, 'index', locals)
 })
 
-const getNewRecipes = function () {
+const getNewRecipes = function (index) {
   const orderPredicate = (a, b) => {
     return a.date > b.date ? -1 : a.date < b.date ? 1 : 0
   }
   const orderedRecipes = []
-  const orderedIndex = INDEX.slice()
+  const orderedIndex = index.slice()
   orderedIndex.sort(orderPredicate)
 
   for (let i = 0; i < 30; ++i) {
@@ -109,7 +109,7 @@ const getNewRecipes = function () {
 APP.get('/new', function (request, response) {
   onRequest(request)
   const locals = {
-    newRecipes: getNewRecipes()
+    newRecipes: getNewRecipes(INDEX)
   }
   sendTemplate(request, response, 'new', locals)
 })
