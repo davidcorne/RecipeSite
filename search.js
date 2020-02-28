@@ -1,10 +1,9 @@
 'use strict'
 const fs = require('graceful-fs')
-const path = require('path')
 
 const utils = require('./utils')
 const log = require('./log')
-const tags = require('./tags')
+const metadata = require('./metadata')
 
 class Match {
   constructor () {
@@ -139,7 +138,7 @@ const search = function (query, index) {
 }
 
 const readCacheFile = function (file, callback) {
-  if (path.extname(file) !== '.cache' && path.extname(file) !== '.tags') {
+  if (utils.recipeFile(file)) {
     // Read the cached file.
     const cacheFileName = utils.cachePath(file)
     fs.stat(cacheFileName, function (error, cacheStats) {
@@ -166,12 +165,12 @@ const readCacheFile = function (file, callback) {
 const buildIndex = function (path, index) {
   const readFileCallback = function (file) {
     readCacheFile(file, function (content) {
-      tags.readTags(file, function (tags) {
+      metadata.readMetadata(file, function (metadata) {
         index.push({
           file,
           content,
-          'tags': tags.tags,
-          'date': tags.date
+          'tags': metadata.tags,
+          'date': metadata.date
         })
       })
     })

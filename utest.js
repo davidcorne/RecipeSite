@@ -14,7 +14,8 @@ const utils = require('./utils')
 const searchModule = rewire('./search.js')
 const buildCacheModule = rewire('./build-cache.js')
 const workerModule = rewire('./worker.js')
-const tagsModule = rewire('./tags.js')
+const metadataModule = rewire('./metadata.js')
+const fileListModule = rewire('./file-list.js')
 const newRecipeModule = rewire('./new_recipe.js')
 
 console.log('Running Unit Tests')
@@ -744,13 +745,13 @@ describe('Routing', function () {
 })
 describe('tags', function () {
   it('Schema', function () {
-    const validtags = tagsModule.__get__('validTags')
+    const validMetadata = metadataModule.__get__('validMetadata')
     // Some valid options
     let t = {
       'tags': ['vegan', 'gout'],
       'date': 'a date'
     }
-    assert.isTrue(validtags(t))
+    assert.isTrue(validMetadata(t))
     t = {
       'tags': [],
       'date': 'a date'
@@ -761,22 +762,22 @@ describe('tags', function () {
       'cuisine': [4],
       'type': 'recipe'
     }
-    assert.isFalse(validtags(t))
+    assert.isFalse(validMetadata(t))
 
     t = {
       'tags': [1]
     }
-    assert.isFalse(validtags(t))
+    assert.isFalse(validMetadata(t))
 
     t = {
       'tags': 'vegan'
     }
-    assert.isFalse(validtags(t))
-    assert.isFalse(validtags(undefined))
+    assert.isFalse(validMetadata(t))
+    assert.isFalse(validMetadata(undefined))
   })
   it('Reading Sync', function () {
-    const readTagsSync = tagsModule.__get__('readTagsSync')
-    const t = readTagsSync('test_data/generic/test.html')
+    const readMetadataSync = metadataModule.__get__('readMetadataSync')
+    const t = readMetadataSync('test_data/generic/test.html')
     const recipeTags = t['tags']
     assert.strictEqual(recipeTags.length, 5)
     assert.isTrue(recipeTags.includes('gout'))
@@ -787,8 +788,8 @@ describe('tags', function () {
     assert.strictEqual(t['date'], 'someday')
   })
   it('Reading', function (done) {
-    const readTags = tagsModule.__get__('readTags')
-    readTags('test_data/generic/test.html', function (allTags) {
+    const readMetadata = metadataModule.__get__('readMetadata')
+    readMetadata('test_data/generic/test.html', function (allTags) {
       const tags = allTags.tags
       assert.strictEqual(tags.length, 5)
       assert.isTrue(tags.includes('gout'))
@@ -801,18 +802,26 @@ describe('tags', function () {
     })
   })
   it('Tag file name', function () {
-    const tagsPath = tagsModule.__get__('tagsPath')
-    const one = tagsPath('one.pdf')
-    assert.strictEqual(one, 'one.tags')
-    const two = tagsPath('two')
-    assert.strictEqual(two, 'two.tags')
-    const three = tagsPath('three.etc.jpg')
-    assert.strictEqual(three, 'three.etc.tags')
+    const metadataPath = metadataModule.__get__('metadataPath')
+    const one = metadataPath('one.pdf')
+    assert.strictEqual(one, 'one.metadata')
+    const two = metadataPath('two')
+    assert.strictEqual(two, 'two.metadata')
+    const three = metadataPath('three.etc.jpg')
+    assert.strictEqual(three, 'three.etc.metadata')
   })
 })
 describe('new_recipe', function () {
   const recipeFileName = newRecipeModule.__get__('recipeFileName')
   it('Recipe file name', function () {
     assert.strictEqual('hi.html', recipeFileName('hi'))
+  })
+})
+describe('File List', function () {
+  it('directoryToItem', function () {
+    const directoryToItem = fileListModule.__get__('directoryToItem')
+    const item = directoryToItem('test_data', 'generic/')
+    // Should have test_recipe.html, test_recipe.pdf and test_recipe_diacritics.html
+    assert.strictEqual(item.files.length, 3)
   })
 })

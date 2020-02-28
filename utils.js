@@ -117,6 +117,16 @@ const pathToDisplayPath = function (file) {
   return displayPath
 }
 
+/** Function that identifies a file as a recipe file or not
+ * @param {String} file               The file path
+ *
+ * @return {Boolean} Returns if the file is a recipe.
+ */
+const recipeFile = function (file) {
+  const ext = path.extname(file)
+  return ext !== '.cache' && ext !== '.metadata'
+}
+
 module.exports.occurrences = occurrences
 module.exports.pathToLabel = pathToLabel
 module.exports.cachePath = cachePath
@@ -128,3 +138,4 @@ module.exports.isRecipe = isRecipe
 module.exports.removeDiacritic = removeDiacritic
 module.exports.formatDate = formatDate
 module.exports.pathToDisplayPath = pathToDisplayPath
+module.exports.recipeFile = recipeFile
