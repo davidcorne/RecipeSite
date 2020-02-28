@@ -52,7 +52,7 @@ const doReadMetadata = function (content, ignoreErrors) {
         throw new Error('Invalid metadata')
       }
     }
-    metadata.Metadata.sort()
+    metadata.tags.sort()
     return metadata
   }
 }
