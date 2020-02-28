@@ -84,32 +84,10 @@ APP.get('/', function (request, response) {
   sendTemplate(request, response, 'index', locals)
 })
 
-const getNewRecipes = function (index) {
-  const orderPredicate = (a, b) => {
-    return a.date > b.date ? -1 : a.date < b.date ? 1 : 0
-  }
-  const orderedRecipes = []
-  const orderedIndex = index.slice()
-  orderedIndex.sort(orderPredicate)
-
-  for (let i = 0; i < 30; ++i) {
-    const item = orderedIndex[i]
-    orderedRecipes.push({
-      'path': item.file,
-      'label': utils.pathToLabel(item.file),
-      'displayPath': utils.pathToDisplayPath(item.file),
-      'context': '',
-      'tags': item.tags,
-      'date': item.date
-    })
-  }
-  return orderedRecipes
-}
-
 APP.get('/new', function (request, response) {
   onRequest(request)
   const locals = {
-    newRecipes: getNewRecipes(INDEX)
+    newRecipes: fileList.filterNewRecipes(INDEX)
   }
   sendTemplate(request, response, 'new', locals)
 })
