@@ -139,7 +139,7 @@ const search = function (query, index) {
 }
 
 const readCacheFile = function (file, callback) {
-  if (path.extname(file) !== '.cache' && path.extname(file) !== '.tags') {
+  if (path.extname(file) !== '.cache' && path.extname(file) !== '.metadata') {
     // Read the cached file.
     const cacheFileName = utils.cachePath(file)
     fs.stat(cacheFileName, function (error, cacheStats) {
