@@ -824,4 +824,30 @@ describe('File List', function () {
     // Should have test_recipe.html, test_recipe.pdf and test_recipe_diacritics.html
     assert.strictEqual(item.files.length, 3)
   })
+  it('filterNewRecipes', function () {
+    const filterNewRecipes = fileListModule.__get__('filterNewRecipes')
+    const index = []
+    index.push({
+      'file': '2',
+      'content': '2',
+      'date': '2'
+    })
+    index.push({
+      'file': '4',
+      'content': '4',
+      'date': '4'
+    })
+    index.push({
+      'file': '3',
+      'content': '3',
+      'date': '3'
+    })
+    index.push({
+      'file': '1',
+      'content': '1',
+      'date': '1'
+    })
+    const orderedRecipes = filterNewRecipes(index)
+    assert.strictEqual(orderedRecipes.length, 4)
+  })
 })

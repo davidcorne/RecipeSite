@@ -56,7 +56,8 @@ const filterNewRecipes = function (index) {
   const orderedIndex = index.slice()
   orderedIndex.sort(orderPredicate)
 
-  for (let i = 0; i < 30; ++i) {
+  const limit = Math.min(30, orderedIndex.length)
+  for (let i = 0; i < limit; ++i) {
     const item = orderedIndex[i]
     orderedRecipes.push({
       'path': item.file,
