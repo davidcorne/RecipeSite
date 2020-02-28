@@ -4,7 +4,7 @@ const path = require('path')
 
 const utils = require('./utils')
 const log = require('./log')
-const tags = require('./metadata')
+const metadata = require('./metadata')
 
 class Match {
   constructor () {
@@ -166,12 +166,12 @@ const readCacheFile = function (file, callback) {
 const buildIndex = function (path, index) {
   const readFileCallback = function (file) {
     readCacheFile(file, function (content) {
-      tags.readMetadata(file, function (tags) {
+      metadata.readMetadata(file, function (metadata) {
         index.push({
           file,
           content,
-          'tags': tags.tags,
-          'date': tags.date
+          'tags': metadata.tags,
+          'date': metadata.date
         })
       })
     })
