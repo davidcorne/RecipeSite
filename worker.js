@@ -13,13 +13,13 @@ const conversion = require('./conversion')
 const search = require('./search')
 const fileList = require('./file-list')
 
-let index = []
-const recipeRoot = 'public/recipes'
+let INDEX = []
+const RECIPE_ROOT = 'public/recipes'
 
-let spell = null
+let SPELL = null
 
 // Compile a function
-const templates = {
+const TEMPLATES = {
   'index': pug.compileFile('template/index.pug'),
   'search': pug.compileFile('template/search.pug'),
   'new': pug.compileFile('template/new.pug'),
@@ -28,36 +28,36 @@ const templates = {
   'conversion': pug.compileFile('template/conversion.pug')
 }
 
-const app = express()
-const http = require('http').Server(app)
+const APP = express()
+const HTTP = require('http').Server(APP)
 
-app.set('port', (process.env.PORT || 3000))
+APP.set('port', (process.env.PORT || 3000))
 
-let partialLoad = false
-let debugView = false
-let gitCommitSha = ''
+let PARTIAL_LOAD = false
+let DEBUG_VIEW = false
+let GIT_COMMIT_SHA = ''
 
 const loadSearchIndex = function () {
-  partialLoad = false
-  search.buildIndex(recipeRoot, index)
+  PARTIAL_LOAD = false
+  search.buildIndex(RECIPE_ROOT, INDEX)
 }
 
 const partialLoadSearchIndex = function () {
-  partialLoad = true
-  search.buildIndex(recipeRoot, index)
+  PARTIAL_LOAD = true
+  search.buildIndex(RECIPE_ROOT, INDEX)
 }
 
-const messageMap = {
+const MESSAGE_MAP = {
   'load-search-index': loadSearchIndex,
   'partial-load-search-index': partialLoadSearchIndex
 }
 
 process.on('message', function (message) {
   log.debug('Recieved ' + JSON.stringify(message))
-  if (message in messageMap) {
-    messageMap[message]()
+  if (message in MESSAGE_MAP) {
+    MESSAGE_MAP[message]()
   } else if (message.git_commit_sha) {
-    gitCommitSha = message.git_commit_sha
+    GIT_COMMIT_SHA = message.git_commit_sha
   } else {
     log.error('Unknown message "' + JSON.stringify(message) + '"')
   }
@@ -67,16 +67,16 @@ const onRequest = function (request) {
   log.debug(
     'Request: ' + request.path + ' ' + JSON.stringify(request.query)
   )
-  debugView = 'debug' in request.query
+  DEBUG_VIEW = 'debug' in request.query
 }
 
 const sendTemplate = function (request, response, key, data) {
-  data.debugView = debugView
-  data.git_commit_sha = gitCommitSha
-  response.send(templates[key](data))
+  data.debugView = DEBUG_VIEW
+  data.git_commit_sha = GIT_COMMIT_SHA
+  response.send(TEMPLATES[key](data))
 }
 
-app.get('/', function (request, response) {
+APP.get('/', function (request, response) {
   onRequest(request)
   const locals = {
     recipes: fileList.generateFileList()
@@ -89,7 +89,7 @@ const getNewRecipes = function () {
     return a.date > b.date ? -1 : a.date < b.date ? 1 : 0
   }
   const orderedRecipes = []
-  const orderedIndex = index.slice()
+  const orderedIndex = INDEX.slice()
   orderedIndex.sort(orderPredicate)
 
   for (let i = 0; i < 30; ++i) {
@@ -106,7 +106,7 @@ const getNewRecipes = function () {
   return orderedRecipes
 }
 
-app.get('/new', function (request, response) {
+APP.get('/new', function (request, response) {
   onRequest(request)
   const locals = {
     newRecipes: getNewRecipes()
@@ -114,7 +114,7 @@ app.get('/new', function (request, response) {
   sendTemplate(request, response, 'new', locals)
 })
 
-app.get('/conversion', function (request, response) {
+APP.get('/conversion', function (request, response) {
   onRequest(request)
   // A list of the conversions that we cover.
   sendTemplate(
@@ -125,7 +125,7 @@ app.get('/conversion', function (request, response) {
   )
 })
 
-app.get('/public/*', function (request, response) {
+APP.get('/public/*', function (request, response) {
   onRequest(request)
   const filePath = path.join(__dirname, decode(request.path))
   fs.stat(filePath, function (error, stats) {
@@ -140,13 +140,13 @@ app.get('/public/*', function (request, response) {
 const searchIndex = function (data) {
   // We've got a search index, actually search it.
   const timer = utils.timer().start()
-  const results = search.search(data.query, index)
+  const results = search.search(data.query, INDEX)
   timer.stop()
-  data['key'] = partialLoad ? 'partial-load' : 'search'
+  data['key'] = PARTIAL_LOAD ? 'partial-load' : 'search'
   // See if it's well spelled, as long as we've loaded a spellchecker
   let suggestions = []
-  if (spell) {
-    suggestions = spell.suggest(data.query)
+  if (SPELL) {
+    suggestions = SPELL.suggest(data.query)
   }
   data['suggestions'] = suggestions
   data['results_length'] = results.length
@@ -160,13 +160,13 @@ const searchIndex = function (data) {
   data['top'] = top
 }
 
-app.get('/search', function (request, response) {
+APP.get('/search', function (request, response) {
   onRequest(request)
   const data = {
     query: request.query.query,
     page: request.query.page ? request.query.page : 1
   }
-  if (Object.keys(index).length === 0) {
+  if (Object.keys(INDEX).length === 0) {
     // Send a search results not ready signal.
     sendTemplate(request, response, 'search-not-ready', data)
   } else {
@@ -180,16 +180,16 @@ const loadDictionary = function () {
     if (error) {
       throw error
     }
-    spell = nspell(dict)
-    spell.add('halloumi')
+    SPELL = nspell(dict)
+    SPELL.add('halloumi')
   })
 }
 
 const start = function () {
   // Load the dictionary
   loadDictionary()
-  http.listen(app.get('port'), function () {
-    log.info('Listening on *:' + app.get('port'))
+  HTTP.listen(APP.get('port'), function () {
+    log.info('Listening on *:' + APP.get('port'))
   })
 }
 

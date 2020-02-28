@@ -306,7 +306,7 @@ describe('Search', function () {
           'tags': ['tag']
         }
       ]
-      workerModule.__set__('index', index)
+      workerModule.__set__('INDEX', index)
       const searchIndex = workerModule.__get__('searchIndex')
 
       let data = {'query': 'nothing', 'page': 1}
@@ -324,7 +324,7 @@ describe('Search', function () {
       assert.strictEqual(data.results[0].context[0], 'Nothing')
     } finally {
       // Reset what we've changed
-      workerModule.__set__('index', [])
+      workerModule.__set__('INDEX', [])
     }
   })
   it('Multiple terms', function () {
@@ -485,12 +485,12 @@ describe('Search', function () {
 
 describe('Routing', function () {
   this.afterEach(function () {
-    workerModule.__set__('index', [])
-    workerModule.__set__('partialLoad', false)
+    workerModule.__set__('INDEX', [])
+    workerModule.__set__('PARTIAL_LOAD', false)
   })
 
   it('Existing', function (done) {
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const server = app.listen()
 
     // Responds to all the routes.
@@ -511,7 +511,7 @@ describe('Routing', function () {
   })
   it('Non-existing', function (done) {
     // Try to get some non-existent routes
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const server = app.listen()
 
     // Responds to all the routes.
@@ -529,7 +529,7 @@ describe('Routing', function () {
     })
   })
   it('Search not ready', function (done) {
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const server = app.listen()
     request(server).get('/search?query=bean').expect(200, function (error, response) {
       if (error) {
@@ -541,7 +541,7 @@ describe('Routing', function () {
     })
   })
   it('Search not found', function (done) {
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const index = [
       {
         'file': 'test 1',
@@ -549,7 +549,7 @@ describe('Routing', function () {
         'tags': []
       }
     ]
-    workerModule.__set__('index', index)
+    workerModule.__set__('INDEX', index)
 
     const server = app.listen()
     const runTest = function (callback) {
@@ -569,7 +569,7 @@ describe('Routing', function () {
         runTest(cb)
       },
       (cb) => {
-        workerModule.__set__('partialLoad', true)
+        workerModule.__set__('PARTIAL_LOAD', true)
         runTest(cb)
       }
     ], function (error) {
@@ -580,7 +580,7 @@ describe('Routing', function () {
     })
   })
   it('Search found', function (done) {
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const index = [
       {
         'file': 'test 1',
@@ -593,7 +593,7 @@ describe('Routing', function () {
         'tags': []
       }
     ]
-    workerModule.__set__('index', index)
+    workerModule.__set__('INDEX', index)
 
     const server = app.listen()
 
@@ -640,7 +640,7 @@ describe('Routing', function () {
     }
     const testPartial = function (callback) {
       // Set the partial load flag
-      workerModule.__set__('partialLoad', true)
+      workerModule.__set__('PARTIAL_LOAD', true)
       request(server).get('/search?query=bean').expect(200, function (error, response) {
         if (error) {
           throw error
@@ -655,7 +655,7 @@ describe('Routing', function () {
           response.text,
           'The search is not complete, here are the first few results.'
         )
-        workerModule.__set__('partialLoad', false)
+        workerModule.__set__('PARTIAL_LOAD', false)
         callback()
       })
     }
@@ -672,7 +672,7 @@ describe('Routing', function () {
     })
   })
   it('Spelling suggestions', function (done) {
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const loadDictionary = workerModule.__get__('loadDictionary')
     const index = [
       {
@@ -681,7 +681,7 @@ describe('Routing', function () {
         'tags': []
       }
     ]
-    workerModule.__set__('index', index)
+    workerModule.__set__('INDEX', index)
     loadDictionary()
     const testSuggestions = function () {
       const server = app.listen()
@@ -695,7 +695,7 @@ describe('Routing', function () {
       })
     }
     const waitForSpell = function () {
-      const spell = workerModule.__get__('spell')
+      const spell = workerModule.__get__('SPELL')
       if (spell) {
         testSuggestions()
         return
@@ -705,7 +705,7 @@ describe('Routing', function () {
     waitForSpell()
   })
   it('Malformed search', function (done) {
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const loadDictionary = workerModule.__get__('loadDictionary')
     const index = [
       {
@@ -719,7 +719,7 @@ describe('Routing', function () {
         'tags': []
       }
     ]
-    workerModule.__set__('index', index)
+    workerModule.__set__('INDEX', index)
     loadDictionary()
     const testSuggestions = function () {
       const server = app.listen()
@@ -733,7 +733,7 @@ describe('Routing', function () {
       })
     }
     const waitForSpell = function () {
-      const spell = workerModule.__get__('spell')
+      const spell = workerModule.__get__('SPELL')
       if (spell) {
         testSuggestions()
         return
