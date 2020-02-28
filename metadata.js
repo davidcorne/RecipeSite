@@ -95,6 +95,6 @@ const initialiseMetadata = function (recipePath) {
 
 module.exports.readMetadataSync = readMetadataSync
 module.exports.writeMetadataSync = writeMetadataSync
-module.exports.MetadataExists = metadataExists
+module.exports.metadataExists = metadataExists
 module.exports.initialiseMetadata = initialiseMetadata
 module.exports.readMetadata = readMetadata

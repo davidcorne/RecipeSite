@@ -4,15 +4,15 @@ const metadata = require('./metadata')
 
 const initialiseAllMetadata = function () {
   utils.foreachRecipe('public/recipes', function (recipePath) {
-    if (!metadata.tagsExists(recipePath)) {
+    if (!metadata.metadataExists(recipePath)) {
       metadata.initialiseMetadata(recipePath)
     }
     const ignoreErrors = true
     const t = metadata.readMetadataSync(recipePath, ignoreErrors)
     if (recipePath.search('Vegan') !== -1) {
-      const recipeMetadata = t['tags']
-      if (!recipeMetadata.includes('vegan')) {
-        recipeMetadata.push('vegan')
+      const recipeTags = t['tags']
+      if (!recipeTags.includes('vegan')) {
+        recipeTags.push('vegan')
       }
     }
     if (!t['date']) {
