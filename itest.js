@@ -98,8 +98,6 @@ describe('Cache', function () {
           }
         }
         assert.isOk(exists, 'Recipe doesn\'t exist for ' + path)
-      } else if (path.endsWith('_tags.json')) {
-        // Don't do anything for meta data
       } else {
         const cache = utils.cachePath(path)
         assert.isOk(fs.existsSync(cache))
