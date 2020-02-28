@@ -4,13 +4,13 @@ const fs = require('fs')
 const log = require('./log')
 const os = require('os')
 
-const numWorkers = (process.env.WORKERS || os.cpus().length)
-let gitCommitSha
+const NUMBER_OF_WORKERS = (process.env.WORKERS || os.cpus().length)
+let GIT_COMMIT_SHA
 
 const startWorkers = function () {
   let currentWorkers = Object.keys(cluster.workers).length
   // currentWorkers should always be 0, but it's worth checking.
-  const workersToSetup = numWorkers - currentWorkers
+  const workersToSetup = NUMBER_OF_WORKERS - currentWorkers
   log.info('Master cluster setting up ' + workersToSetup + ' workers')
   for (let i = 0; i < workersToSetup; i++) {
     cluster.fork()
@@ -37,7 +37,7 @@ const setupCallbacks = function () {
   // to read the search index.
   cluster.on('online', function (worker) {
     worker.process.send('load-search-index')
-    worker.send({git_commit_sha: gitCommitSha})
+    worker.send({git_commit_sha: GIT_COMMIT_SHA})
   })
 }
 
@@ -59,7 +59,7 @@ const getGitCommitShaSync = function () {
 
 const start = function () {
   log.info('Logging level: ' + log.level())
-  gitCommitSha = getGitCommitShaSync()
+  GIT_COMMIT_SHA = getGitCommitShaSync()
   setupCallbacks()
   startWorkers()
 }
