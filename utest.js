@@ -849,5 +849,10 @@ describe('File List', function () {
     })
     const orderedRecipes = filterNewRecipes(index)
     assert.strictEqual(orderedRecipes.length, 4)
+    // Should be largest 'date' first
+    assert.strictEqual(orderedRecipes[0].path, '4')
+    assert.strictEqual(orderedRecipes[1].path, '3')
+    assert.strictEqual(orderedRecipes[2].path, '2')
+    assert.strictEqual(orderedRecipes[3].path, '1')
   })
 })
