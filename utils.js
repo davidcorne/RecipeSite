@@ -119,7 +119,7 @@ const pathToDisplayPath = function (file) {
 
 /** Function that identifies a file as a recipe file or not
  * @param {String} file               The file path
- * 
+ *
  * @return {Boolean} Returns if the file is a recipe.
  */
 const recipeFile = function (file) {
