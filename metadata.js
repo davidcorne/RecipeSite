@@ -5,7 +5,7 @@ const jsonschema = require('jsonschema')
 const log = require('./log')
 const utils = require('./utils')
 
-const schema = {
+const SCHEMA = {
   'id': '/RecipeMetadata',
   'type': 'object',
   'properties': {
@@ -20,7 +20,7 @@ const schema = {
   'required': ['tags', 'date']
 }
 
-const defaultMetadata = {
+const DEFAULT_METADATA = {
   'tags': [],
   'date': ''
 }
@@ -38,7 +38,7 @@ const validMetadata = function (metadata) {
   let valid = false
   if (metadata) {
     const validator = new jsonschema.Validator()
-    valid = validator.validate(metadata, schema).valid
+    valid = validator.validate(metadata, SCHEMA).valid
   }
   return valid
 }
@@ -90,7 +90,7 @@ const writeMetadataSync = function (recipePath, metadata) {
 }
 
 const initialiseMetadata = function (recipePath) {
-  writeMetadataSync(recipePath, defaultMetadata)
+  writeMetadataSync(recipePath, DEFAULT_METADATA)
 }
 
 module.exports.readMetadataSync = readMetadataSync
