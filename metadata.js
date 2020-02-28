@@ -6,7 +6,7 @@ const log = require('./log')
 const utils = require('./utils')
 
 const schema = {
-  'id': '/Recipetags',
+  'id': '/RecipeMetadata',
   'type': 'object',
   'properties': {
     'tags': {
