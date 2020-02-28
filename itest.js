@@ -213,6 +213,7 @@ describe('metadata', function () {
       t.tags.forEach(tag => {
         assert.strictEqual(tag, tag.toLowerCase())
       })
+      assert.match(t.date, /^\d{4}-\d{2}-\d{2}/)
     })
   })
 })
