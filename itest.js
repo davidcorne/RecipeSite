@@ -12,9 +12,9 @@ const rewire = require('rewire')
 
 const utils = require('./utils')
 const buildCache = require('./build-cache')
-const tags = require('./metadata')
+const metadata = require('./metadata')
 
-const tagsModule = rewire('./tags.js')
+const metadataModule = rewire('./metadata.js')
 const newRecipeModule = rewire('./new_recipe.js')
 
 // Turn off application logging
@@ -198,19 +198,19 @@ describe('Recipes', function () {
     })
   })
 })
-describe('tags', function () {
-  const tagsPath = tagsModule.__get__('metadataPath')
-  const validMetadata = tagsModule.__get__('validMetadata')
+describe('metadata', function () {
+  const metadataPath = metadataModule.__get__('metadataPath')
+  const validMetadata = metadataModule.__get__('validMetadata')
   it('Present', function () {
     foreachRecipeSync(function (recipePath) {
-      const path = tagsPath(recipePath)
+      const path = metadataPath(recipePath)
       assert.isTrue(fs.existsSync(path))
     })
   })
   it('Correct', function () {
     foreachRecipeSync(function (recipePath) {
-      const t = tags.readMetadataSync(recipePath)
-      assert.isTrue(validMetadata(t), 'Invalid tags for: ' + recipePath)
+      const t = metadata.readMetadataSync(recipePath)
+      assert.isTrue(validMetadata(t), 'Invalid metadata for: ' + recipePath)
       // Ensure that the tags are lower case
       t.tags.forEach(tag => {
         assert.strictEqual(tag, tag.toLowerCase())
