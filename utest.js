@@ -15,6 +15,7 @@ const searchModule = rewire('./search.js')
 const buildCacheModule = rewire('./build-cache.js')
 const workerModule = rewire('./worker.js')
 const metadataModule = rewire('./metadata.js')
+const fileListModule = rewire('./file-list.js')
 const newRecipeModule = rewire('./new_recipe.js')
 
 console.log('Running Unit Tests')
@@ -814,5 +815,13 @@ describe('new_recipe', function () {
   const recipeFileName = newRecipeModule.__get__('recipeFileName')
   it('Recipe file name', function () {
     assert.strictEqual('hi.html', recipeFileName('hi'))
+  })
+})
+describe('File List', function () {
+  it('directoryToItem', function () {
+    const directoryToItem = fileListModule.__get__('directoryToItem')
+    const item = directoryToItem('test_data', 'generic/')
+    // Should have test_recipe.html, test_recipe.pdf and test_recipe_diacritics.html
+    assert.strictEqual(item.files.length, 3)
   })
 })
