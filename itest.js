@@ -196,7 +196,7 @@ describe('Recipes', function () {
     })
   })
 })
-describe('metadata', function () {
+describe('Metadata', function () {
   const metadataPath = metadataModule.__get__('metadataPath')
   const validMetadata = metadataModule.__get__('validMetadata')
   it('Present', function () {
@@ -217,8 +217,8 @@ describe('metadata', function () {
     })
   })
 })
-describe('new_recipe', function () {
-  it('build new recipe', function (done) {
+describe('New Recipe', function () {
+  it('Build new recipe', function (done) {
     const newRecipe = newRecipeModule.__get__('newRecipe')
     const recipeFileName = newRecipeModule.__get__('recipeFileName')
     const name = 'This is a new recipe'

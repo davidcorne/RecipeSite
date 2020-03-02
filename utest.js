@@ -20,8 +20,8 @@ const newRecipeModule = rewire('./new_recipe.js')
 
 console.log('Running Unit Tests')
 
-describe('utils', function () {
-  it('remove diacritic', function () {
+describe('Utils', function () {
+  it('Remove diacritic', function () {
     const testCases = [
       ['café', 'cafe'],
       ['brulée', 'brulee'],
@@ -32,7 +32,7 @@ describe('utils', function () {
       assert.strictEqual(result, testCase[1])
     })
   })
-  it('format date', function () {
+  it('Format date', function () {
     // Note: for JS dates, months are indexed from 0
     const testCases = [
       [new Date(2015, 11, 28), '2015-12-28'],
@@ -160,7 +160,7 @@ describe('Search', function () {
       assert.strictEqual(result.context[i], expected.context[i])
     }
   }
-  it('search', function () {
+  it('Search', function () {
     const search = searchModule.__get__('search')
     const index = []
     index.push({
@@ -203,7 +203,7 @@ describe('Search', function () {
     assert.searchResultEqual(results[0], expected[0])
     assert.searchResultEqual(results[1], expected[1])
   })
-  it('read cache', function (done) {
+  it('Read cache', function (done) {
     const readCacheFile = searchModule.__get__('readCacheFile')
     readCacheFile('test_data/generic/test_cache.html', function (content) {
       assert.notInclude(content, 'fbdc7648558d2e55237f92296d61958f')
@@ -211,7 +211,7 @@ describe('Search', function () {
       done()
     })
   })
-  it('title weight', function () {
+  it('Title weight', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
@@ -231,7 +231,7 @@ describe('Search', function () {
     assert.strictEqual(results[0].label, 'apple')
     assert.strictEqual(results[1].label, 'title not in data')
   })
-  it('tags weight', function () {
+  it('Tags weight', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
@@ -251,7 +251,7 @@ describe('Search', function () {
     assert.strictEqual(results[0].label, '2')
     assert.strictEqual(results[1].label, '1')
   })
-  it('tags partial match', function () {
+  it('Tags partial match', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
@@ -269,7 +269,7 @@ describe('Search', function () {
     assert.strictEqual(results.length, 1)
     assert.strictEqual(results[0].label, '2')
   })
-  it('Build Index', function (done) {
+  it('Build index', function (done) {
     const buildIndex = searchModule.__get__('buildIndex')
     let index = []
     buildIndex('test_data/build_index_root', index)
@@ -460,7 +460,7 @@ describe('Search', function () {
       assert.strictEqual(results[1].label, 'Other Cheese')
     }
   })
-  it('Whole Word Matching', function () {
+  it('Whole word matching', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
@@ -743,7 +743,7 @@ describe('Routing', function () {
     waitForSpell()
   })
 })
-describe('tags', function () {
+describe('Metadata', function () {
   it('Schema', function () {
     const validMetadata = metadataModule.__get__('validMetadata')
     // Some valid options
@@ -775,7 +775,7 @@ describe('tags', function () {
     assert.isFalse(validMetadata(t))
     assert.isFalse(validMetadata(undefined))
   })
-  it('Reading Sync', function () {
+  it('Reading sync', function () {
     const readMetadataSync = metadataModule.__get__('readMetadataSync')
     const t = readMetadataSync('test_data/generic/test.html')
     const recipeTags = t['tags']
@@ -801,7 +801,7 @@ describe('tags', function () {
       done()
     })
   })
-  it('Tag file name', function () {
+  it('Metadata file name', function () {
     const metadataPath = metadataModule.__get__('metadataPath')
     const one = metadataPath('one.pdf')
     assert.strictEqual(one, 'one.metadata')
@@ -811,7 +811,7 @@ describe('tags', function () {
     assert.strictEqual(three, 'three.etc.metadata')
   })
 })
-describe('new_recipe', function () {
+describe('New Recipe', function () {
   const recipeFileName = newRecipeModule.__get__('recipeFileName')
   it('Recipe file name', function () {
     assert.strictEqual('hi.html', recipeFileName('hi'))
