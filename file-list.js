@@ -50,7 +50,13 @@ const generateFileList = function () {
 
 const filterNewRecipes = function (index) {
   const orderPredicate = (a, b) => {
-    return a.date > b.date ? -1 : a.date < b.date ? 1 : 0
+    if (a.date !== b.date) {
+      return a.date > b.date ? -1 : a.date < b.date ? 1 : 0
+    }
+    // If the dates are equal, sort by file
+    const labelA = utils.pathToLabel(a.file)
+    const labelB = utils.pathToLabel(b.file)
+    return labelA < labelB ? -1 : labelA > labelB ? 1 : 0
   }
   const orderedRecipes = []
   const orderedIndex = index.slice()

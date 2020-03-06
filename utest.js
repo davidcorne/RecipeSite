@@ -855,4 +855,32 @@ describe('File List', function () {
     assert.strictEqual(orderedRecipes[2].path, '2')
     assert.strictEqual(orderedRecipes[3].path, '1')
   })
+  it('Stable sort', function () {
+    const filterNewRecipes = fileListModule.__get__('filterNewRecipes')
+    const index = []
+    index.push({
+      'file': '2',
+      'content': '2',
+      'date': '2'
+    })
+    index.push({
+      'file': '4',
+      'content': '4',
+      'date': '2'
+    })
+    index.push({
+      'file': '3',
+      'content': '3',
+      'date': '2'
+    })
+    // This should sort by date, then by name
+    for (let i = 0; i < 100; ++i) {
+      const orderedRecipes = filterNewRecipes(index)
+      assert.strictEqual(orderedRecipes.length, 3)
+      // Should be largest file first
+      assert.strictEqual(orderedRecipes[0].path, '2')
+      assert.strictEqual(orderedRecipes[1].path, '3')
+      assert.strictEqual(orderedRecipes[2].path, '4')
+    }
+  })
 })
