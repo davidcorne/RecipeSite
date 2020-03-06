@@ -1,4 +1,4 @@
-e4e77727026feb4794191f8c1fb28885
+6803e17d43d2a18115507036e220332f
 Honey BBQ Chicken Wings
 # Honey BBQ Chicken Wings # 
 
@@ -30,5 +30,7 @@ This is a Tasty recipe from [here](https://tasty.co/recipe/honey-bbq-chicken-win
 
 ## Video
 
-<video class="vjs-tech" id="vjs_video_3_html5_api" tabindex="-1" playsinline="playsinline" autoplay="" src="https://vid.tasty.co/output/31936/mp4_1280X720/1495124926"></video>
+<video controls autoplay muted>
+  <source src="https://vid.tasty.co/output/31936/mp4_1280X720/1495124926" type="video/mp4">
+</video>
 
