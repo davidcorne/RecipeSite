@@ -407,7 +407,7 @@ var PR=win['PR']={'createSimpleLexer':createSimpleLexer,'registerLangHandler':re
     var title = titleEl.innerHTML;
     var headlineEl = document.getElementById('headline');
     if (headlineEl)
-      headlineEl.innerHTML = '<a class="home-link" href="/">Home</a>';
+      headlineEl.innerHTML = title;
   }
 
   //////////////////////////////////////////////////////////////////////
