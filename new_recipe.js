@@ -27,7 +27,8 @@ const recipeHtml = function (name) {
 </xmp>
   
   <script src="/public/resources/strapdown.js"></script>
-  </html>
+  <script src="/public/resources/recipe-formatting.js"></script>
+</html>
   
   `
   return html
