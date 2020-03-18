@@ -816,6 +816,11 @@ describe('New Recipe', function () {
   it('Recipe file name', function () {
     assert.strictEqual('hi.html', recipeFileName('hi'))
   })
+  it('Script includes', function () {
+    const recipeHtml = newRecipeModule.__get__('recipeHtml')
+    const html = recipeHtml('hello')
+    assert.include(html, '/public/resources/recipe-formatting.js')
+  })
 })
 describe('File List', function () {
   it('directoryToItem', function () {
