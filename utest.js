@@ -819,7 +819,18 @@ describe('New Recipe', function () {
   it('Script includes', function () {
     const recipeHtml = newRecipeModule.__get__('recipeHtml')
     const html = recipeHtml('hello')
-    assert.include(html, '/public/resources/recipe-formatting.js')
+    // Check we reference the formatter
+    const recipeFormatting = '/public/resources/recipe-formatting.js'
+    assert.include(html, recipeFormatting)
+    // We should also reference strapdown
+    const strapdown = 'strapdown.js'
+    assert.include(html, strapdown)
+    // Now check that strapdown is referenced first
+    const strapdownIndex = html.indexOf(strapdown)
+    const recipeFormattingIndex = html.indexOf(recipeFormatting)
+    assert.notStrictEqual(-1, strapdownIndex)
+    assert.notStrictEqual(-1, recipeFormattingIndex)
+    assert.isBelow(strapdownIndex, recipeFormattingIndex, 'strapdown.js should appear before recipe-formatting.js')
   })
 })
 describe('File List', function () {
