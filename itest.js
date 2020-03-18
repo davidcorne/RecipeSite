@@ -195,6 +195,30 @@ describe('Recipes', function () {
       done()
     })
   })
+  it('Ensure script includes', function (done) {
+    // This ensures that in each html recipe, I'm using the degrees symbol by temperatures.
+    const paths = walkSync('./public/recipes')
+    // This will check each file twice, but it's not slow
+    const test = function (path, callback) {
+      if (path.endsWith('.html') && !path.includes('Purine Levels.html')) {
+        const content = fs.readFileSync(path, 'utf8')
+        const strapdown = '<script src="/public/resources/strapdown.js"></script>'
+        const recipeFormatting = '<script src="/public/resources/recipe-formatting.js"></script>'
+        // The html must include these scripts
+        assert.include(content, strapdown)
+        assert.include(content, recipeFormatting)
+        // strapdown must come first
+        const strapdownIndex = content.indexOf(strapdown)
+        const recipeFormattingIndex = content.indexOf(recipeFormatting)
+        assert.isBelow(strapdownIndex, recipeFormattingIndex, 'Strapdown must appear first in recipes')
+      }
+      callback()
+    }
+    async.each(paths, test, function (error) {
+      assert.isNull(error)
+      done()
+    })
+  })
 })
 describe('Metadata', function () {
   const metadataPath = metadataModule.__get__('metadataPath')
