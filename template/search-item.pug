@@ -4,10 +4,9 @@ div
   div.search-details
     div
       p.collapse(title="Expand search context") +
+      if item.date
+        p.display-path #{item.date}
       p.display-path #{item.displayPath}
-    if item.date
-      div.date
-        p #{item.date}
     if item.tags.length
       div.tags
         each tag in item.tags
