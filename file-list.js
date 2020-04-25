@@ -61,14 +61,14 @@ const filterNewRecipes = function (index) {
   const orderedRecipes = []
   const orderedIndex = index.slice()
   orderedIndex.sort(orderPredicate)
-
   for (let i = 0; i < orderedIndex.length; ++i) {
     const item = orderedIndex[i]
+    const firstLines = item.content.split(/\r?\n/).slice(0, 5)
     orderedRecipes.push({
       'path': item.file,
       'label': utils.pathToLabel(item.file),
       'displayPath': utils.pathToDisplayPath(item.file),
-      'context': '',
+      'context': firstLines,
       'tags': item.tags,
       'date': item.date
     })
