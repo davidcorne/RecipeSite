@@ -25,7 +25,8 @@ const TEMPLATES = {
   'new': pug.compileFile('template/new.pug'),
   'search-not-ready': pug.compileFile('template/search-not-ready.pug'),
   'partial-load': pug.compileFile('template/partial-search.pug'),
-  'conversion': pug.compileFile('template/conversion.pug')
+  'conversion': pug.compileFile('template/conversion.pug'),
+  '404': pug.compileFile('template/404.pug')
 }
 
 const APP = express()
@@ -172,8 +173,9 @@ const start = function () {
 }
 
 const handle404 = function (request, response, reason) {
+  onRequest(request)
   response.status(404)
-  response.send(reason)
+  sendTemplate(request, response, '404', {'reason': reason, 'path': request.path})
 }
 
 // Note: This should always be the last route, as otherwise it'll override the other routes.
