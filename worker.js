@@ -25,7 +25,8 @@ const TEMPLATES = {
   'new': pug.compileFile('template/new.pug'),
   'search-not-ready': pug.compileFile('template/search-not-ready.pug'),
   'partial-load': pug.compileFile('template/partial-search.pug'),
-  'conversion': pug.compileFile('template/conversion.pug')
+  'conversion': pug.compileFile('template/conversion.pug'),
+  '404': pug.compileFile('template/404.pug')
 }
 
 const APP = express()
@@ -108,7 +109,7 @@ APP.get('/public/*', function (request, response) {
   const filePath = path.join(__dirname, decode(request.path))
   fs.stat(filePath, function (error, stats) {
     if (error) {
-      response.status(404).send('Resource not found')
+      handle404(request, response, 'Resource not found')
     } else {
       response.sendFile(filePath)
     }
@@ -170,5 +171,16 @@ const start = function () {
     log.info('Listening on *:' + APP.get('port'))
   })
 }
+
+const handle404 = function (request, response, reason) {
+  onRequest(request)
+  response.status(404)
+  sendTemplate(request, response, '404', {'reason': reason, 'path': request.path})
+}
+
+// Note: This should always be the last route, as otherwise it'll override the other routes.
+APP.get('*', function (request, response) {
+  handle404(request, response, 'Unknown Page')
+})
 
 module.exports.start = start

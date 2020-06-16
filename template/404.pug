@@ -1,0 +1,11 @@
+extends layout.pug
+
+block content
+  include navigation-bar.pug
+
+  h1 404
+  
+  p #{reason}
+  p Couldn't fine #{path}
+
+  include search-bar.pug
