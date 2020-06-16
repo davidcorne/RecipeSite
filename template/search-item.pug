@@ -4,10 +4,13 @@ div
   div.search-details
     div
       p.collapse(title="Expand search context") +
+      if item.date
+        p.display-path #{item.date}
       p.display-path #{item.displayPath}
-    div.tags
-      each tag in item.tags
-        a.tag(href="/search?query=" + tag) #{tag}
+    if item.tags.length
+      div.tags
+        each tag in item.tags
+          a.tag(href="/search?query=" + tag) #{tag}
   if debugView
     p.debug Score: #{item.match}
     p.debug Match: #{JSON.stringify(item.matchVerbose)}
