@@ -31,8 +31,13 @@ const TEMPLATES = {
 
 const APP = express()
 const HTTP = require('http').Server(APP)
-
 APP.set('port', (process.env.PORT || 3000))
+
+const IO = require('socket.io')(HTTP)
+
+IO.on('connection', function (socket) {
+  
+})
 
 let PARTIAL_LOAD = false
 let DEBUG_VIEW = false
