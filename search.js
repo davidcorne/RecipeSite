@@ -96,7 +96,7 @@ const searchContext = function (query, content) {
   }
 }
 
-const search = function (query, index) {
+const searchSync = function (query, index) {
   query = utils.removeDiacritic(query.toLowerCase().trim())
   const results = []
   index.forEach(function (item) {
@@ -179,5 +179,5 @@ const buildIndex = function (path, index) {
   utils.walk(path, readFileCallback)
 }
 
-module.exports.search = search
+module.exports.searchSync = searchSync
 module.exports.buildIndex = buildIndex

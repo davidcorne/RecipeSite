@@ -6,7 +6,7 @@ const search = require('./search')
 let INDEX = []
 
 const runSearch = function (query) {
-  const results = search.search(query, INDEX)
+  const results = search.searchSync(query, INDEX)
   results.forEach(result => {
     console.log(result.label)
     if (commander.context) {

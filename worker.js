@@ -127,7 +127,7 @@ APP.get('/public/*', function (request, response) {
 const searchIndex = function (data) {
   // We've got a search index, actually search it.
   const timer = utils.timer().start()
-  const results = search.search(data.query, INDEX)
+  const results = search.searchSync(data.query, INDEX)
   timer.stop()
   data['key'] = PARTIAL_LOAD ? 'partial-load' : 'search'
   // See if it's well spelled, as long as we've loaded a spellchecker
