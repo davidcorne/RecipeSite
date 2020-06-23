@@ -161,7 +161,7 @@ describe('Search', function () {
     }
   }
   it('Search', function () {
-    const search = searchModule.__get__('search')
+    const search = searchModule.__get__('searchSync')
     const index = []
     index.push({
       'file': path.join('A', 'B', 'c.path'),
@@ -212,7 +212,7 @@ describe('Search', function () {
     })
   })
   it('Title weight', function () {
-    const search = searchModule.__get__('search')
+    const search = searchModule.__get__('searchSync')
     const index = [
       {
         'file': 'apple',
@@ -232,7 +232,7 @@ describe('Search', function () {
     assert.strictEqual(results[1].label, 'title not in data')
   })
   it('Tags weight', function () {
-    const search = searchModule.__get__('search')
+    const search = searchModule.__get__('searchSync')
     const index = [
       {
         'file': '1',
@@ -252,7 +252,7 @@ describe('Search', function () {
     assert.strictEqual(results[1].label, '1')
   })
   it('Tags partial match', function () {
-    const search = searchModule.__get__('search')
+    const search = searchModule.__get__('searchSync')
     const index = [
       {
         'file': '1',
@@ -328,7 +328,7 @@ describe('Search', function () {
     }
   })
   it('Multiple terms', function () {
-    const search = searchModule.__get__('search')
+    const search = searchModule.__get__('searchSync')
     const index = []
     index.push({
       'file': 'one',
@@ -360,7 +360,7 @@ describe('Search', function () {
   it('Multiple terms all used', function () {
     // This tests that if you search using multiple terms, it ranks results which has
     // all of the terms present higher.
-    const search = searchModule.__get__('search')
+    const search = searchModule.__get__('searchSync')
     const index = []
     index.push({
       'file': 'one',
@@ -385,7 +385,7 @@ describe('Search', function () {
   })
   it('Trailing and leading space', function () {
     // This tests that if you search something with a trailing or leading space, it will return sensible results
-    const search = searchModule.__get__('search')
+    const search = searchModule.__get__('searchSync')
     const index = []
     index.push({
       'file': 'one',
@@ -419,7 +419,7 @@ describe('Search', function () {
     }
   })
   it('Diacritics in content', function () {
-    const search = searchModule.__get__('search')
+    const search = searchModule.__get__('searchSync')
     const index = [
       {
         'file': 'one',
@@ -434,7 +434,7 @@ describe('Search', function () {
     }
   })
   it('Diacritics in file name', function () {
-    const search = searchModule.__get__('search')
+    const search = searchModule.__get__('searchSync')
     const index = [
       {
         'file': 'Gruyère Chips',
@@ -461,7 +461,7 @@ describe('Search', function () {
     }
   })
   it('Whole word matching', function () {
-    const search = searchModule.__get__('search')
+    const search = searchModule.__get__('searchSync')
     const index = [
       {
         'file': '1',
