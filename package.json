@@ -23,6 +23,7 @@
     "nspell": "^2.1.0",
     "pdf2json": "^1.1.7",
     "pug": "^2.0.0-beta6",
+    "socket.io": "^2.3.0",
     "urldecode": "^1.0.1",
     "winston": "^2.3.0"
   },
