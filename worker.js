@@ -34,9 +34,12 @@ const HTTP = require('http').Server(APP)
 APP.set('port', (process.env.PORT || 3000))
 
 const IO = require('socket.io')(HTTP)
+const CONNECTIONS = []
 
 IO.on('connection', function (socket) {
-  
+  CONNECTIONS.push(() => {
+    socket.emit('search-ready')
+  })
 })
 
 let PARTIAL_LOAD = false
