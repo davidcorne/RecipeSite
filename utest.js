@@ -486,7 +486,6 @@ describe('Search', function () {
 describe('Routing', function () {
   this.afterEach(function () {
     workerModule.__set__('INDEX', [])
-    workerModule.__set__('PARTIAL_LOAD', false)
   })
 
   it('Existing', function (done) {
@@ -567,10 +566,6 @@ describe('Routing', function () {
     async.series([
       (cb) => {
         runTest(cb)
-      },
-      (cb) => {
-        workerModule.__set__('PARTIAL_LOAD', true)
-        runTest(cb)
       }
     ], function (error) {
       if (error) {
@@ -638,32 +633,10 @@ describe('Routing', function () {
         callback()
       })
     }
-    const testPartial = function (callback) {
-      // Set the partial load flag
-      workerModule.__set__('PARTIAL_LOAD', true)
-      request(server).get('/search?query=bean').expect(200, function (error, response) {
-        if (error) {
-          throw error
-        }
-        // We care that it found 1 things, and it recognises that it's
-        // a partial search.
-        assert.include(response.text, '1 result')
-        assert.include(response.text, 'test 1')
-        assert.include(response.text, 'The context of this bean')
-        assert.notInclude(response.text, 'Not this line though.')
-        assert.include(
-          response.text,
-          'The search is not complete, here are the first few results.'
-        )
-        workerModule.__set__('PARTIAL_LOAD', false)
-        callback()
-      })
-    }
     async.series([
       testFull,
       testBean,
-      testThis,
-      testPartial
+      testThis
     ], function (error) {
       if (error) {
         throw error
