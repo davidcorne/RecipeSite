@@ -1,0 +1,15 @@
+extends layout.pug
+
+block scripts
+    script(type='text/javascript', src='public/resources/search-not-ready.js')
+
+block content
+  include navigation-bar.pug
+
+  h1 Results
+  
+  include search-bar.pug
+  
+  p New recipes are not ready yet. This page will update when they are.
+
+

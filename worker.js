@@ -23,6 +23,7 @@ const TEMPLATES = {
   'index': pug.compileFile('template/index.pug'),
   'search': pug.compileFile('template/search.pug'),
   'new': pug.compileFile('template/new.pug'),
+  'new-not-ready': pug.compileFile('template/new-not-ready.pug'),
   'search-not-ready': pug.compileFile('template/search-not-ready.pug'),
   'conversion': pug.compileFile('template/conversion.pug'),
   '404': pug.compileFile('template/404.pug')
@@ -77,10 +78,15 @@ APP.get('/', function (request, response) {
 
 APP.get('/new', function (request, response) {
   onRequest(request)
-  const locals = {
-    newRecipes: fileList.filterNewRecipes(INDEX)
+  if (Object.keys(INDEX).length === 0) {
+    // Send a "new" results not ready signal.
+    sendTemplate(request, response, 'new-not-ready', {})
+  } else {
+    const locals = {
+      newRecipes: fileList.filterNewRecipes(INDEX)
+    }
+    sendTemplate(request, response, 'new', locals)
   }
-  sendTemplate(request, response, 'new', locals)
 })
 
 APP.get('/conversion', function (request, response) {
