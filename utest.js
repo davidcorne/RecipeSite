@@ -715,6 +715,50 @@ describe('Routing', function () {
     }
     waitForSpell()
   })
+  it('New page', function (done) {
+    const app = workerModule.__get__('APP')
+    const server = app.listen()
+    // Use guids so it will be unambiguous the recipe order
+    const firstRecipe = '7dbd878d-3f5e-4401-86bf-536fa3d06b99'
+    const secondRecipe = 'c2c88cf5-91b7-415a-a6cf-b66948f1f1cd'
+    const thirdRecipe = 'a6533d2b-4733-4f86-9225-e7c84eac06f5'
+    const index = [
+      {
+        'file': thirdRecipe,
+        'content': 'Some content',
+        'tags': [],
+        'date': 1
+      },
+      {
+        'file': secondRecipe,
+        'content': 'Some more content',
+        'tags': [],
+        'date': 2
+      },
+      {
+        'file': firstRecipe,
+        'content': 'Even more content!',
+        'tags': [],
+        'date': 3
+      }
+    ]
+    workerModule.__set__('INDEX', index)
+    request(server).get('/new').expect(200, function (error, response) {
+      if (error) {
+        throw error
+      }
+      // Get the indicies of the recipes, then ensure they are in the response and in the right order
+      const firstRecipeIndex = response.text.indexOf(firstRecipe)
+      const secondRecipeIndex = response.text.indexOf(secondRecipe)
+      const thirdRecipeIndex = response.text.indexOf(thirdRecipe)
+      assert.notStrictEqual(firstRecipeIndex, -1)
+      assert.notStrictEqual(secondRecipeIndex, -1)
+      assert.notStrictEqual(thirdRecipeIndex, -1)
+      assert.isBelow(firstRecipeIndex, secondRecipeIndex)
+      assert.isBelow(secondRecipeIndex, thirdRecipeIndex)
+      done()
+    })
+  })
   it('New not ready', function (done) {
     const app = workerModule.__get__('APP')
     const server = app.listen()
