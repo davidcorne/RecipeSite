@@ -486,7 +486,6 @@ describe('Search', function () {
 describe('Routing', function () {
   this.afterEach(function () {
     workerModule.__set__('INDEX', [])
-    workerModule.__set__('PARTIAL_LOAD', false)
   })
 
   it('Existing', function (done) {
@@ -536,7 +535,7 @@ describe('Routing', function () {
         throw error
       }
       assert.include(response.text, 'Search results are not ready yet.')
-      assert.include(response.text, 'public/resources/search-not-ready.js')
+      assert.include(response.text, 'public/resources/page-not-ready.js')
       done()
     })
   })
@@ -566,10 +565,6 @@ describe('Routing', function () {
     }
     async.series([
       (cb) => {
-        runTest(cb)
-      },
-      (cb) => {
-        workerModule.__set__('PARTIAL_LOAD', true)
         runTest(cb)
       }
     ], function (error) {
@@ -638,32 +633,10 @@ describe('Routing', function () {
         callback()
       })
     }
-    const testPartial = function (callback) {
-      // Set the partial load flag
-      workerModule.__set__('PARTIAL_LOAD', true)
-      request(server).get('/search?query=bean').expect(200, function (error, response) {
-        if (error) {
-          throw error
-        }
-        // We care that it found 1 things, and it recognises that it's
-        // a partial search.
-        assert.include(response.text, '1 result')
-        assert.include(response.text, 'test 1')
-        assert.include(response.text, 'The context of this bean')
-        assert.notInclude(response.text, 'Not this line though.')
-        assert.include(
-          response.text,
-          'The search is not complete, here are the first few results.'
-        )
-        workerModule.__set__('PARTIAL_LOAD', false)
-        callback()
-      })
-    }
     async.series([
       testFull,
       testBean,
-      testThis,
-      testPartial
+      testThis
     ], function (error) {
       if (error) {
         throw error
@@ -741,6 +714,62 @@ describe('Routing', function () {
       setTimeout(waitForSpell, 10)
     }
     waitForSpell()
+  })
+  it('New page', function (done) {
+    const app = workerModule.__get__('APP')
+    const server = app.listen()
+    // Use guids so it will be unambiguous the recipe order
+    const firstRecipe = '7dbd878d-3f5e-4401-86bf-536fa3d06b99'
+    const secondRecipe = 'c2c88cf5-91b7-415a-a6cf-b66948f1f1cd'
+    const thirdRecipe = 'a6533d2b-4733-4f86-9225-e7c84eac06f5'
+    const index = [
+      {
+        'file': thirdRecipe,
+        'content': 'Some content',
+        'tags': [],
+        'date': 1
+      },
+      {
+        'file': secondRecipe,
+        'content': 'Some more content',
+        'tags': [],
+        'date': 2
+      },
+      {
+        'file': firstRecipe,
+        'content': 'Even more content!',
+        'tags': [],
+        'date': 3
+      }
+    ]
+    workerModule.__set__('INDEX', index)
+    request(server).get('/new').expect(200, function (error, response) {
+      if (error) {
+        throw error
+      }
+      // Get the indicies of the recipes, then ensure they are in the response and in the right order
+      const firstRecipeIndex = response.text.indexOf(firstRecipe)
+      const secondRecipeIndex = response.text.indexOf(secondRecipe)
+      const thirdRecipeIndex = response.text.indexOf(thirdRecipe)
+      assert.notStrictEqual(firstRecipeIndex, -1)
+      assert.notStrictEqual(secondRecipeIndex, -1)
+      assert.notStrictEqual(thirdRecipeIndex, -1)
+      assert.isBelow(firstRecipeIndex, secondRecipeIndex)
+      assert.isBelow(secondRecipeIndex, thirdRecipeIndex)
+      done()
+    })
+  })
+  it('New not ready', function (done) {
+    const app = workerModule.__get__('APP')
+    const server = app.listen()
+    request(server).get('/new').expect(200, function (error, response) {
+      if (error) {
+        throw error
+      }
+      assert.include(response.text, 'New recipes are not ready yet. This page will update when they are.')
+      assert.include(response.text, 'public/resources/page-not-ready.js')
+      done()
+    })
   })
 })
 describe('Metadata', function () {

@@ -20,6 +20,7 @@ const startWorkers = function () {
 const setupCallbacks = function () {
   cluster.on('online', function (worker) {
     log.info('Worker ' + worker.process.pid + ' is online.')
+    worker.send({git_commit_sha: GIT_COMMIT_SHA})
   })
   cluster.on('exit', function (worker, code, signal) {
     // You only get one of code and signal, only display one.
@@ -32,12 +33,6 @@ const setupCallbacks = function () {
     )
     log.info('Starting a new worker.')
     cluster.fork()
-  })
-  // Add a hook to the online event, whenever we get a new worker we want it
-  // to read the search index.
-  cluster.on('online', function (worker) {
-    worker.process.send('load-search-index')
-    worker.send({git_commit_sha: GIT_COMMIT_SHA})
   })
 }
 

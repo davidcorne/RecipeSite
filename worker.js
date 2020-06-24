@@ -23,8 +23,8 @@ const TEMPLATES = {
   'index': pug.compileFile('template/index.pug'),
   'search': pug.compileFile('template/search.pug'),
   'new': pug.compileFile('template/new.pug'),
+  'new-not-ready': pug.compileFile('template/new-not-ready.pug'),
   'search-not-ready': pug.compileFile('template/search-not-ready.pug'),
-  'partial-load': pug.compileFile('template/partial-search.pug'),
   'conversion': pug.compileFile('template/conversion.pug'),
   '404': pug.compileFile('template/404.pug')
 }
@@ -34,23 +34,14 @@ const HTTP = require('http').Server(APP)
 
 APP.set('port', (process.env.PORT || 3000))
 
-let PARTIAL_LOAD = false
 let DEBUG_VIEW = false
 let GIT_COMMIT_SHA = ''
 
 const loadSearchIndex = function () {
-  PARTIAL_LOAD = false
-  search.buildIndex(RECIPE_ROOT, INDEX)
-}
-
-const partialLoadSearchIndex = function () {
-  PARTIAL_LOAD = true
   search.buildIndex(RECIPE_ROOT, INDEX)
 }
 
 const MESSAGE_MAP = {
-  'load-search-index': loadSearchIndex,
-  'partial-load-search-index': partialLoadSearchIndex
 }
 
 process.on('message', function (message) {
@@ -87,10 +78,15 @@ APP.get('/', function (request, response) {
 
 APP.get('/new', function (request, response) {
   onRequest(request)
-  const locals = {
-    newRecipes: fileList.filterNewRecipes(INDEX)
+  if (Object.keys(INDEX).length === 0) {
+    // Send a "new" results not ready signal.
+    sendTemplate(request, response, 'new-not-ready', {})
+  } else {
+    const locals = {
+      newRecipes: fileList.filterNewRecipes(INDEX)
+    }
+    sendTemplate(request, response, 'new', locals)
   }
-  sendTemplate(request, response, 'new', locals)
 })
 
 APP.get('/conversion', function (request, response) {
@@ -121,7 +117,7 @@ const searchIndex = function (data) {
   const timer = utils.timer().start()
   const results = search.search(data.query, INDEX)
   timer.stop()
-  data['key'] = PARTIAL_LOAD ? 'partial-load' : 'search'
+  data['key'] = 'search'
   // See if it's well spelled, as long as we've loaded a spellchecker
   let suggestions = []
   if (SPELL) {
@@ -165,6 +161,8 @@ const loadDictionary = function () {
 }
 
 const start = function () {
+  // Start building the search index
+  loadSearchIndex()
   // Load the dictionary
   loadDictionary()
   HTTP.listen(APP.get('port'), function () {
