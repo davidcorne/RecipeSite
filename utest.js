@@ -715,6 +715,18 @@ describe('Routing', function () {
     }
     waitForSpell()
   })
+  it('New not ready', function (done) {
+    const app = workerModule.__get__('APP')
+    const server = app.listen()
+    request(server).get('/new').expect(200, function (error, response) {
+      if (error) {
+        throw error
+      }
+      assert.include(response.text, 'New recipes are not ready yet. This page will update when they are.')
+      assert.include(response.text, 'public/resources/page-not-ready.js')
+      done()
+    })
+  })
 })
 describe('Metadata', function () {
   it('Schema', function () {
