@@ -535,7 +535,7 @@ describe('Routing', function () {
         throw error
       }
       assert.include(response.text, 'Search results are not ready yet.')
-      assert.include(response.text, 'public/resources/search-not-ready.js')
+      assert.include(response.text, 'public/resources/page-not-ready.js')
       done()
     })
   })
