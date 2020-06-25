@@ -84,7 +84,7 @@ function occurrences (string, subString, allowOverlapping) {
 const isRecipe = function (file) {
   const extension = path.extname(file)
   // Recipes are either html, pdf or jpg
-  return extension === '.html' || extension === '.pdf' || extension === '.jpg'
+  return extension === '.html' || extension === '.pdf' || extension === '.jpg' || extension === '.png'
 }
 const foreachRecipe = function (directory, predicate) {
   walk(directory, function (file) {
