@@ -89,7 +89,7 @@ describe('Cache', function () {
     const test = function (path, callback) {
       if (path.endsWith('.cache')) {
         // Find out what this cache was made from
-        const recipeExtensions = ['.pdf', '.html', '.jpg', 'png']
+        const recipeExtensions = ['.pdf', '.html', '.jpg', '.png']
         let exists = false
         for (let i = 0; i < recipeExtensions.length; ++i) {
           const recipe = utils.changeExtension(path, recipeExtensions[i])
