@@ -81,7 +81,7 @@ const writeMetadataSync = function (recipePath, metadata) {
     const filePath = metadataPath(recipePath)
     const data = JSON.stringify(metadata)
     fs.writeFileSync(filePath, data, 'utf8')
-    log.info('Metadata written for ' + filePath)
+    log.debug('Metadata written for ' + filePath)
     success = true
   } else {
     log.error('Metadata is invalid: ' + JSON.stringify(metadata))
