@@ -182,3 +182,8 @@ APP.get('*', function (request, response) {
 })
 
 module.exports.start = start
+
+// Allow you to run the worker as a single process if you don't need the cluster.
+if (require.main === module) {
+  start()
+}
