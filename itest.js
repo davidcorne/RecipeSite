@@ -47,8 +47,8 @@ const foreachRecipeSync = function (predicate) {
 }
 
 describe('Cache', function () {
-  // This can be pretty long running, especially if the files aren't in hte disk cache.
-  this.timeout(5000)
+  // This can be pretty long running, especially if the files aren't in the disk cache. 1 minute should be more than enough.
+  this.timeout(60000)
   it('Up to date', function (done) {
     let paths = []
     foreachRecipeSync(function (path) {
