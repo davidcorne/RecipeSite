@@ -14,7 +14,6 @@ const search = require('./search')
 const fileList = require('./file-list')
 
 let INDEX = []
-const RECIPE_ROOT = 'public/recipes'
 
 let SPELL = null
 
@@ -37,18 +36,9 @@ APP.set('port', (process.env.PORT || 3000))
 let DEBUG_VIEW = false
 let GIT_COMMIT_SHA = ''
 
-const loadSearchIndex = function () {
-  search.buildIndex(RECIPE_ROOT, INDEX)
-}
-
-const MESSAGE_MAP = {
-}
-
 process.on('message', function (message) {
   log.debug('Recieved ' + JSON.stringify(message))
-  if (message in MESSAGE_MAP) {
-    MESSAGE_MAP[message]()
-  } else if (message.git_commit_sha) {
+  if (message.git_commit_sha) {
     GIT_COMMIT_SHA = message.git_commit_sha
   } else {
     log.error('Unknown message "' + JSON.stringify(message) + '"')
@@ -162,7 +152,8 @@ const loadDictionary = function () {
 
 const start = function () {
   // Start building the search index
-  loadSearchIndex()
+  const recipeRoot = 'public/recipes'
+  search.buildIndex(recipeRoot, INDEX)
   // Load the dictionary
   loadDictionary()
   HTTP.listen(APP.get('port'), function () {
