@@ -14,13 +14,14 @@ const utils = require('./utils')
 const searchModule = rewire('./search.js')
 const buildCacheModule = rewire('./build-cache.js')
 const workerModule = rewire('./worker.js')
-const tagsModule = rewire('./tags.js')
+const metadataModule = rewire('./metadata.js')
+const fileListModule = rewire('./file-list.js')
 const newRecipeModule = rewire('./new_recipe.js')
 
 console.log('Running Unit Tests')
 
-describe('utils', function () {
-  it('remove diacritic', function () {
+describe('Utils', function () {
+  it('Remove diacritic', function () {
     const testCases = [
       ['café', 'cafe'],
       ['brulée', 'brulee'],
@@ -28,6 +29,17 @@ describe('utils', function () {
     ]
     testCases.forEach((testCase) => {
       const result = utils.removeDiacritic(testCase[0])
+      assert.strictEqual(result, testCase[1])
+    })
+  })
+  it('Format date', function () {
+    // Note: for JS dates, months are indexed from 0
+    const testCases = [
+      [new Date(2015, 11, 28), '2015-12-28'],
+      [new Date(2020, 1, 1), '2020-02-01']
+    ]
+    testCases.forEach((testCase) => {
+      const result = utils.formatDate(testCase[0])
       assert.strictEqual(result, testCase[1])
     })
   })
@@ -148,7 +160,7 @@ describe('Search', function () {
       assert.strictEqual(result.context[i], expected.context[i])
     }
   }
-  it('search', function () {
+  it('Search', function () {
     const search = searchModule.__get__('search')
     const index = []
     index.push({
@@ -191,7 +203,7 @@ describe('Search', function () {
     assert.searchResultEqual(results[0], expected[0])
     assert.searchResultEqual(results[1], expected[1])
   })
-  it('read cache', function (done) {
+  it('Read cache', function (done) {
     const readCacheFile = searchModule.__get__('readCacheFile')
     readCacheFile('test_data/generic/test_cache.html', function (content) {
       assert.notInclude(content, 'fbdc7648558d2e55237f92296d61958f')
@@ -199,7 +211,7 @@ describe('Search', function () {
       done()
     })
   })
-  it('title weight', function () {
+  it('Title weight', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
@@ -219,7 +231,7 @@ describe('Search', function () {
     assert.strictEqual(results[0].label, 'apple')
     assert.strictEqual(results[1].label, 'title not in data')
   })
-  it('tags weight', function () {
+  it('Tags weight', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
@@ -239,7 +251,7 @@ describe('Search', function () {
     assert.strictEqual(results[0].label, '2')
     assert.strictEqual(results[1].label, '1')
   })
-  it('tags partial match', function () {
+  it('Tags partial match', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
@@ -257,7 +269,7 @@ describe('Search', function () {
     assert.strictEqual(results.length, 1)
     assert.strictEqual(results[0].label, '2')
   })
-  it('Build Index', function (done) {
+  it('Build index', function (done) {
     const buildIndex = searchModule.__get__('buildIndex')
     let index = []
     buildIndex('test_data/build_index_root', index)
@@ -294,7 +306,7 @@ describe('Search', function () {
           'tags': ['tag']
         }
       ]
-      workerModule.__set__('index', index)
+      workerModule.__set__('INDEX', index)
       const searchIndex = workerModule.__get__('searchIndex')
 
       let data = {'query': 'nothing', 'page': 1}
@@ -312,7 +324,7 @@ describe('Search', function () {
       assert.strictEqual(data.results[0].context[0], 'Nothing')
     } finally {
       // Reset what we've changed
-      workerModule.__set__('index', [])
+      workerModule.__set__('INDEX', [])
     }
   })
   it('Multiple terms', function () {
@@ -448,7 +460,7 @@ describe('Search', function () {
       assert.strictEqual(results[1].label, 'Other Cheese')
     }
   })
-  it('Whole Word Matching', function () {
+  it('Whole word matching', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
@@ -473,12 +485,11 @@ describe('Search', function () {
 
 describe('Routing', function () {
   this.afterEach(function () {
-    workerModule.__set__('index', [])
-    workerModule.__set__('partialLoad', false)
+    workerModule.__set__('INDEX', [])
   })
 
   it('Existing', function (done) {
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const server = app.listen()
 
     // Responds to all the routes.
@@ -499,7 +510,7 @@ describe('Routing', function () {
   })
   it('Non-existing', function (done) {
     // Try to get some non-existent routes
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const server = app.listen()
 
     // Responds to all the routes.
@@ -517,19 +528,19 @@ describe('Routing', function () {
     })
   })
   it('Search not ready', function (done) {
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const server = app.listen()
     request(server).get('/search?query=bean').expect(200, function (error, response) {
       if (error) {
         throw error
       }
       assert.include(response.text, 'Search results are not ready yet.')
-      assert.include(response.text, 'public/resources/search-not-ready.js')
+      assert.include(response.text, 'public/resources/page-not-ready.js')
       done()
     })
   })
   it('Search not found', function (done) {
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const index = [
       {
         'file': 'test 1',
@@ -537,7 +548,7 @@ describe('Routing', function () {
         'tags': []
       }
     ]
-    workerModule.__set__('index', index)
+    workerModule.__set__('INDEX', index)
 
     const server = app.listen()
     const runTest = function (callback) {
@@ -555,10 +566,6 @@ describe('Routing', function () {
     async.series([
       (cb) => {
         runTest(cb)
-      },
-      (cb) => {
-        workerModule.__set__('partialLoad', true)
-        runTest(cb)
       }
     ], function (error) {
       if (error) {
@@ -568,7 +575,7 @@ describe('Routing', function () {
     })
   })
   it('Search found', function (done) {
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const index = [
       {
         'file': 'test 1',
@@ -581,7 +588,7 @@ describe('Routing', function () {
         'tags': []
       }
     ]
-    workerModule.__set__('index', index)
+    workerModule.__set__('INDEX', index)
 
     const server = app.listen()
 
@@ -626,32 +633,10 @@ describe('Routing', function () {
         callback()
       })
     }
-    const testPartial = function (callback) {
-      // Set the partial load flag
-      workerModule.__set__('partialLoad', true)
-      request(server).get('/search?query=bean').expect(200, function (error, response) {
-        if (error) {
-          throw error
-        }
-        // We care that it found 1 things, and it recognises that it's
-        // a partial search.
-        assert.include(response.text, '1 result')
-        assert.include(response.text, 'test 1')
-        assert.include(response.text, 'The context of this bean')
-        assert.notInclude(response.text, 'Not this line though.')
-        assert.include(
-          response.text,
-          'The search is not complete, here are the first few results.'
-        )
-        workerModule.__set__('partialLoad', false)
-        callback()
-      })
-    }
     async.series([
       testFull,
       testBean,
-      testThis,
-      testPartial
+      testThis
     ], function (error) {
       if (error) {
         throw error
@@ -660,7 +645,7 @@ describe('Routing', function () {
     })
   })
   it('Spelling suggestions', function (done) {
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const loadDictionary = workerModule.__get__('loadDictionary')
     const index = [
       {
@@ -669,7 +654,7 @@ describe('Routing', function () {
         'tags': []
       }
     ]
-    workerModule.__set__('index', index)
+    workerModule.__set__('INDEX', index)
     loadDictionary()
     const testSuggestions = function () {
       const server = app.listen()
@@ -683,7 +668,7 @@ describe('Routing', function () {
       })
     }
     const waitForSpell = function () {
-      const spell = workerModule.__get__('spell')
+      const spell = workerModule.__get__('SPELL')
       if (spell) {
         testSuggestions()
         return
@@ -693,7 +678,7 @@ describe('Routing', function () {
     waitForSpell()
   })
   it('Malformed search', function (done) {
-    const app = workerModule.__get__('app')
+    const app = workerModule.__get__('APP')
     const loadDictionary = workerModule.__get__('loadDictionary')
     const index = [
       {
@@ -707,7 +692,7 @@ describe('Routing', function () {
         'tags': []
       }
     ]
-    workerModule.__set__('index', index)
+    workerModule.__set__('INDEX', index)
     loadDictionary()
     const testSuggestions = function () {
       const server = app.listen()
@@ -721,7 +706,7 @@ describe('Routing', function () {
       })
     }
     const waitForSpell = function () {
-      const spell = workerModule.__get__('spell')
+      const spell = workerModule.__get__('SPELL')
       if (spell) {
         testSuggestions()
         return
@@ -730,17 +715,75 @@ describe('Routing', function () {
     }
     waitForSpell()
   })
+  it('New page', function (done) {
+    const app = workerModule.__get__('APP')
+    const server = app.listen()
+    // Use guids so it will be unambiguous the recipe order
+    const firstRecipe = '7dbd878d-3f5e-4401-86bf-536fa3d06b99'
+    const secondRecipe = 'c2c88cf5-91b7-415a-a6cf-b66948f1f1cd'
+    const thirdRecipe = 'a6533d2b-4733-4f86-9225-e7c84eac06f5'
+    const index = [
+      {
+        'file': thirdRecipe,
+        'content': 'Some content',
+        'tags': [],
+        'date': 1
+      },
+      {
+        'file': secondRecipe,
+        'content': 'Some more content',
+        'tags': [],
+        'date': 2
+      },
+      {
+        'file': firstRecipe,
+        'content': 'Even more content!',
+        'tags': [],
+        'date': 3
+      }
+    ]
+    workerModule.__set__('INDEX', index)
+    request(server).get('/new').expect(200, function (error, response) {
+      if (error) {
+        throw error
+      }
+      // Get the indicies of the recipes, then ensure they are in the response and in the right order
+      const firstRecipeIndex = response.text.indexOf(firstRecipe)
+      const secondRecipeIndex = response.text.indexOf(secondRecipe)
+      const thirdRecipeIndex = response.text.indexOf(thirdRecipe)
+      assert.notStrictEqual(firstRecipeIndex, -1)
+      assert.notStrictEqual(secondRecipeIndex, -1)
+      assert.notStrictEqual(thirdRecipeIndex, -1)
+      assert.isBelow(firstRecipeIndex, secondRecipeIndex)
+      assert.isBelow(secondRecipeIndex, thirdRecipeIndex)
+      done()
+    })
+  })
+  it('New not ready', function (done) {
+    const app = workerModule.__get__('APP')
+    const server = app.listen()
+    request(server).get('/new').expect(200, function (error, response) {
+      if (error) {
+        throw error
+      }
+      assert.include(response.text, 'New recipes are not ready yet. This page will update when they are.')
+      assert.include(response.text, 'public/resources/page-not-ready.js')
+      done()
+    })
+  })
 })
-describe('tags', function () {
+describe('Metadata', function () {
   it('Schema', function () {
-    const validtags = tagsModule.__get__('validTags')
+    const validMetadata = metadataModule.__get__('validMetadata')
     // Some valid options
     let t = {
-      'tags': ['vegan', 'gout']
+      'tags': ['vegan', 'gout'],
+      'date': 'a date'
     }
-    assert.isTrue(validtags(t))
+    assert.isTrue(validMetadata(t))
     t = {
-      'tags': []
+      'tags': [],
+      'date': 'a date'
     }
     // Incorrect data
     t = {
@@ -748,22 +791,22 @@ describe('tags', function () {
       'cuisine': [4],
       'type': 'recipe'
     }
-    assert.isFalse(validtags(t))
+    assert.isFalse(validMetadata(t))
 
     t = {
       'tags': [1]
     }
-    assert.isFalse(validtags(t))
+    assert.isFalse(validMetadata(t))
 
     t = {
       'tags': 'vegan'
     }
-    assert.isFalse(validtags(t))
-    assert.isFalse(validtags(undefined))
+    assert.isFalse(validMetadata(t))
+    assert.isFalse(validMetadata(undefined))
   })
-  it('Reading Sync', function () {
-    const readTagsSync = tagsModule.__get__('readTagsSync')
-    const t = readTagsSync('test_data/generic/test.html')
+  it('Reading sync', function () {
+    const readMetadataSync = metadataModule.__get__('readMetadataSync')
+    const t = readMetadataSync('test_data/generic/test.html')
     const recipeTags = t['tags']
     assert.strictEqual(recipeTags.length, 5)
     assert.isTrue(recipeTags.includes('gout'))
@@ -771,10 +814,11 @@ describe('tags', function () {
     assert.isTrue(recipeTags.includes('FODMAP'))
     assert.isTrue(recipeTags.includes('fusion'))
     assert.isTrue(recipeTags.includes('italian'))
+    assert.strictEqual(t['date'], 'someday')
   })
   it('Reading', function (done) {
-    const readTags = tagsModule.__get__('readTags')
-    readTags('test_data/generic/test.html', function (allTags) {
+    const readMetadata = metadataModule.__get__('readMetadata')
+    readMetadata('test_data/generic/test.html', function (allTags) {
       const tags = allTags.tags
       assert.strictEqual(tags.length, 5)
       assert.isTrue(tags.includes('gout'))
@@ -782,22 +826,106 @@ describe('tags', function () {
       assert.isTrue(tags.includes('FODMAP'))
       assert.isTrue(tags.includes('fusion'))
       assert.isTrue(tags.includes('italian'))
+      assert.strictEqual(allTags['date'], 'someday')
       done()
     })
   })
-  it('Tag file name', function () {
-    const tagsPath = tagsModule.__get__('tagsPath')
-    const one = tagsPath('one.pdf')
-    assert.strictEqual(one, 'one.tags')
-    const two = tagsPath('two')
-    assert.strictEqual(two, 'two.tags')
-    const three = tagsPath('three.etc.jpg')
-    assert.strictEqual(three, 'three.etc.tags')
+  it('Metadata file name', function () {
+    const metadataPath = metadataModule.__get__('metadataPath')
+    const one = metadataPath('one.pdf')
+    assert.strictEqual(one, 'one.metadata')
+    const two = metadataPath('two')
+    assert.strictEqual(two, 'two.metadata')
+    const three = metadataPath('three.etc.jpg')
+    assert.strictEqual(three, 'three.etc.metadata')
   })
 })
-describe('new_recipe', function () {
+describe('New Recipe', function () {
   const recipeFileName = newRecipeModule.__get__('recipeFileName')
   it('Recipe file name', function () {
     assert.strictEqual('hi.html', recipeFileName('hi'))
+  })
+  it('Script includes', function () {
+    const recipeHtml = newRecipeModule.__get__('recipeHtml')
+    const html = recipeHtml('hello')
+    // Check we reference the formatter
+    const recipeFormatting = '/public/resources/recipe-formatting.js'
+    assert.include(html, recipeFormatting)
+    // We should also reference strapdown
+    const strapdown = 'strapdown.js'
+    assert.include(html, strapdown)
+    // Now check that strapdown is referenced first
+    const strapdownIndex = html.indexOf(strapdown)
+    const recipeFormattingIndex = html.indexOf(recipeFormatting)
+    assert.notStrictEqual(-1, strapdownIndex)
+    assert.notStrictEqual(-1, recipeFormattingIndex)
+    assert.isBelow(strapdownIndex, recipeFormattingIndex, 'strapdown.js should appear before recipe-formatting.js')
+  })
+})
+describe('File List', function () {
+  it('directoryToItem', function () {
+    const directoryToItem = fileListModule.__get__('directoryToItem')
+    const item = directoryToItem('test_data', 'generic/')
+    // Should have test_recipe.html, test_recipe.pdf and test_recipe_diacritics.html
+    assert.strictEqual(item.files.length, 3)
+  })
+  it('filterNewRecipes', function () {
+    const filterNewRecipes = fileListModule.__get__('filterNewRecipes')
+    const index = []
+    index.push({
+      'file': '2',
+      'content': '2',
+      'date': '2'
+    })
+    index.push({
+      'file': '4',
+      'content': '4',
+      'date': '4'
+    })
+    index.push({
+      'file': '3',
+      'content': '3',
+      'date': '3'
+    })
+    index.push({
+      'file': '1',
+      'content': '1',
+      'date': '1'
+    })
+    const orderedRecipes = filterNewRecipes(index)
+    assert.strictEqual(orderedRecipes.length, 4)
+    // Should be largest 'date' first
+    assert.strictEqual(orderedRecipes[0].path, '4')
+    assert.strictEqual(orderedRecipes[1].path, '3')
+    assert.strictEqual(orderedRecipes[2].path, '2')
+    assert.strictEqual(orderedRecipes[3].path, '1')
+  })
+  it('Stable sort', function () {
+    const filterNewRecipes = fileListModule.__get__('filterNewRecipes')
+    const index = []
+    index.push({
+      'file': '2',
+      'content': '2',
+      'date': '2'
+    })
+    index.push({
+      'file': '4',
+      'content': '4',
+      'date': '2'
+    })
+    index.push({
+      'file': '3',
+      'content': '3',
+      'date': '2'
+    })
+    // This should sort by date, then by name
+    for (let i = 0; i < 100; ++i) {
+      const orderedRecipes = filterNewRecipes(index)
+      assert.strictEqual(orderedRecipes.length, 3)
+      // Should be largest file first
+      assert.strictEqual(orderedRecipes[0].path, '2')
+      assert.strictEqual(orderedRecipes[1].path, '3')
+      assert.strictEqual(orderedRecipes[2].path, '4')
+    }
   })
 })

@@ -12,9 +12,9 @@ const rewire = require('rewire')
 
 const utils = require('./utils')
 const buildCache = require('./build-cache')
-const tags = require('./tags')
+const metadata = require('./metadata')
 
-const tagsModule = rewire('./tags.js')
+const metadataModule = rewire('./metadata.js')
 const newRecipeModule = rewire('./new_recipe.js')
 
 // Turn off application logging
@@ -47,8 +47,8 @@ const foreachRecipeSync = function (predicate) {
 }
 
 describe('Cache', function () {
-  // This can be pretty long running, especially if the files aren't in hte disk cache.
-  this.timeout(5000)
+  // This can be pretty long running, especially if the files aren't in the disk cache. 1 minute should be more than enough.
+  this.timeout(60000)
   it('Up to date', function (done) {
     let paths = []
     foreachRecipeSync(function (path) {
@@ -89,7 +89,7 @@ describe('Cache', function () {
     const test = function (path, callback) {
       if (path.endsWith('.cache')) {
         // Find out what this cache was made from
-        const recipeExtensions = ['.pdf', '.html', '.jpg']
+        const recipeExtensions = ['.pdf', '.html', '.jpg', '.png']
         let exists = false
         for (let i = 0; i < recipeExtensions.length; ++i) {
           const recipe = utils.changeExtension(path, recipeExtensions[i])
@@ -98,8 +98,6 @@ describe('Cache', function () {
           }
         }
         assert.isOk(exists, 'Recipe doesn\'t exist for ' + path)
-      } else if (path.endsWith('_tags.json')) {
-        // Don't do anything for meta data
       } else {
         const cache = utils.cachePath(path)
         assert.isOk(fs.existsSync(cache))
@@ -197,29 +195,54 @@ describe('Recipes', function () {
       done()
     })
   })
+  it('Ensure script includes', function (done) {
+    // This ensures that in each html recipe, I'm using the degrees symbol by temperatures.
+    const paths = walkSync('./public/recipes')
+    // This will check each file twice, but it's not slow
+    const test = function (path, callback) {
+      if (path.endsWith('.html') && !path.includes('Purine Levels.html')) {
+        const content = fs.readFileSync(path, 'utf8')
+        const strapdown = '<script src="/public/resources/strapdown.js"></script>'
+        const recipeFormatting = '<script src="/public/resources/recipe-formatting.js"></script>'
+        // The html must include these scripts
+        assert.include(content, strapdown)
+        assert.include(content, recipeFormatting)
+        // strapdown must come first
+        const strapdownIndex = content.indexOf(strapdown)
+        const recipeFormattingIndex = content.indexOf(recipeFormatting)
+        assert.isBelow(strapdownIndex, recipeFormattingIndex, 'Strapdown must appear first in recipes')
+      }
+      callback()
+    }
+    async.each(paths, test, function (error) {
+      assert.isNull(error)
+      done()
+    })
+  })
 })
-describe('tags', function () {
-  const tagsPath = tagsModule.__get__('tagsPath')
-  const validTags = tagsModule.__get__('validTags')
+describe('Metadata', function () {
+  const metadataPath = metadataModule.__get__('metadataPath')
+  const validMetadata = metadataModule.__get__('validMetadata')
   it('Present', function () {
     foreachRecipeSync(function (recipePath) {
-      const path = tagsPath(recipePath)
+      const path = metadataPath(recipePath)
       assert.isTrue(fs.existsSync(path))
     })
   })
   it('Correct', function () {
     foreachRecipeSync(function (recipePath) {
-      const t = tags.readTagsSync(recipePath)
-      assert.isTrue(validTags(t), 'Invalid tags for: ' + recipePath)
+      const t = metadata.readMetadataSync(recipePath)
+      assert.isTrue(validMetadata(t), 'Invalid metadata for: ' + recipePath)
       // Ensure that the tags are lower case
       t.tags.forEach(tag => {
         assert.strictEqual(tag, tag.toLowerCase())
       })
+      assert.match(t.date, /^\d{4}-\d{2}-\d{2}/)
     })
   })
 })
-describe('new_recipe', function () {
-  it('build new recipe', function (done) {
+describe('New Recipe', function () {
+  it('Build new recipe', function (done) {
     const newRecipe = newRecipeModule.__get__('newRecipe')
     const recipeFileName = newRecipeModule.__get__('recipeFileName')
     const name = 'This is a new recipe'

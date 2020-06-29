@@ -1,0 +1,20 @@
+div
+  h3.search-header
+    a(href=item.path, target="_blank") #{item.label}
+  div.search-details
+    div
+      p.collapse(title="Expand search context") +
+      if item.date
+        p.display-path #{item.date}
+      p.display-path #{item.displayPath}
+    if item.tags.length
+      div.tags
+        each tag in item.tags
+          a.tag(href="/search?query=" + tag) #{tag}
+  if debugView
+    p.debug Score: #{item.match}
+    p.debug Match: #{JSON.stringify(item.matchVerbose)}
+    p.debug Date: #{item.date}
+  div.search-context
+    each line in item.context
+      p.line #{line}

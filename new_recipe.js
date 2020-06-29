@@ -5,7 +5,7 @@ const recipeFileName = function (name) {
   return name + '.html'
 }
 
-const newRecipe = function (name, directory, callback) {
+const recipeHtml = function (name) {
   const html = `<!DOCTYPE html>
   <html>
   <head>
@@ -27,9 +27,15 @@ const newRecipe = function (name, directory, callback) {
 </xmp>
   
   <script src="/public/resources/strapdown.js"></script>
-  </html>
+  <script src="/public/resources/recipe-formatting.js"></script>
+</html>
   
   `
+  return html
+}
+
+const newRecipe = function (name, directory, callback) {
+  const html = recipeHtml(name)
   const fileName = path.join(directory, recipeFileName(name))
   fs.writeFile(fileName, html, callback)
 }

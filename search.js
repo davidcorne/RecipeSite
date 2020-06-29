@@ -1,10 +1,9 @@
 'use strict'
 const fs = require('graceful-fs')
-const path = require('path')
 
 const utils = require('./utils')
 const log = require('./log')
-const tags = require('./tags')
+const metadata = require('./metadata')
 
 class Match {
   constructor () {
@@ -28,14 +27,6 @@ class Match {
   found () {
     return this.score() > 0
   }
-}
-
-const pathToDisplayPath = function (file) {
-  // comes in as public\recipes\A\B\C.X want to display A/B/C
-  let displayPath = file.replace(/\\/g, '/')
-  displayPath = displayPath.replace('public/recipes/', '')
-  displayPath = displayPath.replace(/\..*/, '')
-  return displayPath
 }
 
 const searchContext = function (query, content) {
@@ -131,7 +122,7 @@ const search = function (query, index) {
       results.push({
         label: utils.pathToLabel(file),
         path: file,
-        displayPath: pathToDisplayPath(file),
+        displayPath: utils.pathToDisplayPath(file),
         context: contextResult.context,
         tags: item.tags,
         match: match.score(),
@@ -147,7 +138,7 @@ const search = function (query, index) {
 }
 
 const readCacheFile = function (file, callback) {
-  if (path.extname(file) !== '.cache' && path.extname(file) !== '.tags') {
+  if (utils.recipeFile(file)) {
     // Read the cached file.
     const cacheFileName = utils.cachePath(file)
     fs.stat(cacheFileName, function (error, cacheStats) {
@@ -174,11 +165,12 @@ const readCacheFile = function (file, callback) {
 const buildIndex = function (path, index) {
   const readFileCallback = function (file) {
     readCacheFile(file, function (content) {
-      tags.readTags(file, function (tags) {
+      metadata.readMetadata(file, function (metadata) {
         index.push({
           file,
           content,
-          'tags': tags.tags
+          'tags': metadata.tags,
+          'date': metadata.date
         })
       })
     })

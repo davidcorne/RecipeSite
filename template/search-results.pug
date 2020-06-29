@@ -9,22 +9,7 @@ div#spelling-suggestions
 div#search-result
   if results.length
     each item in results
-      div
-        h3.search-header
-          a(href=item.path, target="_blank") #{item.label}
-        div.search-details
-          div
-            p.collapse(title="Expand search context") +
-            p.display-path #{item.displayPath}
-          div.tags
-            each tag in item.tags
-              a.tag(href="/search?query=" + tag) #{tag}
-        if debugView
-          p.debug Score: #{item.match}
-          p.debug Match: #{JSON.stringify(item.matchVerbose)}
-        div.search-context
-          each line in item.context
-            p.line #{line}
+      include search-item.pug
     div.page-numbers
       if results_length > 20
         - const pages = Math.ceil(results_length / 20)

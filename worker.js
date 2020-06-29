@@ -13,50 +13,43 @@ const conversion = require('./conversion')
 const search = require('./search')
 const fileList = require('./file-list')
 
-let index = []
-const recipeRoot = 'public/recipes'
+let INDEX = []
+const RECIPE_ROOT = 'public/recipes'
 
-let spell = null
+let SPELL = null
 
 // Compile a function
-const templates = {
+const TEMPLATES = {
   'index': pug.compileFile('template/index.pug'),
   'search': pug.compileFile('template/search.pug'),
+  'new': pug.compileFile('template/new.pug'),
+  'new-not-ready': pug.compileFile('template/new-not-ready.pug'),
   'search-not-ready': pug.compileFile('template/search-not-ready.pug'),
-  'partial-load': pug.compileFile('template/partial-search.pug'),
-  'conversion': pug.compileFile('template/conversion.pug')
+  'conversion': pug.compileFile('template/conversion.pug'),
+  '404': pug.compileFile('template/404.pug')
 }
 
-const app = express()
-const http = require('http').Server(app)
+const APP = express()
+const HTTP = require('http').Server(APP)
 
-app.set('port', (process.env.PORT || 3000))
+APP.set('port', (process.env.PORT || 3000))
 
-let partialLoad = false
-let debugView = false
-let gitCommitSha = ''
+let DEBUG_VIEW = false
+let GIT_COMMIT_SHA = ''
 
 const loadSearchIndex = function () {
-  partialLoad = false
-  search.buildIndex(recipeRoot, index)
+  search.buildIndex(RECIPE_ROOT, INDEX)
 }
 
-const partialLoadSearchIndex = function () {
-  partialLoad = true
-  search.buildIndex(recipeRoot, index)
-}
-
-const messageMap = {
-  'load-search-index': loadSearchIndex,
-  'partial-load-search-index': partialLoadSearchIndex
+const MESSAGE_MAP = {
 }
 
 process.on('message', function (message) {
   log.debug('Recieved ' + JSON.stringify(message))
-  if (message in messageMap) {
-    messageMap[message]()
+  if (message in MESSAGE_MAP) {
+    MESSAGE_MAP[message]()
   } else if (message.git_commit_sha) {
-    gitCommitSha = message.git_commit_sha
+    GIT_COMMIT_SHA = message.git_commit_sha
   } else {
     log.error('Unknown message "' + JSON.stringify(message) + '"')
   }
@@ -66,16 +59,16 @@ const onRequest = function (request) {
   log.debug(
     'Request: ' + request.path + ' ' + JSON.stringify(request.query)
   )
-  debugView = 'debug' in request.query
+  DEBUG_VIEW = 'debug' in request.query
 }
 
 const sendTemplate = function (request, response, key, data) {
-  data.debugView = debugView
-  data.git_commit_sha = gitCommitSha
-  response.send(templates[key](data))
+  data.debugView = DEBUG_VIEW
+  data.git_commit_sha = GIT_COMMIT_SHA
+  response.send(TEMPLATES[key](data))
 }
 
-app.get('/', function (request, response) {
+APP.get('/', function (request, response) {
   onRequest(request)
   const locals = {
     recipes: fileList.generateFileList()
@@ -83,7 +76,20 @@ app.get('/', function (request, response) {
   sendTemplate(request, response, 'index', locals)
 })
 
-app.get('/conversion', function (request, response) {
+APP.get('/new', function (request, response) {
+  onRequest(request)
+  if (Object.keys(INDEX).length === 0) {
+    // Send a "new" results not ready signal.
+    sendTemplate(request, response, 'new-not-ready', {})
+  } else {
+    const locals = {
+      newRecipes: fileList.filterNewRecipes(INDEX)
+    }
+    sendTemplate(request, response, 'new', locals)
+  }
+})
+
+APP.get('/conversion', function (request, response) {
   onRequest(request)
   // A list of the conversions that we cover.
   sendTemplate(
@@ -94,12 +100,12 @@ app.get('/conversion', function (request, response) {
   )
 })
 
-app.get('/public/*', function (request, response) {
+APP.get('/public/*', function (request, response) {
   onRequest(request)
   const filePath = path.join(__dirname, decode(request.path))
   fs.stat(filePath, function (error, stats) {
     if (error) {
-      response.status(404).send('Resource not found')
+      handle404(request, response, 'Resource not found')
     } else {
       response.sendFile(filePath)
     }
@@ -109,13 +115,13 @@ app.get('/public/*', function (request, response) {
 const searchIndex = function (data) {
   // We've got a search index, actually search it.
   const timer = utils.timer().start()
-  const results = search.search(data.query, index)
+  const results = search.search(data.query, INDEX)
   timer.stop()
-  data['key'] = partialLoad ? 'partial-load' : 'search'
+  data['key'] = 'search'
   // See if it's well spelled, as long as we've loaded a spellchecker
   let suggestions = []
-  if (spell) {
-    suggestions = spell.suggest(data.query)
+  if (SPELL) {
+    suggestions = SPELL.suggest(data.query)
   }
   data['suggestions'] = suggestions
   data['results_length'] = results.length
@@ -129,13 +135,13 @@ const searchIndex = function (data) {
   data['top'] = top
 }
 
-app.get('/search', function (request, response) {
+APP.get('/search', function (request, response) {
   onRequest(request)
   const data = {
     query: request.query.query,
     page: request.query.page ? request.query.page : 1
   }
-  if (Object.keys(index).length === 0) {
+  if (Object.keys(INDEX).length === 0) {
     // Send a search results not ready signal.
     sendTemplate(request, response, 'search-not-ready', data)
   } else {
@@ -149,17 +155,35 @@ const loadDictionary = function () {
     if (error) {
       throw error
     }
-    spell = nspell(dict)
-    spell.add('halloumi')
+    SPELL = nspell(dict)
+    SPELL.add('halloumi')
   })
 }
 
 const start = function () {
+  // Start building the search index
+  loadSearchIndex()
   // Load the dictionary
   loadDictionary()
-  http.listen(app.get('port'), function () {
-    log.info('Listening on *:' + app.get('port'))
+  HTTP.listen(APP.get('port'), function () {
+    log.info('Listening on *:' + APP.get('port'))
   })
 }
 
+const handle404 = function (request, response, reason) {
+  onRequest(request)
+  response.status(404)
+  sendTemplate(request, response, '404', {'reason': reason, 'path': request.path})
+}
+
+// Note: This should always be the last route, as otherwise it'll override the other routes.
+APP.get('*', function (request, response) {
+  handle404(request, response, 'Unknown Page')
+})
+
 module.exports.start = start
+
+// Allow you to run the worker as a single process if you don't need the cluster.
+if (require.main === module) {
+  start()
+}

@@ -84,7 +84,7 @@ function occurrences (string, subString, allowOverlapping) {
 const isRecipe = function (file) {
   const extension = path.extname(file)
   // Recipes are either html, pdf or jpg
-  return extension === '.html' || extension === '.pdf' || extension === '.jpg'
+  return extension === '.html' || extension === '.pdf' || extension === '.jpg' || extension === '.png'
 }
 const foreachRecipe = function (directory, predicate) {
   walk(directory, function (file) {
@@ -101,6 +101,32 @@ const removeDiacritic = function (string) {
   return string.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
 
+const formatDate = function (date) {
+  return date.getFullYear() +
+    '-' +
+    String(date.getMonth() + 1).padStart(2, '0') +
+    '-' +
+    String(date.getDate()).padStart(2, '0')
+}
+
+const pathToDisplayPath = function (file) {
+  // comes in as public\recipes\A\B\C.X want to display A/B/C
+  let displayPath = file.replace(/\\/g, '/')
+  displayPath = displayPath.replace('public/recipes/', '')
+  displayPath = displayPath.replace(/\..*/, '')
+  return displayPath
+}
+
+/** Function that identifies a file as a recipe file or not
+ * @param {String} file               The file path
+ *
+ * @return {Boolean} Returns if the file is a recipe.
+ */
+const recipeFile = function (file) {
+  const ext = path.extname(file)
+  return ext !== '.cache' && ext !== '.metadata'
+}
+
 module.exports.occurrences = occurrences
 module.exports.pathToLabel = pathToLabel
 module.exports.cachePath = cachePath
@@ -110,3 +136,6 @@ module.exports.timer = timer
 module.exports.foreachRecipe = foreachRecipe
 module.exports.isRecipe = isRecipe
 module.exports.removeDiacritic = removeDiacritic
+module.exports.formatDate = formatDate
+module.exports.pathToDisplayPath = pathToDisplayPath
+module.exports.recipeFile = recipeFile

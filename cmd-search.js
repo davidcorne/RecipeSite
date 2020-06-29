@@ -3,10 +3,10 @@
 const commander = require('commander')
 const search = require('./search')
 
-let index = []
+let INDEX = []
 
 const runSearch = function (query) {
-  const results = search.search(query, index)
+  const results = search.search(query, INDEX)
   results.forEach(result => {
     console.log(result.label)
     if (commander.context) {
@@ -18,7 +18,7 @@ const runSearch = function (query) {
 }
 
 const runSearches = function (queries) {
-  search.buildIndex('public/recipes', index)
+  search.buildIndex('public/recipes', INDEX)
   const continueSearch = function () {
     queries.forEach(query => {
       console.log('Query:', query)
@@ -30,11 +30,11 @@ const runSearches = function (queries) {
   const waitForIndex = function () {
     // Wait until 2 iterations of reading the search index have the same
     // length, i.e. should be no more to find.
-    if (index.length > 0 && index.length === currentLength) {
+    if (INDEX.length > 0 && INDEX.length === currentLength) {
       continueSearch()
       return
     }
-    currentLength = index.length
+    currentLength = INDEX.length
     setTimeout(waitForIndex, 10)
   }
   waitForIndex()

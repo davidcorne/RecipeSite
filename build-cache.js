@@ -9,7 +9,7 @@ const firstline = require('firstline')
 const utils = require('./utils')
 const log = require('./log')
 
-const pdfQueue = []
+const PDF_QUEUE = []
 
 const getHtmlCacheContent = function (file, callback) {
   fs.readFile(file, 'utf8', function (error, content) {
@@ -51,8 +51,8 @@ const getPdfCacheContent = function (file, callback) {
 }
 
 const getNextPdf = function (callback) {
-  if (pdfQueue.length) {
-    const file = pdfQueue.pop()
+  if (PDF_QUEUE.length) {
+    const file = PDF_QUEUE.pop()
     getPdfCacheContent(file, callback)
   }
 }
@@ -68,8 +68,8 @@ const getCacheContent = function (file, callback) {
   if (extension === '.html') {
     getHtmlCacheContent(file, callback)
   } else if (extension === '.pdf') {
-    pdfQueue.push(file)
-    if (pdfQueue.length === 1) {
+    PDF_QUEUE.push(file)
+    if (PDF_QUEUE.length === 1) {
       getNextPdf(callback)
     }
   } else {

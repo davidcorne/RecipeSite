@@ -97,3 +97,10 @@ li.L5,
 li.L7,
 li.L9 { background: #eee }
 
+/*===========================================================================*/
+/* Home link style */
+.home-link {
+  color: white;
+  margin-left: 4px;
+  font-weight: bold;
+}
