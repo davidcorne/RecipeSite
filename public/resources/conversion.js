@@ -99,3 +99,36 @@ Conversion.rateChange = function () {
   // Update the output
   Conversion.update()
 }
+
+Conversion.CakeTin = {
+}
+
+Conversion.CakeTin.conversionFactor = function (recipeTin, kitchenTin) {
+  // Try to keep the height the same between the two tins, so work out the
+  // relative volumes of the two cylinders and return the factor needed to
+  // transform one into the other.
+  // V1 = pi*h*(d1/2)^2
+  // V2 = pi*h*(d2/2)^2
+  // rearrange for:
+  // V2 = V2*(d2/d1)^2
+  // So return (d2/d1)^2 as the factor to times ingredients by
+  return Math.round(Math.pow((kitchenTin / recipeTin), 2) * 100) / 100
+}
+
+Conversion.CakeTin.update = function () {
+  // Get the amount input
+  const recipeTinDom = document.getElementById('recipe-tin')
+  const recipeTin = parseInt(recipeTinDom.value)
+
+  const kitchenTinDom = document.getElementById('kitchen-tin')
+  const kitchenTin = parseInt(kitchenTinDom.value)
+
+  const output = Conversion.CakeTin.conversionFactor(recipeTin, kitchenTin)
+  // Write the output to the output window
+  const outputDom = document.getElementById('tin-output')
+  outputDom.value = isNaN(output) ? '' : output
+}
+
+Conversion.CakeTin.onMeasurementSelect = function (select) {
+
+}

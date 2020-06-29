@@ -1,6 +1,7 @@
 extends layout.pug
 
 block scripts
+  script(type='text/javascript', src='public/resources/conversion.js')
   script.
     Conversion.conversions = !{JSON.stringify(conversions)}
 
@@ -9,7 +10,13 @@ block content
 
   h1 Conversion
 
-  div.conversions
+  div
+    ul
+      li
+        a Ingredients
+      li
+        a Cake Tins
+  div#ingredient-conversion.conversion
     select#ingredient(onchange="Conversion.onIngredientSelect(this);")
       option(value="", disabled="disabled", selected="selected") Ingredient
       each item in conversions
@@ -20,5 +27,13 @@ block content
     input#output(readonly="readonly")
     select#convert-to(onchange="Conversion.rateChange();")
       option(value="", disabled="disabled", selected="selected") Unit
-
-
+  div#cake-tin-conversion.conversion
+    select#ingredient(onchange="Conversion.CakeTin.(this);")
+      option(value="", selected="selected") Diameter
+      option(value="",) Radius
+    p Recipe tin
+    input#recipe-tin(oninput="Conversion.CakeTin.update();", type="number")
+    p Kitchen tin
+    input#kitchen-tin(oninput="Conversion.CakeTin.update();", type="number")
+    p Volume times
+    input#tin-output(readonly="readonly")
