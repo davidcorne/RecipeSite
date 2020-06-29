@@ -1,20 +1,11 @@
 'use strict'
-const express = require('express')
-const decode = require('urldecode')
-const path = require('path')
-const fs = require('fs')
 const dictionary = require('dictionary-en-gb')
+const express = require('express')
 const nspell = require('nspell')
 
-const utils = require('./utils')
 const log = require('./log')
-const conversion = require('./conversion')
-const search = require('./search')
 const router = require('./router')
-
-let INDEX = []
-
-let SPELL = null
+const search = require('./search')
 
 const APP = express()
 const HTTP = require('http').Server(APP)
@@ -30,36 +21,13 @@ process.on('message', function (message) {
   }
 })
 
-const searchIndex = function (data) {
-  // We've got a search index, actually search it.
-  const timer = utils.timer().start()
-  const results = search.search(data.query, INDEX)
-  timer.stop()
-  data['key'] = 'search'
-  // See if it's well spelled, as long as we've loaded a spellchecker
-  let suggestions = []
-  if (SPELL) {
-    suggestions = SPELL.suggest(data.query)
-  }
-  data['suggestions'] = suggestions
-  data['results_length'] = results.length
-  data['time'] = timer.milliseconds
-  // slice the search data by the page
-  const bottom = (data.page - 1) * 20
-  const top = Math.min(data.page * 20, results.length)
-  data['results'] = results.slice(bottom, top)
-  // For display add 1, as they're not array indices.
-  data['bottom'] = bottom + 1
-  data['top'] = top
-}
-
-const loadDictionary = function () {
+const loadDictionary = function (router) {
   dictionary(function (error, dict) {
     if (error) {
       throw error
     }
-    SPELL = nspell(dict)
-    SPELL.add('halloumi')
+    router.spell = nspell(dict)
+    router.spell.add('halloumi')
   })
 }
 
@@ -75,13 +43,14 @@ const setupRoutes = function (router) {
 
 const start = function () {
   // Start building the search index
+  const searchIndex = []
   const recipeRoot = 'public/recipes'
-  search.buildIndex(recipeRoot, INDEX)
-  // Load the dictionary
-  loadDictionary()
-  // Setup routes
-  const router_ = new router.Router(APP)
+  search.buildIndex(recipeRoot, searchIndex)
+
+  const router_ = new router.Router(APP, searchIndex)
   setupRoutes(router_)
+  // Load the dictionary
+  loadDictionary(router_)
   HTTP.listen(APP.get('port'), function () {
     log.info('Listening on *:' + APP.get('port'))
   })

@@ -1,16 +1,19 @@
 'use strict'
-const pug = require('pug')
 const decode = require('urldecode')
-const path = require('path')
 const fs = require('fs')
+const path = require('path')
+const pug = require('pug')
 
-const log = require('./log')
-const fileList = require('./file-list')
 const conversion = require('./conversion')
+const fileList = require('./file-list')
+const log = require('./log')
+const search = require('./search')
+const utils = require('./utils')
 
 class Router {
-  constructor (app) {
+  constructor (app, index) {
     this.app = app
+    this.index = index
     this.debugView = false
     this.templates = {
       'index': pug.compileFile('template/index.pug'),
@@ -22,6 +25,7 @@ class Router {
       '404': pug.compileFile('template/404.pug')
     }
     this.gitCommitSHA = ''
+    this.spell = null
   }
 
   onRequest (request) {
@@ -43,6 +47,29 @@ class Router {
     this.sendTemplate(request, response, '404', {'reason': reason, 'path': request.path})
   }
 
+  searchIndex (data) {
+    // We've got a search index, actually search it.
+    const timer = utils.timer().start()
+    const results = search.search(data.query, this.index)
+    timer.stop()
+    data['key'] = 'search'
+    // See if it's well spelled, as long as we've loaded a spellchecker
+    let suggestions = []
+    if (this.spell) {
+      suggestions = this.spell.suggest(data.query)
+    }
+    data['suggestions'] = suggestions
+    data['results_length'] = results.length
+    data['time'] = timer.milliseconds
+    // slice the search data by the page
+    const bottom = (data.page - 1) * 20
+    const top = Math.min(data.page * 20, results.length)
+    data['results'] = results.slice(bottom, top)
+    // For display add 1, as they're not array indices.
+    data['bottom'] = bottom + 1
+    data['top'] = top
+  }
+
   // Routes
   root (request, response) {
     this.onRequest(request)
@@ -51,14 +78,15 @@ class Router {
     }
     this.sendTemplate(request, response, 'index', locals)
   }
+
   newRecipes (request, response) {
     this.onRequest(request)
-    if (Object.keys(INDEX).length === 0) {
+    if (Object.keys(this.index).length === 0) {
       // Send a "new" results not ready signal.
       this.sendTemplate(request, response, 'new-not-ready', {})
     } else {
       const locals = {
-        newRecipes: fileList.filterNewRecipes(INDEX)
+        newRecipes: fileList.filterNewRecipes(this.index)
       }
       this.sendTemplate(request, response, 'new', locals)
     }
@@ -92,7 +120,7 @@ class Router {
       query: request.query.query,
       page: request.query.page ? request.query.page : 1
     }
-    if (Object.keys(INDEX).length === 0) {
+    if (Object.keys(this.index).length === 0) {
       // Send a search results not ready signal.
       this.sendTemplate(request, response, 'search-not-ready', data)
     } else {
