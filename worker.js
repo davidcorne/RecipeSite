@@ -9,13 +9,14 @@ const search = require('./search')
 
 const APP = express()
 const HTTP = require('http').Server(APP)
+const INDEX = []
 
 APP.set('port', (process.env.PORT || 3000))
 
 process.on('message', function (message) {
   log.debug('Recieved ' + JSON.stringify(message))
   if (message.git_commit_sha) {
-    //X GIT_COMMIT_SHA = message.git_commit_sha
+    // X GIT_COMMIT_SHA = message.git_commit_sha
   } else {
     log.error('Unknown message "' + JSON.stringify(message) + '"')
   }
@@ -43,11 +44,10 @@ const setupRoutes = function (router) {
 
 const start = function () {
   // Start building the search index
-  const searchIndex = []
   const recipeRoot = 'public/recipes'
-  search.buildIndex(recipeRoot, searchIndex)
+  search.buildIndex(recipeRoot, INDEX)
 
-  const router_ = new router.Router(APP, searchIndex)
+  const router_ = new router.Router(APP, INDEX)
   setupRoutes(router_)
   // Load the dictionary
   loadDictionary(router_)

@@ -10,6 +10,7 @@ const async = require('async')
 const fs = require('fs')
 
 const utils = require('./utils')
+const router = require('./router')
 
 const searchModule = rewire('./search.js')
 const buildCacheModule = rewire('./build-cache.js')
@@ -485,11 +486,18 @@ describe('Search', function () {
 
 describe('Routing', function () {
   this.afterEach(function () {
-    workerModule.__set__('INDEX', [])
+    // ?
+    const index = workerModule.__get__('INDEX')
+    // empty the index
+    index.splice(0, index.length)
   })
 
   it('Existing', function (done) {
     const app = workerModule.__get__('APP')
+    const setupRoutes = workerModule.__get__('setupRoutes')
+
+    const route = new router.Router(app, [])
+    setupRoutes(app, route)
     const server = app.listen()
 
     // Responds to all the routes.
@@ -541,15 +549,6 @@ describe('Routing', function () {
   })
   it('Search not found', function (done) {
     const app = workerModule.__get__('APP')
-    const index = [
-      {
-        'file': 'test 1',
-        'content': 'never found',
-        'tags': []
-      }
-    ]
-    workerModule.__set__('INDEX', index)
-
     const server = app.listen()
     const runTest = function (callback) {
       request(server).get('/search?query=always').expect(200, function (error, response) {
