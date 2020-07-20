@@ -14,9 +14,15 @@ div#search-result
       if results_length > 20
         - const pages = Math.ceil(results_length / 20)
         - let n = 1
+        //- Add a left arrow if we're not on the first page
+        if parseInt(page) !== 1
+          a(href="/search?query=" + query + "&page=" + (page - 1)) ◀
         while n <= pages
           - const id = page === n.toString() ? 'current' : ''
           a(href="/search?query=" + query + "&page=" + n, id=id) #{n}
           - n++
+        //- Add a right arrow if we're not on the last page
+        if page < pages
+          a(href="/search?query=" + query + "&page=" + (parseInt(page) + 1)) ▶
   else
     p Your search - #{query} - did not match any documents.
