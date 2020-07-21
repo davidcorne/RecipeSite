@@ -13,9 +13,8 @@ const configuration = {
   airbrakeProjectKey: process.env.AIRBRAKE_API_KEY
 }
 
-// Override those properties with the user config
-const stat = fs.statSync('./.user_config.json')
-if (stat.isFile()) {
+// Override those properties with the user config, if it exists
+if (fs.existsSync('./.user_config.json')) {
   const userConfig = require('./.user_config')
   for (const property in userConfig) {
     configuration[property] = userConfig[property]
