@@ -53,7 +53,7 @@ const getGitCommitShaSync = function () {
 }
 
 const start = function () {
-  log.info('Logging level: ' + log.level())
+  log.info(JSON.stringify(configuration, null, 4))
   GIT_COMMIT_SHA = getGitCommitShaSync()
   setupCallbacks()
   startWorkers()
