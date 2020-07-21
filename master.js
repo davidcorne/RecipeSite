@@ -2,15 +2,15 @@
 const cluster = require('cluster')
 const fs = require('fs')
 const log = require('./log')
-const os = require('os')
 
-const NUMBER_OF_WORKERS = (process.env.WORKERS || os.cpus().length)
+const configuration = require('./configuration')
+
 let GIT_COMMIT_SHA
 
 const startWorkers = function () {
   let currentWorkers = Object.keys(cluster.workers).length
   // currentWorkers should always be 0, but it's worth checking.
-  const workersToSetup = NUMBER_OF_WORKERS - currentWorkers
+  const workersToSetup = configuration.numberOfWorkers - currentWorkers
   log.info('Master cluster setting up ' + workersToSetup + ' workers')
   for (let i = 0; i < workersToSetup; i++) {
     cluster.fork()
@@ -37,9 +37,9 @@ const setupCallbacks = function () {
 }
 
 const getGitCommitShaSync = function () {
-  if (process.env.HEROKU_SLUG_COMMIT) {
+  if (configuration.herokuSlugCommit) {
     // We're in the Heroku environment, just get it from the meta-data
-    return process.env.HEROKU_SLUG_COMMIT
+    return configuration.herokuSlugCommit
   } else {
     // We're not in Heroku, read the git file ourselves
     const rev = fs.readFileSync('.git/HEAD').toString()

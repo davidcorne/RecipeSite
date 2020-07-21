@@ -2,8 +2,10 @@
 
 const winston = require('winston')
 
+const configuration = require('./configuration')
+
 // We want info to be the default logging level
-winston.level = (process.env.LOG_LEVEL || 'info')
+winston.level = configuration.logLevel
 
 const logFunction = function (level) {
   // Return a log function for that level

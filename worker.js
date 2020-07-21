@@ -10,6 +10,7 @@ const nspell = require('nspell')
 const utils = require('./utils')
 const log = require('./log')
 const conversion = require('./conversion')
+const configuration = require('./configuration')
 const search = require('./search')
 const fileList = require('./file-list')
 
@@ -32,7 +33,7 @@ const TEMPLATES = {
 const APP = express()
 const HTTP = require('http').Server(APP)
 
-APP.set('port', (process.env.PORT || 3000))
+APP.set('port', configuration.port)
 
 let DEBUG_VIEW = false
 let GIT_COMMIT_SHA = ''
