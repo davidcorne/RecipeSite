@@ -13,6 +13,7 @@ const conversion = require('./conversion')
 const configuration = require('./configuration')
 const search = require('./search')
 const fileList = require('./file-list')
+require('./error-notification')
 
 let INDEX = []
 const RECIPE_ROOT = 'public/recipes'
