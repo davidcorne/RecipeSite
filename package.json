@@ -13,6 +13,7 @@
     "develop": "nodemon server.js"
   },
   "dependencies": {
+    "@airbrake/node": "^1.3.0",
     "dictionary-en-gb": "^2.0.0",
     "express": "*",
     "firstline": "^1.2.1",
