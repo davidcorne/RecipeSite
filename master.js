@@ -4,7 +4,6 @@ const fs = require('fs')
 const log = require('./log')
 
 const configuration = require('./configuration')
-require('./error-notification')
 
 let GIT_COMMIT_SHA
 
