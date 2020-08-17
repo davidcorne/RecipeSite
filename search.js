@@ -126,7 +126,8 @@ const search = function (query, index) {
         context: contextResult.context,
         tags: item.tags,
         match: match.score(),
-        matchVerbose: match
+        matchVerbose: match,
+        date: item.date
       })
     }
   })
