@@ -195,8 +195,28 @@ describe('Recipes', function () {
       done()
     })
   })
+  it('Ensure gram space', function (done) {
+    // This ensures that in each html recipe, there aren't spaces surrounding grams
+    const paths = walkSync('./public/recipes')
+    // This will check each file twice, but it's not slow
+
+    const noGrams = new RegExp(' g ')
+    const test = function (path, callback) {
+      if (path.endsWith('.html')) {
+        const content = fs.readFileSync(path, 'utf8')
+        let matches = content.match(noGrams)
+        if (matches) console.log(matches)
+        assert.isNull(matches, 'A recipe shouldn\'t have floating gram symbols. file: ' + path)
+      }
+      callback()
+    }
+    async.each(paths, test, function (error) {
+      assert.isNull(error)
+      done()
+    })
+  })
   it('Ensure script includes', function (done) {
-    // This ensures that in each html recipe, I'm using the degrees symbol by temperatures.
+    // This ensures that in each html recipe, I'm including strapdown first
     const paths = walkSync('./public/recipes')
     // This will check each file twice, but it's not slow
     const test = function (path, callback) {
