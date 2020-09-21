@@ -936,5 +936,10 @@ describe('File List', function () {
   ![Roast Chicken, Summer Vegetables and Green Herb Consommé](/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg)
 `
     assert.strictEqual(imageFromItem({content: contentWithImage}), '/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg')
+    const contentWithoutImage = `
+  This is a Masterchef AU recipe by Matt Abe.
+  [Roast Chicken, Summer Vegetables and Green Herb Consommé](/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg)
+`
+    assert.strictEqual(imageFromItem({content: contentWithoutImage}), '')
   })
 })
