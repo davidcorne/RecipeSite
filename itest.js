@@ -215,6 +215,24 @@ describe('Recipes', function () {
       done()
     })
   })
+  it('Ensure removed boilerplate', function (done) {
+    const paths = walkSync('./public/recipes')
+
+    const boilerplate = new RegExp('°C ½ ¼')
+    const test = function (path, callback) {
+      if (path.endsWith('.html')) {
+        const content = fs.readFileSync(path, 'utf8')
+        const matches = content.match(boilerplate)
+        if (matches) console.log(matches)
+        assert.isNull(matches, 'A recipe shouldn\'t still have boilerplate symbols. file: ' + path)
+      }
+      callback()
+    }
+    async.each(paths, test, function (error) {
+      assert.isNull(error)
+      done()
+    })
+  })
   it('Ensure script includes', function (done) {
     // This ensures that in each html recipe, I'm including strapdown first
     const paths = walkSync('./public/recipes')
