@@ -323,3 +323,9 @@ summary{
     height: 2.5rem;
     width: 100%;
 }
+
+/*===========================================================================*/
+/* Recipe preview image */
+.preview-image {
+    max-width: 260px;
+}

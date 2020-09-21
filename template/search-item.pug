@@ -15,6 +15,8 @@ div
     p.debug Score: #{item.match}
     p.debug Match: #{JSON.stringify(item.matchVerbose)}
     p.debug Date: #{item.date}
+  if item.image
+    img(src=item.image).preview-image
   div.search-context
     each line in item.context
       p.line #{line}

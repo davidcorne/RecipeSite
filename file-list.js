@@ -48,6 +48,10 @@ const generateFileList = function () {
   return fileList
 }
 
+const imageFromItem = function (item) {
+  return '/public/images/Eggs-Pipérade.jpg'
+}
+
 const filterNewRecipes = function (index) {
   const orderPredicate = (a, b) => {
     if (a.date !== b.date) {
@@ -64,13 +68,15 @@ const filterNewRecipes = function (index) {
   for (let i = 0; i < orderedIndex.length; ++i) {
     const item = orderedIndex[i]
     const firstLines = item.content.split(/\r?\n/).slice(0, 5)
+    const image = imageFromItem(item)
     orderedRecipes.push({
       'path': item.file,
       'label': utils.pathToLabel(item.file),
       'displayPath': utils.pathToDisplayPath(item.file),
       'context': firstLines,
       'tags': item.tags,
-      'date': item.date
+      'date': item.date,
+      'image': image
     })
   }
   return orderedRecipes
