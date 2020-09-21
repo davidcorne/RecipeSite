@@ -928,4 +928,13 @@ describe('File List', function () {
       assert.strictEqual(orderedRecipes[2].path, '4')
     }
   })
+  it('Image from item', function () {
+    const imageFromItem = fileListModule.__get__('imageFromItem')
+    // test that it gets an image from the 1st, but not the second
+    const contentWithImage = `
+  This is a Masterchef AU recipe by Matt Abe.
+  ![Roast Chicken, Summer Vegetables and Green Herb Consommé](/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg)
+`
+    assert.strictEqual(imageFromItem({content: contentWithImage}), '/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg')
+  })
 })
