@@ -49,7 +49,9 @@ const generateFileList = function () {
 }
 
 const imageFromItem = function (item) {
-  return '/public/images/Eggs-Pipérade.jpg'
+  const markdownImage = new RegExp('!\\[.*\\]\\((.*)\\)')
+  const matches = item.content.match(markdownImage)
+  return matches ? matches[1] : ''
 }
 
 const filterNewRecipes = function (index) {
