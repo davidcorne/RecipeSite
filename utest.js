@@ -11,6 +11,7 @@ const fs = require('fs')
 
 const utils = require('./utils')
 
+const utilsModule = rewire('./utils.js')
 const searchModule = rewire('./search.js')
 const buildCacheModule = rewire('./build-cache.js')
 const workerModule = rewire('./worker.js')
@@ -42,6 +43,20 @@ describe('Utils', function () {
       const result = utils.formatDate(testCase[0])
       assert.strictEqual(result, testCase[1])
     })
+  })
+  it('Image from item', function () {
+    const imageFromItem = utilsModule.__get__('imageFromItem')
+    // test that it gets an image from the 1st, but not the second
+    const contentWithImage = `
+  This is a Masterchef AU recipe by Matt Abe.
+  ![Roast Chicken, Summer Vegetables and Green Herb Consommé](/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg)
+`
+    assert.strictEqual(imageFromItem({content: contentWithImage}), '/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg')
+    const contentWithoutImage = `
+  This is a Masterchef AU recipe by Matt Abe.
+  [Roast Chicken, Summer Vegetables and Green Herb Consommé](/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg)
+`
+    assert.strictEqual(imageFromItem({content: contentWithoutImage}), '')
   })
 })
 describe('Caches', function () {
@@ -927,19 +942,5 @@ describe('File List', function () {
       assert.strictEqual(orderedRecipes[1].path, '3')
       assert.strictEqual(orderedRecipes[2].path, '4')
     }
-  })
-  it('Image from item', function () {
-    const imageFromItem = fileListModule.__get__('imageFromItem')
-    // test that it gets an image from the 1st, but not the second
-    const contentWithImage = `
-  This is a Masterchef AU recipe by Matt Abe.
-  ![Roast Chicken, Summer Vegetables and Green Herb Consommé](/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg)
-`
-    assert.strictEqual(imageFromItem({content: contentWithImage}), '/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg')
-    const contentWithoutImage = `
-  This is a Masterchef AU recipe by Matt Abe.
-  [Roast Chicken, Summer Vegetables and Green Herb Consommé](/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg)
-`
-    assert.strictEqual(imageFromItem({content: contentWithoutImage}), '')
   })
 })

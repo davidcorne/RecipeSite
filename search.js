@@ -119,16 +119,11 @@ const search = function (query, index) {
     })
 
     if (match.found()) {
-      results.push({
-        label: utils.pathToLabel(file),
-        path: file,
-        displayPath: utils.pathToDisplayPath(file),
-        context: contextResult.context,
-        tags: item.tags,
-        match: match.score(),
-        matchVerbose: match,
-        date: item.date
-      })
+      const resultItem = utils.searchItemToResult(item)
+      resultItem.context = contextResult.context
+      resultItem.match = match.score()
+      resultItem.matchVerbose = match
+      results.push(resultItem)
     }
   })
   // Sort the results by the larger match is better (closer to the beginning)
