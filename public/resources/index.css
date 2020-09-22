@@ -327,5 +327,6 @@ summary{
 /*===========================================================================*/
 /* Recipe preview image */
 .preview-image {
-    max-width: 260px;
+    max-width: 300px;
+    max-height: 300px;
 }
