@@ -127,6 +127,34 @@ const recipeFile = function (file) {
   return ext !== '.cache' && ext !== '.metadata'
 }
 
+/** Function to get an image path from a search item
+ *
+ * @param {SearchItem} item
+ *
+ * @returns {String} path to an image to display
+ */
+const imageFromItem = function (item) {
+  const markdownImage = new RegExp('!\\[.*\\]\\((.*)\\)')
+  const matches = item.content.match(markdownImage)
+  return matches ? matches[1] : ''
+}
+
+/** Function to convert from a search index item to a result item
+ * @param {SearchItem} item   The item to convert to a result
+ *
+ * @returns {ResultItem} The result with all of the instrumentation needed
+ */
+const searchItemToResult = function (item) {
+  return {
+    label: pathToLabel(item.file),
+    path: item.file,
+    displayPath: pathToDisplayPath(item.file),
+    tags: item.tags,
+    date: item.date,
+    image: imageFromItem(item)
+  }
+}
+
 module.exports.occurrences = occurrences
 module.exports.pathToLabel = pathToLabel
 module.exports.cachePath = cachePath
@@ -139,3 +167,4 @@ module.exports.removeDiacritic = removeDiacritic
 module.exports.formatDate = formatDate
 module.exports.pathToDisplayPath = pathToDisplayPath
 module.exports.recipeFile = recipeFile
+module.exports.searchItemToResult = searchItemToResult
