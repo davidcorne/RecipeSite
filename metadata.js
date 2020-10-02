@@ -15,14 +15,18 @@ const SCHEMA = {
     },
     'date': {
       'type': 'string' // format YYYY-MM-DD
+    },
+    'image': {
+      'type': 'string'
     }
   },
-  'required': ['tags', 'date']
+  'required': ['tags', 'date', 'image']
 }
 
 const DEFAULT_METADATA = {
   'tags': [],
-  'date': ''
+  'date': '',
+  'image': ''
 }
 
 const metadataPath = function (recipePath) {

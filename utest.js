@@ -793,7 +793,8 @@ describe('Metadata', function () {
     // Some valid options
     let t = {
       'tags': ['vegan', 'gout'],
-      'date': 'a date'
+      'date': 'a date',
+      'image': 'an image'
     }
     assert.isTrue(validMetadata(t))
     t = {
