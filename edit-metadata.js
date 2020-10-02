@@ -20,11 +20,9 @@ const initialiseAllMetadata = function () {
       const date = new Date()
       t['date'] = utils.formatDate(date)
     }
-    // 1. Read the image from the recipe.
-    // 2. Save into meta-data
-    // 3. Convert to only do this if there isn't an image
-    // A recipe with no image, write a blank one for now
-    t['image'] = utils.readImageFromRecipeSync(recipePath)
+    if (!t['image']) {
+      t['image'] = utils.readImageFromRecipeSync(recipePath)
+    }
     metadata.writeMetadataSync(recipePath, t)
   })
 }
