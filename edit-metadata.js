@@ -20,6 +20,10 @@ const initialiseAllMetadata = function () {
       const date = new Date()
       t['date'] = utils.formatDate(date)
     }
+    if (!t['image']) {
+      // A recipe with no image, write a blank one for now
+      t['image'] = ''
+    }
     metadata.writeMetadataSync(recipePath, t)
   })
 }
