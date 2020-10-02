@@ -133,10 +133,21 @@ const recipeFile = function (file) {
  *
  * @returns {String} path to an image to display
  */
-const imageFromItem = function (item) {
+const imageFromRecipe = function (content) {
   const markdownImage = new RegExp('!\\[.*\\]\\((.*)\\)')
-  const matches = item.content.match(markdownImage)
+  const matches = content.match(markdownImage)
   return matches ? matches[1] : ''
+}
+
+/** Function to read a recipe and get the image from it
+ *
+ * @param {string} recipePath
+ *
+ * @returns {String} image, can be empty
+ */
+const readImageFromRecipeSync = function (recipePath) {
+  const content = fs.readFileSync(recipePath)
+  return imageFromRecipe(String(content))
 }
 
 /** Function to convert from a search index item to a result item
@@ -151,7 +162,7 @@ const searchItemToResult = function (item) {
     displayPath: pathToDisplayPath(item.file),
     tags: item.tags,
     date: item.date,
-    image: imageFromItem(item)
+    image: item.image
   }
 }
 
@@ -168,3 +179,4 @@ module.exports.formatDate = formatDate
 module.exports.pathToDisplayPath = pathToDisplayPath
 module.exports.recipeFile = recipeFile
 module.exports.searchItemToResult = searchItemToResult
+module.exports.readImageFromRecipeSync = readImageFromRecipeSync
