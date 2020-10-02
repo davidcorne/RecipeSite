@@ -166,7 +166,8 @@ const buildIndex = function (path, index) {
           file,
           content,
           'tags': metadata.tags,
-          'date': metadata.date
+          'date': metadata.date,
+          'image': metadata.image
         })
       })
     })
