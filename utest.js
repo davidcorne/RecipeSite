@@ -45,18 +45,18 @@ describe('Utils', function () {
     })
   })
   it('Image from item', function () {
-    const imageFromItem = utilsModule.__get__('imageFromItem')
+    const imageFromRecipe = utilsModule.__get__('imageFromRecipe')
     // test that it gets an image from the 1st, but not the second
     const contentWithImage = `
   This is a Masterchef AU recipe by Matt Abe.
   ![Roast Chicken, Summer Vegetables and Green Herb Consommé](/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg)
 `
-    assert.strictEqual(imageFromItem({content: contentWithImage}), '/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg')
+    assert.strictEqual(imageFromRecipe(contentWithImage), '/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg')
     const contentWithoutImage = `
   This is a Masterchef AU recipe by Matt Abe.
   [Roast Chicken, Summer Vegetables and Green Herb Consommé](/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg)
 `
-    assert.strictEqual(imageFromItem({content: contentWithoutImage}), '')
+    assert.strictEqual(imageFromRecipe(contentWithoutImage), '')
   })
 })
 describe('Caches', function () {
@@ -793,7 +793,8 @@ describe('Metadata', function () {
     // Some valid options
     let t = {
       'tags': ['vegan', 'gout'],
-      'date': 'a date'
+      'date': 'a date',
+      'image': 'an image'
     }
     assert.isTrue(validMetadata(t))
     t = {

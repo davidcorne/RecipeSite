@@ -20,6 +20,9 @@ const initialiseAllMetadata = function () {
       const date = new Date()
       t['date'] = utils.formatDate(date)
     }
+    if (!t['image']) {
+      t['image'] = utils.readImageFromRecipeSync(recipePath)
+    }
     metadata.writeMetadataSync(recipePath, t)
   })
 }
