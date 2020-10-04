@@ -27,4 +27,16 @@ const initialiseAllMetadata = function () {
   })
 }
 
+if (require.main === module) {
+  // Clear all of the images
+  utils.foreachRecipe('public/recipes', function (recipePath) {
+    if (metadata.metadataExists(recipePath)) {
+      const ignoreErrors = true
+      const t = metadata.readMetadataSync(recipePath, ignoreErrors)
+      t['image'] = ''
+      metadata.writeMetadataSync(recipePath, t)
+    }
+  })
+}
+
 module.exports.initialiseAllMetadata = initialiseAllMetadata

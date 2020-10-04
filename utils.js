@@ -146,8 +146,12 @@ const imageFromRecipe = function (content) {
  * @returns {String} image, can be empty
  */
 const readImageFromRecipeSync = function (recipePath) {
-  const content = fs.readFileSync(recipePath)
-  return imageFromRecipe(String(content))
+  const extension = path.extname(recipePath)
+  if (extension === '.html') {
+    const content = fs.readFileSync(recipePath)
+    return imageFromRecipe(String(content))
+  }
+  return ''
 }
 
 /** Function to convert from a search index item to a result item
