@@ -8,5 +8,6 @@ block content
   div.image-gallery
     each path in imagePaths
       - var image = '/public/images/' + path
+      - var altText = path.replace(/-/g, ' ').replace(/\..*/, '')
       a(href=image, target="_blank")
-        img(src=image)
+        img(src=image, alt=altText, title=altText)
