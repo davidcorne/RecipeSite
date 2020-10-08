@@ -118,7 +118,7 @@ APP.get('/images', function (request, response) {
   onRequest(request)
   fs.readdir(path.join(__dirname, 'public/images'), function (error, files) {
     if (error) {
-      // shrug
+      handle404(request, response, 'Internal error: images not found')
     } else {
       sendTemplate(request, response, 'images', {imagePaths: files})
     }
