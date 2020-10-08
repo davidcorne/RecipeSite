@@ -9,7 +9,6 @@ const nspell = require('nspell')
 
 const utils = require('./utils')
 const log = require('./log')
-const conversion = require('./conversion')
 const configuration = require('./configuration')
 const search = require('./search')
 const fileList = require('./file-list')
@@ -22,11 +21,11 @@ let SPELL = null
 // Compile a function
 const TEMPLATES = {
   'index': pug.compileFile('template/index.pug'),
+  'images': pug.compileFile('template/images.pug'),
   'search': pug.compileFile('template/search.pug'),
   'new': pug.compileFile('template/new.pug'),
   'new-not-ready': pug.compileFile('template/new-not-ready.pug'),
   'search-not-ready': pug.compileFile('template/search-not-ready.pug'),
-  'conversion': pug.compileFile('template/conversion.pug'),
   '404': pug.compileFile('template/404.pug')
 }
 
@@ -90,17 +89,6 @@ APP.get('/new', function (request, response) {
   }
 })
 
-APP.get('/conversion', function (request, response) {
-  onRequest(request)
-  // A list of the conversions that we cover.
-  sendTemplate(
-    request,
-    response,
-    'conversion',
-    {conversions: conversion.conversions}
-  )
-})
-
 APP.get('/public/*', function (request, response) {
   onRequest(request)
   const filePath = path.join(__dirname, decode(request.path))
@@ -109,6 +97,17 @@ APP.get('/public/*', function (request, response) {
       handle404(request, response, 'Resource not found')
     } else {
       response.sendFile(filePath)
+    }
+  })
+})
+
+APP.get('/images', function (request, response) {
+  onRequest(request)
+  fs.readdir(path.join(__dirname, 'public/images'), function (error, files) {
+    if (error) {
+      handle404(request, response, 'Internal error: images not found')
+    } else {
+      sendTemplate(request, response, 'images', {imagePaths: files})
     }
   })
 })

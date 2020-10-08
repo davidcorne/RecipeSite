@@ -10,7 +10,7 @@
     "test": "standard && mocha utest.js && mocha itest.js",
     "itest": "mocha itest.js",
     "utest": "mocha utest.js",
-    "develop": "nodemon server.js"
+    "develop": "nodemon server.js -e js,pug"
   },
   "dependencies": {
     "dictionary-en-gb": "^2.0.0",

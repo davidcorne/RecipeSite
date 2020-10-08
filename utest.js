@@ -513,9 +513,9 @@ describe('Routing', function () {
     }
     async.each([
       '/',
-      '/conversion',
       '/public/resources/index.css',
-      '/search'
+      '/search',
+      '/images'
     ], testRoute, function (error) {
       if (error) {
         throw error

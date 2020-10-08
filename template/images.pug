@@ -1,0 +1,12 @@
+extends layout.pug
+
+block content
+  include navigation-bar.pug
+
+  h1 Images
+
+  div.image-gallery
+    each path in imagePaths
+      - var image = '/public/images/' + path
+      a(href=image, target="_blank")
+        img(src=image)
