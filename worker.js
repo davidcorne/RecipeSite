@@ -22,6 +22,7 @@ let SPELL = null
 // Compile a function
 const TEMPLATES = {
   'index': pug.compileFile('template/index.pug'),
+  'images': pug.compileFile('template/images.pug'),
   'search': pug.compileFile('template/search.pug'),
   'new': pug.compileFile('template/new.pug'),
   'new-not-ready': pug.compileFile('template/new-not-ready.pug'),
@@ -119,8 +120,7 @@ APP.get('/images', function (request, response) {
     if (error) {
       // shrug
     } else {
-      console.log(files)
-      sendTemplate(request, response, '404', {})
+      sendTemplate(request, response, 'images', {imagePaths: files})
     }
   })
 })

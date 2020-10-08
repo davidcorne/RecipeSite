@@ -1,0 +1,12 @@
+extends layout.pug
+
+block content
+  include navigation-bar.pug
+
+  h1 Images
+
+  include search-bar.pug
+
+  each path in imagePaths
+    p #{path}
+
