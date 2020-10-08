@@ -333,7 +333,7 @@ summary{
 
 /*===========================================================================*/
 /* Recipe preview image */
-.image-gallery > img {
+.image-gallery img {
     max-width: 300px;
     max-height: 300px;
 }

@@ -9,5 +9,7 @@ block content
 
   div.image-gallery
     each path in imagePaths
-      img(src='/public/images/' + path)
+      - var image = '/public/images/' + path
+      a(href=image, target="_blank")
+        img(src=image)
 
