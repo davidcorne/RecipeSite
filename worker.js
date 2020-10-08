@@ -9,7 +9,6 @@ const nspell = require('nspell')
 
 const utils = require('./utils')
 const log = require('./log')
-const conversion = require('./conversion')
 const configuration = require('./configuration')
 const search = require('./search')
 const fileList = require('./file-list')
@@ -27,7 +26,6 @@ const TEMPLATES = {
   'new': pug.compileFile('template/new.pug'),
   'new-not-ready': pug.compileFile('template/new-not-ready.pug'),
   'search-not-ready': pug.compileFile('template/search-not-ready.pug'),
-  'conversion': pug.compileFile('template/conversion.pug'),
   '404': pug.compileFile('template/404.pug')
 }
 
@@ -89,17 +87,6 @@ APP.get('/new', function (request, response) {
     }
     sendTemplate(request, response, 'new', locals)
   }
-})
-
-APP.get('/conversion', function (request, response) {
-  onRequest(request)
-  // A list of the conversions that we cover.
-  sendTemplate(
-    request,
-    response,
-    'conversion',
-    {conversions: conversion.conversions}
-  )
 })
 
 APP.get('/public/*', function (request, response) {
