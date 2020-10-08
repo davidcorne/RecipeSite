@@ -22,6 +22,7 @@ let SPELL = null
 // Compile a function
 const TEMPLATES = {
   'index': pug.compileFile('template/index.pug'),
+  'images': pug.compileFile('template/images.pug'),
   'search': pug.compileFile('template/search.pug'),
   'new': pug.compileFile('template/new.pug'),
   'new-not-ready': pug.compileFile('template/new-not-ready.pug'),
@@ -109,6 +110,17 @@ APP.get('/public/*', function (request, response) {
       handle404(request, response, 'Resource not found')
     } else {
       response.sendFile(filePath)
+    }
+  })
+})
+
+APP.get('/images', function (request, response) {
+  onRequest(request)
+  fs.readdir(path.join(__dirname, 'public/images'), function (error, files) {
+    if (error) {
+      handle404(request, response, 'Internal error: images not found')
+    } else {
+      sendTemplate(request, response, 'images', {imagePaths: files})
     }
   })
 })
