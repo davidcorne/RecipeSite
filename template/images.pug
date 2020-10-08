@@ -5,11 +5,8 @@ block content
 
   h1 Images
 
-  include search-bar.pug
-
   div.image-gallery
     each path in imagePaths
       - var image = '/public/images/' + path
       a(href=image, target="_blank")
         img(src=image)
-
