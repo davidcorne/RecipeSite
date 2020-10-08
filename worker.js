@@ -113,6 +113,18 @@ APP.get('/public/*', function (request, response) {
   })
 })
 
+APP.get('/images', function (request, response) {
+  onRequest(request)
+  fs.readdir(path.join(__dirname, 'public/images'), function (error, files) {
+    if (error) {
+      // shrug
+    } else {
+      console.log(files)
+      sendTemplate(request, response, '404', {})
+    }
+  })
+})
+
 const searchIndex = function (data) {
   // We've got a search index, actually search it.
   const timer = utils.timer().start()
