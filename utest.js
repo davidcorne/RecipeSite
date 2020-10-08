@@ -513,7 +513,6 @@ describe('Routing', function () {
     }
     async.each([
       '/',
-      '/conversion',
       '/public/resources/index.css',
       '/search',
       '/images'
