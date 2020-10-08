@@ -7,6 +7,7 @@ block content
 
   include search-bar.pug
 
-  each path in imagePaths
-    p #{path}
+  div.image-gallery
+    each path in imagePaths
+      img(src='/public/images/' + path)
 
