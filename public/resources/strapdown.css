@@ -26,6 +26,7 @@ pre {
 
 img {
   margin: 10px 0;
+  max-width: 45%;
 }
 
 .navbar {
