@@ -112,6 +112,11 @@ APP.get('/images', function (request, response) {
   })
 })
 
+APP.get('/influences', function (request, response) {
+  onRequest(request)
+  response.redirect('/public/Influences.html')
+})
+
 const searchIndex = function (data) {
   // We've got a search index, actually search it.
   const timer = utils.timer().start()
