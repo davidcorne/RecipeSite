@@ -515,7 +515,8 @@ describe('Routing', function () {
       '/',
       '/public/resources/index.css',
       '/search',
-      '/images'
+      '/images',
+      '/influences'
     ], testRoute, function (error) {
       if (error) {
         throw error
