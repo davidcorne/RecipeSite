@@ -523,6 +523,23 @@ describe('Routing', function () {
       server.close(done)
     })
   })
+  it('Redirecting', function (done) {
+    const app = workerModule.__get__('APP')
+    const server = app.listen()
+
+    // Responds to all the routes.
+    const testRoute = function (route, callback) {
+      request(server).get(route).expect(302, callback)
+    }
+    async.each([
+      '/influences'
+    ], testRoute, function (error) {
+      if (error) {
+        throw error
+      }
+      server.close(done)
+    })
+  })
   it('Non-existing', function (done) {
     // Try to get some non-existent routes
     const app = workerModule.__get__('APP')
