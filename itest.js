@@ -180,7 +180,8 @@ describe('Recipes', function () {
     const paths = walkSync('./public/recipes')
     // This will check each file twice, but it's not slow
 
-    const noDegreesCelcius = new RegExp('[0-9][0-9]C')
+    // The regex excludes %NN as encoded URLs will have %20 as a space
+    const noDegreesCelcius = new RegExp('[^%][0-9][0-9]C')
     const test = function (path, callback) {
       if (path.endsWith('.html')) {
         const content = fs.readFileSync(path, 'utf8')
