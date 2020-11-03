@@ -259,6 +259,33 @@ describe('Recipes', function () {
     })
   })
 })
+describe('Images', function () {
+  it('Referenced', function (done) {
+    // This checks that each image in public/images is referenced in a recipe
+    fs.readdir('public/images', function (error, images) {
+      if (error) {
+        throw error
+      }
+      const paths = walkSync('./public/recipes')
+      paths.forEach(function (path) {
+        const content = fs.readFileSync(path)
+        // Iterate through the images backwards so we can remove elements
+        let i = images.length
+        while (i--) {
+          const image = images[i]
+          if (content.includes(image)) {
+            images.splice(i, 1)
+          }
+        }
+      })
+      if (images.length) {
+        console.error(`Images not referenced: ${images}`)
+        assert.fail()
+      }
+      done()
+    })
+  })
+})
 describe('Metadata', function () {
   const metadataPath = metadataModule.__get__('metadataPath')
   const validMetadata = metadataModule.__get__('validMetadata')
