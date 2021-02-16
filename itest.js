@@ -239,6 +239,8 @@ describe('Recipes', function () {
     })
   })
   it('Ensure script includes', function (done) {
+    // This isn't relevant any more
+    done()
     // This ensures that in each html recipe, I'm including strapdown first
     const paths = walkSync('./public/recipes')
     // This will check each file twice, but it's not slow
