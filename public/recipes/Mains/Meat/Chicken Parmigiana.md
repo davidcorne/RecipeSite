@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Chicken Parmigiana</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Chicken Parmigiana # 
 
 This is from the January 2021 edition of BBC Good Food magazine. Also on the [BBC Good Food site](https://www.bbcgoodfood.com/recipes/chicken-parmigiana-2).
@@ -64,10 +56,3 @@ This is from the January 2021 edition of BBC Good Food magazine. Also on the [BB
 
 ![Chicken Parmigiana](/public/images/Chicken-Parmigiana.png)
  
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

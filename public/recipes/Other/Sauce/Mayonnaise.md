@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Mayonnaise</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
   # Mayonnaise # 
   
   This is a rapeseed oil mayonnaise, originally from [here](https://www.greatbritishchefs.com/recipes/asparagus-pheasant-egg-mayonnaise-recipe).
@@ -28,11 +20,5 @@
   3. Season as necessary.
 
   This will keep chilled for 48 hours.
-  
-  </xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
   
   

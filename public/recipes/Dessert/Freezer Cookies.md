@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Chocolate Chip Cookies</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Chocolate Chip Cookies # 
 
 These are designed to be frozen, but can also be cooked straight away. This is based on [this recipe](http://allrecipes.co.uk/recipe/12570/freezer-friendly-chocolate-chip-cookies.aspx) with modifications based on the science in the [ATK Perfect Chocolate Chip Cookies](https://www.americastestkitchen.com/recipes/4737-perfect-chocolate-chip-cookies).
@@ -63,10 +55,4 @@ It made 99 cookies.
 
 - These are easy to make gluten free, use any gluten free plain flour mix (I've had success with Dove Farms, Sainsbury's and ASDA's brands). Also, ensure you're using gluten free bicarbonate of soda.
 - The chocolate chips or white chocolate can be switched for other chocolates. I've made these with dark chocolate rather than white, and that worked very well.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

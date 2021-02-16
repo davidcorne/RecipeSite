@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Apple Coleslaw</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Apple Coleslaw # 
 
 ## Ingredients ## 
@@ -23,10 +15,4 @@
 1. Mix all fruit and vegetables together.
 2. Add small amounts of mayo and increase as you don't want it drenched otherwise it goes soggy.
 3. Season to taste.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

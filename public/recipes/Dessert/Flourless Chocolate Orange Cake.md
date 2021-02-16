@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Flourless Chocolate Orange Cake</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Flourless Chocolate Orange Cake # 
 
 By Richard Matthews, used to work at Delcam but moved to Shefield. Copied from Tessa.
@@ -36,10 +28,4 @@ and come out well anyway.
 5.> Pour/scrape into cake tin (sometimes I have got a very runny mixtures that pours, other times less so, it doesn't seem to matter too much), bake for an hour. Check after 45 mins as may need to cover with foil. I can't remember how long it has actually taken when I did it as one cake. When I did the cupcakes yesterday they took a bit under twenty minutes. I find that the test of sticking a sharp knife or similar in and seeing when it comes out clean does not entirely work for gluten free stuff, at least with this recipe it does not seem to ever come out entirely clean, presumably until it burns. I still do the check but only wait until it comes out fairly clean.
 
 For the topping I have always done a chocolate fudge icing with butter, dark chocolate, icing sugar, vanilla and milk. When I have done it as a cake I have done something much softer than I did on the cupcakes but for them I added golden syrup and more icing sugar so it would set harder and be less likely to make a mess whilst being transported.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

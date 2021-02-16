@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Cauliflower 4 ways</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Cauliflower 4 ways # 
 
 This is currently a work in progress for our 12th anniversary. This is what I think the composition should be:
@@ -114,10 +106,3 @@ This should look like this:
 
 
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

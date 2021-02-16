@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Gluten Free Choux Bun</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Gluten Free Choux Bun # 
 
 This is from the dove farm gluten free flour website [here](https://www.dovesfarm.co.uk/recipes/gluten-free-choux-pastry).
@@ -39,10 +31,3 @@ This is from the dove farm gluten free flour website [here](https://www.dovesfar
 3. Remove the tray from the oven and make a cut in the side of each choux bun to allow the steam to escape, and transfer to a wire rack to cool.
 4. When completely cold slice and fill the buns with a sweet or savoury filling. 
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Pulled Pork</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Pulled Pork # 
 
 This is originally from [here](https://www.greatbritishchefs.com/how-to-cook/how-to-cook-pulled-pork-sous-vide).
@@ -33,10 +25,4 @@ This is originally from [here](https://www.greatbritishchefs.com/how-to-cook/how
 10. Use a blowtorch to lightly char the outside of the pork - this will help to caramelise the outside, giving you a nice charred flavour. Alternatively, you can colour the outsides in a hot pan
 11. Working with a pair of forks (or clean fingers) pull the meat into shreds
 12. Once the meat is shredded to the desired thickness, add the thickened sauce and mix well to combine
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

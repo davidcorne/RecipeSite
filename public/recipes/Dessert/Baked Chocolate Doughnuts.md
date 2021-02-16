@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Baked Chocolate Doughnuts</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Baked Chocolate Doughnuts # 
 
 Originally from [here](https://www.reddit.com/r/GifRecipes/comments/6ef9x0/easy_homemade_chocolate_doughnuts/).
@@ -37,10 +29,4 @@ Makes: 12
 9. Carefully take the doughnuts out of the muffin tin.
 10. Take out the paper balls with your fingers. You should have a circle-shaped hole in each doughnut.
 11. Dip in some melted chocolate, followed by some sprinkles.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

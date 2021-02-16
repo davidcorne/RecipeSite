@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Roast Carrot Purée</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Roast Carrot Purée # 
 
 This is from Sarah's *Carrot Seven Ways* MasterChef AU dish. I found the recipe [here](https://10play.com.au/masterchef/recipes/carrot-seven-ways/r190614rigpv).
@@ -34,10 +26,3 @@ This is from Sarah's *Carrot Seven Ways* MasterChef AU dish. I found the recipe 
 8. Transfer cooked carrot pieces to the canister of a stick blender and process with remaining 1½ tablespoons butter and a little of the cooking liquid until a smooth puree forms.
 9. Pass carrot puree through a sieve, season with salt and set aside, until serving.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

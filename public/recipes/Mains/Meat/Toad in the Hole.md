@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Toad in the Hole</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Toad in the Hole #
 
 This dinner has always been a favourite of mine. A great winter evening meal
@@ -43,8 +35,3 @@ sausages over a direct heat to start with. For this you cook the sausages for
 the first 10 minutes over a medium heat. This means you can get the oil to a
 better tempreture and it will not burn away so it's possible to use less of
 it.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

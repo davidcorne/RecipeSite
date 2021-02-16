@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Mini Quiche</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Mini Quiche # 
 
 This is originally from [here](https://www.vegansociety.com/resources/recipes/starters-snacks-and-sides/mini-vegan-quiches). This should make around 12.
@@ -38,10 +30,4 @@ This is originally from [here](https://www.vegansociety.com/resources/recipes/st
 9. Cook in the oven for 10 minutes then open the door to let the steam out.
 10. Cook for another 15 minutes until golden brown and the filling has set.
 11. Let cool and brush with some melted vegan marg to give a glossy top.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

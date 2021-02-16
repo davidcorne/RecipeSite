@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Roast Chicken Risotto with Chicken Crackling</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Roast Chicken Risotto with Chicken Crackling # 
 
 This is a recipe from the 2020 October edition of BBC Good Food. There is also a link to it on the [good food website](https://www.bbcgoodfood.com/recipes/roast-chicken-risotto-with-chicken-crackling).
@@ -72,10 +64,3 @@ This is a recipe from the 2020 October edition of BBC Good Food. There is also a
 
 ![Roast Chicken Risotto Chicken Crackling Recipe](/public/images/Roast-Chicken-Risotto-with-Chicken-Crackling.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

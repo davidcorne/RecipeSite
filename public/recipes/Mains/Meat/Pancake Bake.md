@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Pancake Bake</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Savoury Pancakes  #
 
 ## Ingredients
@@ -65,8 +57,3 @@
 13. Place in oven dish
 14. Pour cheese sauce over
 15. Top with grated cheese
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

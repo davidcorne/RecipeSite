@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Sweet Potato, Chickpea and Spinach Curry</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Sweet Potato, Chickpea and Spinach Curry # 
 
 This is a [Jamie Oliver recipe](https://www.jamieoliver.com/recipes/vegetables-recipes/sweet-potato-chickpea-amp-spinach-curry/) which is easy and a good crowd pleaser. It also freezes well, and is a good camping meal.
@@ -40,10 +32,3 @@ This is a [Jamie Oliver recipe](https://www.jamieoliver.com/recipes/vegetables-r
 1. Stir in the spinach and cook until wilted.
 1. Scatter over the coriander leaves, then serve with poppadoms and rice, if you like.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

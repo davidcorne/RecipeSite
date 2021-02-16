@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Potato Latkes</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Potato Latkes # 
 
 ![Potato Latkes](/public/images/Potato-Latkes.jpg)
@@ -38,10 +30,3 @@ This is a recipe from the [Great British Chef](https://www.greatbritishchefs.com
 7. Carefully cut the potatoes into equal portions, around 5cm in size – you should end up with around 18-24 latkes, depending on the depth and size of your baking dish.
 7. Deep-fry the latkes for a few minutes until they crisp up and turn a deep golden brown. It’s important to do this in batches so the temperature of the oil doesn’t drop – you can keep the latkes warm in a low oven until they are all cooked.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

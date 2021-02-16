@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Cauliflower Hash Browns</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Cauliflower Hash Browns # 
 
 ## Ingredients ## 
@@ -31,10 +23,4 @@
 6. Turnover a large roasting tray and line with parchment paper - this helps prevent burning on the bottom of the hash browns. Divide the cauliflower mixture into 6 even portions, place on the tray, and shape into hash browns.
 7. Bake for 35-40 minutes, until golden brown.
 8. Let the hash browns cool for about 15 minutes until they have set.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Sausage Casserole with Garlic Breadcrumbs</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Sausage Casserole with Garlic Breadcrumbs # 
 
 This is a recipe from the 2020 October edition of BBC Good Food. There is also a link to it on the [good food website](https://www.bbcgoodfood.com/recipes/one-pot-sausage-casserole-with-garlic-breadcrumbs).
@@ -51,10 +43,3 @@ This is a recipe from the 2020 October edition of BBC Good Food. There is also a
 
 ![Sausage Casserole Garlic Breadcrumbs Recipe](/public/images/Sausage-Casserole-with-Garlic-Breadcrumbs.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

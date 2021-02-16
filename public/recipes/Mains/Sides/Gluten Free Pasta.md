@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Gluten Free Pasta</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Gluten Free Pasta # 
 
 This is from [this site](https://theloopywhisk.com/2018/02/23/homemade-3-ingredient-gluten-free-pasta-recipe/) originally, which has a really good description of how to make this.
@@ -80,10 +72,3 @@ To cook the dried gluten free pasta:
 1. The gluten free flour blend I use is the Lidl "Just Free" brand that’s available in the UK (I’m not so sure about the US). It contains rice, potato and maize flour, like most of the gluten free blends out there. 
 2. The eggs will have a large effect on how wet your final pasta dough is. If the first roll-through on the pasta machine gives an uneven pasta sheet that feels sticky (despite having been dusted with flour) and has streaks of crumbled-looking dough, your pasta dough is too wet, likely because your eggs were larger or had a greater moisture content. If that is the case, may have to repeat the fold + dust process an extra few times, but you will definitely get a  smooth, velvety gluten free pasta sheet in the end.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

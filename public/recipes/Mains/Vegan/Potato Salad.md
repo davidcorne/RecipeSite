@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Potato Salad</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Potato Salad # 
 
 This is an interesting sounding side from [here](https://yupitsvegan.com/vegan-potato-salad).
@@ -48,10 +40,3 @@ This is an interesting sounding side from [here](https://yupitsvegan.com/vegan-p
 8. Set the whole thing in the fridge to cool completely.
 9. After the salad is cold, add the rest of the dressing according to your taste (I don't generally use quite all of it).
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

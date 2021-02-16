@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Spring Onion Pancake (Cong You Bing)</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Spring Onion Pancake (Cong You Bing) # 
 
 This is a gluten free version of a traditional Chinese side/appetizer. The filling was from [here](https://brightrootskitchen.com/scallion-pancakes-gluten-free/) and the dough was from [here](https://redhousespice.com/spring-onion-pancake/) but with gluten free flour and slightly more water.
@@ -44,10 +36,3 @@ This is a gluten free version of a traditional Chinese side/appetizer. The filli
 1. The flour and water ratio may vary slightly depending on the brand. Adjust accordingly. The finished dough should be soft but not sticky.
 2. These go really well with sweet chilli sauce, there is an "additive dipping sauce" on [this recipe](https://brightrootskitchen.com/scallion-pancakes-gluten-free/) but we weren't big fans of them.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Cheese Twist</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Cheese Twists #
 
 ## Ingredients #
@@ -39,8 +31,3 @@
 9. Cover with lightly oiled clingfilm and leave to prove for 45 mins,
 10. Preheat oven to 200 degrees C.
 11. When dough is almost twice its orginal size, bake for 15 - 20 mins or until twists are golden and crisp. Cool on a wire rack.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

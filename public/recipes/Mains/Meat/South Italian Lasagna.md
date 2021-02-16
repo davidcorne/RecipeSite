@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>South Italian Lasagna</title>
-
-<xmp theme="cerulean" style="display:none;">
 # South Italian Lasagna#
 
 This is a traditional lasagna in the style of southern Italy (I beleive). The difference is rather than a bechemel sauce with cheese, you use ricotta.
@@ -53,8 +45,3 @@ This is a traditional lasagna in the style of southern Italy (I beleive). The di
 3. Bake for 30-40 minutes.
 4. Allow to cool for 5-10 minutes before slicing so it's more solid to serve.
 
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

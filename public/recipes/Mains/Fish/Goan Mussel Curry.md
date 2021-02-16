@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Goan Mussel Curry</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Goan Mussel Curry # 
 
 This is a [BBC Good Food](https://www.bbcgoodfood.com/recipes/goan-mussels) recipe. It's a quick recipe which makes a mild but tasty curry.
@@ -47,10 +39,3 @@ As pictured, this goes well with <a href="/public/recipes/Mains/Sides/Spiced%20R
 
 I made this with unshelled mussels, and it worked well.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

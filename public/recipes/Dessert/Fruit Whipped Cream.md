@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Fruit Whipped Cream</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Fruit Whipped Cream # 
 
 Inspired by the blackberry whipped cream from [here](https://www.askchefdennis.com/blackberry-lime-butter-cake-with-blackberry-whipped-cream/). I feel this would be best with berries, it works well with blackberry.
@@ -22,10 +14,4 @@ Inspired by the blackberry whipped cream from [here](https://www.askchefdennis.c
 
 1. In a bowl add the cream, sugar and vanilla and whip at medium speed until almost you have soft peaks.
 2. Add the fruit and continue to whip until they are fully incorporated.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Fish and Chips</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Fish and Chips # 
 
 This is from [here](https://www.bbc.co.uk/food/recipes/deepfriedfishinbeerb_67776) but with par-boiling chips added, and ¾ of the batter.
@@ -40,10 +32,3 @@ This is from [here](https://www.bbc.co.uk/food/recipes/deepfriedfishinbeerb_6777
 10. Once the fish is cooked, return the chips to the fryer and cook for 2-3 minutes or until golden and crispy.
 11. Shake off any excess fat and season with salt before serving with the crispy fish.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

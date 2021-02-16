@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Yule Log</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Yule Log # 
 
 This originally cam from [here](https://www.wearesovegan.com/classic-vegan-yule-log/).
@@ -52,10 +44,3 @@ This originally cam from [here](https://www.wearesovegan.com/classic-vegan-yule-
 20. Cover the cake with the remaining buttercream frosting, then run a fork over the outside to create a bark-style pattern.
 21. Dust with icing and serve.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Roast Leg of Lamb Provençal</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Roast Leg of Lamb Provençal # 
 
 This is originally a recipe from an old cook book my mother uses by Robert Carrier, I believe it was Great Dishes of the World. There is a photo at the bottom.
@@ -36,10 +28,3 @@ This is originally a recipe from an old cook book my mother uses by Robert Carri
 This is a photo of the original recipe.
 
 ![recipe](/public/images/Roast-Leg-of-Lamb-Provençal.jpg)
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

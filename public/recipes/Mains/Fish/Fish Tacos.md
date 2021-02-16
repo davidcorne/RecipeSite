@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Fish Tacos</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Fish Tacos # 
 
 This is a fish taco recipe from [Marcus Waering](http://thetaste.ie/wp/fish-tacos-recipe-marcus-wareing/) which is a favorite of the Great British Cookbook Club.
@@ -55,10 +47,3 @@ This is a fish taco recipe from [Marcus Waering](http://thetaste.ie/wp/fish-taco
 12. Add the coriander to the pickled onion rings.
 13. Add 2 pieces of fish to each taco, top with shredded lettuce, grated radish, pickled chilli and onion and harissa sour cream.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

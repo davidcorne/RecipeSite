@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
-<title>Honey BBQ Chicken Wings</title>
-
-<xmp theme="cerulean" style="display:none;">
   # Honey BBQ Chicken Wings #
 
   This is a Tasty recipe from [here](https://tasty.co/recipe/honey-bbq-chicken-wings).
@@ -44,9 +35,3 @@
   </video>
   © Tasty.
 
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-<script src="/public/resources/recipe-formatting.js"></script>
-
-</html>

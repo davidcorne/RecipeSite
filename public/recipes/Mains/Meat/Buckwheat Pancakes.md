@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Buckwheat Pancakes</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Buckwheat Pancakes # 
 
 This is from the 2020 February issue of Good Food Magazine. Buckwheat flour is traditionally used in the popular galettes and crêpes of northern France. It gives a nutty flavour and is gluten-free, but you can replace it with regular wheat flour if you like.
@@ -34,10 +26,3 @@ This is from the 2020 February issue of Good Food Magazine. Buckwheat flour is t
 5. Repeat with the rest of the pancakes, then bake for 6 -7 mins until the egg whites are set.
 6. Serve with fried mushrooms or wilted spinach, if you like.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

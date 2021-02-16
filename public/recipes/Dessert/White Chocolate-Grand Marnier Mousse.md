@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>White Chocolate-Grand Marnier Mousse</title>
-
-<xmp theme="cerulean" style="display:none;">
 # White Chocolate-Grand Marnier Mousse # 
 
 ## Ingredients ## 
@@ -44,9 +36,3 @@ __Chocolate-Pistachio Tuile Cups:__
 4. Bake for 12 to 13 minutes, or until a deep brown. Remove from the oven. 
 5. With a thin spatula, quickly remove the cookies 1 at a time from the baking sheet and drape on top of a ramekin to create a cup shape. (If the cookies become too brittle, replace on the baking sheet and place in the oven for 10 seconds to soften.) 
 6. Cool completely on the glasses, then gently lift off and transfer to a platter until ready to use.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-

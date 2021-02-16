@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Chicken Tikka</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Chicken Tikka # 
 
 This is a recipe from [The Curry Guy](https://greatcurryrecipes.net/2013/05/16/making-chicken-tikka/), and it works really well for chicken in a curry, or on it's own.
@@ -41,10 +33,3 @@ This is a recipe from [The Curry Guy](https://greatcurryrecipes.net/2013/05/16/m
 7. Cook the chicken tikka on skewers turning occasionally until the chicken is cooked through and the edges are blackened. In the oven at 200°C this took ~40 minutes.
 8. Serve, or set aside to use in a curry.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

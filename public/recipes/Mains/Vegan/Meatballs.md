@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Meatballs</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Meatballs # 
 
 This is originally from [here](http://makingthymeforhealth.com/vegan-zucchini-meatballs/).
@@ -38,10 +30,3 @@ This is originally from [here](http://makingthymeforhealth.com/vegan-zucchini-me
 9. Once the courgette balls are light golden brown, remove them from the oven and set aside. 
 10. Serve warm over cooked pasta with marinara sauce. Garnish with fresh basil and enjoy!
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

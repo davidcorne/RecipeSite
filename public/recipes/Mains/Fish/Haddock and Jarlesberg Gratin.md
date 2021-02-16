@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Haddock and Jarlesberg Gratin</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Haddock and Jarlesberg Gratin # 
 
 This is from the November 2020 edition of BBC Good Food magazine. Also available from the [BBC Good Food](https://www.bbcgoodfood.com/recipes/haddock-jarlsberg-gratin) site.
@@ -49,10 +41,3 @@ This is from the November 2020 edition of BBC Good Food magazine. Also available
 
 ![](/public/images/Haddock-and-Jarlesberg-Gratin.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

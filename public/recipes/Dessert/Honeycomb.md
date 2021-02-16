@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Honeycomb</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Honeycomb # 
 
 This is a recipe from Adam Byatt, found [here](https://www.greatbritishchefs.com/recipes/honeycomb-recipe) on the Great British Chefs website. I've modified it as liquid glucose come in 140ml tubes in my local supermarket, so this has 70% ingredients and uses a smaller pan.
@@ -33,10 +25,3 @@ This is a recipe from Adam Byatt, found [here](https://www.greatbritishchefs.com
 7. Leave to cool for approximately 20 minutes, or until it has set firm
 8. Break up the honeycomb into pieces, or grind into a powder using a food processor. Store in an airtight container in the freezer for up to a month
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

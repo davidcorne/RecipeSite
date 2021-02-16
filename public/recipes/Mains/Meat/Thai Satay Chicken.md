@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Thai Satay Chicken</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Thai Satay Chicken # 
   
 This recipe is from [here](https://www.reddit.com/r/GifRecipes/comments/axgmw9/thai_satay_chicken/ehthdgu/). Note, this could easily be made vegan if you used vegan red curry paste (many have fish sauce in) and substituted tofu for the chicken.
@@ -65,10 +57,4 @@ If cooking on a BBQ or over charcoal, soak skewers for 2 hours in water.
     - Sauce for for rice, noodles, veggies (raw or steamed)
     - Make a simple Gado Gado with steam veg, hard boiled eggs and rice
     - Dip for prawn crackers and vegetables
-  </xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
   

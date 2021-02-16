@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Cookies and Cream Truffles</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Cookies and Cream Truffles # 
 
 ## Ingredients ## 
@@ -26,10 +18,4 @@
 6. In a small bowl, melt semisweet chocolate. On a cutting board, crush cookies. 
 7. Dip the truffle in melted semisweet chocolate, then roll in cookie crumbs.
 8. Place back in the fridge for 10 minutes, and enjoy!
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

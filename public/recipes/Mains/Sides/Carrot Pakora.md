@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Carrot Pakora</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Carrot Pakora # 
 
 This is from the January 2021 edition of BBC Good Food magazine. This is a nice naturally gluten free recipe. Makes 8 small or 4 large.
@@ -48,10 +40,3 @@ This is from the January 2021 edition of BBC Good Food magazine. This is a nice 
 ![Carrot Pakora Recipe](/public/images/Carrot-Pakora-1.png)
 ![Carrot Pakora Recipe](/public/images/Carrot-Pakora-2.png)
  
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

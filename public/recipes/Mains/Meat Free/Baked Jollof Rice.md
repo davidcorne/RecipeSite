@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Baked Jollof Rice</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Baked Jollof Rice # 
 
 This is an exciting sounding recipe from Good Food Magazine September 2020.
@@ -50,10 +42,3 @@ This is an exciting sounding recipe from Good Food Magazine September 2020.
 
 ![Baked Jollof Rice Recipe](/public/images/Baked-Jollof-Rice-Recipe.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

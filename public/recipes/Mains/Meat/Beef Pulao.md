@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Beef Pulao</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Beef Pulao # 
 
 This is from the eight bonus recipes from Nik Sharma's [The Flavour Equation](https://niksharma.chroniclebooks.com/).
@@ -67,10 +59,3 @@ Aromatic spices such as cardamom and cinnamon merge with the aroma of the meat c
 19. To serve, fluff the rice with a fork and redistribute the beef.
 20. Garnish with the chopped cilantro and chilli.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

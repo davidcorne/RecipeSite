@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Lamb Rogan Josh</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Lamb Rogan Josh # 
 
 ## Ingredients ## 
@@ -59,10 +51,4 @@
 3. Stir and remove from the heat.
 4. Stir in the yogurt and season to taste with salt. 
 5. Transfer to a serving bowl and garnish with cilantro. Serve with rice, naan bread, and/or papadums.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

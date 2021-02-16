@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Porridge</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Porridge # 
 
 This is my simple microwave porridge recipe from reading online recipes and tweaking them.
@@ -26,10 +18,3 @@ This is my simple microwave porridge recipe from reading online recipes and twea
 3. Heat again for 0.30, then stir.
 4. Heat again for 0.30.
 5. Add toppings.
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

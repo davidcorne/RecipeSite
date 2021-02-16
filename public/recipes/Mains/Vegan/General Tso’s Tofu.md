@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>General Tso’s Tofu</title>
-
-<xmp theme="cerulean" style="display:none;">
 # General Tso’s Tofu #
 
 This is originally from [here](https://simpleveganblog.com/general-tsos-tofu/).
@@ -43,10 +35,4 @@ This is originally from [here](https://simpleveganblog.com/general-tsos-tofu/).
 8. Finally, add the tofu, stir and cook for 1 to 2 minutes more.
 9. Remove pan from heat and serve with some white rice and garnish with sesame seeds and chopped chives (optional).
 10. Keep leftovers in a sealed container in the fridge for up to 5 days.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

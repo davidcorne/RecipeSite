@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Banana Pancakes</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Banana Pancakes # 
 
 This is originally from a reddit post [here](https://www.reddit.com/r/Cooking/comments/5viq3x/besides_banana_bread_what_are_some_tasty_things/de2gxvz/), so it's a little vague.
@@ -37,9 +29,3 @@ Note, this is the aproximate method.
 - Fry in a little oil or butter.
 
 You can throw some blueberries in right after you put the batter in the pan.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-

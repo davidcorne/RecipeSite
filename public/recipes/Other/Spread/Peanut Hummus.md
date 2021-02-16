@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Peanut Hummus</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Peanut Hummus # 
 
 This is a nice looking hummus recipe from the BBC Good Food Magazine September 2020 edition.
@@ -31,10 +23,3 @@ This is a nice looking hummus recipe from the BBC Good Food Magazine September 2
 ## Original Recipe
 
 ![Peanut Butter Hummus Recipe](/public/images/Peanut-Hummus.png)
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

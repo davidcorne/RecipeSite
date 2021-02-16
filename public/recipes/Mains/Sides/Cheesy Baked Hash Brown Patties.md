@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Cheesy Baked Hash Brown Patties</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Cheesy Baked Hash Brown Patties # 
 
 This is number one on [this list](https://www.buzzfeed.com/hannahmars/xx-hashbrown-recipes-cause-theyre-the-greatest-breakfast-car).
@@ -32,10 +24,4 @@ This is number one on [this list](https://www.buzzfeed.com/hannahmars/xx-hashbro
 6. Take a handful of the mixture and pack it on a baking sheet into desired hash brown shape.
 7. Bake for 40-45 minutes or until brown and crispy. Allow to cool for 5 minutes.
 
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

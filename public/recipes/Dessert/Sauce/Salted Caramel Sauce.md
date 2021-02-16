@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Salted Caramel Sauce</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Salted Caramel Sauce # 
 
 Originally from [here](http://www.browneyedbaker.com/homemade-salted-caramel-sauce-recipe/).
@@ -31,10 +23,4 @@ This easy salted caramel sauce will change your life! It's perfect to keep in th
 5. As soon as the caramel reaches 350 degrees, add the butter all at once. Be careful, as the caramel will bubble up when the butter is added. Whisk the butter into the caramel until it is completely melted.
 6. Remove the pan from the heat and slowly pour the cream into the caramel. Again, be careful because the mixture will once again bubble up ferociously. Whisk until all of the cream has been incorporated and you have a smooth sauce. Add the fleur de sel and whisk to incorporate.
 7. Set the sauce aside to cool for 10 to 15 minutes and then pour into your favourite glass jar and let cool to room temperature. You can refrigerate the sauce for up to 2 weeks. You'll want to warm the sauce up before using.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

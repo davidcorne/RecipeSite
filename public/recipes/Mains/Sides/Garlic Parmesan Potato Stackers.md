@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Garlic Parmesan Potato Stackers</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Garlic Parmesan Potato Stackers # 
 
 This is from [here](https://www.buzzfeed.com/merleoneal/these-garlic-parmesan-potato-stackers-are-going-to-change-yo).
@@ -28,8 +20,3 @@ This is from [here](https://www.buzzfeed.com/merleoneal/these-garlic-parmesan-po
 4. Spray a muffin tin with cooking spray, then stack about 10-12 chips in each muffin cup.
 5. Place the potato stacks in the oven for about an hour or until they are fully browned.
 6. Allow to cool, then serve with sour cream and enjoy!
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

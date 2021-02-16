@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Pumpkin Cornbread with Whipped Jalapeño Butter</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Pumpkin Cornbread with Whipped Jalapeño Butter # 
 
 This is a recipe from the 2020 October edition of BBC Good Food. There is also a link to it on the [good food website](https://www.bbcgoodfood.com/recipes/pumpkin-cornbread-with-whipped-jalapeno-butter).
@@ -47,10 +39,3 @@ The cornbread will keep in an airtight container for up to three days, or frozen
 
 ![Pumpkin Cornbread Whipped Jalapeño Butter Recipe](/public/images/Pumpkin-Cornbread-With-Whipped-Jalapeño-Butter.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

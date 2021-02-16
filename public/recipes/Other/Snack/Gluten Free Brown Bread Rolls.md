@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Gluten Free Brown Bread Rolls</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Gluten Free Brown Bread Rolls # 
 
 This is a doves farm recipe from [here](https://www.dovesfarm.co.uk/recipes/gluten-free-brown-bread-rolls).
@@ -38,10 +30,3 @@ This is a doves farm recipe from [here](https://www.dovesfarm.co.uk/recipes/glut
 1. Transfer the rolls to a wire rack and allow to cool completely before slicing.
 1. Re-heat the rolls for a couple of minutes before serving.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Dairy Free Pomme-Puree</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Dairy Free Pomme-Puree # 
 
 This recipe is from [here](http://modernistcuisine.com/recipes/diastatic-potato-puree/) Note: This is dairy-free, but not vegan.
@@ -28,10 +20,4 @@ This recipe is from [here](http://modernistcuisine.com/recipes/diastatic-potato-
 7. Cook sous-vide for 30 minutes.
 8. Transfer the puree to a pot and heat to at least 75°C to halt the enzyme activity.
 9. Season with salt/pepper and serve immediately.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

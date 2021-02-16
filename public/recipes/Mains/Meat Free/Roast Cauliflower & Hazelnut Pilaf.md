@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Roast Cauliflower & Hazelnut Pilaf</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
     # Roast Cauliflower & Hazelnut Pilaf # 
 
     This is from the January 2021 edition of BBC Good Food magazine. Also on the [BBC Good Food site](https://www.bbcgoodfood.com/recipes/roast-cauliflower-hazelnut-pilaf).
@@ -43,10 +35,3 @@
     
     ![Roast Cauliflower Hazelnut Pilaf](/public/images/Roast-Cauliflower-&-Hazelnut-Pilaf.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

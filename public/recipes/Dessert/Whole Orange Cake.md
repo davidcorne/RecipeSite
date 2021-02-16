@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Whole Orange Cake</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Whole Orange Cake # 
 
 This is a gluten free orange cake from [cookrepublic](https://www.cookrepublic.com/gluten-free-whole-orange-cake/) which sounds very interesting.
@@ -38,10 +30,3 @@ This is a gluten free orange cake from [cookrepublic](https://www.cookrepublic.c
 11. Remove from the oven and allow to cool in the pan slightly, before cutting into slices.
 12. Enjoy warm or store in an air-tight tin in a cool corner of your kitchen for up to 3 days.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Swirl Cookies</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Swirl Cookies # 
 
 This is an interesting idea originally from [here](https://tasty.co/recipe/mix-and-match-swirl-cookies) for making interesting flavour combinations look pretty cool.
@@ -42,10 +34,4 @@ This is an interesting idea originally from [here](https://tasty.co/recipe/mix-a
 6. Place one half of flavored dough on top of the other and start to roll up the doughs into a swirl. Wrap the roll in plastic wrap and chill in the fridge until solid, about 4 hours.
 7. Preheat the oven to 180°C. Line a baking sheet with parchment paper.
 8. Once chilled, unwrap the dough, slice into 1 cm thick coins, and place them on the baking sheet at least 5 cm apart, as the cookies will spread while baking.9. Bake the cookies for 10 minutes. Let cool at room temperature for about 30 minutes.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

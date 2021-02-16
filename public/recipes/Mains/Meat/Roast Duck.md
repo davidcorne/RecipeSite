@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Roast Duck</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Roast Duck # 
 
 This is originally from [here](https://www.bbcgoodfood.com/howto/guide/how-cook-duck).
@@ -36,10 +28,4 @@ This is originally from [here](https://www.bbcgoodfood.com/howto/guide/how-cook-
 4. Flip duck to breast side up, then roast for a further 30 minutes.
 5. Rest for 10 minutes.
 6. Carve.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

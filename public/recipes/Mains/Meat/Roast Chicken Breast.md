@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Roast Chicken Breast</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Roast Chicken Breast # 
 
 This is just a quick note to keep the temperatures that chicken breasts should be cooked to.
@@ -28,10 +20,3 @@ This is just a quick note to keep the temperatures that chicken breasts should b
 6. Cook for 8-10 minutes, until the chicken has reached ~72.8°C. Note: You want the internal temperature to be 73.9°C, but this will happen during resting.
 7. Rest for ~10 minutes.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Crispy Chicken Skin</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Crispy Chicken Skin # 
 
 This is from a recipe [here](https://www.greatbritishchefs.com/how-to-cook/how-to-make-crispy-chicken-skin).
@@ -27,10 +19,3 @@ This is from a recipe [here](https://www.greatbritishchefs.com/how-to-cook/how-t
 8. Place the skins on kitchen paper and sprinkle with salt.
 9. Store in airtight container in a cool, dark place for up to 5 days (they can be kept out of the fridge).
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

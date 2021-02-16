@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Lemon Layered Cake</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Lemon Layered Cake # 
 
 This is a pretty involved recipe from [here](https://www.sweetandsavorybyshinee.com/lemon-layer-cake-with-lemon-swiss-meringue-buttercream/), it took me about 3 hours total to make.
@@ -82,10 +74,3 @@ This is a pretty involved recipe from [here](https://www.sweetandsavorybyshinee.
 9. Coat the entire cake with frosting and smooth it with an offset spatula.
 10. Decorate the cake with the remaining lemon curd, lemon slices and/or lemon macarons.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

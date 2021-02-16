@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Shepard's Pie</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Shepard's Pie#
 
 ## Ingredients ##
@@ -41,8 +33,3 @@
 5. While this is simmering, make mashed potatoes.
 6. Transfer the meat mixture to an oven tray, top with mash then top that with cheese.
 7. Bake in the oven for 20-30 minutes.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

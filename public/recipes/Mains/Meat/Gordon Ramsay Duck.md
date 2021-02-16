@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Gordon Ramsay Duck</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Gordon Ramsay's Pan-Seared Duck with Pak Choi & Orange Sauce # 
 
 This is from the 2020 February issue of Good Food Magazine.
@@ -37,10 +29,3 @@ This is from the 2020 February issue of Good Food Magazine.
 1. Slice the duck at an angle and plate up alongside the pak choi.
 2. Pour over the sauce and sprinkle with the sesame seeds before serving with some cooked rice.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

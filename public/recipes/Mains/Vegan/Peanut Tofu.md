@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Peanut Tofu</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Peanut Tofu # 
 
 This recipe is originally from [here](https://www.reddit.com/r/GifRecipes/comments/bmih7l/baked_crispy_peanut_tofu/).
@@ -45,11 +37,5 @@ This recipe is originally from [here](https://www.reddit.com/r/GifRecipes/commen
 12. Once hot, add tofu and the peanut sauce. Toss to coat. Stirring frequently.
 13. Sauté the tofu for about 2 minutes, or until the tofu is hot and well coated with peanut sauce.
 14. At this point it’s ready to eat! Enjoy as is or with any Asian-inspired dish.
-  
-  </xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
   
   

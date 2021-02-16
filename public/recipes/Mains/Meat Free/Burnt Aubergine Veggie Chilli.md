@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Burnt Aubergine Veggie Chilli</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Burnt Aubergine Veggie Chilli # 
 
 An intriguing sounding recipe from [BBC Good Food](https://www.bbcgoodfood.com/recipes/burnt-aubergine-veggie-chilli).
@@ -52,10 +44,3 @@ An intriguing sounding recipe from [BBC Good Food](https://www.bbcgoodfood.com/r
 5. Stir in the lime juice and taste for seasoning – add more salt if needed.
 6. Serve hot over rice with whichever accompaniments you want!
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

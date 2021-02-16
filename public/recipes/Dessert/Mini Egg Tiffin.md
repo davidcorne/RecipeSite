@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Mini Egg Tiffin</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Mini Egg Tiffin # 
 
 This recipe was from [here](http://coffeemuffins.com/easter-mini-egg-chocolate-tiffin-recipe/4025/).
@@ -29,10 +21,4 @@ This recipe was from [here](http://coffeemuffins.com/easter-mini-egg-chocolate-t
 3. Melt the chocolate and pour over the mixture in the tin.
 4. Pop the tin into the fridge and leave for about 1 hour to set. 
 5. To serve, cut into about 20 pieces.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

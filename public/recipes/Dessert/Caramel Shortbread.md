@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Caramel Shortbread</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Caramel Shortbread #
 
 ## Ingredients 
@@ -46,8 +38,3 @@
 8. Pour caramel over shortbread leave to cool in fridge for 2 hours
 9. Melt chocolate and pour over caramel when not too hot
 10. Leave in frige for 2 hours
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

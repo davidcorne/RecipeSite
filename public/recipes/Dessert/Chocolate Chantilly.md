@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Chocolate Chantilly</title>
-
-<xmp theme="cerulean" style="display:none;">
 This is from [here](https://gfycat.com/HotLastIndri).
 
 ## Ingredients ##
@@ -27,8 +19,3 @@ This is from [here](https://gfycat.com/HotLastIndri).
 7. Transfer to ramekin
 8. Serve or refrigerate.
 
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

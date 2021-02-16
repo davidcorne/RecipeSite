@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Parsnip Rösti</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Parsnip Rösti # 
 
 This was from a river cottage recipe [here](https://www.rivercottage.net/recipes/parsnip-rosti). I've made it with half an onion grated into it, and that worked very well. Also I'd recommend squeezing some moisture out of the vegetable mix.
@@ -32,10 +24,3 @@ This was from a river cottage recipe [here](https://www.rivercottage.net/recipes
 8. Allow the rösti to cook for a few minutes and then check the underside by lifting it up with a palette knife. If the underneath is deep golden brown, lift off the rings using tongs or a tea towel and turn the rösti over to cook the other side. If you struggle to get the rings off, just run a butter knife around the inside of each one.
 9. Serve the rösti straight away, topped with a knob of butter or a dollop of crème fraîche, or just as they are as a side dish.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

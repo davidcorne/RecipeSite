@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Hasselback Parsnips</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Hasselback Parsnips # 
 
 This is from the November 2020 edition of BBC Good Food magazine. Also available on the [BBC Good Food](https://www.bbcgoodfood.com/recipes/hasselback-parsnips-with-orange-maple-syrup) site.
@@ -33,10 +25,3 @@ This is from the November 2020 edition of BBC Good Food magazine. Also available
 
 ![](/public/images/Hasselback-Parsnips.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Jar Salad</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Jar Salad # 
 
 This is a technique for making salad in a jar for easy meal prepping and it sounds really useful. It's originally from [this site](https://hurrythefoodup.com/how-to-pack-a-salad-in-a-jar/).
@@ -59,10 +51,3 @@ Each of these portions is enough for 2 jars.
 3. Once everything is laid out chuck all the ingredients according to the layers into the jars. 
 4. Lid on top and off they go into the fridge. As easy as that.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Vegetarian Shepherd's Pie</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Vegetarian Shepherd's Pie #
 
 ## Ingredients ##
@@ -40,8 +32,3 @@
 4. While it simmers, make mashed potatoes
 5. Transfer the vegetable mixture to an oven tray, top with mash then top that with cheese.
 6. Bake in the oven for 20-30 minutes.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

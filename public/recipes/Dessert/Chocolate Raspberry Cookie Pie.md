@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Chocolate Raspberry Cookie Pie</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Chocolate Raspberry Cookie Pie #
 
 Originally from [here](http://twistedfood.co.uk/chocolate-raspberry-cookie-pie/)
@@ -32,8 +24,3 @@ Originally from [here](http://twistedfood.co.uk/chocolate-raspberry-cookie-pie/)
 2. Meanwhile, over a very low heat, melt your coffee, butter, sugars and chocolate until glossy and smooth (it should be warm, not hot). Leave to cool for a few minutes. Sieve your flour, cocoa and salt into a large bowl. Add your chocolate mix and eggs and whisk until smooth and gloopy.
 3. Pour ½ of your mix into your pie crust. Add your raspberries in an even layer. Add the rest of your chocolate mix. Bake for 30 minutes at 180°C.
 4. Leave to cool slightly before removing from the tin. Great warm with ice-cream!
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

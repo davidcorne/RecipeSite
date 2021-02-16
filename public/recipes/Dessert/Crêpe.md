@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Crêpe</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Crêpe # 
 
 This is from [this good food recipe](https://www.bbcgoodfood.com/recipes/perfect-pancakes-recipe) for the perfect pancake. I've found if you make it with melted butter rather than oil it's lighter and tastier.
@@ -32,10 +24,3 @@ This is from [this good food recipe](https://www.bbcgoodfood.com/recipes/perfect
 1. Hold the pan handle, ease a palette knife under the pancake, then quickly lift and flip it over. Make sure the pancake is lying flat against the base of the pan with no folds, then cook for another 30 secs before turning out onto a warm plate.
 1. Continue with the rest of the batter, serving them as you cook or stack onto a plate. You can freeze the pancakes for 1 month, wrapped in cling film or make them up to a day ahead.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

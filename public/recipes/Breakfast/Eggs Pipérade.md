@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Eggs Pipérade</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Eggs Pipérade # 
 
 This is a traditional Basque recipe, I've got this recipe from [ATK](https://www.americastestkitchen.com/recipes/9389-eggs-piperade?pac=uBHBuhYSpd1xJUst90cJ2khmD1Bb8AaE+Lfy2fMhsSQ=) but I think it's now a member only recipe.
@@ -53,10 +45,3 @@ We used a mix of red bell peppers and pale green Cubanelle peppers, which offere
 13. Reduce heat to low and gently but constantly fold eggs until clumped and just slightly wet, 30 to 60 seconds.
 14. Immediately transfer eggs to serving dish with pepper mixture, sprinkle with remaining 1 tablespoon parsley, and serve.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

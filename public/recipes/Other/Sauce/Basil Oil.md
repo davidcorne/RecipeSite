@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Basil Oil</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Basil Oil # 
 
 This is a recipe from [here](https://www.finecooking.com/recipe/basil-oil).
@@ -31,10 +23,3 @@ This is a recipe from [here](https://www.finecooking.com/recipe/basil-oil).
 10. Strain through a cheesecloth-lined fine strainer, very gently pushing on the solids to extract the oil.
 11. Use immediately or refrigerate for up to a week. For the best flavor, let the oil come to room temperature before using.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Wedding White Chocolate and Raspberry Cake</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Wedding White Chocolate and Raspberry Cake # 
 
 This was one of the tiers of cake at our wedding.
@@ -62,10 +54,3 @@ This was one of the tiers of cake at our wedding.
 1. Spoon the raspberry sauce over the cooled sponge.
 2. Top the sauce with buttercream.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

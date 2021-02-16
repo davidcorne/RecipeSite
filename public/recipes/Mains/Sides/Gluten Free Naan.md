@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Gluten Free Naan</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Gluten Free Naan # 
 
 This is a recipe originally from [here](https://glutenfreeonashoestring.com/naan-bread/).
@@ -45,10 +37,3 @@ This is a recipe originally from [here](https://glutenfreeonashoestring.com/naan
 18. Repeat with the remaining pieces of dough, adding more fat to the skillet as necessary. Stack the pieces of naan one on top of another, keeping them covered with a tea towel to maintain freshness.
 19. Serve warm.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

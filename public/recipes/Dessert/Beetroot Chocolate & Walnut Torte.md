@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Beetroot Chocolate & Walnut Torte</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Beetroot Chocolate & Walnut Torte # 
 
 This is from a Haloween food magazine that my mum showed me.
@@ -39,10 +31,4 @@ This is from a Haloween food magazine that my mum showed me.
 9. Stir in the cornflour, cocoa, and baking powder, then fold in the chopped walnuts until well combined.
 10. Tip into the lined tin, and bake for 35-40 minutes until risen and cracked on top, but still gooey when pierced.
 11. This can be served now, but the texture will be improved by being left for 24 hours.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

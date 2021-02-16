@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Bacon Cheese Twists</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Bacon Cheese Twists #
 
 ## Ingredients ##
@@ -28,8 +20,3 @@
 5. Sprinkle on brown sugar and minced rosemary.
 6. Bake at 190°C for 45-50 minutes, turning halfway through to make sure they are golden brown all over.
 7. Enjoy!
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

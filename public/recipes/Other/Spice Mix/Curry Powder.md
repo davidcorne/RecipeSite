@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Curry Powder</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Curry Powder # 
 
 Originally from [here](http://allrecipes.co.uk/recipe/1876/homemade-curry-powder.aspx).
@@ -25,10 +17,4 @@ Originally from [here](http://allrecipes.co.uk/recipe/1876/homemade-curry-powder
 1. Crush mustard seed.
 2. Combine all the ingredients with the crushed mustard seeds.
 3. Store in an airtight container.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

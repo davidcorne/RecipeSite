@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Ricotta</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Ricotta # 
 
 This was from [here](https://www.greatbritishchefs.com/how-to-cook/how-to-make-cheese-sous-vide).
@@ -30,10 +22,4 @@ This was from [here](https://www.greatbritishchefs.com/how-to-cook/how-to-make-c
 8. Use a slotted spoon to collect the curds that have formed in the bag and transfer them to the sieve
 9. Leave the cheese to drain for an hour, then tie up the muslin and squeeze out the remaining liquid. 
 10. Leave for a further half an hour to one hour to finish draining.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

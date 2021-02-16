@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Framboise</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Framboise # 
 
 **Note: This is very much experimental**
@@ -33,10 +25,4 @@ This is based off of 2 recipes; [sous vide limoncello](https://recipes.anovaculi
 6. When the timer goes off, remove the raspberry vodka mixture from the bath and put it into an ice bath. This is so that the volatile aromatics return to the liquid.
 7. When it is chilled strain the liquid into a bowl and add the syrup.
 8. Transfer to a clean bottle with a tight fitting lid.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

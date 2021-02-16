@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Baked Banana Porridge</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Baked Banana Porridge # 
 
 This is from the January 2021 edition of BBC Good Food magazine. Also on the [BBC Good Food site](https://www.bbcgoodfood.com/recipes/baked-banana-porridge).
@@ -32,10 +24,3 @@ This is from the January 2021 edition of BBC Good Food magazine. Also on the [BB
 
 ![Baked Banana Porridge](/public/images/Baked-Banana-Porridge.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

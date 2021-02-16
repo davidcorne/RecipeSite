@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Syrup Cake</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Syrup Cake #
 
 ## Ingredients ##
@@ -26,8 +18,3 @@
 4. sift in flour till smooth.
 5. poor into 11x7" tin.
 6. 30-35 minutes 180° oven.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

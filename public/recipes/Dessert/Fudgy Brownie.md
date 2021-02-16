@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Fudgy Brownie</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Fudgy Brownie # 
 
 This is from [this recipe](https://www.reddit.com/r/GifRecipes/comments/9249hc/fudgy_brownies/) originally, with temperature recommendations from [this yummly article](https://www.yummly.com/dish/978013/how-to-tell-when-your-cookies-and-brownies-are-perfectly-baked).
@@ -58,10 +50,4 @@ This is from [this recipe](https://www.reddit.com/r/GifRecipes/comments/9249hc/f
     - It was a bit looser and fudgier than I think it should have been, next time I think I would go for ~150g flour.
 - I used a 9"x9" metal pan, which worked well for this amount (89 inch² vs. 96 inch²).
 - Cooking time, gluten free in the square pan 35 minutes worked nicely.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

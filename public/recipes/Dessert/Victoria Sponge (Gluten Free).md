@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Victoria Sponge (Gluten Free)</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Victoria Sponge (Gluten Free) # 
 
 This is from [here](https://www.reddit.com/r/GifRecipes/comments/bx2c5r/glutenfree_victoria_sponge_cake_recipe/) originally. Due to the measurement in the recipe, it's not possible to substitute weight measurements for cup measurements.
@@ -51,10 +43,3 @@ This is from [here](https://www.reddit.com/r/GifRecipes/comments/bx2c5r/glutenfr
 1. When the cakes are cold; spread jam of choice on one half, top with cream and another half of sponge.
 2. Sprinkle top with extra icing sugar.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Japanese Style Pancakes</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Japanese Style Pancakes #
 
 Source [here](https://www.buzzfeed.com/yuitakahashi/fluffy-pancake)
@@ -30,8 +22,3 @@ Source [here](https://www.buzzfeed.com/yuitakahashi/fluffy-pancake)
 4. Apply butter to the celule and place a 9 cm diameter cellule in a frying pan heated with extremely low heat. Pour in (3) until seventh minute, close the lid and bake for 10 minutes with a low heat. 
 5. When the center of the pancake gently shakes, do not get out of the mold and return it. Close the lid again and bake for 5 minutes. 
 6. Serve on dishes, put butter and maple syrup. Complete with strawberries and blueberries.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Chocolate Pots</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Chocolate Pots #
 
 ## Ingredients 
@@ -24,8 +16,3 @@
 3. pour into blender leave for 1 minute
 4. switch on and add egg for 20 seconds
 5. pour into ramekins and chill (2hours or preferably overnight)
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

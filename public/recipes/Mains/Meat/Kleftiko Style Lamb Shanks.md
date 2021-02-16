@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Kleftiko Style Lamb Shanks</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Kleftiko Style Lamb Shanks # 
 
 This is an interesting one pot Tom Kerridge recipe from the September 2020 BBC Good Food magazine.
@@ -55,10 +47,3 @@ This is an interesting one pot Tom Kerridge recipe from the September 2020 BBC G
 
 ![Kleftiko Lamb Shanks Recipe](/public/images/Kleftiko-Style-Lamb-Shanks-Recipe.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

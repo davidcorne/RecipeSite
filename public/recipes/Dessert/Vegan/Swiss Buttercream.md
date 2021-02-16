@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Swiss Buttercream</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Swiss Buttercream # 
 
 This is a vegan swiss buttercream recipe from Gretchen's Bakery, [here](https://www.gretchensbakery.com/aquafaba-swiss-buttercream-recipe/).
@@ -34,10 +26,3 @@ This is a vegan swiss buttercream recipe from Gretchen's Bakery, [here](https://
 Vegan Buttercream is softer than regular buttercream so it is helpful to store it and any cakes, pastries made with it, in the refrigerator ((for up to 2 weeks)), then bring the leftovers to room temperature before using by re-whipping it back to workable consistency.
 
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Rhubarb Ribbon Cake</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Rhubarb Ribbon Cake # 
 
 This is taken from Cooks Country, [here](https://www.cookscountry.com/recipes/10871-rhubarb-ribbon-cake) with units converted, but mostly because they don't have a print option. 
@@ -63,10 +55,4 @@ Rhubarb doesn't make its way into many cake recipes, but we thought that was a c
 
 9. Using stand mixer fitted with whisk attachment, whip butter, salt, and cooled rhubarb mixture on medium-low speed until combined. Slowly add sugar and continue to mix until smooth, about 2 minutes longer. Increase speed to medium-high and whip frosting until light and fluffy, about 5 minutes.
 10. Reserve cake with rhubarb ribbons for top layer. Place 1 cake layer, rhubarb side up, on cake plate and spread 1 cup frosting evenly over top, right to edge of cake. Repeat with second cake layer and 1 cup frosting. Top with ribbon cake. Frost sides of cake with thin layer of frosting, about ¾ cup. Using basketweave pastry tip, pipe remaining frosting in horizontal bands around sides of cake. Serve.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

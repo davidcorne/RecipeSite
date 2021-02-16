@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Crème Anglaise</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Crème Anglaise # 
 
 This is originally from [here](https://www.gatherandfeast.com/almond-milk-cr%C3%A8me-anglaise) with the almond milk replaced with oat milk.
@@ -31,10 +23,3 @@ This is originally from [here](https://www.gatherandfeast.com/almond-milk-cr%C3%
 7. Remove from the heat and keep whisking for a few minutes to ensure the anglaise stays smooth as it cools.
 8. Serve warm or cold. Delish!
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

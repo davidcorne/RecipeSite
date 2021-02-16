@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Duck and Fennel Salad</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Duck and Fennel Salad # 
 
 ![recipe](/public/images/Duck-and-Fennel-Salad.jpg)
@@ -44,10 +36,3 @@ This is a recipe from [Gressingham](https://www.gressinghamduck.co.uk/recipes/ro
 - The duck was a bit overcooked, I think it would be better without the oven cooking.
 - Serve the duck on top of the salad.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

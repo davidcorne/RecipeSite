@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Pavlova</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Pavlova # 
 
 This based on the pavlova [here](https://thehappyfoodie.co.uk/recipes/vegan-pavlova-meringue-tower) but made as a black forest version.
@@ -42,10 +34,4 @@ This based on the pavlova [here](https://thehappyfoodie.co.uk/recipes/vegan-pavl
 6. Carefully lay the top meringue onto the base.
 7. Spread the remaining chocolate onto the top, you can pool it by the edges to get a more drip cake effect.
 8. While the chocolate is still soft arrange the remaining fruit on top, and sprinkle with the chocolate curls.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

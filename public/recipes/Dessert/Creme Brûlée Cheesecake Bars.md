@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Creme Brûlée Cheesecake Bars</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Creme Brûlée Cheesecake Bars # 
 
 This is originally from [here](https://www.reddit.com/r/GifRecipes/comments/7r1dsz/creme_br%C3%BBl%C3%A9e_cheesecake_bars/).
@@ -38,10 +30,4 @@ This is originally from [here](https://www.reddit.com/r/GifRecipes/comments/7r1d
 9. Slice cheese cake into bars and top with additional sugar.
 10. Use a blow torch to caramelize sugar and serve.
 
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

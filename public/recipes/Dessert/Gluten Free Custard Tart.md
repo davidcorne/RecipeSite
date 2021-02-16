@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Gluten Free Custard Tart</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Gluten Free Custard Tart # 
 
 This is a [Dove's Farm](https://www.dovesfarm.co.uk/recipes/custard-tart) recipe, which works well. I've made it sucessfully with the recommended Dove Farms FREEE plain flour, and using oat milk.
@@ -67,10 +59,3 @@ This is a [Dove's Farm](https://www.dovesfarm.co.uk/recipes/custard-tart) recipe
 1. Bake for 20-25 minutes, the filling may be wobbly.
 1. Leave to cool and chill before serving.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

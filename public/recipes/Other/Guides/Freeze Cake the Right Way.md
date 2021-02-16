@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Freeze Cake the Right Way</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # How to Freeze Cake the Right Way # 
 
 This is from [this guide](http://www.cakeboss.com/Cake-Stuff/how-to-freeze-your-cakes-the-right-way) from Cake Boss.
@@ -36,10 +28,3 @@ Freezing your cakes will allow you new levels of flexibility in your cake decora
 7. Use your favorite permanent marker to date and label your cake!  Trust me, you will thank yourself later!
 8. Place in the freezer and enjoy at a time of your desiring!  I have used this method to freeze a cake for up to 7 months and it still tasted as delicious as the day I made it. However, until you are experienced with this method, I recommend starting with shorter freezing times of 1-2 weeks until you are comfortable with the quality of your cake. 
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Roast Pork Belly</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Roast Pork Belly, Fondant Potatoes & Pickled Onions # 
 
 This is from the 2020 February issue of Good Food Magazine.
@@ -35,10 +27,3 @@ This is from the 2020 February issue of Good Food Magazine.
 4. Return the tin with the potatoes to the oven and increase the oven temperature to 200°C/180°C fan for 25-30 mins until crisp.
 5. Carve the pork into generous squares (you can use a bread knife to do this more easily) and serve alongside the fondant potatoes and caramelised pickled onions.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

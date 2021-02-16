@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Spiced Fish Piaf</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Spiced Fish Piaf # 
 
 This is inspired by [this recipe](https://www.bbcgoodfood.com/recipes/spiced-bulgur-pilaf-fish) but made gluten free with rice, and the proportions changed.
@@ -42,10 +34,3 @@ This is inspired by [this recipe](https://www.bbcgoodfood.com/recipes/spiced-bul
 10. Replace the fish, and cook until the fish is cooked through, the prawns are cooked and the rice is tender.
 10. Season with pepper and serve.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

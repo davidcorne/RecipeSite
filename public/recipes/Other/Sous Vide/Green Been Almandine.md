@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Green Been Almandine</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Green Been Almandine # 
 
 This is originally from [here](https://www.theblackpeppercorn.com/2013/08/sous-vide-green-bean-almandine/).
@@ -29,10 +21,3 @@ This is originally from [here](https://www.theblackpeppercorn.com/2013/08/sous-v
 6. Drizzle with lemon juice and sprinkle with salt.
 7. Top with chopped almonds and serve
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Gluten Free Chocolate Cake</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Gluten Free Chocolate Cake # 
 
 This is a recipe originally from [here](https://www.delish.com/cooking/recipe-ideas/a19473626/best-flourless-chocolate-cake-recipe/).
@@ -58,10 +50,3 @@ I think that this can be made into an orange cake:
 - Add the zest of an orange to the ganache
 - Serve with orange segments
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Christmas Sticky Toffee Pudding</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Christmas Sticky Toffee Pudding #
 
 This is from the November 2020 edition of BBC Good Food magazine. Also on the [BBC Good Food](https://www.bbcgoodfood.com/recipes/christmas-sticky-toffee-pudding) site.
@@ -64,10 +56,3 @@ You can make the pudding up to a week in advance. After it’s steamed, remove t
 
 ![](/public/images/Christmas-Sticky-Toffee-Pudding.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

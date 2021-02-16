@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Cauliflower Cheese</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Cauliflower Cheese # 
 
 This is very much based on [this](http://www.onegreenplanet.org/vegan-recipe/hot-n-bubbly-cauliflower-cheese/) but with my own experimentation.
@@ -40,10 +32,4 @@ This is very much based on [this](http://www.onegreenplanet.org/vegan-recipe/hot
 9. Top with the rest of the cheese, and then the breadcrumbs.
 10. Cook in the oven for 30-40 minutes, or until the breadcrumb crust goes golden brown.
 
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

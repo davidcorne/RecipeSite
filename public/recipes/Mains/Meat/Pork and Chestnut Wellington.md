@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Pork and Chestnut Wellington</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Pork and Chestnut Wellington # 
 
 This is from the November 2020 edition of BBC Good Food magazine. Also available on the [BBC Good Food](https://www.bbcgoodfood.com/recipes/pork-chestnut-wellington) site.
@@ -77,10 +69,3 @@ This is from the November 2020 edition of BBC Good Food magazine. Also available
 ![](/public/images/Pork-and-Chestnut-Wellington-3.png)
 ![](/public/images/Pork-and-Chestnut-Wellington-4.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

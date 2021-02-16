@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Pickled Red Onions</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Pickled Red Onions # 
 
 This is a [Cook's Illustrated](https://www.cooksillustrated.com/recipes/9137-pickled-red-onions?pac=VS125Jbz3QSFyEk0AwYb8iz8xQXjbsrW4o117SeHDR8=) recipe, which was available for free for 2 days.
@@ -30,10 +22,3 @@ Red onions get their color from the presence of anthocyanins, a type of compound
 4. Cover and refrigerate until onions turn pink and are seasoned throughout, at least 8 hours.
 5. Strain onions and serve. (Onions can be refrigerated in pickling liquid for up to 2 weeks.)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

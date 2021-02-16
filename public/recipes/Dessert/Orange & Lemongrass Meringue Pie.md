@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Orange & Lemongrass Meringue Pie</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Orange & Lemongrass Meringue Pie # 
 
 This is a recipe from the 2020 October edition of BBC Good Food. There is also a link to it on the [the happy foodie](https://thehappyfoodie.co.uk/recipes/nadiya-hussains-orange-and-lemongrass-meringue-pie).
@@ -71,10 +63,3 @@ This is a recipe from the 2020 October edition of BBC Good Food. There is also a
 ![Orange Lemongrass Meringue Pie Recipe](/public/images/Orange-&-Lemongrass-Meringue-Pie.png)
 
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

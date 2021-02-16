@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Gluten Free Crumpet</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Gluten Free Crumpet # 
 
 This is from [here](https://glutenfreecuppatea.co.uk/2019/07/16/gluten-free-crumpets-recipe-dairy-free-vegan/). This will make ~13 crumpets.
@@ -40,10 +32,3 @@ This is from [here](https://glutenfreecuppatea.co.uk/2019/07/16/gluten-free-crum
 1. Remove from the pan and repeat with the rest of the batter.
 1. Serve hot from the pan or place in your toaster to reheat. Serve with butter, spread, golden syrup, jam, cheese... or whatever you fancy! Enjoy with a cuppa!
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

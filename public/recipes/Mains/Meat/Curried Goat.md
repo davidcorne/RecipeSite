@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Curried Goat</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Curried Goat # 
 
 This is a recipe from BBC Good Food September 2020. They advise getting the goat meat from Cabrito Goat Meat.
@@ -49,8 +41,3 @@ This is a recipe from BBC Good Food September 2020. They advise getting the goat
 
 ![Curried Goat Recipe](/public/images/Curried-Goat-Recipe.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

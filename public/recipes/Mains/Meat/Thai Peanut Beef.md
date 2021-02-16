@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Thai Peanut Beef</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Thai Peanut Beef # 
 
 ## Ingredients ## 
@@ -41,10 +33,3 @@
 ## Notes
 Alternative cooking option: if you prefer your steak cooked medium or rare, sear steak whole (not sliced) for 5-8 minutes on each side until browned and cooked to desired doneness.  (62°C for medium rare, 70°C for medium) Thinly slice, return to pan with the sauce and saute 1-2 minutes.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

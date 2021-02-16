@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Roast Chicken & Kidney Beans with Cashew Cocoa Stew</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Roast Chicken & Kidney Beans with Cashew Cocoa Stew # 
 
 This is from the eight bonus recipes from Nik Sharma's [The Flavour Equation](https://niksharma.chroniclebooks.com/).
@@ -69,10 +61,3 @@ To toast cashews, heat raw cashews in a dry, stainless-steel skillet over medium
 1. Garnish with onion, cilantro, and cashews.
 1. Serve hot with rice and plain unsweetened Greek yogurt.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

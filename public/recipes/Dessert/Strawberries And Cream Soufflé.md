@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Strawberries And Cream Soufflé</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Strawberries And Cream Soufflé # 
 
 This came from [here](https://tasty.co/recipe/strawberries-and-cream-souffle).
@@ -49,10 +41,4 @@ This came from [here](https://tasty.co/recipe/strawberries-and-cream-souffle).
 13. Bake the soufflés for 10-12 minutes, until the tops are light brown. Avoid opening the oven prematurely, so the soufflés don’t fall.
 14. Serve the soufflés immediately with the crème anglaise poured over the top.
 15. Enjoy!
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

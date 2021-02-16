@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Roast Chicken with Chestnut Bisque and Wild Mushroom</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Roast Chicken with Chestnut Bisque and Wild Mushroom # 
 
 ![recipe](/public/images/Roast-Chicken-with-Chestnut-Bisque.jpg)
@@ -53,10 +45,3 @@ This is a previous Great British Chefs cookbook club recipe, by Phil Fanning. I 
 15. Next, mix 1tbs chives with 3tbs of crème fraîche, season with black pepper to taste
 16. When ready to serve, carve the chicken breasts in half lengthways and re heat the bisque. Arrange the mushrooms, crème fraîche, water cress and roast shallots in to the bottom of a bowl.
 17. Add a good dollop of the crème fraîche and chive mix, some chopped chestnut and finish with a generous helping of bisque.
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

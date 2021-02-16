@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Yorkshire Pudding</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Yorkshire Pudding #
 
 ## Ingredients ##
@@ -43,8 +35,3 @@ measuring jug, or anything to help pour.
 10. Place this in the oven for 5 minutes until the oil is very hot.
 11. Quickly pour the batter into the oil and return to the oven.
 12. Cook for 20 minutes.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

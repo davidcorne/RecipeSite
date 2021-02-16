@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Wedding Lemon Cake</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Wedding Lemon Cake # 
 
 This was one of the tiers of cake at our wedding.
@@ -51,10 +43,3 @@ This was one of the tiers of cake at our wedding.
 
 1. Cream the butter with the sugar and add lemon extract.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

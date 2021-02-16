@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Lime and Garlic Pork Tenderloin</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Lime and Garlic Pork Tenderloin # 
 
 This is an Anova recipe taken from [here](https://recipes.anovaculinary.com/recipe/sous-vide-lime-and-garlic-pork-tenderloin).
@@ -38,10 +30,4 @@ This makes enough for 6.
 1. When the pork is cooked, remove it from the bag, place it on a paper towel–lined plate or baking sheet, and pat it dry. Discard the cooking liquid.
 2. Heat a cast iron pan over high heat and add the butter. Add the pork to the pan and sear until browned on all sides, 3 to 4 minutes in total.
 3. Remove the pork from the pan and transfer it to a cutting board. Let it rest for 5 minutes before carving into 1- to 2-inch medallions.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

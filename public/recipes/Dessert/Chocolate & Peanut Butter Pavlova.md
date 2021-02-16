@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Chocolate & Peanut Butter Pavlova</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Chocolate & Peanut Butter Pavlova # 
 
 This is from the December 2020 edition of BBC Good Food magazine. It's also on the [BBC Good Food site](https://www.bbcgoodfood.com/recipes/chocolate-peanut-butter-pavlova).
@@ -92,10 +84,3 @@ Meanwhile, make the candied peanuts.
 ![Chocolate Peanut Butter Pavlova](/public/images/Chocolate-&-Peanut-Butter-Pavlova-3.png)
 ![Chocolate Peanut Butter Pavlova](/public/images/Chocolate-&-Peanut-Butter-Pavlova-4.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

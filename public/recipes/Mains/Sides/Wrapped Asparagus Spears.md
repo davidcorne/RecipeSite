@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Wrapped Asparagus Spears</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Wrapped Asparagus Spears # 
 
 This is a recipe from [here](https://tasty.co/recipe/bacon-asparagus-pastry-twists).
@@ -30,10 +22,4 @@ This is a recipe from [here](https://tasty.co/recipe/bacon-asparagus-pastry-twis
 7. Place the wrapped spears on a baking tray lined with parchment paper.
 8. Brush them with egg wash, then sprinkle a pinch of salt & pepper on top.
 9. Bake for 18 minutes, until golden brown and puffed.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

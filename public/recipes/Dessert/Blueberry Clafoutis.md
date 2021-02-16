@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Blueberry Clafoutis</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Blueberry Clafoutis # 
 
 This is originally from [here](https://www.carolinescooking.com/blueberry-clafoutis-with-gluten-free-option/).
@@ -34,10 +26,3 @@ This is originally from [here](https://www.carolinescooking.com/blueberry-clafou
 7. Allow to cool a couple minutes before serving. It will probably be puffed up when you take it out the oven and collapse after a minute. 
 8. Sprinkle with a little icing sugar to serve, if desired.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Shannon’s Chocolate Peanut Bar</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Shannon’s Chocolate Peanut Bar # 
 
 This was an Australian Masterchef dish from 2016, I got the recipe from [here](https://www.news.com.au/entertainment/tv/reality-tv/recipe-how-to-make-shannon-bennetts-chocolate-peanut-bar/news-story/62ccac17bb37076de11160dd953081bd).
@@ -123,10 +115,3 @@ This was an Australian Masterchef dish from 2016, I got the recipe from [here](h
 40. Pour boiling Honey Caramel into the serving jug.
 41. To serve, pour Honey Caramel slowly and evenly along the length of the parfait, melting the chocolate and coating the parfait completely.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

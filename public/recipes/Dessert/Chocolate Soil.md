@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Chocolate Soil</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Chocolate Soil # 
 
 These are two recipes, one from [The Lone Baker](http://www.thelonebaker.com/journal/2013/11/5/chocolate-soil.html) and the other from [BBC Good Food](https://www.bbcgoodfood.com/recipes/2774681/chocolate-soil-crumbs).
@@ -49,10 +41,3 @@ Note: you can add different chocolate flavours if you like or spices.
 7. It's finished and ready to poured onto your prepared baking tray to cool.
 8. Once cool, store in an airtight container for up to a week, or freeze up to a month.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

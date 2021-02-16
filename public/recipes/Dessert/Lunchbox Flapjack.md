@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Lunchbox Flapjack</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Lunchbox Flapjack # 
 
 This is a nice flapjack recipe from [BBC Good Food](www.bbcgoodfood.com/recipes/yummy-golden-syrup-flapjacks) which are slightly modified to be nice and solid for a lunchbox.
@@ -30,10 +22,3 @@ This is a nice flapjack recipe from [BBC Good Food](www.bbcgoodfood.com/recipes/
 1. Press into the corners with the back of a spoon so the mixture is flat.
 1. Bake for around 25 mins until golden brown.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

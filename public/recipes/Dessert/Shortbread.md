@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Shortbread</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Shortbread # 
 
 This was a BBC recipe, from [here](https://www.bbc.com/food/recipes/christmas_shortbread_76920).
@@ -30,9 +22,3 @@ This was a BBC recipe, from [here](https://www.bbc.com/food/recipes/christmas_sh
 8. Leave to cool slightly and enjoy. 
 
 These will keep well for at least 1 week in a sealed container, but the fresher they are the better.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-

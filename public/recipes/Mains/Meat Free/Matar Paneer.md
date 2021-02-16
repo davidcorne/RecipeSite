@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
-<title>Matar Paneer</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Matar Paneer #
 This comes from [this site](https://www.cookwithmanali.com/matar-paneer/) and it's a fantastic recipe.
 
@@ -67,9 +58,3 @@ really well). Note, I didn't fry the halloumi first which some sites recommend a
 - I added some more vegetables for more texture; sliced onions and tomatoes I fried before the spices then removed and
 added back in at the same time as the cheese.
 
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-<script src="/public/resources/recipe-formatting.js"></script>
-
-</html>

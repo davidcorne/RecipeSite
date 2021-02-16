@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Caramalized Onion Chutney</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Caramalized Onion Chutney # 
 
 This is a work in progress, as I made some in November 2017 and didn't note which recipes I used. This was inspired by the following three recipes: [Allotment Garden](https://www.allotment-garden.org/recipe/1635/caramelised-onion-chutney-recipe/), [Sarsons](https://www.sarsons.co.uk/recipes/caramelised-onion-chutney), and [Food.com](https://www.food.com/recipe/caramelised-red-onion-chutney-recipe-446595).
@@ -32,10 +24,3 @@ This is a work in progress, as I made some in November 2017 and didn't note whic
 7. Pour the chutney into the hot, sterilised jars seal and let chutney cool.
 8. Should ideally be left for a month or maybe even more for the flavours to blend and mature, but certainly try it now!
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

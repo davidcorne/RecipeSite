@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Chorizo & Chickpea Tagine</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Chorizo & Chickpea Tagine # 
 
 This is from the January 2021 edition of BBC Good Food magazine.
@@ -43,10 +35,3 @@ This is from the January 2021 edition of BBC Good Food magazine.
 
 ![Chorizo Chickpea Tagine](/public/images/Chorizo-&-Chickpea-Tagine.png)
  
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

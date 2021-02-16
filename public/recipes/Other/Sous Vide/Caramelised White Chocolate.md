@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Caramelised White Chocolate</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Caramelised White Chocolate # 
 
 This came originally from [here](http://www.veggiechef.co.uk/Blog/files/sous_vide_caramelised_white_chocolate.html).
@@ -23,10 +15,4 @@ This came originally from [here](http://www.veggiechef.co.uk/Blog/files/sous_vid
 
 The chocolate will turn a light gown within the first hour or two of cooking then gradually continue to darken. 
 I found that 6 hours gave me a great caramelised flavour and intensity, but you could probably even push the cooking time on for another hour or two if you wanted a darker caramel. 
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

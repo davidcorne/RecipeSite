@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Buttercream</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Buttercream # 
 
 This is the Tate & Lyle recipe from the icing sugar packet.
@@ -21,10 +13,4 @@ This is the Tate & Lyle recipe from the icing sugar packet.
 
 1. Put butter into a bowl, beat until creamy. 
 2. Sift and gradually beat in the icing sugar, add the milk and beat again.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

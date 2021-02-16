@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Chocolate Fudge Brownie Cheesecake</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Chocolate Fudge Brownie Cheesecake # 
 
 This recipe comes from [here](https://www.reddit.com/r/GifRecipes/comments/5scdge/chocolate_fudge_brownie_cheesecake/dde0ypv/), and has a gif [here](https://gfycat.com/QualifiedGenuineBighornedsheep), it calls for box brownie mix, but you can definitely make a brownie mix.
@@ -43,10 +35,4 @@ This recipe comes from [here](https://www.reddit.com/r/GifRecipes/comments/5scdg
 1. Enjoy!
 
 
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

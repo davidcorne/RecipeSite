@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Double Cream Scones</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Double Cream Scones # 
 
 This is a scone recipe recommended by my mum, from [the Telegraph](https://www.telegraph.co.uk/recipes/0/double-cream-scones-recipe/?WT.mc_id=tmg_share_em).
@@ -38,10 +30,3 @@ This is a scone recipe recommended by my mum, from [the Telegraph](https://www.t
 
 These are actually still good two days later (well, not quite as good, but they don’t deteriorate the way other scones do – just keep them in an airtight container).
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

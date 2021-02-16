@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Sprouts and Crunchy Chorizo Crumbs</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Sprouts and Crunchy Chorizo Crumbs # 
 
 This is from the November 2020 edition of BBC Good Food magazine. Also available on the [BBC Good Food](https://www.bbcgoodfood.com/recipes/pan-fried-sprouts-crunchy-chorizo-crumbs) site.
@@ -37,10 +29,3 @@ This is from the November 2020 edition of BBC Good Food magazine. Also available
 
 ![](/public/images/Sprouts-and-Crunchy-Chorizo-Crumbs.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

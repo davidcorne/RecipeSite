@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Peanut Butter Chicken Curry</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Peanut Butter Chicken Curry # 
 
 This is a recipe from the BBC Good Food Magazine September 2020 edition.
@@ -54,10 +46,3 @@ This is a recipe from the BBC Good Food Magazine September 2020 edition.
 
 ![Peanut Butter Chicken Curry Recipe](/public/images/Peanut-Butter-Chicken-Curry.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

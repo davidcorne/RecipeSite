@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Mint Chocolate Pot</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Mint Chocolate Pot # 
   
 This comes from [here](https://intentionallyeat.com/mint-chocolate-pots-de-creme/) and doesn't have any strange ingredients in it.
@@ -27,11 +19,5 @@ This comes from [here](https://intentionallyeat.com/mint-chocolate-pots-de-creme
 3. With the blender on low speed, gradually pour in melted chocolate. Blend until well incorporated.
 4. Pour into individual serving bowls or ramekins and refrigerate until chilled, about 4 hours. 
 5. You can top them with coconut whipped cream, mint leaves and nuts, if desired. Enjoy!  
-  
-  </xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
   
   

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Mini Crème Brûlée Cheesecakes</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Mini Crème Brûlée Cheesecakes # 
 
 Makes 12 cheesecakes. Recipe originally from [here](https://www.reddit.com/r/GifRecipes/comments/6bcgyo/mini_cr%C3%A8me_br%C3%BBl%C3%A9e_cheesecakes/dhlgpjs/).
@@ -41,10 +33,4 @@ Makes 12 cheesecakes. Recipe originally from [here](https://www.reddit.com/r/Gif
 10. For the crème brûlée topping, scatter on a teaspoon of sugar over each cheesecake.
 11. Ensure the sugar is evening distributed and any excess is knocked off.
 12. Using a blow torch, carefully melt the sugar using swirling motions until bubbling and caramelized. Leave to cool for 2 minutes for the sugar to cool and harden.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

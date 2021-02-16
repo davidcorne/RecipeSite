@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Sterilise Jars</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Sterilise Jars # 
 
 This is how to sterilise jars for filling with preserves. It is originally from [here](https://www.bbcgoodfood.com/videos/techniques/how-sterilise-jars).
@@ -19,10 +11,3 @@ This is how to sterilise jars for filling with preserves. It is originally from 
 6. While everything is still hot, cover the jars with their lids or top with wax paper and a piece of cellophane secured tightly with an elastic band.
 7. Once in sterilised jars like this your preserves should keep for about 6 months in a cool, dark place, but do check the recipe you’re using for a more accurate shelf life as some preserves will last longer than others.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

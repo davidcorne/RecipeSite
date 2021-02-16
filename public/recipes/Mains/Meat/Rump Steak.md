@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Rump Steak</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Rump Steak # 
 
 This is from [Great British Chefs](https://www.greatbritishchefs.com/how-to-cook/how-to-cook-rump-steak-to-perfection), with temperature notes from [BBC Good Food](https://www.bbcgoodfood.com/recipes/rump-steak)
@@ -60,10 +52,3 @@ Note: I know some of these measurements aren't really helpful.
     5. Swirl in a knob of butter and/or a dash of cream.
 1. Slice the steak and serve with your choice of accompaniments.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Egg Drop Soup</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Egg Drop Soup # 
   
 This is a recipe from [here](https://www.gimmesomeoven.com/egg-drop-soup/). It's a staple at Chinese restaurants across the United States.
@@ -36,10 +28,4 @@ We've changed it slightly, as there was a little too much spring onion and added
 7. Stir in the sesame oil, green onions and corn (optional) until combined.
 8. Season with salt and pepper to taste, also adding a dash or two of more sesame oil if needed.
 6. Serve immediately, sprinkled with additional green onions.
-  </xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
   

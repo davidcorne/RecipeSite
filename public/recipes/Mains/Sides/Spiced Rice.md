@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Spiced Rice</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Spiced Rice # 
 
 This is a good side dish for any curry, from [BBC Good Food](https://www.bbcgoodfood.com/recipes/spiced-rice-0).
@@ -40,10 +32,3 @@ As pictured, this goes well with <a href="/public/recipes/Mains/Fish/Goan%20Muss
 1. Turn the heat off but don’t lift the lid and leave to sit for 20 mins.
 1. Stir in half the almonds and coriander, with the rest of the coriander and the almonds thrown over the top.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

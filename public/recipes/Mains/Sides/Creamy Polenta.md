@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Creamy Polenta</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Creamy Polenta # 
 
 This is from a Guardian article [here](https://www.theguardian.com/lifeandstyle/wordofmouth/2013/nov/21/how-to-make-perfect-polenta) originally. I've made it with less cooking and stock rather than milk.
@@ -28,10 +20,3 @@ This is from a Guardian article [here](https://www.theguardian.com/lifeandstyle/
 5. Turn the heat right down and stir well, roughly every 4-5 minutes to prevent it sticking, for about 35-45 minutes, until the polenta begins to come away from the sides of the pan.
 6. Stir in the butter and cheese, if using, then put on a serving dish.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

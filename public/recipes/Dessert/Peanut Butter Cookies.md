@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Peanut Butter Cookies</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Peanut Butter Cookies # 
 
 This is originally from [here](https://tasty.co/recipe/3-ingredient-peanut-butter-cookies).
@@ -25,10 +17,4 @@ This is originally from [here](https://tasty.co/recipe/3-ingredient-peanut-butte
 4. For extra decoration and to make them cook more evenly, flatten the cookie balls by pressing a fork down on top of them, then press it down again at a 90º angle to make a criss-cross pattern.
 5. Bake for 8-10 minutes or until the bottom of the cookies are golden brown.
 6. Remove from baking sheet and cool.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

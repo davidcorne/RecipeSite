@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Ground Beef Chilli</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Ground Beef Chilli # 
 
 This is from an ATK recipe [here](https://www.americastestkitchen.com/recipes/8564-best-ground-beef-chili).
@@ -52,10 +44,4 @@ This is from an ATK recipe [here](https://www.americastestkitchen.com/recipes/85
 6. Remove chili from oven and let stand, uncovered, for 10 minutes. Stir in any fat that has risen to top of chili, then add vinegar and season with salt to taste. Serve, passing lime wedges, cilantro, and chopped onion separately. (Chili can be made up to 3 days in advance.)
 
 °C
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

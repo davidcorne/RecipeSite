@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Vegetarian Toad In The Hole</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Vegetarian Toad in the Hole #
 
 This works especially well with Linda McCartney sausages.
@@ -32,8 +24,3 @@ This works especially well with Linda McCartney sausages.
 ## Note ##
 
 I find there are two types of vegetarian sausages, meat-like and non meat-like. If you are using meat-like vegetarian sausages mustard works very well with them, but if you are using the less meat-like ones (e.g. Linda McCartney ones) a herb like rosemary works a little better.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

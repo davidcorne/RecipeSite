@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Waffles</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Waffles #
 
 ## Ingredients 
@@ -26,8 +18,3 @@
 2. Mix wet ingredients together.
 3. Add the wet ingredients to the dry, slowly mixing them as you go.
 4. Cook in a hot waffle maker.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

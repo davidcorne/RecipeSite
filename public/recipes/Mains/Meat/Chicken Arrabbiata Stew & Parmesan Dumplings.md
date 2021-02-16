@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Chicken Arrabbiata Stew & Parmesan Dumplings</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Chicken Arrabbiata Stew & Parmesan Dumplings # 
 
 This is from the January 2021 edition of BBC Good Food magazine. Also on the [BBC Good Food site](https://www.bbcgoodfood.com/recipes/chicken-arrabbiata-stew-parmesan-dumplings).
@@ -59,10 +51,3 @@ This is from the January 2021 edition of BBC Good Food magazine. Also on the [BB
 
 ![Chicken Arrabbiata Stew](/public/images/Chicken-Arrabbiata-Stew-&-Parmesan-Dumplings.png)
  
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

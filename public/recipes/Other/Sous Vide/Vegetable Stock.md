@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Vegetable Stock</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Vegetable Stock # 
 
 This is originally from [this recipe](https://www.youtube.com/watch?v=1RyQwLXILUw).
@@ -34,10 +26,4 @@ This is originally from [this recipe](https://www.youtube.com/watch?v=1RyQwLXILU
 3. Place everything in water and cook for ~12 hours at 82°C.
 4. Strain.
 5. This will keep for 1 week in a fridge, up to a year in a freezer.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

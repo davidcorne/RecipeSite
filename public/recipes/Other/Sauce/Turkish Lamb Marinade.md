@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Turkish Lamb Marinade</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Turkish Marinade # 
 
 ## Ingredients
@@ -21,8 +13,3 @@
 ## Method 
 
 1. Combine all ingredients in bowl.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

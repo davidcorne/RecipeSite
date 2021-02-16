@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Peanut Butter Udon</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Peanut Butter Udon # 
 
 This is a quick midweek peanut based stirfry from Good Food Magazine September 2020. Makes two small portions.
@@ -53,10 +45,3 @@ This is a quick midweek peanut based stirfry from Good Food Magazine September 2
 ## Original Recipe
 
 ![Weeknight Peanut Butter Udon Recipe](/public/images/Peanut-Butter-Udon-Recipe.png)
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

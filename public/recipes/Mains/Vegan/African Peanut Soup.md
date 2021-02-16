@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>African Peanut Soup</title>
-
-<xmp theme="cerulean" style="display:none;">
 # African Peanut Soup # 
 
 Originally from [here](http://ohmyveggies.com/african-peanut-soup/).
@@ -35,10 +27,4 @@ Originally from [here](http://ohmyveggies.com/african-peanut-soup/).
 2. Remove about 1 cup of the liquid and place it into a small bowl. Add the peanut butter and stir until creamy. Return the mixture to the pot, stir well, and cook for 5 minutes, stirring occasionally.
 3. Add the coriander, stir well, and garnish with peanuts before serving.
 
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

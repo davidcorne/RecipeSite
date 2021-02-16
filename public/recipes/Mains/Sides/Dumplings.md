@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Dumplings</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Dumplings #
 
 These are from [this recipe](http://www.bbcgoodfood.com/recipes/brazilian-pork-stew-corn-dumplings) for brazilian pork stew.
@@ -30,8 +22,3 @@ These are from [this recipe](http://www.bbcgoodfood.com/recipes/brazilian-pork-s
 5. Sit 6 of the dumplings on top of a stew and the rest on a baking tray lined with baking parchment. 
 6. Put both in the oven and cook for 25 mins until the dumplings are golden and risen.
 
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

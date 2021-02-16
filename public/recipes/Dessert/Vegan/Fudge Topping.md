@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Fudge Topping</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Fudge Topping # 
 
 This is from [here](https://lovingitvegan.com/dairy-free-fudge/), we often use it to top our [ginger flapjacks](/public/recipes/Dessert/Ginger%20Flapjack.pdf).
@@ -34,10 +26,3 @@ This is from [here](https://lovingitvegan.com/dairy-free-fudge/), we often use i
 * Fudge can be a tricky beast, even though this recipe is easy, working with boiling sugar is always a bit of a thing.
 * I would recommend not substituting ingredients here as these are the ones that have been tested and I have not tried this recipe with variations of ingredients.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

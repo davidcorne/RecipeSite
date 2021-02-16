@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Chocolate Meringue Tart</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Chocolate Meringue Tart # 
 
 The original recipe is from [here](http://www.tasty-recipes.us/leftover-easter-chocolate-tart/24516/).
@@ -50,10 +42,4 @@ The original recipe is from [here](http://www.tasty-recipes.us/leftover-easter-c
 12. Spoon on top of the chocolate tart.
 13. Bake for 30 minutes.
 14. Cut into slices and serve.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

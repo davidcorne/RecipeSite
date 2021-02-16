@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Lamb Curry</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Lamb Curry # 
 
 This recipe is from [here](http://www.amazingfoodmadeeasy.com/info/modernist-recipes/more/sous-vide-lamb-curry-recipe).
@@ -64,10 +56,4 @@ This should be done at least 30 to 45 minutes before serving.
 7. Remove the lamb from the sous vide pouches and add to the pan, along with some of the juices from the pouch. Stir well and let simmer for about 5 minutes.
 8. Stir in the cream and parsley.
 9. Serve, preferably over rice or with crusty bread.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

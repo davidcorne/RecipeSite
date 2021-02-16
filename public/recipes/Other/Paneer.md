@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Paneer</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Paneer # 
 
 Turns out paneer is a pretty easy cheese to make, I used lemon juice and pressed the paneer well and it gave a great result. This recipe is from [Cook with Manali](https://www.cookwithmanali.com/how-to-make-paneer-at-home-homemade-paneer-recipe/).
@@ -37,10 +29,3 @@ Turns out paneer is a pretty easy cheese to make, I used lemon juice and pressed
 - Start by adding only 1 teaspoon of the curdling agent. Add 1 more teaspoon only if the milk doesn’t curdle and add the remaining ½ teaspoon only if it still doesn’t curdle.
 - For creamier paneer, add ¼ cup heavy cream to the milk while boiling it.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

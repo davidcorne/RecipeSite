@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Confit Chicken Thigh</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Confit Chicken Thigh # 
 
 This is originally from [here](https://anovaculinary.com/sous-vide-chicken-confit/).
@@ -36,10 +28,4 @@ Finishing step: For crispy skin, pan sear in olive oil over medium-high heat.
 4. Serve on the bone with a salad or pickled vegetables. 
 
 NOTE: If you’re not planning to serve the chicken immediately, you can leave the chicken sealed and refrigerate for up to three days. When ready to serve, remove from the bag, pat dry, season, and sear it then.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

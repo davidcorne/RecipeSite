@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Arancini</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Arancini # 
 
 ## Ingredients ## 
@@ -30,10 +22,4 @@
 ### How to Pan-Fry Arancini
 
 They can also be pan-fried rather than deep-fried. Cook them over medium heat and make sure you turn them frequently, basting with the oil.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

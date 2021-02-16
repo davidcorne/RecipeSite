@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Gluten Free Chapati</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Gluten Free Chapati # 
 
 This is a nice gluten free recipe for a quick Indian style flatbread, from [Doves Farm](https://www.dovesfarm.co.uk/recipes/chapati-flat-breads)
@@ -40,10 +32,3 @@ This should make 6 chapati, but I have used half this recipe to make 4 smaller c
 1. Lift the chapati out of the pan, wrap it in tin foil and keep warm until ready to serve.
 1. Repeat with the remaining dough circles.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

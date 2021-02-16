@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Orange Chocolate Cupcake</title>
-
-<xmp theme="cerulean" style="display:none;">
 
 This recipe comes from [here](https://gfycat.com/BlaringShadyKookaburra).
 
@@ -30,8 +22,3 @@ See the gif.
 4. Allow to cool, then make icing with the cream cheese.
 5. Ice, top with orange zest.
 
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

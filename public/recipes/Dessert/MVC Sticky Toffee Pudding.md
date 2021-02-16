@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>MVC Sticky Toffee Pudding</title>
-
-<xmp theme="cerulean" style="display:none;">
 # MVC Sticky Toffee Pudding #
 
 ## Ingredients ##
@@ -37,8 +29,3 @@
   1. Bring sugar, butter and cream to a boil in a heavy bottomed pan.
   2. Stir constantly for 3 minutes while boiling.
 6. Cut cake as soon as cooked and pour over sticky toffee sauce.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

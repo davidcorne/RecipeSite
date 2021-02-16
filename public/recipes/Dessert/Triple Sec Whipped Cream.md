@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Triple Sec Infused Whipped Cream</title>
-
-<xmp theme="cerulean" style="display:none;">
 
 ## Ingredients ##
 
@@ -20,8 +12,3 @@
     1. If making by hand or with a hand-held mixer, place your bowl and whisk/whisk attachments in the freezer for at least 15 minutes before starting.  
 2. Pipe whipped cream on to each of your shots with a piping bag or a plastic bag with the corner snipped off.
 
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

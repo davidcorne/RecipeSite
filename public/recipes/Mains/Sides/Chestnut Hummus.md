@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Chestnut Hummus</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Chestnut Hummus # 
 
 This is from the December 2020 edition of BBC Good Food magazine. It's also on the [BBC Good Food site](https://www.bbcgoodfoodme.com/recipes/chestnut-hummus/).
@@ -30,10 +22,3 @@ This is from the December 2020 edition of BBC Good Food magazine. It's also on t
 
 ![Chestnut Hummus](/public/images/Chestnut-Hummus.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

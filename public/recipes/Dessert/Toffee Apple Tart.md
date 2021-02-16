@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Toffee Apple Tart</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Toffee Apple Tart
 
 This is from [here](http://www.cookstr.com/recipes/toffee-apple-tart)
@@ -66,8 +58,3 @@ will give you the most amazing toffee.
 4. Place the apples on top and pour any remaining juices over. 
 5. Cook at the bottom of the preheated oven for about 40 minutes, to give you a crispy base and bubbling toffee over the apples. 
 6. Serve with vanilla ice cream. Beautiful!
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

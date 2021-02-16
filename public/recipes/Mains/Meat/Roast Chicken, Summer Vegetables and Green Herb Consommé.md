@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Roast Chicken, Summer Vegetables and Green Herb Consommé</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Roast Chicken, Summer Vegetables and Green Herb Consommé # 
 
 This is a Masterchef AU recipe by Matt Abe. I got the recipe from [here](https://10play.com.au/masterchef/recipes/roast-chicken-summer-vegetables-and-green-herb-consomme/r190614vrydx).
@@ -153,10 +145,3 @@ This is a Masterchef AU recipe by Matt Abe. I got the recipe from [here](https:/
 ### To serve:
 1. Squeeze 10 drops of the Herb Oil into the jug of Consommé. Pour to one side of the dish and serve immediately.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

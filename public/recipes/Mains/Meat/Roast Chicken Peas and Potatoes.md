@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Roast Chicken Peas and Potatoes</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Roast Chicken Peas and Potatoes # 
 
 This is a masterchef dish from season 7, a pressure test cooking against Gary Mehigan. I got the recipe from [here](https://www.tvnz.co.nz/shows/masterchef-australia/masterchef-australia-recipes/gary-mehigan-roast-chicken-peas-and-potatoes).
@@ -145,10 +137,3 @@ Here is what the finished dish should look like:
 79. Finish with some white violas, sage flowers and a sprig of bronze fennel.
 80. To serve, spoon some Jus Gras over the Potato Fondant.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

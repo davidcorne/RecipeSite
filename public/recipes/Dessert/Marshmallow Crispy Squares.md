@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Marshmallow Crispy Squares</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Marshmallow Crispy Squares # 
 
 This is a lovely simple recipe from [Nigella](https://www.nigella.com/recipes/marshmallow-crispy-squares). I've replicated it with ⅔ of the ingredients to the original recipe, as supermarkets tend to have 200g bags of marshmallows.
@@ -27,10 +19,3 @@ This is a lovely simple recipe from [Nigella](https://www.nigella.com/recipes/ma
 1. Flatten the top and press down the sides, so it's an even thickness.
 1. Let the marshmallow crispy squares cool completely in the tin (in or out of the fridge) and then cut them into squares.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

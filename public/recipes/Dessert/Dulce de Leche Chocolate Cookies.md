@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Dulce de Leche Chocolate Cookies</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Dulce de Leche Chocolate Cookies # 
 
 Credit to [Tastemade](https://www.tastemade.com/videos/dulce-de-leche-cookies), gif of the recipe [here](https://i.redd.it/d04yurpeay9y.gif).
@@ -36,10 +28,4 @@ Credit to [Tastemade](https://www.tastemade.com/videos/dulce-de-leche-cookies), 
 6. Use an ice cream scoop to scoop out batter and fill with the dulce de leche.
 7. Bake for 12 minutes at 350ºF.
 
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

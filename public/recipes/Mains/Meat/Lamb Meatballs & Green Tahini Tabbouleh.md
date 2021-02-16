@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Lamb Meatballs & Green Tahini Tabbouleh</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Lamb Meatballs & Green Tahini Tabbouleh # 
 
 This is from the December 2020 edition of BBC Good Food magazine. It's also on the [BBC Good Food site](https://www.bbcgoodfood.com/recipes/lamb-meatballs-green-tahini-tabbouleh).
@@ -40,10 +32,3 @@ This is from the December 2020 edition of BBC Good Food magazine. It's also on t
 
 ![Lamb Meatballs Green Tahini Tabbouleh](/public/images/Lamb-Meatballs-&-Green-Tahini-Tabbouleh.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Chicken Chorizo Jambalaya</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Chicken Chorizo Jambalaya # 
 
 ![recipe](/public/images/Chicken-Chorizo-Jambalaya.jpg)
@@ -50,10 +42,3 @@ This is a recipe from [here](https://www.bbcgoodfood.com/recipes/chicken-chorizo
 5. Stir the chicken back in with 250g long grain rice, add the 400g can of tomatoes and 350ml chicken stock.
 6. Cover and simmer for 20-25 mins until the rice is tender.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Soft Pretzel Knots</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Soft Pretzel Knots # 
 
 This is from [here](https://www.reddit.com/r/food/comments/7mjznk/homemade_soft_pretzel_knots/druxlh7/).
@@ -47,10 +39,4 @@ This is from [here](https://www.reddit.com/r/food/comments/7mjznk/homemade_soft_
 10. Bake until dark golden brown in color, approximately 12 to 14 minutes.
 
 Transfer to a cooling rack for at least 5 minutes before serving.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Flourless Brownies</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Flourless Brownies # 
 
 This is a nice looking gluten free recipe from August BBC Good Food Magazine.
@@ -32,10 +24,3 @@ This is a nice looking gluten free recipe from August BBC Good Food Magazine.
 7. Bake for 25 minutes until cooked with a slight wobble in the middle.
 8. Leave to cool for at least 10 minutes, can be eaten warm or cut and served cold.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

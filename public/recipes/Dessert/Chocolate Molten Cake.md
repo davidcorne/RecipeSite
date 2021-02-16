@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Chocolate Molten Cake</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Chocolate Molten Cake # 
 
 This is known as the Easy Chocolate Molten Cake from bbc good food, the recipe is [here](http://www.bbcgoodfood.com/recipes/1753648/easy-chocolate-molten-cake).
@@ -26,10 +18,4 @@ This is known as the Easy Chocolate Molten Cake from bbc good food, the recipe i
 2. Put the chocolate and butter in a heatproof bowl and set over a pan of hot water (or alternatively put in the microwave) and stir until smooth, then set aside to cool slightly for 15 minutes.
 3. Mix in the sugar, then the eggs, one at a time, followed by the vanilla extract and finally the flour. Divide the mixture among the basins or ramekins.
 4. You can now either put the mixture in the fridge and wait until they're nearly ready to be eaten, or bake now for 10-12 minutes, or until the tops are firm to touch but the middles still feel squidgy. Carefully run a knife around the edge of each pudding, then turn out onto serving plates and serve with single cream.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

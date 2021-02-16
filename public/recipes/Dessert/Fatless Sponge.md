@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Fatless Sponge</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Fatless Sponge #
 
 This is my great-grandmothers recipe for a fatless sponge. The secretingredient in this recipe is air. Without fat you need to really incorporateair into the mixture to get a really light fluffy cake. This means that steps5 and 7 need to be done very carefully so that you end up with a very lightmixture.
@@ -45,8 +37,3 @@ This is a generic sponge recipe, and there are many things you can do with it.
 - A dusting of icing sugar.
 - Icing (can be easily coloured for a themed cake such as a Christmas tree).
 - Buttercream.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Quiche Lorraine</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Quiche Lorraine #
 
 ## Ingredients ##
@@ -40,8 +32,3 @@
 6. For the filling: Heat the oil in a frying pan and cook the bacon for 5-6 minutes, or until crisp. Remove and drain on kitchen paper. Sweat the onions gently in the same oil for a further ten minutes, or until softened.
 7. Meanwhile, whisk the two whole eggs and two egg yolks in a medium-sized bowl, add the cream, herbs, cheeses and bacon and onions. Mix well and season with salt and black pepper.
 8. Pour the filling into the pastry base and return to the oven to bake for 30–40 minutes, or until the centre has set. Serve warm with a green salad and relish. 
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

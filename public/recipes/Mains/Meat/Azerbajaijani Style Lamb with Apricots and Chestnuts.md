@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Azerbajaijani Style Lamb with Apricots and Chestnuts</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Azerbajaijani Style Lamb with Apricots and Chestnuts # 
 
 This is from the November 2020 edition of BBC Good Food magazine. Also on the [BBC Good Food](https://www.bbcgoodfood.com/recipes/azerbaijani-style-lamb-with-apricots-chestnuts) site.
@@ -50,10 +42,3 @@ This is from the November 2020 edition of BBC Good Food magazine. Also on the [B
 
 ![Azerbajaijani Lamb with Apricots and Chestnuts](/public/images/Azerbajaijani-Style-Lamb-with-Apricots-and-Chestnuts.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

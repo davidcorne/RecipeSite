@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Cabbage Rolls</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Cabbage Rolls # 
 
 This is a mixture of two different recipes: [this redhousespice recipe](https://redhousespice.com/chinese-steamed-cabbage-rolls/) and [this taste recipe](https://www.taste.com.au/recipes/pork-prawn-cabbage-rolls/4a4e5642-9b05-46b0-8808-83bd0026a5f5).
@@ -56,10 +48,3 @@ This is a mixture of two different recipes: [this redhousespice recipe](https://
 3. Set up a steamer.
 4. Steam the rolls for 10 minutes, or until the filling is cooked through.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

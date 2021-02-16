@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Chinese Duck Curry</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Chinese Duck Curry # 
 
 This was made with a modified version of the sauce from [here](http://allrecipes.co.uk/recipe/28375/chinese-curry-sauce.aspx).
@@ -40,10 +32,4 @@ This was made with a modified version of the sauce from [here](http://allrecipes
 7. Add the chicken stock, and mix in the cornflour.
 8. Add the duck and the soy sauce and spices for the sauce, simmering for a further 15 minutes to allow the flavours to blend and infuse the meat.
 9. Enjoy!
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

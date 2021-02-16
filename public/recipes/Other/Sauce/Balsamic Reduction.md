@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Balsamic Reduction</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Balsamic Reduction # 
 
 This is a recipe with technique from [here](https://www.joyfulhealthyeats.com/balsamic-reduction/), and added to.
@@ -30,10 +22,4 @@ This is a recipe with technique from [here](https://www.joyfulhealthyeats.com/ba
 8. When there's half the volume left, remove from the heat.
 9. This may need some stirring as it cools, but once cool can be refrigerated.
 10. If it's too thick once refrigerated, it should be heated for ~30 seconds in a microwave.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

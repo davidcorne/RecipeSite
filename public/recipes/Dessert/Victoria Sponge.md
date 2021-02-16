@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Victoria Sponge</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Victoria Sponge #
 
 ## Ingredients ##
@@ -24,8 +16,3 @@
 3. Cream butter and suger in a food processor.
 4. Add the eggs and flour.
 5. Bake for 25-30 minutes.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

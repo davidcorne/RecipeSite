@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Tempered Chocolate</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Tempered Chocolate # 
 
 This is from [serious eats](http://www.seriouseats.com/2014/12/print/the-food-lab-best-way-to-temper-chocolate.html).
@@ -51,10 +43,4 @@ The best part? There's almost no waste whatsoever. With traditional chocolate te
 And I take back what I said about the best part. The best best part is that storage and clean up is so darned easy. You don't have to wash any bowls, food processors, or spatula. All you have to do is squeeze the chocolate away from the open corner of the vacuum bag, stick it back in your vacuum sealer, and re-seal the edge.
 
 Your chocolate is now perfectly contained, will hold indefinitely at room temperature, and is ready to re-temper for the next time you need good melted chocolate.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

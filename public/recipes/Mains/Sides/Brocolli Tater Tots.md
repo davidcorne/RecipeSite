@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Brocolli Tater Tots</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Broccoli Tater Tots. # 
 
 ## Ingredients ## 
@@ -26,8 +18,3 @@
 2. Fill a medium saucepan with water and bring to a boil. Aggressively season with salt. Blanch the broccoli in boiling water for about two minutes. Drain and finely chop the cooked broccoli. In a mixing bowl, add broccoli, spring onion, garlic, cheddar, egg, and bread crumbs. Optional: Add hot sauce of choice. Mix well and chill in the refrigerator for 15–20 minutes.
 3. Spray a nonstick baking sheet with nonstick spray. Shape the mixture into tot shapes and spread them evenly on the sheet.
 4. Bake for 8–9 minutes. Flip and then bake for an additional 8–9 minutes on the other side until golden brown.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

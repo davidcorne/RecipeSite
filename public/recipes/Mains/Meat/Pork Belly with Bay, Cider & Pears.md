@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Pork Belly with Bay, Cider & Pears</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Pork Belly with Bay, Cider & Pears # 
 
 This is a recipe from the 2020 October edition of BBC Good Food. There is also a link to it on the [good food website](https://www.bbcgoodfood.com/recipes/pork-belly-with-bay-cider-pears).
@@ -60,10 +52,3 @@ This is a recipe from the 2020 October edition of BBC Good Food. There is also a
 
 ![Pork Belly Bay Cider Pears Recipe](/public/images/Pork-Belly-With-Bay-Cider-&-Pears.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

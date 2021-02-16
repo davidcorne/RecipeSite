@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Pear and Lemon Verbena Vacherin</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Pear and Lemon Verbena Vacherin # 
 
 This is a masterchef dessert recipe by Clare Smyth. It's from an elimination round in season 11, episode 16. This recipe is from [10 play](https://10play.com.au/masterchef/recipes/pear-and-lemon-verbena-vacherin/r190614ijdfh).
@@ -173,10 +165,3 @@ This is a masterchef dessert recipe by Clare Smyth. It's from an elimination rou
 1. Pipe a small amount of Lemon Verbena Cream in the centre of the sugar ring. Place the meringue dome on top of the cream.
 1. Garnish with small fresh lemon verbena leaves between the Meringue and Pear Discs.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

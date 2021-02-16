@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Finnish Spoon Biscuits</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Finnish Spoon Biscuits # 
 
 Also know as Lusikkaleivat, from the November 2020 edition of BBC Good Food magazine. Also available from the [BBC Good Food](https://www.bbcgoodfood.com/recipes/lusikkaleivat-finnish-spoon-biscuits) site.
@@ -44,10 +36,3 @@ Also know as Lusikkaleivat, from the November 2020 edition of BBC Good Food maga
 ![](/public/images/Finnish-Spoon-Biscuits-1.png)
 ![](/public/images/Finnish-Spoon-Biscuits-2.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

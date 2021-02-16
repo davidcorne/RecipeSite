@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Oreo Macaron</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Oreo Macarons # 
 
 These are originall from [here](https://www.reddit.com/r/GifRecipes/comments/6googh/cookies_and_cream_macarons/).
@@ -47,10 +39,4 @@ These are originall from [here](https://www.reddit.com/r/GifRecipes/comments/6go
 13. Let rest for 10 minutes before filling. To fill, pipe about about a tablespoon of the buttercream onto one macaron and place another on top.
 14. Macarons are best kept refrigerated until serving.
 15. Enjoy!
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

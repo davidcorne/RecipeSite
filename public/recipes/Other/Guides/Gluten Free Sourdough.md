@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Gluten Free Sourdough</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Gluten Free Sourdough # 
 
 This uses many guides:
@@ -110,10 +102,3 @@ If you're not actively baking and need to get rid of starter that's discard. I h
 - Brownies - from [the guardian](https://www.theguardian.com/food/2020/jun/26/rich-and-tangy-gluten-free-sourdough-chocolate-brownies).
 - Banana Bread - from [What the Fork](https://www.whattheforkfoodblog.com/2020/05/13/gluten-free-sourdough-banana-bread/) and [Cultures for Health](https://www.culturesforhealth.com/learn/recipe/gf-sourdough-recipes/gluten-free-sourdough-banana-snack-cake/).
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

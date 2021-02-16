@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Vegetable Crumble</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Vegetable Crumble # 
 
 This is our interpretation of the vegetarian dish from our wedding.
@@ -82,10 +74,3 @@ While the vegetables are softening, make a simple white sauce:
 7. Bake for 30-40 minutes untill the top is golden brown.
 
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

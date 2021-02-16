@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Dark Chocolate and Peanut Truffles</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Dark Chocolate and Peanut Truffles # 
 
 ## Ingredients ## 
@@ -25,10 +17,4 @@
 5. In a small bowl, melt peanut butter. On a cutting board, crush peanuts. 
 6. Dip the truffle in melted peanut butter, then roll in crushed peanuts.
 7. Place back in the fridge for 10 minutes and enjoy!
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

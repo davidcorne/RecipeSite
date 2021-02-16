@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Roast Tomato Sauce</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Roast Tomato Sauce # 
 
 ## Ingredients ## 
@@ -30,9 +22,3 @@
 - Give the sauce a Middle Eastern flavour by adding a broken cinnamon stick to the tomatoes before cooking and replacing the basil with fresh coriander.
 - When choosing, look for firmish, fragrant tomatoes with an intense colour.
 - Tomatoes still attached to the vine often have a sweeter flavour. Roast a mixture of cherry, medium, plum and vine to give a great flavoured sauce.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-

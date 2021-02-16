@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Caramelised White Chocolate Cheesecake</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Caramelised White Chocolate Cheesecake # 
 
 Originally from [here](http://www.thecakehunter.co.uk/blog/ecakehunter.co.uk/2013/02/caramelised-white-chocolate-cheesecake.html).
@@ -30,10 +22,4 @@ Originally from [here](http://www.thecakehunter.co.uk/blog/ecakehunter.co.uk/201
 5. Take the cake tin out of the fridge and pour the cheesecake mix into the tin. Bang the tin down on a firm surface to remove any air bubbles.
 6. Bake in the oven for an hour, or until the centre is just firm.
 7. Allow to rest for several hours to firm up before removing from the tin. Grate some white chocolate over the top of the cake and serve.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

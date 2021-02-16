@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>French Onion Soup</title>
-
-<xmp theme="cerulean" style="display:none;">
 # French Onion Soup #
 
 ## Ingredients ##
@@ -25,8 +17,3 @@
 4. Add the stock and the pepper.
 5. Simmer for 10 minutes allowing the flavours to infuse.
 6. Serve with crusty bread and cheese.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

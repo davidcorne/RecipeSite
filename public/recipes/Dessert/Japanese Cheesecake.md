@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Fluffy Jiggly Japanese Cheesecake</title>
-
-<xmp theme="cerulean" style="display:none;">
 
 Originally from [here](https://www.buzzfeed.com/alvinzhou/this-jiggly-fluffy-japanese-cheesecake-is-what-dreams-are-ma).
 
@@ -41,10 +33,4 @@ Originally from [here](https://www.buzzfeed.com/alvinzhou/this-jiggly-fluffy-jap
 12. Remove from oven, and carefully invert the cake onto your dominant hand and peel off the paper. Be extremely careful, as the cake will be hot. You can also invert the cake onto a plate, but this will cause the cake to deflate more. 
 13. Sprinkle the top of the cake with powdered sugar, slice, and serve with strawberries while still warm!
 14. Enjoy!
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

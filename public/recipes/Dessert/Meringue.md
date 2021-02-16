@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-<title>Meringue</title>
 
-<xmp theme="cerulean" style="display:none;">
 # Meringues #
 
 ## Ingredients ## 
@@ -22,8 +15,3 @@
 4. Sift a third of the icing sugar over the mixture, then gently fold it in with a big metal spoon or rubber spatula. Continue to sift and fold in the icing sugar a third at a time. Again, don't over-mix. The mixture should now look smooth and billowy, almost like a snow drift.
 5. Scoop up a heaped dessertspoonful of the mixture. Using another dessertspoon, ease it on to the baking sheet to make an oval shape (pic 3). Or just drop them in rough rounds, if you prefer. Bake for 1 1⁄2-1 3⁄4 hours in a fan oven, 1 1⁄4 hours in a conventional or gas oven, until the meringues sound crisp when tapped underneath and are a pale coffee colour.
 6. Leave to cool on the trays or a cooling rack. (The meringues will now keep in an airtight tin for up to 2 weeks, or frozen for a month.) Serve two meringues sandwiched together with a generous dollop of softly whipped double cream.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

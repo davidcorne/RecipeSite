@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Walk in the Forest</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Walk in the Forest # 
 
 This is a dish from Masterchef Australia Season 8, Episode 52. This was cooked by Dominique Crenn from Restaurant Ikarus, and I got the recipe from [here](https://www.four-magazine.com/recipes/pine-meringue-with-pumpernickel-soil/).
@@ -146,10 +138,3 @@ Note. This serves 20.
 4. Next, place dots of mushroom purée and scatter with shavings of toasted hazelnuts.
 5. Drizzle the praline on top and garnish with seasonal herbs and flowers.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

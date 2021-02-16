@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Carrot Cake</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Carrot Cake # 
 
 This is from the [vegan society recipe](https://www.vegansociety.com/resources/recipes/gluten-free/carrot-and-walnut-cake-gluten-free).
@@ -41,10 +33,3 @@ This is from the [vegan society recipe](https://www.vegansociety.com/resources/r
     2. Sift in the icing sugar while beating.
 7. Spread the filling generously on the top of the cake, and on the sides too if you like. Leave to set before serving.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

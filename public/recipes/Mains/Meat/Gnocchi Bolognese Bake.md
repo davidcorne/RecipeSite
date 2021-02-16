@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Gnocchi Bolognese Bake</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Gnocchi Bolognese Bake # 
 
 Inspired by [this](http://www.bbcgoodfood.com/recipes/5862/gnocchi-bolognese-with-spinach)
@@ -35,10 +27,4 @@ and [this](http://www.bbcgoodfood.com/recipes/7192/gnocchi-and-tomato-bake).
 7. Stir the spinach through.
 8. Top with mozzarella and scatter basil over it, then bake for 15 minutes.
 9. Allow the top to cool/crisp up, then serve.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

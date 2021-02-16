@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Vegetable Biryani with Green Raita</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Vegetable Biryani with Green Raita # 
 
 This is from the November 2020 edition of BBC Good Food magazine. Also available on the [BBC Good Food](https://www.bbcgoodfood.com/recipes/vegetable-biryani-with-green-raita) site.
@@ -51,10 +43,3 @@ This serves 2 but is easily increased.
 
 ![](/public/images/Vegetable-Biryani-with-Green-Raita.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

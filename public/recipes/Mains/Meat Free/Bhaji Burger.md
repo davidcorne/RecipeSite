@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Bhaji Burger</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Bhaji Burger # 
 
 This is a Jamie Oliver vegetarian recipe, can be made vegan by omitting paneer.
@@ -62,10 +54,3 @@ This is a Jamie Oliver vegetarian recipe, can be made vegan by omitting paneer.
 ## Recipe Photo
 ![Bhaji Burger](/public/images/Bhaji-Burger.jpg)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

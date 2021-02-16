@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Lemon Pepper Chicken with Lemon Rice and Raita</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Lemon Pepper Chicken with Lemon Rice and Raita # 
 
 This is a Masterchef Australia recipe from Sandeep in season 11 episode 22, the recipe is [here](https://10play.com.au/masterchef/recipes/lemon-pepper-chicken-with-lemon-rice-and-raita/r190614tygml)
@@ -83,10 +75,3 @@ This is a Masterchef Australia recipe from Sandeep in season 11 episode 22, the 
 1. Return the chicken to the pan and cook for a further 2-3 minutes, turning the chicken in the pan until coated in the spices and sauce in the pan appears split. Add 2 cups of the hot chicken stock, sugar and salt, to taste.
 1. Simmer until the chicken is cooked through and liquid in the pan has reduced and is sticky. Season with salt to taste then remove from the heat. Transfer to a large serving bowl or plate.
 1. To serve, line a large serving board with a banana leaf. Add the bowls of Lemon Pepper Chicken, Lemon Rice and Raita.
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

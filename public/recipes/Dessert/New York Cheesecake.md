@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>New York Cheesecake</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # New York Cheesecake # 
 
 This is from [Cook's Illustrated](https://www.cooksillustrated.com/recipes/8208-foolproof-new-york-cheesecake), via [KCET](https://www.kcet.org/food/weekend-recipe-foolproof-new-york-cheesecake).
@@ -74,10 +66,4 @@ This cheesecake takes at least 12 hours to make (including chilling), so we reco
 7. Let cheesecake cool until barely warm, 2½ to 3 hours. Wrap tightly in plastic wrap and refrigerate until cold and firmly set, at least 6 hours. (Leftovers can be refrigerated for up to 4 days.)
 8. To unmold cheesecake, remove sides of pan. Slide thin metal spatula between crust and pan bottom to loosen, then slide cheesecake onto serving plate. 
 9. Let cheesecake stand at room temperature for about 30 minutes. To slice, dip sharp knife in very hot water and wipe dry between cuts. Serve.
-  </xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
   

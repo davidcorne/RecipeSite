@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Curry Base Gravy</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Curry Base Gravy # 
 
 This is a good base curry sauce (known as gravy) from the British Indian restaurant tradition. I got it from [The Curry Guy](https://greatcurryrecipes.net/2013/12/31/make-indian-restaurant-style-curry-sauce-large-batch/).
@@ -47,10 +39,3 @@ This is a good base curry sauce (known as gravy) from the British Indian restaur
 10. Once it is bubbling away, turn down the heat and simmer for a further 20 to 30 minutes
 11. Use immediately or store in the fridge for up to three days or freeze in 750ml (3 cups) portions for up to three months.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

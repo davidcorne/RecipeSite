@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>White Chocolate Chip Truffles</title>
-
-<xmp theme="cerulean" style="display:none;">
 # White Chocolate Chip Truffles # 
 
 This was originally from [here](https://www.buzzfeed.com/hannahmars/homemade-chocolate-truffles), number 5.
@@ -29,10 +21,4 @@ This was originally from [here](https://www.buzzfeed.com/hannahmars/homemade-cho
 7. In two small bowls, melt remaining half of semisweet chocolate and the white chocolate.
 8. Dip the truffle in melted semisweet chocolate, allow to dry and then drizzle with the white chocolate.
 9. Place back in the fridge for 10 minutes and enjoy!
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

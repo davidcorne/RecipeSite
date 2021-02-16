@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Caramelised White Chocolate Mousse</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Caramelised White Chocolate Mousse # 
 
 [Original recipe](http://www.greatbritishchefs.com/recipes/caramelised-white-chocolate-mousse-recipe).
@@ -28,10 +20,4 @@
 4. Fold through the chocolate mixture, a third at a time. 
 5. Semi-whip the double cream to soft peaks and fold through the chocolate egg yolk mix. 
 6. Leave in a container in the fridge to set.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

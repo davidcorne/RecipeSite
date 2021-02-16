@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Garlic Naan</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Garlic Naan # 
 
 This is a fantastic recipe which comes from [this site](https://whattocooktoday.com/homemade-garlic-naan.html).
@@ -63,10 +55,3 @@ This is a fantastic recipe which comes from [this site](https://whattocooktoday.
 9. Continue with the rest of the dough and stack them up as you cook them. 
 10. Serve warm with some fresh coriander leaves or other dishes.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

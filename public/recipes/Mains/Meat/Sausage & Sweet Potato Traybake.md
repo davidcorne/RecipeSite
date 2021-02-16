@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Sausage & Sweet Potato Traybake</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Sausage & Sweet Potato Traybake # 
 
 This is a recipe from the 2020 October edition of BBC Good Food.
@@ -47,10 +39,3 @@ This is a recipe from the 2020 October edition of BBC Good Food.
 
 ![Sausage Sweet Potato Traybake Recipe](/public/images/Sausage-&-Sweet-Potato-Traybake.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

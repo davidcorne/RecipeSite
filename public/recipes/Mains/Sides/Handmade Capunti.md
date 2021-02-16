@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Handmade Capunti</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Handmade Capunti # 
 
 This comes from [this](https://www.chefsteps.com/activities/handmade-capunti-with-jason-stoneburner) chefsteps recipe.
@@ -48,10 +40,4 @@ It’s true! Some pasta is made with egg. But some pasta is made without egg. So
     - For a more traditional, rustic approach to capunti, use your fingers to roll out the pasta. Roll the dough beneath the tips of two fingers, using slight pressure to create an indentation. The finished product should look like an open peapod.
     - To get real fancy with your capunti, use a textured surface—such as an ornate cutting board—to roll out your dough. Sprinkle semolina flour over your textured surface. Gently press down on the pasta with a knife and roll it out across the surface.
 9. Boil capunti for two minutes and top with whatever sauce you like.
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 

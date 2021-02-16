@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Taco Courgette Boats</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Taco Courgette Boats #
 
 From [here](https://www.reddit.com/r/GifRecipes/comments/4af0gs/taco_courgette_zucchini_boats/).
@@ -56,8 +48,3 @@ Serves: 4
 10. Transfer the courgettes to a baking tray, cove with foil and bake for 20 minutes.
 11. Remove the foil, top with with remaining cheese and grill for a further 5 minutes to melt the cheese.
 12. Top them with tomato salsa, guacamole, soured cream and jalapeño chillies.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

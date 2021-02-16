@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Pear & Blackberry Crumble with Bay Leaf Custard</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Pear & Blackberry Crumble with Bay Leaf Custard # 
 
 This is a recipe from the 2020 October edition of BBC Good Food. There is also a link to it on the [good food website](https://www.bbcgoodfood.com/recipes/pear-blackberry-crumble-with-bay-leaf-custard).
@@ -69,10 +61,3 @@ This is a recipe from the 2020 October edition of BBC Good Food. There is also a
 
 ![Pear Blackberry Crumble with Bay Leaf Custard Recipe](/public/images/Pear-&-Blackberry-Crumble-With-Bay-Leaf-Custard.png)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

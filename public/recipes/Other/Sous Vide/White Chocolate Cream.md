@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>White Chocolate Cream</title>
-
-<xmp theme="cerulean" style="display:none;">
 # White Chocolate Cream # 
 
 This is originally from [here](http://www.amazingfoodmadeeasy.com/info/modernist-recipes/more/sous-vide-white-chocolate-cream-recipe).
@@ -30,9 +22,3 @@ Serves: 4-6
 6. Remove the white chocolate cream from the bath and transfer to a measuring cup or a container with a pour spout. If the mixture looks separated or curdled, whisk it to smooth it out. 
 7. Pour into your ramekins and refrigerate for at least 1 hour or until firm.
 8. Garnish it and serve!
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-

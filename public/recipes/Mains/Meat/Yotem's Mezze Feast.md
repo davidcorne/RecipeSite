@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Yotem's Mezze Feast</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Yotem's Mezze Feast # 
 
 ## Ingredients ## 
@@ -171,10 +163,3 @@
 1. To plate the Broad Bean Spread and Roasted Garlic Ricotta, spread the Roasted Garlic Ricotta onto the base of the serving plate and use the back of a spoon to spread the mixture and create a thick natural rim around the edge.
 1. Spoon the broad bean mixture on top, lightly spreading it out to cover most of the ricotta. Sprinkle over the shredded mint and grated lemon zest and finish with a drizzle of the olive oil.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

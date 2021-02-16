@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Courgette Muffins</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Courgette Muffins # 
 
 This is a great recipe for some chocolatey moist muffins. It's originally from [here](https://www.bakedbyanintrovert.com/chocolate-zucchini-cupcakes/), but this is gluten free.
@@ -65,10 +57,3 @@ Note: two potions of this recipe made 29 muffins, so expect to make 14-15.
 1. Ice the muffins
 
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

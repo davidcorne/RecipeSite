@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Chicken Pilaf</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Chicken Pilaf # 
 
 This is a chicken pilaf recipe from [here](http://www.nutrizonia.com/saffron-rice-pilaf-with-chicken/). I've changed the quantities, and made some notes about how I might do this next time.
@@ -57,10 +49,3 @@ This is a chicken pilaf recipe from [here](http://www.nutrizonia.com/saffron-ric
 1. In a small skillet, add 1 tbsp of ghee/butter, when its hot, add almonds, pine nuts, cashews, toast them until they are golden brown, and drizzle over the rice.
 1. Serve the rice with yogurt or some salad.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Gammon</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Sweet Mustard Gammon #
 
 ## Ingredients ##
@@ -33,8 +25,3 @@
 5. Make glaze put all ingredients in microwave for around a minute.
 6. Place in roasting tin (small).
 7. Glaze and cook for the rest of the time at 180.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>

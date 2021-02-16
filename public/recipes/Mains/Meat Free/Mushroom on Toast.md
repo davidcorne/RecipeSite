@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Mushroom on Toast</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Mushroom on Toast # 
 
 This is a Masterchef recipe from one of Gary's masterclasses at the end of season 8. The recipe I got from [here](https://webcache.googleusercontent.com/search?q=cache:Vf57zS8p4p4J:https://10play.com.au/masterchef/recipes/mushrooms-on-toast/r190614oklbn+&cd=11&hl=en&ct=clnk&gl=uk).
@@ -120,10 +112,3 @@ This is a Masterchef recipe from one of Gary's masterclasses at the end of seaso
 1. Arrange some Ramps on the plate and top with two pieces of the Fish.
 2. Pipe some Celeriac Puree onto the plate and place some of the Mushrooms on top of the fish pieces.
 3. Finish with a drizzle of Mushroom Sauce and garnish with nasturtium leaves.
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

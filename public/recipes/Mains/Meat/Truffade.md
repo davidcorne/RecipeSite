@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Truffade</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Truffade # 
 
 This is a French dish from the Auvergne region, I found this recipe [here](https://sarahskitchen.dukeshillham.co.uk/recipes/by-ingredient/sausage/truffade/).
@@ -29,10 +21,3 @@ This is a French dish from the Auvergne region, I found this recipe [here](https
 4. Add the cheese, stirring constantly until you get a mixture in which the potatoes are no longer distinguishable from the melted cheese.
 4. Serve immediately.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Bitter Orange Sauce</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Bitter Orange Sauce # 
 
 This is a bitter orange sauce from The Professional Pastry Chef, found from ckbk [here](https://app.ckbk.com/recipe/prof59258c16s006r028/orange-sauce#login) and [here](https://app.ckbk.com/recipe/prof59258c16s006ss003r001/bitter-orange-sauce).
@@ -40,10 +32,3 @@ Follow the recipe for Orange Sauce, with the following changes:
 1. Set the sauce aside to allow the peels to macerate for 30 minutes.
 1. Strain to remove the orange peel as well as any pits or sediment.
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Sausagemeat Stuffing</title>
-  
-  <xmp theme="cerulean" style="display:none;">
+
 # Sausagemeat Stuffing # 
 
 This is the sausagemeat stuffing my family makes at Christmas time, I believe from Katie Stuart's cookbook. The original recipe is below.
@@ -36,10 +28,3 @@ This is a photo of the original recipe.
 
 ![recipe](/public/images/Sausagemeat-Stuffing.jpg)
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-  </html>
-  
-  

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
 
-<title>Black Forest Pavlova</title>
-
-<xmp theme="cerulean" style="display:none;">
 # Black Forest Pavlova # 
 
 The meringue is originally from [here](https://www.lurpak.com/en/recipes/black-forest-pavlova/), the rest is all my own.
@@ -60,10 +52,4 @@ Start this only when both meringues are cool to the touch.
 6. While the chocolate is still soft arrange the remaining fruit on top, and sprinkle with the chocolate curls.
 
 
-
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
 
