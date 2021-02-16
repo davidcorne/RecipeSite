@@ -1,0 +1,34 @@
+
+# Lamb Meatballs & Green Tahini Tabbouleh # 
+
+This is from the December 2020 edition of BBC Good Food magazine. It's also on the [BBC Good Food site](https://www.bbcgoodfood.com/recipes/lamb-meatballs-green-tahini-tabbouleh).
+
+## Ingredients ## 
+
+- 2 tbsp tahini
+- 2 tbsp fat-free yogurt
+- ½ small bunch of parsley
+- 1 lemon, juiced
+- ½ small garlic clove
+- ½ tbsp rapeseed oil
+- 10-12 ready-made lamb meatballs
+- 2 x 250g pouches mixed grains
+- 4 cooked beetroots, chopped
+- 2 spring onions, sliced
+- 200g baby tomatoes, halved
+- 50g pitted black olives, halved
+- 1 cucumber, peeled and cubed
+- ½ tbsp za’atar
+
+## Method ## 
+
+1. Blend the tahini, yogurt, parsley, lemon juice, garlic, 2-3 tbsp water and a pinch of salt in a food processor until smooth. Set aside.
+1. Heat the oil in a non-stick frying pan and cook the meatballs over a medium heat for 10-12 mins until cooked through, turning regularly.
+1. Warm the grains following pack instructions.
+1. Leave to cool a little, then toss with the remaining ingredients. Season.
+1. Divide between four plates, top with the meatballs and drizzle over the tahini dressing.
+
+## Recipe Image
+
+![Lamb Meatballs Green Tahini Tabbouleh](/public/images/Lamb-Meatballs-&-Green-Tahini-Tabbouleh.png)
+

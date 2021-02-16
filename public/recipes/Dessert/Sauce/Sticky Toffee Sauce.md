@@ -1,0 +1,13 @@
+
+# Sticky Toffee Sauce #
+
+## Ingredients
+
+- 3 ½ oz demerara sugar
+- 1 ½ oz butter
+- 3 tbsp double cream
+
+## Method
+
+1. Bring to boil in heavy bottomed pan.
+2. Boil for 3 mins stirring constantly

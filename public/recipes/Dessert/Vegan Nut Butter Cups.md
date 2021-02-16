@@ -1,0 +1,35 @@
+
+# Vegan Nut Butter Cups # 
+
+This is from the January 2021 edition of BBC Good Food magazine. Also on the [BBC Good Food site](https://www.bbcgoodfood.com/recipes/vegan-nut-butter-cups).
+
+## Ingredients ## 
+
+- 100g walnuts
+- 100g dairy-free dark chocolate (at least 70% cocoa solids)
+- 1 medjool date, stoned and finely chopped
+
+### Equipment
+
+- 1 x 12-hole mini muffin tin
+- 12 mini paper cases
+
+## Method ## 
+
+1. Line the holes of the muffin tin with paper cases and set aside.
+1. Heat the oven to 160°C/140°C fan.
+1. Spread the walnuts out in a single layer on a baking tray and roast for 12-15 mins, or until fragrant and slightly darker in colour.
+1. Tip into a small food processor and blitz in 1-min bursts, scraping down the sides between each burst.
+1. When you have a buttery, mostly smooth paste, the walnut butter is ready – this may take 5-10 mins. You don’t want it to be completely smooth, as it will become too runny to fill the cups.
+1. Melt the chocolate in a heatproof bowl set over a pan of simmering water, making sure the bowl doesn’t touch the water.
+    1. Alternatively, do this in the microwave in 30-second bursts.
+1. Spoon 1 tsp chocolate into each case, then freeze for 10 mins before adding a spoonful of walnut butter.
+1. Push in a few pieces of chopped date, then spoon over the remaining melted chocolate.
+1. Freeze for at least another 30 mins, or until the chocolate is firm (the walnut centre will remain gooey), then transfer to a freezerproof container.
+1. Will keep frozen for up to a month.
+
+
+## Recipe Image
+
+![Vegan Nut Butter Cups](/public/images/Vegan-Nut-Butter-Cups.png)
+ 

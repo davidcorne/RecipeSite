@@ -1,0 +1,6 @@
+
+# Cottage Pie #
+
+## Ingredients ##
+
+## Method ##

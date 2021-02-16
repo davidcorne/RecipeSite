@@ -1,0 +1,61 @@
+
+# Beef Pulao # 
+
+This is from the eight bonus recipes from Nik Sharma's [The Flavour Equation](https://niksharma.chroniclebooks.com/).
+
+This should make 4 servings.
+
+## Ingredients ## 
+
+- ¼ cup [60ml] plus 2 Tbsp grapeseed or other neutral oil, divided
+- 1 tsp cumin seeds
+- 2 large (each [340g]) onions, cut in half and thinly sliced
+- 2 lb [910g] beef stew meat, fat trimmed and discarded, cut into ½ in [12 mm] cubes
+- Fine sea salt
+- 1 cup [240g] plain unsweetened Greek yogurt
+- 1 tsp ground black pepper
+- 1 tsp ground coriander
+- 1 tsp red chilli powder
+- ½ tsp ground turmeric
+- 2 bay leaves
+- 2 cups [400g] basmati rice
+- Two 5cm cinnamon sticks
+- 1 tsp ground cardamom
+- 4 cloves
+- 5cm fresh ginger, peeled and cut in half crosswise and into matchsticks
+- ¼ cup [10g] chopped cilantro
+- 1 green chilli, minced
+
+## The Flavour Approach
+
+Browning the pieces of beef before they are added to the rice creates a richer meaty ﬂavor for the pulao via the caramelization and the Maillard reactions. 
+
+Yogurt provides a hint of sourness and forms the basis for the spice mixture.
+
+Aromatic spices such as cardamom and cinnamon merge with the aroma of the meat created by the fat and proteins as they cook, adding a pleasant fragrance.
+
+## Method ## 
+
+1. Heat 2 Tbsp of the oil in a large saucepan or Dutch oven over medium-high heat.
+2. When the oil is hot, add the 1 tsp cumin seeds and cook until they turn brown and fragrant, 30 to 45 seconds.
+3. Add the 2 onions and fry until they just start to turn brown, 8 to 12 minutes.
+4. Season the beef cubes with salt and fry with the onions until the meat starts to brown and the juices cook off, 8 to 12 minutes.
+5. In a small bowl, mix the 240g yogurt with the 1 tsp black pepper, 1 tsp coriander, 1 tsp chilli, and ½ tsp turmeric and add this to the beef.
+6. Add the 2 bay leaves and ½ cup [120 ml] water, season with salt, and stir to coat evenly.
+7. Reduce the heat to low, cover the saucepan, and cook, stirring occasionally, until the beef is thoroughly cooked, 30 to 45 minutes.
+8. Transfer the cooked beef mixture to a large bowl and set aside. 
+9. While the beef cooks, clean and pick through the rice for any stones or debris.
+10. Rinse the rice in a fne mesh sieve under running water until the runoff is no longer cloudy.
+11. Transfer to a large bowl, cover with 4 cups [960ml] of water, and soak for 30 minutes.
+12. Wipe the saucepan clean and heat the remaining 2 Tbsp of oil over medium-high heat.
+11. Add the 2 cinnamon sticks, 1 tsp cardamom, 4 cloves, and ginger and sauté until the spices are fragrant, 30 to 45 seconds.
+12. Drain the rice, add it to the saucepan, and fry until the rice starts to stick to the bottom of the pan.
+13. Add 2 cups [480ml] water.
+14. Season with salt and stir gently with a spatula.
+15. Add the beef mixture on top of the rice.
+16. Bring the water to a boil, then reduce the heat to low.
+17. Cover the pan and cook until all the water is absorbed, and the rice is completely cooked, 30 to 40 minutes.
+18. Remove from the heat and let rest for 10 minutes.
+19. To serve, fluff the rice with a fork and redistribute the beef.
+20. Garnish with the chopped cilantro and chilli.
+

@@ -1,0 +1,38 @@
+
+# Spring Onion Pancake (Cong You Bing) # 
+
+This is a gluten free version of a traditional Chinese side/appetizer. The filling was from [here](https://brightrootskitchen.com/scallion-pancakes-gluten-free/) and the dough was from [here](https://redhousespice.com/spring-onion-pancake/) but with gluten free flour and slightly more water.
+ 
+## Ingredients ## 
+
+### Dough
+- 250g gluten free plain flour + extra for dusting
+- 190ml boiling water
+
+### Scallion Pancake Filling
+- 1 bunch spring onion, chopped
+- 1 clove garlic, finely chopped
+- ½ jalepeno, chopped and seeds removed leave the seeds in if you want it spicy
+- ¼ tsp ground Sichuan pepper, or Chinese five-spice powder
+- 1 tsp olive oil
+
+## Method ## 
+
+1. Put the flour into a heatproof bowl, pour in boiling water.
+2. Stir with a pair of chopsticks or a fork until the flour turns into small lumps and no more water can be seen.
+3. When cool enough to handle, knead the mixture into a soft, smooth dough. Leave to rest for 30 mins (see note 1).
+4. While that's resting, make the filling by mixing it all together in a bowl.
+2. In a separate bowl stir together all of the pancake filling ingredients.
+3. Sprinkle a counter or durable cutting board with a little flour (to keep the dough from sticking).
+4. Roll out the dough into a large rectangle about ½ inch thick.
+5. Evenly spread the filling onto the dough.
+6. Roll up the dough into a cylinder.
+7. Cut rounds from the cylinder and then squash them down into pancake shapes.
+8. Heat a tbsp of oil over a medium heat.
+9. Fry each of them till each side is golden brown, about 3-4 minutes.
+
+## Notes
+
+1. The flour and water ratio may vary slightly depending on the brand. Adjust accordingly. The finished dough should be soft but not sticky.
+2. These go really well with sweet chilli sauce, there is an "additive dipping sauce" on [this recipe](https://brightrootskitchen.com/scallion-pancakes-gluten-free/) but we weren't big fans of them.
+

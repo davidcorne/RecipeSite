@@ -876,23 +876,7 @@ describe('Metadata', function () {
 describe('New Recipe', function () {
   const recipeFileName = newRecipeModule.__get__('recipeFileName')
   it('Recipe file name', function () {
-    assert.strictEqual('hi.html', recipeFileName('hi'))
-  })
-  it('Script includes', function () {
-    const recipeHtml = newRecipeModule.__get__('recipeHtml')
-    const html = recipeHtml('hello')
-    // Check we reference the formatter
-    const recipeFormatting = '/public/resources/recipe-formatting.js'
-    assert.include(html, recipeFormatting)
-    // We should also reference strapdown
-    const strapdown = 'strapdown.js'
-    assert.include(html, strapdown)
-    // Now check that strapdown is referenced first
-    const strapdownIndex = html.indexOf(strapdown)
-    const recipeFormattingIndex = html.indexOf(recipeFormatting)
-    assert.notStrictEqual(-1, strapdownIndex)
-    assert.notStrictEqual(-1, recipeFormattingIndex)
-    assert.isBelow(strapdownIndex, recipeFormattingIndex, 'strapdown.js should appear before recipe-formatting.js')
+    assert.strictEqual('hi.md', recipeFileName('hi'))
   })
 })
 describe('File List', function () {

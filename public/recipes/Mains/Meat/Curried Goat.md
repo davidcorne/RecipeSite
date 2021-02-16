@@ -1,0 +1,43 @@
+
+# Curried Goat # 
+
+This is a recipe from BBC Good Food September 2020. They advise getting the goat meat from Cabrito Goat Meat.
+
+![Curried Goat](/public/images/Curried-Goat.png)
+
+## Ingredients ## 
+
+- 1 kg goat meat, cubed
+- 4 tbsp curry powder
+- 1 tbsp turmeric
+- 1 tsp black pepper
+- 1 tsp Jamaican allspice (ground pimento)
+- 3 tsp salt, to taste
+- 1 medium onion, sliced
+- 4 spring onions, thinly sliced
+- 2 tsp minced garlic
+- 6-7 thyme sprigs
+- 5 tbsp oil
+- 1 medium carrot, cubed
+- 1 medium potato, cut into 2cm cubes
+- 1 Scotch bonnet chilli, whole
+
+## Method ## 
+
+1. Put the goat in a large mixing bowl.
+2. Add the other ingredients except: oil, carrot, potato and chilli.
+3. Rub everything into the meat until well coats.
+4. Marinate for at least 1 hour, until overnight.
+5. Heat the oil in a large heavy-bottomed pan over a medium to high heat.
+6. Add the meat and stir until browned on all sides.
+7. Pour in enough hot water to cover the meat (~800ml)
+8. Put the lid on and simmer over a low heat for 2 hours, or until the meat is soft.
+9. Keep checking and stirring every 30 minutes, add water if it reduces too much.
+10. For the last 30 minutes add the carrot, potato and chilli.
+11. Remove the lid and simmer to thicken.
+12. Season to taste, then scatter over the extra spring onion.
+
+## Original Recipe
+
+![Curried Goat Recipe](/public/images/Curried-Goat-Recipe.png)
+

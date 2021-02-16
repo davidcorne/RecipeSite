@@ -1,0 +1,25 @@
+
+# Basil Oil # 
+
+This is a recipe from [here](https://www.finecooking.com/recipe/basil-oil).
+
+## Ingredients ## 
+
+- 1 cup mild olive oil
+- 2 cups tightly packed sweet basil leaves
+- Kosher salt
+
+## Method ## 
+
+1. Put the measured oil in the refrigerator while you prepare the basil.
+2. Bring a pot of water to a boil and have a bowl of ice water ready.
+3. Blanch the basil leaves in the boiling water for about 10 seconds.
+4. Remove them quickly with a strainer and dunk in the ice water, swishing them around to be sure they’re all cold.
+5. Remove from the water and squeeze gently to remove the excess water.
+6. Roughly chop the basil and put it in a blender.
+7. Add the oil and ½ tsp kosher salt.
+8. Blend until the basil is puréed, the mixture will be very frothy.
+9. Let the purée settle for about 30 min.
+10. Strain through a cheesecloth-lined fine strainer, very gently pushing on the solids to extract the oil.
+11. Use immediately or refrigerate for up to a week. For the best flavor, let the oil come to room temperature before using.
+

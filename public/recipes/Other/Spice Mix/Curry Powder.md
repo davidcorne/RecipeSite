@@ -1,0 +1,20 @@
+
+# Curry Powder # 
+
+Originally from [here](http://allrecipes.co.uk/recipe/1876/homemade-curry-powder.aspx).
+
+## Ingredients ## 
+
+- 2 tablespoons ground cumin
+- 2 tablespoons ground coriander
+- 1 tablespoon ground turmeric
+- ½ teaspoon cayenne pepper
+- ½ teaspoon mustard seed
+- ½ teaspoon ground ginger
+
+## Method ##
+
+1. Crush mustard seed.
+2. Combine all the ingredients with the crushed mustard seeds.
+3. Store in an airtight container.
+

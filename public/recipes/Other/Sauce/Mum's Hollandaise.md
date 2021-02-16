@@ -1,0 +1,27 @@
+
+# Mum's Hollandaise # 
+
+This is my Mum's hollandaise sauce which she makes using her food processor. The original recipe is from the Katie Stuart Times cookbook and a photo is included below.
+
+## Ingredients ## 
+
+- 3 egg yolks
+- 112g butter, melted
+- 2 tbsp lemon juice
+- salt and pepper to taste
+
+## Method ## 
+
+1. Place egg yolks and lemon in a food processor/blender.
+2. Season with salt and pepper.
+3. Blend for a few seconds.
+4. Heat butter till very hot.
+5. Blend on high speed, gradually pouring the hot butter onto the egg yolks.
+6. Blend until thick and fluffy, about 30 seconds.
+
+## Original Recipe ##
+This is a photo of the original recipe.
+
+![recipe](/public/images/Hollandaise.png)
+
+

@@ -22,6 +22,10 @@ winston.level = 'silent'
 
 console.log('Running Integration Tests')
 
+const isTextRecipe = function (path) {
+  return path.endsWith('.html') || path.endsWith('.md')
+}
+
 // I would put this in utils, but I don't want this called in a non-test.
 const walkSync = function (dir, paths) {
   if (!paths) paths = []
@@ -89,7 +93,7 @@ describe('Cache', function () {
     const test = function (path, callback) {
       if (path.endsWith('.cache')) {
         // Find out what this cache was made from
-        const recipeExtensions = ['.pdf', '.html', '.jpg', '.png']
+        const recipeExtensions = ['.pdf', '.html', '.jpg', '.png', '.md']
         let exists = false
         for (let i = 0; i < recipeExtensions.length; ++i) {
           const recipe = utils.changeExtension(path, recipeExtensions[i])
@@ -157,7 +161,7 @@ describe('Recipes', function () {
     const nonUnicodeFractionSpaceBefore = new RegExp('\\s[0-9]/[0-9]')
     const nonUnicodeFractionSpaceAfter = new RegExp('[0-9]/[0-9]\\s')
     const test = function (path, callback) {
-      if (path.endsWith('.html')) {
+      if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')
         let matches = content.match(nonUnicodeFractionSpaceBefore)
         if (matches) console.log(matches)
@@ -183,7 +187,7 @@ describe('Recipes', function () {
     // The regex excludes %NN as encoded URLs will have %20 as a space
     const noDegreesCelcius = new RegExp('[^%][0-9][0-9]C')
     const test = function (path, callback) {
-      if (path.endsWith('.html')) {
+      if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')
         let matches = content.match(noDegreesCelcius)
         if (matches) console.log(matches)
@@ -203,7 +207,7 @@ describe('Recipes', function () {
 
     const noGrams = new RegExp(' g ')
     const test = function (path, callback) {
-      if (path.endsWith('.html')) {
+      if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')
         let matches = content.match(noGrams)
         if (matches) console.log(matches)
@@ -221,7 +225,7 @@ describe('Recipes', function () {
 
     const boilerplate = new RegExp('°C ½ ¼')
     const test = function (path, callback) {
-      if (path.endsWith('.html')) {
+      if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')
         const matches = content.match(boilerplate)
         if (matches) console.log(matches)
@@ -235,11 +239,13 @@ describe('Recipes', function () {
     })
   })
   it('Ensure script includes', function (done) {
+    // This isn't relevant any more
+    done()
     // This ensures that in each html recipe, I'm including strapdown first
     const paths = walkSync('./public/recipes')
     // This will check each file twice, but it's not slow
     const test = function (path, callback) {
-      if (path.endsWith('.html') && !path.includes('Purine Levels.html')) {
+      if (isTextRecipe(path) && !path.includes('Purine Levels.html')) {
         const content = fs.readFileSync(path, 'utf8')
         const strapdown = '<script src="/public/resources/strapdown.js"></script>'
         const recipeFormatting = '<script src="/public/resources/recipe-formatting.js"></script>'
@@ -319,8 +325,7 @@ describe('New Recipe', function () {
         assert.isNull(error)
         const content = buffer.toString('utf8')
 
-        // The recipe should have the recipe name as a title and header
-        assert.include(content, '<title>' + name + '</title>')
+        // The recipe should have the recipe name as a header
         assert.include(content, '# ' + name + ' #')
 
         // Clean up after the test, then we're done

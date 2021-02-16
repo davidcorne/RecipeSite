@@ -1,0 +1,20 @@
+
+# Syrup Cake #
+
+## Ingredients ##
+
+- 200g self raising
+- 150g butter
+- 100g soft brown suger
+- 3 tablespoons syrup
+- tablespoon water
+- 2 eggs
+
+## Method ##
+
+1. butter, suger syrup water in microwave till blended.
+2. allow to cool till hand.
+3. beat in eggs.
+4. sift in flour till smooth.
+5. poor into 11x7" tin.
+6. 30-35 minutes 180° oven.

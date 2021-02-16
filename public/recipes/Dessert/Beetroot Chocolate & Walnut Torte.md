@@ -1,0 +1,34 @@
+
+# Beetroot Chocolate & Walnut Torte # 
+
+This is from a Haloween food magazine that my mum showed me.
+
+## Ingredients ## 
+
+- 250g unsalted butter, plus extra for greasing
+- 50g walnut halves or pieces
+- 250g cooked beetroot, drained
+- 1 orange, zest, plus extra to serve
+- 1 tsp vanilla extract
+- 250g dark chocolate, chopped
+- 3 eggs
+- 250g light brown muscovado sugar
+- 75g cornflour
+- 75g cocoa powder
+- 1 tsp baking powder
+- crème fraîche, to serve
+
+## Method ## 
+
+1. Preheat the oven to 180°C.
+2. Lightly grease the base and side of a 23cm springform tin and line with parchment
+3. Put walnuts on a backing tray and roast for 4-5 minutes until lightly toasted. Cool, and chop finely.
+4. Put the beetroot, orange zest, vanilla, and a pinch of salt in a food processor and blend till totally smooth.
+5. Meanwhile, put the chocolate and butter in a heatproof bowl and sit over gently simmering water.
+6. When it's melted, stir in the blended beetroot, leave to cool.
+7. Whisk the eggs and sugar together until well combined and slightly frothy.
+8. Gently fold in the chocolate beetroot mixture.
+9. Stir in the cornflour, cocoa, and baking powder, then fold in the chopped walnuts until well combined.
+10. Tip into the lined tin, and bake for 35-40 minutes until risen and cracked on top, but still gooey when pierced.
+11. This can be served now, but the texture will be improved by being left for 24 hours.
+

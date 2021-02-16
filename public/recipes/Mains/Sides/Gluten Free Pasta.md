@@ -1,0 +1,74 @@
+
+# Gluten Free Pasta # 
+
+This is from [this site](https://theloopywhisk.com/2018/02/23/homemade-3-ingredient-gluten-free-pasta-recipe/) originally, which has a really good description of how to make this.
+
+## Ingredients ## 
+
+- 200g gluten free flour, plus extra for kneading + dusting
+- 1 tsp xanthan gum
+- 3 medium eggs
+
+
+## Method ## 
+
+### To make the gluten free pasta dough
+
+1. In a bowl, mix together the gluten free flour and xanthan gum until evenly distributed. 
+1. Make a well in the middle of the flour + xanthan mixture and crack in the eggs.
+1. Scramble the eggs slightly and start mixing in the flour + xanthan mixture.
+1. Eventually, you will end up with a slightly sticky pasta dough.
+    - If the dough doesn't come together in a ball and feels crumbly or dry (this can happen if you use a different gluten free flour blend from the one recommended in the recipe), you can add another egg at this point.
+    - If, on the other hand, the dough feels too wet or soft, you can add a small amount of additional flour.
+1. Turn the pasta dough onto a generously floured surface and knead it for 2 - 3 minutes, until you get a smooth ball of pasta dough.
+    - Because this is a gluten free pasta dough, there’s no gluten to stretch and “activate”, but kneading ensures a smooth dough with no flour clumps.
+
+### To roll out the gluten free pasta dough
+
+1. Cut the dough into four evenly sized pieces.
+1. Wrap the three pieces of dough you won’t use immediately in cling film so that they don’t dry out.
+1. Flatten one piece of gluten free pasta dough and flour it generously on both sides.
+1. Pass the flattened piece through the pasta machine, starting on the widest setting. You will stay on this setting for a few minutes, so get comfy. (See also Note 2)
+     - Different pasta machines can have different widest settings, so that the “widest” setting can produce pasta sheets of different thicknesses.
+     - In my case, the widest setting gives pasta sheets about 2 mm thick, which is actually quite thin compared to some other machines.
+1. Fold the rolled-out pasta dough like a book or letter (into thirds, see step-by-step pictures in text) and dust the outsides with flour.
+1. Turn the piece by 90 degrees (so that the smooth edges are left-right, not top-bottom) and feed it again through the machine.
+1. Repeat this process until you get a smooth, velvety gluten free pasta sheet. (See also Note 2)
+    - I repeated the folding + rolling steps 5 times before I got a perfectly smooth pasta sheet. 
+1. Generously dust the pasta sheet with gluten free flour and feed it through the next narrower setting on the pasta machine. (Note that there’s no more folding!)
+1. Keep reducing the settings until you get to a sheet about 1 mm thick.
+    - For me, that was just one setting down from the widest one, but it might be different on your pasta machine.
+
+### To cut and shape the gluten free pasta
+
+Using a knife or the cutting setting on your pasta machine, cut the gluten free pasta sheet into tagliatelle (about 1 cm wide). 
+Toss the cut pasta in some more flour and shape it into a nest. 
+
+### To dry the gluten free pasta:
+
+To dry the gluten free pasta, place it on a cooling/drying rack near a source of heat (radiator or fireplace in winter, kitchen counter in summer) and leave it to dry at least overnight.
+The next day, check the pasta for dryness – if it still feels damp, leave it for an extra few hours or a day.
+
+### To store the gluten free pasta
+
+For the first few days after making it, keep the dried gluten free pasta in an opened container. 
+The pasta may still be a bit damp on the inside and closing the container may lead to mould formation.
+After that, keep the dried pasta in a closed container in a dry place. It should keep for at least 2 - 3 weeks.
+
+### To cook the gluten free pasta:
+
+To cook the fresh (not dried) gluten free pasta:
+
+- Place it in boiling water, seasoned with a pinch of salt.
+- Cook for 4 - 8 minutes, depending on how well-cooked you like it.
+
+To cook the dried gluten free pasta:
+
+- Place it in boiling water, seasoned with a pinch of salt.
+- Cook for 6 - 10 minutes, depending on how well-cooked you like it.
+
+### Notes
+
+1. The gluten free flour blend I use is the Lidl "Just Free" brand that’s available in the UK (I’m not so sure about the US). It contains rice, potato and maize flour, like most of the gluten free blends out there. 
+2. The eggs will have a large effect on how wet your final pasta dough is. If the first roll-through on the pasta machine gives an uneven pasta sheet that feels sticky (despite having been dusted with flour) and has streaks of crumbled-looking dough, your pasta dough is too wet, likely because your eggs were larger or had a greater moisture content. If that is the case, may have to repeat the fold + dust process an extra few times, but you will definitely get a  smooth, velvety gluten free pasta sheet in the end.
+

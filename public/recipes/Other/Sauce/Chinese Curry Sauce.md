@@ -1,0 +1,20 @@
+
+# Chinese Curry Sauce # 
+
+This was made with ingredients inspired by [this](http://allrecipes.co.uk/recipe/28375/chinese-curry-sauce.aspx) but method and amounts modified.
+
+## Ingredients ## 
+
+- 1½ pints chicken stock
+- 3 tablespoons cornflour (mixed with sufficient cold water to make a paste)
+- 2 tablespoon soy sauce
+- 1 teaspoon Chinese five spice powder
+- 1 teaspoon ground ginger
+- ½ teaspoon mild chilli powder
+- 4 teaspoons mild curry powder
+
+## Method ## 
+
+1. Heat the stock until simmering.
+2. Add the cornflour paste.
+3. Add the rest of the spices.
