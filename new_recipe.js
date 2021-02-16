@@ -2,20 +2,11 @@ const fs = require('fs')
 const path = require('path')
 
 const recipeFileName = function (name) {
-  return name + '.html'
+  return name + '.md'
 }
 
-const recipeHtml = function (name) {
-  const html = `<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>` + name + `</title>
-  
-  <xmp theme="cerulean" style="display:none;">
-# ` + name + ` # 
+const recipeMd = function (name) {
+  const md = `# ` + name + ` # 
 
 ## Ingredients ## 
 
@@ -24,20 +15,14 @@ const recipeHtml = function (name) {
 
 °C ½ ¼
 
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  `
-  return html
+`
+  return md
 }
 
 const newRecipe = function (name, directory, callback) {
-  const html = recipeHtml(name)
+  const md = recipeMd(name)
   const fileName = path.join(directory, recipeFileName(name))
-  fs.writeFile(fileName, html, callback)
+  fs.writeFile(fileName, md, callback)
 }
 
 const main = function () {
