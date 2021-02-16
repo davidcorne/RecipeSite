@@ -325,8 +325,7 @@ describe('New Recipe', function () {
         assert.isNull(error)
         const content = buffer.toString('utf8')
 
-        // The recipe should have the recipe name as a title and header
-        assert.include(content, '<title>' + name + '</title>')
+        // The recipe should have the recipe name as a header
         assert.include(content, '# ' + name + ' #')
 
         // Clean up after the test, then we're done
