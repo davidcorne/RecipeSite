@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-
-<title>American Style Pancakes</title>
-
-<xmp id="tempDGC" theme="cerulean" style="display:none;">
 # American Style Pancakes #
 
 ## Ingredients ##
@@ -28,8 +19,3 @@
 3. Heat a non-stick frying pan over a medium heat and add a knob of butter. When it's melted, add a ladle of batter (or two if your frying pan is big enough to cook two pancakes at the same time). It will seem very thick but this is how it should be. Wait until the top of the pancake begins to bubble, then turn it over and cook until both sides are golden brown and the pancake has risen to about 1cm (½in) thick.
 4. Repeat until all the batter is used up. You can keep the pancakes warm in a low oven, but they taste best fresh out the pan.
 5. Serve with lashings of real maple syrup and extra butter if you like.
-</xmp>
-
-<script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
