@@ -53,17 +53,38 @@ const parseBbcGoodFoodIngredients = function ($) {
 }
 
 const parseBbcGoodFoodMethod = function ($) {
-  return []
+  const methodUL = $('.recipe__method-steps')[0].children[1].firstChild
+  const methodArray = []
+  for (const li of methodUL.children) {
+    const content = li.lastChild.firstChild
+    const stepArray = []
+    const appendMethod = function (part) {
+      const trimmed = part.trim()
+      if (trimmed) {
+        stepArray.push(trimmed)
+      }
+    }
+    for (const sub of content.children) {
+      if (sub.nodeValue) {
+        appendMethod(sub.nodeValue)
+      } else {
+        appendMethod(sub.firstChild.nodeValue)
+      }
+    }
+    methodArray.push(stepArray.join(' '))
+  }
+  return methodArray
 }
 
 const parseBbcGoodFoodRecipe = function (url, html, callback) {
   const $ = cheerio.load(html)
   const ingredients = parseBbcGoodFoodIngredients($).map(
     i => `- ${i}
-`
-  ).join('')
+`).join('')
   const title = ''
-  const method = parseBbcGoodFoodMethod($)
+  const method = parseBbcGoodFoodMethod($).map(
+    step => `1. ${step}
+`).join('')
   const markdown = `# ${title} #
 
 This is a [BBC Good Food](${url}) recipe.
