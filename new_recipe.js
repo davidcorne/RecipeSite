@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const cheerio = require('cheerio')
+const request = require('request')
 
 const utils = require('./utils')
 
@@ -109,13 +110,23 @@ ${method}
   callback(markdown)
 }
 
+const scrapeUrl = function (url, callback) {
+  request(url, {}, (error, response, body) => {
+    if (error) {
+      throw error
+    }
+    callback(body)
+  })
+}
+
 const newRecipeFromUrl = function (url, directory, callback) {
   // Get html from url
-  const html = ''
-  const name = ''
-  // Parse the html
-  parseBbcGoodFoodRecipe(url, html, function (markdown) {
-    fs.writeFile(recipeFilePath(directory, name), markdown, callback)
+  scrapeUrl(url, function (html) {
+    const name = parseBbcGoodFoodTitle(url)
+    // Parse the html
+    parseBbcGoodFoodRecipe(url, html, function (markdown) {
+      fs.writeFile(recipeFilePath(directory, name), markdown, callback)
+    })
   })
 }
 
