@@ -13,6 +13,7 @@
     "develop": "nodemon server.js -e js,pug,cache,metadata"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
     "dictionary-en-gb": "^2.0.0",
     "express": "*",
     "firstline": "^1.2.1",

@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const cheerio = require('cheerio')
 
 const recipeFileName = function (name) {
   return name + '.md'
@@ -28,8 +29,33 @@ const newRecipe = function (name, directory, callback) {
   fs.writeFile(recipeFilePath(directory, name), md, callback)
 }
 
+const parseBbcGoodFoodIngredients = function ($) {
+  const ingredientHTML = $('.recipe__ingredients')[0].lastChild.firstChild.children
+  const ingredients = []
+  for (const li of ingredientHTML) {
+    const ingredientArray = []
+    const appendIngredient = function (i) {
+      const trimmed = i.trim()
+      if (trimmed) {
+        ingredientArray.push(trimmed)
+      }
+    }
+    for (const sub of li.children) {
+      if (sub.nodeValue) {
+        appendIngredient(sub.nodeValue)
+      } else {
+        appendIngredient(sub.firstChild.nodeValue)
+      }
+    }
+    ingredients.push(ingredientArray.join(' '))
+  }
+  return ingredients
+}
+
 const parseBbcGoodFoodRecipe = function (url, html, callback) {
-  callback(html)
+  const $ = cheerio.load(html)
+  const ingredients = parseBbcGoodFoodIngredients($)
+  callback(ingredients)
 }
 
 const newRecipeFromUrl = function (url, directory, callback) {
