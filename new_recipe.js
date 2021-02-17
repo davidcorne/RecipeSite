@@ -66,6 +66,8 @@ const parseBbcGoodFoodRecipe = function (url, html, callback) {
   const method = parseBbcGoodFoodMethod($)
   const markdown = `# ${title} #
 
+This is a [BBC Good Food](${url}) recipe.
+
 ## Ingredients ## 
 
 ${ingredients}
