@@ -33,6 +33,19 @@ const changeExtension = function (fileName, newExtension) {
   return fileName.substr(0, position < 0 ? fileName.length : position) + newExtension
 }
 
+/**
+ * A function to change a string to title case.
+ * e.g. titleCase('hello there, my name is Dave') -> 'Hello There, My Name Is Dave'
+ * @param {String} str
+ */
+const titleCase = function (str) {
+  str = str.toLowerCase().split(' ')
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1)
+  }
+  return str.join(' ')
+}
+
 const cachePath = function (file) {
   return changeExtension(file, '.cache')
 }
@@ -184,3 +197,4 @@ module.exports.pathToDisplayPath = pathToDisplayPath
 module.exports.recipeFile = recipeFile
 module.exports.searchItemToResult = searchItemToResult
 module.exports.readImageFromRecipeSync = readImageFromRecipeSync
+module.exports.titleCase = titleCase

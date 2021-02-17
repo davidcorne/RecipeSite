@@ -58,6 +58,15 @@ describe('Utils', function () {
 `
     assert.strictEqual(imageFromRecipe(contentWithoutImage), '')
   })
+  it('Title case', function () {
+    const testCases = [
+      ['hello there', 'Hello There']
+    ]
+    testCases.forEach((testCase) => {
+      const result = utils.titleCase(testCase[0])
+      assert.strictEqual(result, testCase[1])
+    })
+  })
 })
 describe('Caches', function () {
   const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent')
@@ -875,8 +884,13 @@ describe('Metadata', function () {
 })
 describe('New Recipe', function () {
   const recipeFileName = newRecipeModule.__get__('recipeFileName')
+  const parseBbcGoodFoodTitle = newRecipeModule.__get__('parseBbcGoodFoodTitle')
   it('Recipe file name', function () {
     assert.strictEqual('hi.md', recipeFileName('hi'))
+  })
+  it('BBC Good Food Title', function () {
+    const title = parseBbcGoodFoodTitle('www.bbcgoodfood.com/recipes/crispy-chilli-beef')
+    assert.strictEqual(title, 'Crispy Chilli Beef')
   })
 })
 describe('File List', function () {
