@@ -2,6 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const cheerio = require('cheerio')
 
+const utils = require('./utils')
+
 const recipeFileName = function (name) {
   return name + '.md'
 }
@@ -76,12 +78,18 @@ const parseBbcGoodFoodMethod = function ($) {
   return methodArray
 }
 
+const parseBbcGoodFoodTitle = function (url) {
+  const position = url.lastIndexOf('/') + 1
+  const name = url.substr(position, url.length)
+  return utils.titleCase(name.split('-').join(' '))
+}
+
 const parseBbcGoodFoodRecipe = function (url, html, callback) {
   const $ = cheerio.load(html)
   const ingredients = parseBbcGoodFoodIngredients($).map(
     i => `- ${i}
 `).join('')
-  const title = ''
+  const title = parseBbcGoodFoodTitle(url)
   const method = parseBbcGoodFoodMethod($).map(
     step => `1. ${step}
 `).join('')

@@ -377,6 +377,8 @@ describe('New Recipe', function () {
         for (const methodStep of methodSteps) {
           assert.include(markdown, methodStep)
         }
+        // Check the title is correct
+        assert.include(markdown, '# Crispy Chilli Beef #')
         done()
       }
       )
