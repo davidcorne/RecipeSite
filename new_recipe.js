@@ -19,14 +19,27 @@ const recipeMd = function (name) {
   return md
 }
 
+const recipeFilePath = function (directory, name) {
+  return path.join(directory, recipeFileName(name))
+}
+
 const newRecipe = function (name, directory, callback) {
   const md = recipeMd(name)
-  const fileName = path.join(directory, recipeFileName(name))
-  fs.writeFile(fileName, md, callback)
+  fs.writeFile(recipeFilePath(directory, name), md, callback)
+}
+
+const parseBbcGoodFoodRecipe = function (url, html, callback) {
+  callback(html)
 }
 
 const newRecipeFromUrl = function (url, directory, callback) {
-  callback()
+  // Get html from url
+  const html = ''
+  const name = ''
+  // Parse the html
+  parseBbcGoodFoodRecipe(url, html, function (markdown) {
+    fs.writeFile(recipeFilePath(directory, name), markdown, callback)
+  })
 }
 
 const main = function () {

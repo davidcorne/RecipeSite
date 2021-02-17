@@ -336,4 +336,20 @@ describe('New Recipe', function () {
       })
     })
   })
+  it('BBC Good Food Parsing', function (done) {
+    fs.readFile('test_data/new_recipe/bbc-good-food-crispy-chilli-beef.html', function (error, data) {
+      if (error) {
+        throw error
+      }
+      const parseBbcGoodFoodRecipe = newRecipeModule.__get__('parseBbcGoodFoodRecipe')
+      parseBbcGoodFoodRecipe(
+        'www.bbcgoodfood.com/recipes/crispy-chilli-beef',
+        data,
+        function (markdown) {
+          console.log(markdown)
+          done()
+        }
+      )
+    })
+  })
 })
