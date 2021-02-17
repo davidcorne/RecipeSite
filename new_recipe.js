@@ -52,10 +52,30 @@ const parseBbcGoodFoodIngredients = function ($) {
   return ingredients
 }
 
+const parseBbcGoodFoodMethod = function ($) {
+  return []
+}
+
 const parseBbcGoodFoodRecipe = function (url, html, callback) {
   const $ = cheerio.load(html)
-  const ingredients = parseBbcGoodFoodIngredients($)
-  callback(ingredients)
+  const ingredients = parseBbcGoodFoodIngredients($).map(
+    i => `- ${i}
+`
+  ).join('')
+  const title = ''
+  const method = parseBbcGoodFoodMethod($)
+  const markdown = `# ${title} #
+
+## Ingredients ## 
+
+${ingredients}
+
+## Method ## 
+
+${method}
+
+`
+  callback(markdown)
 }
 
 const newRecipeFromUrl = function (url, directory, callback) {

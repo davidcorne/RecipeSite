@@ -346,7 +346,26 @@ describe('New Recipe', function () {
         'www.bbcgoodfood.com/recipes/crispy-chilli-beef',
         data,
         function (markdown) {
-          console.log(markdown)
+          const ingredients = [
+            '350g thin-cut minute steak, very thinly sliced into strips',
+            '3 tbsp cornflour',
+            '2 tsp Chinese five-spice powder',
+            '100ml vegetable oil',
+            '1 red pepper, thinly sliced',
+            '1 red chilli, thinly sliced',
+            '4 spring onions, sliced, green and white parts separated',
+            '2 garlic cloves, crushed',
+            'thumb-sized piece ginger, cut into matchsticks',
+            '4 tbsp rice wine vinegar or white wine vinegar',
+            '1 tbsp soy sauce',
+            '2 tbsp sweet chilli sauce',
+            '2 tbsp tomato ketchup',
+            'cooked noodles, to serve (optional)',
+            'prawn crackers, to serve (optional)'
+          ]
+          for (const ingredient of ingredients) {
+            assert.include(markdown, ingredient)
+          }
           done()
         }
       )
