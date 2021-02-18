@@ -68,14 +68,16 @@ class BbcGoodFoodParser {
           ingredientArray.push(trimmed)
         }
       }
-      for (const sub of li.children) {
-        if (sub.nodeValue) {
-          appendIngredient(sub.nodeValue)
-        } else {
-          appendIngredient(sub.firstChild.nodeValue)
+      if (li.children) {
+        for (const sub of li.children) {
+          if (sub.nodeValue) {
+            appendIngredient(sub.nodeValue)
+          } else {
+            appendIngredient(sub.firstChild.nodeValue)
+          }
         }
+        ingredients.push(ingredientArray.join(' '))
       }
-      ingredients.push(ingredientArray.join(' '))
     }
     return ingredients
   }
