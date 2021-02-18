@@ -337,7 +337,7 @@ describe('New Recipe', function () {
       })
     })
   })
-  it('BBC Good Food Parsing', function (done) {
+  it('BBC Good Food Parsing Chilli Beef', function (done) {
     fs.readFile('test_data/new_recipe/bbc-good-food-crispy-chilli-beef.html', function (error, data) {
       if (error) {
         throw error
@@ -382,6 +382,21 @@ describe('New Recipe', function () {
         // Check the title is correct
         assert.include(markdown, '# Crispy Chilli Beef #')
         done()
+      }
+      )
+    })
+  })
+  it('BBC Good Food Parsing Masala Pie', function (done) {
+    fs.readFile('test_data/new_recipe/bbc-good-food-masala-chicken-pie.html', function (error, data) {
+      if (error) {
+        throw error
+      }
+      const BbcGoodFoodParser = urlParserModule.__get__('BbcGoodFoodParser')
+      const parser = new BbcGoodFoodParser()
+      const url = 'https://www.bbcgoodfood.com/recipes/masala-chicken-pie'
+      parser.parseRecipe(url, data, function (markdown) {
+        // Used to give the error "Uncaught TypeError: li.children is not iterable"
+        assert.isNotNull(markdown)
       }
       )
     })
