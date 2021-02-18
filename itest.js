@@ -16,6 +16,7 @@ const metadata = require('./metadata')
 
 const metadataModule = rewire('./metadata.js')
 const newRecipeModule = rewire('./new_recipe.js')
+const urlParserModule = rewire('./url-parser.js')
 
 // Turn off application logging
 winston.level = 'silent'
@@ -334,6 +335,55 @@ describe('New Recipe', function () {
           done()
         })
       })
+    })
+  })
+  it('BBC Good Food Parsing', function (done) {
+    fs.readFile('test_data/new_recipe/bbc-good-food-crispy-chilli-beef.html', function (error, data) {
+      if (error) {
+        throw error
+      }
+      const BbcGoodFoodParser = urlParserModule.__get__('BbcGoodFoodParser')
+      const parser = new BbcGoodFoodParser()
+      const url = 'www.bbcgoodfood.com/recipes/crispy-chilli-beef'
+      parser.parseRecipe(url, data, function (markdown) {
+        assert.include(markdown, url)
+        const ingredients = [
+          '350g thin-cut minute steak, very thinly sliced into strips',
+          '3 tbsp cornflour',
+          '2 tsp Chinese five-spice powder',
+          '100ml vegetable oil',
+          '1 red pepper, thinly sliced',
+          '1 red chilli, thinly sliced',
+          '4 spring onions, sliced, green and white parts separated',
+          '2 garlic cloves, crushed',
+          'thumb-sized piece ginger, cut into matchsticks',
+          '4 tbsp rice wine vinegar or white wine vinegar',
+          '1 tbsp soy sauce',
+          '2 tbsp sweet chilli sauce',
+          '2 tbsp tomato ketchup',
+          'cooked noodles, to serve (optional)',
+          'prawn crackers, to serve (optional)'
+        ]
+        for (const ingredient of ingredients) {
+          assert.include(markdown, ingredient)
+        }
+        const methodSteps = [
+          'Put 350g thin-cut minute steak strips in a bowl and toss in 3 tbsp cornflour and 2 tsp Chinese five-spice powder.',
+          'Heat 100ml vegetable oil in a wok or large frying pan until hot, then add the beef and fry until golden and crisp.',
+          'Scoop out the beef and drain on kitchen paper. Pour away all but 1 tbsp oil.',
+          'Add 1 thinly sliced red pepper, ½ thinly sliced red chilli, sliced white ends of 4 spring onions, 2 crushed garlic cloves and thumb-sized piece ginger, cut into matchsticks, to the pan. Stir-fry for 3 mins to soften, but don’t let the garlic and ginger burn.',
+          'Mix the 4 tbsp rice wine vinegar or white wine vinegar, 1 tbsp soy sauce, 2 tbsp sweet chilli sauce and 2 tbsp tomato ketchup in a jug with 2 tbsp water, then pour over the veg.',
+          'Bubble for 2 mins, then add the beef back to the pan and toss well to coat.',
+          'Serve the beef on noodles with prawn crackers, if you like, scattered with the remaining ½ sliced red chilli and sliced green parts of the spring onions.'
+        ]
+        for (const methodStep of methodSteps) {
+          assert.include(markdown, methodStep)
+        }
+        // Check the title is correct
+        assert.include(markdown, '# Crispy Chilli Beef #')
+        done()
+      }
+      )
     })
   })
 })

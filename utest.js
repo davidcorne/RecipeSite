@@ -18,6 +18,7 @@ const workerModule = rewire('./worker.js')
 const metadataModule = rewire('./metadata.js')
 const fileListModule = rewire('./file-list.js')
 const newRecipeModule = rewire('./new_recipe.js')
+const urlParserModule = rewire('./url-parser.js')
 
 console.log('Running Unit Tests')
 
@@ -57,6 +58,21 @@ describe('Utils', function () {
   [Roast Chicken, Summer Vegetables and Green Herb Consommé](/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg)
 `
     assert.strictEqual(imageFromRecipe(contentWithoutImage), '')
+  })
+  it('Title case', function () {
+    const testCases = [
+      ['hello there', 'Hello There']
+    ]
+    testCases.forEach((testCase) => {
+      const result = utils.titleCase(testCase[0])
+      assert.strictEqual(result, testCase[1])
+    })
+  })
+  it('Domain name', function () {
+    const a = 'www.example.com/search?test=true'
+    assert.strictEqual('example.com', utils.domainName(a))
+    const b = 'www.bbcgoodfood.com/recipes/crispy-chilli-beef'
+    assert.strictEqual('bbcgoodfood.com', utils.domainName(b))
   })
 })
 describe('Caches', function () {
@@ -877,6 +893,19 @@ describe('New Recipe', function () {
   const recipeFileName = newRecipeModule.__get__('recipeFileName')
   it('Recipe file name', function () {
     assert.strictEqual('hi.md', recipeFileName('hi'))
+  })
+})
+describe('Parser', function () {
+  const BbcGoodFoodParser = urlParserModule.__get__('BbcGoodFoodParser')
+  const parserFactory = urlParserModule.__get__('parserFactory')
+  it('BBC Good Food Title', function () {
+    const parser = new BbcGoodFoodParser()
+    const title = parser.parseTitle('www.bbcgoodfood.com/recipes/crispy-chilli-beef')
+    assert.strictEqual(title, 'Crispy Chilli Beef')
+  })
+  it('Parser factory', function () {
+    const parser = parserFactory('www.bbcgoodfood.com/')
+    assert.strictEqual('BbcGoodFoodParser', parser.constructor.name)
   })
 })
 describe('File List', function () {
