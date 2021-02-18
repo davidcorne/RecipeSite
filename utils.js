@@ -34,6 +34,21 @@ const changeExtension = function (fileName, newExtension) {
 }
 
 /**
+ * Get the domain name from a url
+ * e.g. domainName('www.example.com/search?test=true') = example.com
+ * @param {String} url
+ */
+const domainName = function (url) {
+  const baseUrl = url.replace(/(https?:\/\/)?(www.)?/i, '')
+
+  if (baseUrl.indexOf('/') !== -1) {
+    return baseUrl.split('/')[0]
+  }
+
+  return baseUrl
+}
+
+/**
  * A function to change a string to title case.
  * e.g. titleCase('hello there, my name is Dave') -> 'Hello There, My Name Is Dave'
  * @param {String} str
@@ -198,3 +213,4 @@ module.exports.recipeFile = recipeFile
 module.exports.searchItemToResult = searchItemToResult
 module.exports.readImageFromRecipeSync = readImageFromRecipeSync
 module.exports.titleCase = titleCase
+module.exports.domainName = domainName

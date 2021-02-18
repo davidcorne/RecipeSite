@@ -68,6 +68,12 @@ describe('Utils', function () {
       assert.strictEqual(result, testCase[1])
     })
   })
+  it('Domain name', function () {
+    const a = 'www.example.com/search?test=true'
+    assert.strictEqual('example.com', utils.domainName(a))
+    const b = 'www.bbcgoodfood.com/recipes/crispy-chilli-beef'
+    assert.strictEqual('bbcgoodfood.com', utils.domainName(b))
+  })
 })
 describe('Caches', function () {
   const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent')
