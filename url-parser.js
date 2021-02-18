@@ -2,6 +2,36 @@ const cheerio = require('cheerio')
 
 const utils = require('./utils')
 
+/**
+ * This will return a String representing a recipe in markdown format
+ *
+ * @param {String} title
+ * @param {String} urlText
+ * @param {String} url
+ * @param {String} ingredientArray
+ * @param {String} methodArray
+ */
+const markdownTemplate = function (title, urlText, url, ingredientArray, methodArray) {
+  const ingredients = ingredientArray.map(
+    i => `- ${i}
+`).join('')
+  const method = methodArray.map(
+    i => `1. ${i}
+`).join('')
+  return `# ${title} #
+
+This is a [${urlText}](${url}) recipe.
+
+## Ingredients ##
+
+${ingredients}
+
+## Method ##
+
+${method}
+`
+}
+
 class BbcGoodFoodParser {
   parseMethod ($) {
     const methodUL = $('.recipe__method-steps')[0].children[1].firstChild
@@ -56,28 +86,16 @@ class BbcGoodFoodParser {
     return utils.titleCase(name.split('-').join(' '))
   }
 
+  markdown (title, url, ingredients, method) {
+    return markdownTemplate(title, 'BBC Good Food', url, ingredients, method)
+  }
+
   parseRecipe (url, html, callback) {
     const $ = cheerio.load(html)
-    const ingredients = this.parseIngredients($).map(
-      i => `- ${i}
-  `).join('')
+    const ingredients = this.parseIngredients($)
     const title = this.parseTitle(url)
-    const method = this.parseMethod($).map(
-      step => `1. ${step}
-  `).join('')
-    const markdown = `# ${title} #
-  
-  This is a [BBC Good Food](${url}) recipe.
-  
-  ## Ingredients ## 
-  
-  ${ingredients}
-  
-  ## Method ## 
-  
-  ${method}
-  
-  `
+    const method = this.parseMethod($)
+    const markdown = this.markdown(title, url, ingredients, method)
     callback(markdown)
   }
 }
