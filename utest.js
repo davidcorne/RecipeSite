@@ -18,6 +18,7 @@ const workerModule = rewire('./worker.js')
 const metadataModule = rewire('./metadata.js')
 const fileListModule = rewire('./file-list.js')
 const newRecipeModule = rewire('./new_recipe.js')
+const urlParserModule = rewire('./url-parser.js')
 
 console.log('Running Unit Tests')
 
@@ -57,6 +58,21 @@ describe('Utils', function () {
   [Roast Chicken, Summer Vegetables and Green Herb Consommé](/public/images/Roast-Chicken-Summer-Vegetables-and-Green-Herb-Consommé.jpg)
 `
     assert.strictEqual(imageFromRecipe(contentWithoutImage), '')
+  })
+  it('Title case', function () {
+    const testCases = [
+      ['hello there', 'Hello There']
+    ]
+    testCases.forEach((testCase) => {
+      const result = utils.titleCase(testCase[0])
+      assert.strictEqual(result, testCase[1])
+    })
+  })
+  it('Domain name', function () {
+    const a = 'www.example.com/search?test=true'
+    assert.strictEqual('example.com', utils.domainName(a))
+    const b = 'www.bbcgoodfood.com/recipes/crispy-chilli-beef'
+    assert.strictEqual('bbcgoodfood.com', utils.domainName(b))
   })
 })
 describe('Caches', function () {
@@ -876,23 +892,43 @@ describe('Metadata', function () {
 describe('New Recipe', function () {
   const recipeFileName = newRecipeModule.__get__('recipeFileName')
   it('Recipe file name', function () {
-    assert.strictEqual('hi.html', recipeFileName('hi'))
+    assert.strictEqual('hi.md', recipeFileName('hi'))
   })
-  it('Script includes', function () {
-    const recipeHtml = newRecipeModule.__get__('recipeHtml')
-    const html = recipeHtml('hello')
-    // Check we reference the formatter
-    const recipeFormatting = '/public/resources/recipe-formatting.js'
-    assert.include(html, recipeFormatting)
-    // We should also reference strapdown
-    const strapdown = 'strapdown.js'
-    assert.include(html, strapdown)
-    // Now check that strapdown is referenced first
-    const strapdownIndex = html.indexOf(strapdown)
-    const recipeFormattingIndex = html.indexOf(recipeFormatting)
-    assert.notStrictEqual(-1, strapdownIndex)
-    assert.notStrictEqual(-1, recipeFormattingIndex)
-    assert.isBelow(strapdownIndex, recipeFormattingIndex, 'strapdown.js should appear before recipe-formatting.js')
+})
+describe('Parser', function () {
+  const BbcGoodFoodParser = urlParserModule.__get__('BbcGoodFoodParser')
+  const parserFactory = urlParserModule.__get__('parserFactory')
+  const markdownTemplate = urlParserModule.__get__('markdownTemplate')
+  it('BBC Good Food Title', function () {
+    const parser = new BbcGoodFoodParser()
+    const title = parser.parseTitle('www.bbcgoodfood.com/recipes/crispy-chilli-beef')
+    assert.strictEqual(title, 'Crispy Chilli Beef')
+  })
+  it('Markdown template', function () {
+    const md = markdownTemplate(
+      'A Title',
+      'some alt text',
+      'www.recipe-site.gov',
+      ['1 tsp rubbish', 'a thumb sized piece of ginger'],
+      ['Add all the ingredients, make a well in the middle', 'mix well', 'serve with rice']
+    )
+    assert.include(md, '# A Title #')
+    assert.include(md, '[some alt text](www.recipe-site.gov)')
+    assert.include(md, '- 1 tsp rubbish')
+    assert.include(md, '- a thumb sized piece of ginger')
+    assert.include(md, '1. Add all the ingredients, make a well in the middle')
+    assert.include(md, '1. serve with rice')
+    // Ensure that the lists start the line, no leading spaces.
+    const ulStartLine = /\n- /g
+    // Should have two bullet points starting lines
+    assert.strictEqual(2, md.match(ulStartLine).length)
+    const olStartLine = /\n1. /g
+    // Should have three ordered list items
+    assert.strictEqual(3, md.match(olStartLine).length)
+  })
+  it('Parser factory', function () {
+    const parser = parserFactory('www.bbcgoodfood.com/')
+    assert.strictEqual('BbcGoodFoodParser', parser.constructor.name)
   })
 })
 describe('File List', function () {

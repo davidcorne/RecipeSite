@@ -1,0 +1,34 @@
+
+# Vegetarian Shepherd's Pie #
+
+## Ingredients ##
+
+### Filling
+
+- Carrots
+- Courgette
+- Mushrooms
+- Celery (optional)
+- Onion
+- Garlic
+- Vegetable stock
+- Chopped tomatoes
+- Red wine (optional)
+- Thyme
+- Pepper
+
+### Mashed Topping
+
+- Potatoes
+- Milk/cream
+- Butter
+- Grated cheese
+
+## Method ##
+
+1. Fry the courgette, carrot, celery
+2. Add in the onion and garlic.
+3. Add the stock, wine, chopped tomoatoes and seasoning, allow to simmer.
+4. While it simmers, make mashed potatoes
+5. Transfer the vegetable mixture to an oven tray, top with mash then top that with cheese.
+6. Bake in the oven for 20-30 minutes.

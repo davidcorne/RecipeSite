@@ -1,0 +1,59 @@
+
+# Lamb Curry # 
+
+This recipe is from [here](http://www.amazingfoodmadeeasy.com/info/modernist-recipes/more/sous-vide-lamb-curry-recipe).
+
+## Ingredients ## 
+
+### For the Sous Vide Lamb
+
+- 2 pounds boneless leg of lamb, cut into 1 to 2 inch chunks
+- 2 teaspoons garam masala
+- Pepper
+
+### For the Curry
+
+- 3 onions, chopped
+- 5 garlic cloves, coarsely chopped
+- 2 inch piece fresh ginger, peeled and cut into large chunks
+- 3 tablespoons canola oil
+- 2 carrots, peeled and chopped
+- 1 red bell pepper, chopped
+- 2 teaspoons ground coriander
+- ½ teaspoon black pepper
+- ½ teaspoon ground cloves
+- ¼ to 1 teaspoon cayenne pepper, to taste
+- ½ teaspoon garam masala
+- ½ cup plain yogurt, preferable whole milk
+- 1½ cups water
+- ¼ cup heavy cream
+- ¼ cup fresh parsley, chopped
+- Salt and pepper
+
+## Method ## 
+
+### For the Pre-Bath
+Pepper the lamb then sprinkle with the garam masala. Place into the sous vide pouch and seal.
+
+At this point you can store the pouch in the refrigerator for up to 2 days, freeze it for up to 6 months, or cook it right away.
+
+### For the Sous Vide Lamb
+At least 48 to 72 hours before serving
+Preheat the water bath to 131°F (55°C).
+
+Place the pouch in the water bath for 2 to 3 days.
+
+### For Finishing the Lamb Curry
+
+This should be done at least 30 to 45 minutes before serving.
+
+1. Add half the onion and all of the garlic and ginger to a food processor. Process to a paste.
+2. Warm a pan over medium-high heat with the canola oil in it. Add the remaining onion and cook until it begins to soften, about 5 minutes. 
+3. Add the carrots and cook for another 5 minutes. 
+4. Add the red bell pepper and cook for another 5 minutes.
+5. Add the pureed onion mixture, the coriander, pepper, cayenne, garam masala, and cloves to the pan. Cook for about 10 minutes while stirring occasionally.
+6. Add the yogurt and water and bring to a simmer. 
+7. Remove the lamb from the sous vide pouches and add to the pan, along with some of the juices from the pouch. Stir well and let simmer for about 5 minutes.
+8. Stir in the cream and parsley.
+9. Serve, preferably over rice or with crusty bread.
+

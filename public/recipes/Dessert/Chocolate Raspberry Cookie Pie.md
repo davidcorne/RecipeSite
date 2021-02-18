@@ -1,0 +1,26 @@
+
+# Chocolate Raspberry Cookie Pie #
+
+Originally from [here](http://twistedfood.co.uk/chocolate-raspberry-cookie-pie/)
+ 
+## Ingrediente
+
+- 300g chocolate cookies, finely crushed
+- 120g butter, melted
+- 150g fresh raspberries
+- 370ml coffee (cafetiere)
+- 250g dark (70%+) chocolate
+- 250g butter
+- 2 eggs
+- 95g muscavado sugar
+- 95g caster sugar
+- 30g cocoa powder
+- ¼ tsp salt
+- 185g self-raising flour
+
+## Method
+
+1. Mix your crushed cookies with the butter. Tip into a lined, loose-bottomed tin and press down and up the sides to form your pie crust. Freeze for 30 minutes.
+2. Meanwhile, over a very low heat, melt your coffee, butter, sugars and chocolate until glossy and smooth (it should be warm, not hot). Leave to cool for a few minutes. Sieve your flour, cocoa and salt into a large bowl. Add your chocolate mix and eggs and whisk until smooth and gloopy.
+3. Pour ½ of your mix into your pie crust. Add your raspberries in an even layer. Add the rest of your chocolate mix. Bake for 30 minutes at 180°C.
+4. Leave to cool slightly before removing from the tin. Great warm with ice-cream!

@@ -34,6 +34,15 @@ const getHtmlCacheContent = function (file, callback) {
   })
 }
 
+const getMdCacheContent = function (file, callback) {
+  fs.readFile(file, 'utf8', function (error, content) {
+    if (error) {
+      throw error
+    }
+    callback(content)
+  })
+}
+
 const getPdfCacheContent = function (file, callback) {
   log.silly('Caching ' + file)
   const pdfParser = new PDFParser(this, 1)
@@ -67,6 +76,8 @@ const getCacheContent = function (file, callback) {
   const extension = path.extname(file)
   if (extension === '.html') {
     getHtmlCacheContent(file, callback)
+  } else if (extension === '.md') {
+    getMdCacheContent(file, callback)
   } else if (extension === '.pdf') {
     PDF_QUEUE.push(file)
     if (PDF_QUEUE.length === 1) {

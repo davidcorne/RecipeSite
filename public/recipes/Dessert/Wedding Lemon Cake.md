@@ -1,0 +1,45 @@
+
+# Wedding Lemon Cake # 
+
+This was one of the tiers of cake at our wedding.
+
+## Ingredients ## 
+
+### Cake
+
+- 350g butter
+- 350g caster sugar
+- 5 eggs
+- 350g self raising flour
+- Splash of milk
+- Zest of 2 lemons
+
+### Lemon Syrup
+
+- Juice of 2 lemons
+- 3-4 tbsp icing sugar
+
+### Lemon Buttercream
+
+- 200g butter
+- 400g icing sugar
+- ~2 tsp lemon extract
+
+## Method ## 
+
+1. Preheat oven to 180°C.
+2. Beat the butter and sugar together till fluffy.
+3. Beat in the eggs.
+4. Stir in the flours.
+5. Add a splash of milk.
+6. Divide between two 8" tines.
+7. Bake for 30-40 minutes, until a skewer comes out clean.
+8. Meanwhile, make lemon syrup:
+    1. Add the sugar to the lemon juice, need to add more or less depending how sweet the lemon is.
+    2. Warm gently till it dissolves.
+9. As soon as the cake comes out of the oven pierce it all over with a skewer, pour over a lemon syrup and then leave the cake to cool in the tin.
+
+### Lemon Buttercream
+
+1. Cream the butter with the sugar and add lemon extract.
+

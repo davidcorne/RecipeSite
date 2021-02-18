@@ -1,0 +1,26 @@
+
+# Caramalized Onion Chutney # 
+
+This is a work in progress, as I made some in November 2017 and didn't note which recipes I used. This was inspired by the following three recipes: [Allotment Garden](https://www.allotment-garden.org/recipe/1635/caramelised-onion-chutney-recipe/), [Sarsons](https://www.sarsons.co.uk/recipes/caramelised-onion-chutney), and [Food.com](https://www.food.com/recipe/caramelised-red-onion-chutney-recipe-446595).
+
+## Ingredients ## 
+
+- 8 red onions
+- 2 bay leaves
+- 25ml olive oil
+- 200g brown sugar
+- 2 tsp mustard seeds
+- 150ml balsamic vinegar
+- 150ml red wine vinegar
+
+## Method ## 
+
+1. Cut the onions into thin slices, then cut onion slices in half again.
+2. Put them into a pan with bay leaves, and oil.
+3. Cook gently over a low heat for about 20 minutes.
+4. When the onions are dark and sticky, add the sugar, the vinegars and mustard seeds.
+5. Simmer for about 30 minutes, until the chutney is thick and dark. Stirring at intervals so the chutney does not stick to the pan.
+6. While this is happening sterilise some jars, following the instructions [here](/public/recipes/Other/Guides/Sterilise%20Jars.html)
+7. Pour the chutney into the hot, sterilised jars seal and let chutney cool.
+8. Should ideally be left for a month or maybe even more for the flavours to blend and mature, but certainly try it now!
+

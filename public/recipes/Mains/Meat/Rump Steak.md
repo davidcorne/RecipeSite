@@ -1,0 +1,54 @@
+
+# Rump Steak # 
+
+This is from [Great British Chefs](https://www.greatbritishchefs.com/how-to-cook/how-to-cook-rump-steak-to-perfection), with temperature notes from [BBC Good Food](https://www.bbcgoodfood.com/recipes/rump-steak)
+
+## Notes
+As the name suggests, rump is a cut that comes from the backside of a cow, an area which works hard. So even though rump steak won’t be quite as tender as sirloin, it will more than make up for it with a deep, mineral savouriness. And what’s more, it’s half the price.
+
+Buy a well-aged piece of meat and cook it medium or medium-rare rather than full-on rare which, can be a little chewy. For best results choose a large steak to share, at least 5cm thick.
+
+Key points to think about are seasoning, what pan to use and resting time:
+
+- Season the meat really well before cooking, but only with salt as pepper will burn in the pan.
+- Use a heavy-based pan or griddle, preferably something cast iron which retains heat very well. Use a tiny splash of vegetable or groundnut oil and get both pan and oil really hot before adding the meat. The oil should almost be at smoking point in order to get a delicious brown crust to contrast with the juicy pink interior.
+
+## Ingredients ## 
+
+### Steak
+- 1 rump steak, 500g or more, measuring 5cm in thickness
+- vegetable oil, or groundnut oil
+- flaky sea salt
+- black pepper
+
+### Pan Sauce
+- 1 finely chopped shallot
+- 2-3 minced cloves of garlic
+- A slug of wine, brandy or stock
+- Knob of butter or glug of cream
+- Optional herbs, e.g. thyme
+
+Note: I know some of these measurements aren't really helpful.
+
+## Method ## 
+
+1. Remove the steaks from the fridge and allow them to come to room temperature at least an hour before you begin.
+1. Preheat the oven to 180°C.
+1. Place a heavy-based frying pan or griddle pan over a high heat and add a splash of vegetable or groundnut oil.
+1. Pat the steak dry with a paper towel and sprinkle both sides generously with flaky sea salt.
+1. When the pan is very hot, with the oil almost at smoking point, add the steak and cook for ~3 minutes on each side.
+    - Note: this is to form a crust, so if it looks done before 3 minutes procede to the next steps.
+1. If there is a thick layer of fat on the outside, hold the steak with tongs, fat-side down, so it can brown for a minute or so.
+1. Transfer the steak to a roasting tin and put it into the oven for 10–15 minutes. You're looking for these internal temperatures:
+    - 50°C for rare.
+    - 60°C for medium.
+    - 70°C for well done.
+1. Remove the steak from the oven, season with pepper and rest on a warm plate, covered loosely with foil, for a further 10 minutes.
+1. Make a pan sauce while it rests:
+    1. Tip out any excess fat from the pan but don’t wipe it.
+    2. Soften the shallot and garlic over a medium heat.
+    3. Add a slug of wine, brandy or stock to deglaze, some herbs if you like.
+    4. Bubble down until syrupy.
+    5. Swirl in a knob of butter and/or a dash of cream.
+1. Slice the steak and serve with your choice of accompaniments.
+

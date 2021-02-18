@@ -1,0 +1,25 @@
+
+# Arancini # 
+
+## Ingredients ## 
+
+- 250g rice worth of risotto.
+- 9 mini mozzarella cheese balls or ½ large ball.
+- 2 eggs, beaten.
+- About ¾ cup all-purpose flour.
+- 1 cup panko breadcrumbs or regular breadcrumbs.
+- Lemon wedges, to serve (optional)
+
+## Method ## 
+
+1. If using mini mozzarella balls, halve them; if using part of a large ball, cut it into ¾-inch cubes.
+2. Lay out 3 plates or shallow bowls. Put the beaten eggs in one, the flour (seasoned with a pinch of salt and pepper) in another, and the breadcrumbs in the final one.
+3. Once the risotto is cooled (it doesn't matter if it is still a little warm, as long as it has stiffened up a bit and is cool enough to handle), roll it into balls the size of golf balls. Push a piece of mozzarella into the middle of each ball, making sure that the cheese is completely enclosed. Leave to set in the fridge for at least 30 minutes or overnight.
+4. Heat a deep-fat fryer to 170°C or fill a large saucepan one-third full of flavorless oil and heat until a cube of bread dropped into the hot oil sizzles and turns golden brown in 30 seconds.
+5. Dip a rice ball into the flour, shake off any excess, then dip into the egg, allowing any excess to drip off. Finish by coating completely in the breadcrumbs. Repeat with the remaining balls.
+6. Deep-fry the balls in batches for 2-3 minutes until golden brown all over. Remove with a slotted spoon and drain on paper towels. Serve immediately while the middles are still melting. Drizzle with lemon juice, if using.
+
+### How to Pan-Fry Arancini
+
+They can also be pan-fried rather than deep-fried. Cook them over medium heat and make sure you turn them frequently, basting with the oil.
+

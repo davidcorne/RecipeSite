@@ -1,0 +1,38 @@
+
+# General Tso’s Tofu #
+
+This is originally from [here](https://simpleveganblog.com/general-tsos-tofu/).
+
+## Ingredients ## 
+
+### For the Tofu
+
+- 2 tbsp tamari or soy sauce
+- 1 tbsp apple cider vinegar
+- 275g firm tofu, cubed
+- 6 tbsp cornstarch
+- Extra virgin olive to taste
+- 2 cloves of garlic, minced
+
+### For the sauce
+
+- 3 tbsp tamari or soy sauce
+- 3 tbsp apple cider vinegar
+- 3 tbsp vegetable stock or water
+- 3 tbsp cane, coconut or brown sugar
+- 1 tbsp cornstarch
+- ⅛ tsp cayenne powder
+
+## Method ## 
+
+1. Mix tamari and vinegar in a bowl until well combined.
+2. Add the tofu cubes and let rest for at least 5 minutes.
+3. Drain the tofu and transfer ⅓ of the tofu cubes to a freezer bag with 2 tbsp of cornstarch and toss to coat. Repeat this step with the rest of the tofu and cornstarch. Add more cornstarch if needed.
+4. Cook the tofu cubes in a skillet with a little bit of oil over medium-high heat until all sides are golden brown. Remove tofu from pan and set aside.
+5. Add the garlic to the skillet and cook them over medium-high heat for about 1 to 2 minutes, stirring frequently until they start to golden brown.
+6. To make the sauce just mix all the ingredients until well combined.
+7. Add the sauce to the skillet and cook until it thickens, stirring frequently.
+8. Finally, add the tofu, stir and cook for 1 to 2 minutes more.
+9. Remove pan from heat and serve with some white rice and garnish with sesame seeds and chopped chives (optional).
+10. Keep leftovers in a sealed container in the fridge for up to 5 days.
+

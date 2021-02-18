@@ -1,0 +1,44 @@
+
+# Azerbajaijani Style Lamb with Apricots and Chestnuts # 
+
+This is from the November 2020 edition of BBC Good Food magazine. Also on the [BBC Good Food](https://www.bbcgoodfood.com/recipes/azerbaijani-style-lamb-with-apricots-chestnuts) site.
+
+## Ingredients ## 
+
+- pinch of saffron
+- 75ml boiling water
+- 2 tbsp sunflower or groundnut oil
+- 800g braising lamb (such as shoulder), trimmed of excess fat
+- 2 large onions, roughly chopped
+- 4 plum tomatoes, roughly chopped
+- 2 garlic cloves, chopped
+- ½ tsp ground cinnamon
+- ½ tsp allspice
+- 250ml lamb or chicken stock
+- 100g dried apricots
+- 125g cooked chestnuts (canned or vacuum-packed)
+- ½ lemon, juiced
+- ½ tsp sumac
+- 15g coriander, leaves picked and roughly chopped
+
+## Method ## 
+
+1. Put the saffron in a heatproof cup and pour over 75ml boiling water.
+1. Leave for 30 mins, or until the water is a deep yellow colour.
+1. Heat the oil in a heavy-bottomed saucepan, and brown the lamb all over – you’ll need to do this in batches.
+1. Transfer the browned lamb to a bowl using a slotted spoon as you continue cooking the rest.
+1. Fry the onions in the residual fat in the pan over a medium-low heat for 10-12 mins until golden and soft.
+1. Add the tomatoes and garlic, and continue to fry until the tomatoes have softened.
+1. Stir in the spices and cook for a few minutes, then return the lamb to the pan with some seasoning.
+1. Pour in the stock and infused saffron water.
+1. Bring to just under the boil, then add the apricots, chestnuts, and a little more seasoning.
+1. Reduce the heat to a simmer, cover and cook over a very low heat for 1 hr-1 hr 15 mins until the lamb is tender.
+1. At this stage, the lamb can be frozen. Leave to cool completely first, then transfer to a freezer proof airtight container. Will keep in the freezer for up to three months.
+1. To serve straightaway, stir in the lemon juice, sumac and coriander.
+1. Alternatively, if you have frozen the lamb, defrost in the fridge overnight, then transfer to a saucepan and heat gently.
+1. When it is piping hot, add the lemon juice, sumac and coriander. Taste to check for seasoning, then serve.
+
+## Recipe Image
+
+![Azerbajaijani Lamb with Apricots and Chestnuts](/public/images/Azerbajaijani-Style-Lamb-with-Apricots-and-Chestnuts.png)
+

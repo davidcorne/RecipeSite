@@ -1,0 +1,16 @@
+
+# Chicken with Chorizo Peppers & Saffron Mash # 
+
+This is a recipe from BBC Good Food 2020 October edition.
+
+I've not yet transcribed it, but it does sound very interesting.
+
+## Keywords
+
+- Chicken
+- Saffron
+- Chorizo
+- Peppers
+
+![Chicken with Chorizo Peppers and Saffron Mash](/public/images/Chicken-With-Chorizo-Peppers-&-Saffron-Mash.png)
+

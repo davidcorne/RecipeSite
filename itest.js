@@ -16,11 +16,16 @@ const metadata = require('./metadata')
 
 const metadataModule = rewire('./metadata.js')
 const newRecipeModule = rewire('./new_recipe.js')
+const urlParserModule = rewire('./url-parser.js')
 
 // Turn off application logging
 winston.level = 'silent'
 
 console.log('Running Integration Tests')
+
+const isTextRecipe = function (path) {
+  return path.endsWith('.html') || path.endsWith('.md')
+}
 
 // I would put this in utils, but I don't want this called in a non-test.
 const walkSync = function (dir, paths) {
@@ -89,7 +94,7 @@ describe('Cache', function () {
     const test = function (path, callback) {
       if (path.endsWith('.cache')) {
         // Find out what this cache was made from
-        const recipeExtensions = ['.pdf', '.html', '.jpg', '.png']
+        const recipeExtensions = ['.pdf', '.html', '.jpg', '.png', '.md']
         let exists = false
         for (let i = 0; i < recipeExtensions.length; ++i) {
           const recipe = utils.changeExtension(path, recipeExtensions[i])
@@ -157,7 +162,7 @@ describe('Recipes', function () {
     const nonUnicodeFractionSpaceBefore = new RegExp('\\s[0-9]/[0-9]')
     const nonUnicodeFractionSpaceAfter = new RegExp('[0-9]/[0-9]\\s')
     const test = function (path, callback) {
-      if (path.endsWith('.html')) {
+      if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')
         let matches = content.match(nonUnicodeFractionSpaceBefore)
         if (matches) console.log(matches)
@@ -183,7 +188,7 @@ describe('Recipes', function () {
     // The regex excludes %NN as encoded URLs will have %20 as a space
     const noDegreesCelcius = new RegExp('[^%][0-9][0-9]C')
     const test = function (path, callback) {
-      if (path.endsWith('.html')) {
+      if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')
         let matches = content.match(noDegreesCelcius)
         if (matches) console.log(matches)
@@ -203,7 +208,7 @@ describe('Recipes', function () {
 
     const noGrams = new RegExp(' g ')
     const test = function (path, callback) {
-      if (path.endsWith('.html')) {
+      if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')
         let matches = content.match(noGrams)
         if (matches) console.log(matches)
@@ -221,7 +226,7 @@ describe('Recipes', function () {
 
     const boilerplate = new RegExp('°C ½ ¼')
     const test = function (path, callback) {
-      if (path.endsWith('.html')) {
+      if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')
         const matches = content.match(boilerplate)
         if (matches) console.log(matches)
@@ -235,11 +240,13 @@ describe('Recipes', function () {
     })
   })
   it('Ensure script includes', function (done) {
+    // This isn't relevant any more
+    done()
     // This ensures that in each html recipe, I'm including strapdown first
     const paths = walkSync('./public/recipes')
     // This will check each file twice, but it's not slow
     const test = function (path, callback) {
-      if (path.endsWith('.html') && !path.includes('Purine Levels.html')) {
+      if (isTextRecipe(path) && !path.includes('Purine Levels.html')) {
         const content = fs.readFileSync(path, 'utf8')
         const strapdown = '<script src="/public/resources/strapdown.js"></script>'
         const recipeFormatting = '<script src="/public/resources/recipe-formatting.js"></script>'
@@ -319,8 +326,7 @@ describe('New Recipe', function () {
         assert.isNull(error)
         const content = buffer.toString('utf8')
 
-        // The recipe should have the recipe name as a title and header
-        assert.include(content, '<title>' + name + '</title>')
+        // The recipe should have the recipe name as a header
         assert.include(content, '# ' + name + ' #')
 
         // Clean up after the test, then we're done
@@ -328,6 +334,70 @@ describe('New Recipe', function () {
           assert.isNull(error)
           done()
         })
+      })
+    })
+  })
+  it('BBC Good Food Parsing Chilli Beef', function (done) {
+    fs.readFile('test_data/new_recipe/bbc-good-food-crispy-chilli-beef.html', function (error, data) {
+      if (error) {
+        throw error
+      }
+      const BbcGoodFoodParser = urlParserModule.__get__('BbcGoodFoodParser')
+      const parser = new BbcGoodFoodParser()
+      const url = 'www.bbcgoodfood.com/recipes/crispy-chilli-beef'
+      parser.parseRecipe(url, data, function (markdown) {
+        assert.include(markdown, url)
+        const ingredients = [
+          '350g thin-cut minute steak, very thinly sliced into strips',
+          '3 tbsp cornflour',
+          '2 tsp Chinese five-spice powder',
+          '100ml vegetable oil',
+          '1 red pepper, thinly sliced',
+          '1 red chilli, thinly sliced',
+          '4 spring onions, sliced, green and white parts separated',
+          '2 garlic cloves, crushed',
+          'thumb-sized piece ginger, cut into matchsticks',
+          '4 tbsp rice wine vinegar or white wine vinegar',
+          '1 tbsp soy sauce',
+          '2 tbsp sweet chilli sauce',
+          '2 tbsp tomato ketchup',
+          'cooked noodles, to serve (optional)',
+          'prawn crackers, to serve (optional)'
+        ]
+        for (const ingredient of ingredients) {
+          assert.include(markdown, ingredient)
+        }
+        const methodSteps = [
+          'Put 350g thin-cut minute steak strips in a bowl and toss in 3 tbsp cornflour and 2 tsp Chinese five-spice powder.',
+          'Heat 100ml vegetable oil in a wok or large frying pan until hot, then add the beef and fry until golden and crisp.',
+          'Scoop out the beef and drain on kitchen paper. Pour away all but 1 tbsp oil.',
+          'Add 1 thinly sliced red pepper, ½ thinly sliced red chilli, sliced white ends of 4 spring onions, 2 crushed garlic cloves and thumb-sized piece ginger, cut into matchsticks, to the pan. Stir-fry for 3 mins to soften, but don’t let the garlic and ginger burn.',
+          'Mix the 4 tbsp rice wine vinegar or white wine vinegar, 1 tbsp soy sauce, 2 tbsp sweet chilli sauce and 2 tbsp tomato ketchup in a jug with 2 tbsp water, then pour over the veg.',
+          'Bubble for 2 mins, then add the beef back to the pan and toss well to coat.',
+          'Serve the beef on noodles with prawn crackers, if you like, scattered with the remaining ½ sliced red chilli and sliced green parts of the spring onions.'
+        ]
+        for (const methodStep of methodSteps) {
+          assert.include(markdown, methodStep)
+        }
+        // Check the title is correct
+        assert.include(markdown, '# Crispy Chilli Beef #')
+        done()
+      }
+      )
+    })
+  })
+  it('BBC Good Food Parsing Masala Pie', function (done) {
+    fs.readFile('test_data/new_recipe/bbc-good-food-masala-chicken-pie.html', function (error, data) {
+      if (error) {
+        throw error
+      }
+      const BbcGoodFoodParser = urlParserModule.__get__('BbcGoodFoodParser')
+      const parser = new BbcGoodFoodParser()
+      const url = 'https://www.bbcgoodfood.com/recipes/masala-chicken-pie'
+      parser.parseRecipe(url, data, function (markdown) {
+        // Used to give the error "Uncaught TypeError: li.children is not iterable"
+        assert.isNotNull(markdown)
+        done()
       })
     })
   })

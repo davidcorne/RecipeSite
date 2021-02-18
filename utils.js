@@ -33,6 +33,34 @@ const changeExtension = function (fileName, newExtension) {
   return fileName.substr(0, position < 0 ? fileName.length : position) + newExtension
 }
 
+/**
+ * Get the domain name from a url
+ * e.g. domainName('www.example.com/search?test=true') = example.com
+ * @param {String} url
+ */
+const domainName = function (url) {
+  const baseUrl = url.replace(/(https?:\/\/)?(www.)?/i, '')
+
+  if (baseUrl.indexOf('/') !== -1) {
+    return baseUrl.split('/')[0]
+  }
+
+  return baseUrl
+}
+
+/**
+ * A function to change a string to title case.
+ * e.g. titleCase('hello there, my name is Dave') -> 'Hello There, My Name Is Dave'
+ * @param {String} str
+ */
+const titleCase = function (str) {
+  str = str.toLowerCase().split(' ')
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1)
+  }
+  return str.join(' ')
+}
+
 const cachePath = function (file) {
   return changeExtension(file, '.cache')
 }
@@ -83,8 +111,8 @@ function occurrences (string, subString, allowOverlapping) {
 
 const isRecipe = function (file) {
   const extension = path.extname(file)
-  // Recipes are either html, pdf or jpg
-  return extension === '.html' || extension === '.pdf' || extension === '.jpg' || extension === '.png'
+  // Recipes are either html, md, pdf or jpg
+  return extension === '.html' || extension === '.md' || extension === '.pdf' || extension === '.jpg' || extension === '.png'
 }
 const foreachRecipe = function (directory, predicate) {
   walk(directory, function (file) {
@@ -184,3 +212,5 @@ module.exports.pathToDisplayPath = pathToDisplayPath
 module.exports.recipeFile = recipeFile
 module.exports.searchItemToResult = searchItemToResult
 module.exports.readImageFromRecipeSync = readImageFromRecipeSync
+module.exports.titleCase = titleCase
+module.exports.domainName = domainName

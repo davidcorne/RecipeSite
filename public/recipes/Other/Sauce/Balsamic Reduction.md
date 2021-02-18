@@ -1,0 +1,25 @@
+
+# Balsamic Reduction # 
+
+This is a recipe with technique from [here](https://www.joyfulhealthyeats.com/balsamic-reduction/), and added to.
+
+## Ingredients ## 
+
+- 250ml balsamic vinegar
+- ~30ml of maple syrup (~2 tbsp)
+- 1 clove of garlic
+- 1½ tsp of thyme
+
+## Method ## 
+
+1. Dice the garlic, very finely.
+2. In a saucepan, fry the garlic in a small amount of oil on a low heat.
+3. When it's lightly fried, add the vinegar and maple syrup.
+4. Measure the depth of the liquid in the pan, **note this down!**
+5. Turn heat to medium/high and bring the mixture to a boil.
+6. Add the thyme
+7. Simmer for 5 to 7 minutes, stirring occasionally. The important thing now, is to reduce it until there's half as much as when we started.
+8. When there's half the volume left, remove from the heat.
+9. This may need some stirring as it cools, but once cool can be refrigerated.
+10. If it's too thick once refrigerated, it should be heated for ~30 seconds in a microwave.
+

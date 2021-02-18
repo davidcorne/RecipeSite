@@ -1,0 +1,45 @@
+
+# Chocolate Meringue Tart # 
+
+The original recipe is from [here](http://www.tasty-recipes.us/leftover-easter-chocolate-tart/24516/).
+
+## Ingredients ## 
+
+### Chocolate Filling
+
+- 250 grams chocolate
+- 200 grams butter
+- 2 eggs
+- 3 egg yolks
+- 50 grams sugar
+- 100 grams plain flour
+
+### Tart
+
+- 1 pre-baked tart shell, 25 cm / 9 in
+
+### Meringue
+
+- 6 egg whites
+- 300 grams caster sugar
+- 1 tablespoon vanilla extract
+- 1 teaspoon wine vinegar
+- 100 grams cocoa powder
+
+## Method ## 
+
+1. Pre-heat the oven to 150°C
+2. Gently melt the chocolate and butter together over a bain-marie.
+3. Once combined, take off the heat.
+4. Stir in the eggs, egg yolks and sugar.
+5. Fold in the flour.
+6. Pour into the tart shell.
+7. Bake for 15 minutes.
+8. Meanwhile, prepare the meringue by whisking the egg whites with an electric hand whisk.
+9. Once foamy, gradually add in the sugar, followed by the vanilla and vinegar.
+10. Whisk until stiff peaks form.
+11. Gently fold in the cocoa powder.
+12. Spoon on top of the chocolate tart.
+13. Bake for 30 minutes.
+14. Cut into slices and serve.
+

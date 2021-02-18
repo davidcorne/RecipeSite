@@ -1,0 +1,31 @@
+
+# Sprouts and Crunchy Chorizo Crumbs # 
+
+This is from the November 2020 edition of BBC Good Food magazine. Also available on the [BBC Good Food](https://www.bbcgoodfood.com/recipes/pan-fried-sprouts-crunchy-chorizo-crumbs) site.
+
+## Ingredients ## 
+
+- 50g day-old white bread, crusts cut off (country bread or sourdough works well)
+- 100g cooking chorizo, skin removed, chopped into large chunks
+- 1 tbsp sunflower oil
+- 25g butter
+- 500g Brussels sprouts, trimmed and quartered
+- 50g day-old white bread, crusts cut off (country bread or sourdough works well)
+- 100g cooking chorizo, skin removed, chopped into large chunks
+- 1 tbsp sunflower oil
+- 25g butter
+- 500g Brussels sprouts, trimmed and quartered
+
+## Method ## 
+
+1. Tip the bread into a food processor and pulse into crumbs.
+2. Add the chorizo and pulse again to combine.
+3. Heat a little of the oil in a large frying pan, and cook the chorizo crumbs gently for 20 mins, drizzling with more oil if the pan becomes dry, until the chorizo has released its fat and becomes crisp and the crumbs are toasted.
+4. Scoop out onto a plate. Will keep in an airtight container at room temperature for up to a day.
+5. Heat the butter in the frying pan until foaming, then cook the sprouts gently for 15 mins, turning occasionally until golden and slightly charred.
+6. Toss in the crumbs and cook for a minute to heat through, then serve.
+
+## Recipe Image
+
+![](/public/images/Sprouts-and-Crunchy-Chorizo-Crumbs.png)
+

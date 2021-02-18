@@ -89,6 +89,40 @@ APP.get('/new', function (request, response) {
   }
 })
 
+/** Function to handle routing of a file
+ * @param {String} filePath
+ * @param {*} response
+ */
+const routeFile = function (filePath, response) {
+  const extension = path.extname(filePath)
+  if (extension === '.md') {
+    // Markdown files need some processing
+    fs.readFile(filePath, function (error, content) {
+      if (error) {
+        throw error
+      }
+      // TODO: replace this with a template
+      response.send(`
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<title>${utils.pathToLabel(filePath)}</title>
+
+<xmp theme="cerulean" style="display:none">
+${content}
+</xmp>
+<script src="/public/resources/strapdown.js"></script>
+<script src="/public/resources/recipe-formatting.js"></script>
+`)
+    })
+  } else {
+    response.sendFile(filePath)
+  }
+}
+
 APP.get('/public/*', function (request, response) {
   onRequest(request)
   const filePath = path.join(__dirname, decode(request.path))
@@ -96,7 +130,7 @@ APP.get('/public/*', function (request, response) {
     if (error) {
       handle404(request, response, 'Resource not found')
     } else {
-      response.sendFile(filePath)
+      routeFile(filePath, response)
     }
   })
 })

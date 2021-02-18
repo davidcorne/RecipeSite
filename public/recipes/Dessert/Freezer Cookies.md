@@ -1,0 +1,58 @@
+
+# Chocolate Chip Cookies # 
+
+These are designed to be frozen, but can also be cooked straight away. This is based on [this recipe](http://allrecipes.co.uk/recipe/12570/freezer-friendly-chocolate-chip-cookies.aspx) with modifications based on the science in the [ATK Perfect Chocolate Chip Cookies](https://www.americastestkitchen.com/recipes/4737-perfect-chocolate-chip-cookies).
+
+![baked-freezer-cookies](/public/images/Freezer-Cookies-Baked.jpg)
+
+This makes ~30 cookies. The recipe can be easily scaled up for mass freezing, or halved for a single batch.
+
+## Ingredients ## 
+
+- 200g butter
+- 220g caster sugar
+- 150g dark brown soft sugar
+- 2 eggs
+- 1 teaspoon vanilla extract
+- 1 teaspoon bicarbonate of soda
+- 375g plain flour
+- 1 teaspoon salt
+- 250g chocolate chips
+- 200g white chocolate
+
+## Method ## 
+
+1. As prep, roughly chop the white chocolate. This will lead to slightly uneven shards of chocolate, but that means it will be incorporated well and taste great.
+2. Melt the butter, and lightly brown it. This will develop a more rounded, caramel like flavour.
+3. In a large bowl mix the sugars into the butter by hand.
+4. Now wait for 5-10 minutes, this will allow the sugar to better dissolve/melt into the butter and for the whole mixture to cool.
+4. Incorporate the eggs one at a time into the mixture.
+5. Add the vanilla extract.
+6. Slowly add in the flour.
+7. Add the chocolate chips and chopped white chocolate.
+8. Form into tablespoon sized balls.
+9. These can now be frozen, see the later section.
+
+### Baking
+
+1. Preheat oven to 200°C.
+2. Place balls on greased baking tray, ensure they have enough room to spread.
+2. Cook for 10-15 minutes from the freezer (8-10 if not frozen) until golden brown.
+
+## Freezing
+
+- When freezing these, you want to freeze them in the tablespoon sized balls you make in step 8. This is so that it's as easy as possible to bake from frozen.
+- To start with, the balls should be spread out on a baking sheet in the freezer for at least an hour so. This is so they don't stick together.
+- After that, they can be placed in a sealed container or plastic bag to store better. Old chocolate tins e.g. celebrations or quality street work well for this.
+
+This is what 3 batches of this recipe looks like:
+
+![Freezer Cookies Prep](/public/images/Freezer-Cookies-Prep.jpg)
+
+It made 99 cookies.
+
+## Ingredient Switches
+
+- These are easy to make gluten free, use any gluten free plain flour mix (I've had success with Dove Farms, Sainsbury's and ASDA's brands). Also, ensure you're using gluten free bicarbonate of soda.
+- The chocolate chips or white chocolate can be switched for other chocolates. I've made these with dark chocolate rather than white, and that worked very well.
+

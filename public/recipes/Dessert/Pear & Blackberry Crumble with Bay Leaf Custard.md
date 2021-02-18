@@ -1,0 +1,63 @@
+
+# Pear & Blackberry Crumble with Bay Leaf Custard # 
+
+This is a recipe from the 2020 October edition of BBC Good Food. There is also a link to it on the [good food website](https://www.bbcgoodfood.com/recipes/pear-blackberry-crumble-with-bay-leaf-custard).
+
+## Ingredients ## 
+
+- knob of butter, plus extra for the dish
+- 6 large pears (Williams, Conference or Comice), peeled, cored and each sliced into 6 thick wedges
+- 100g light muscovado sugar
+- ½ lemon, juiced
+- pinch of ground cinnamon
+- 100g blackberries
+- For the custard (makes 500ml)
+- 2 egg yolks
+- 225ml whole milk, plus a splash
+- 1½ tbsp golden caster sugar
+- 3 fresh bay leaves
+- For the crumble topping
+- 120g plain or spelt flour
+- 140g light muscovado sugar
+- 100g jumbo oats
+- 50g pumpkin seeds
+- 40g flaked almonds
+- 40g skinless blanched hazelnuts, chopped
+- ½ tsp ground cardamom
+- ½ tsp ground ginger
+- 150g unsalted butter, melted
+
+## Method ## 
+
+### Custard
+
+1. Whisk the egg yolks in a bowl until just broken up – they shouldn’t be frothy.
+1. Pour the milk and sugar into a saucepan and warm over a low heat, stirring to dissolve the sugar, until almost boiling.
+1. Add the bay leaves, remove from the heat, and leave to infuse for 10 mins.
+1. If the milk mixture has cooled after this time, briefly warm it up again until just steaming, then remove from the heat.
+1. Discard the bay leaves and pour a little of the mixture into the whisked egg yolks.
+1. Whisk in the splash of milk, then pour the yolk mixture into the milk pan, whisking continuously to combine.
+1. Cook over a low-medium heat, stirring constantly, until the mixture is thick enough to coat the back of a spoon, and silky smooth.
+1. Strain through a sieve and set aside.
+1. The custard can be served warm or cold – you can chill it at this stage, or set aside to reheat later.
+
+### Crumble Topping
+
+1. Combine the flour, sugar, oats, pumpkin seeds, almonds, hazelnuts, spices and a pinch of salt in a bowl, then pour over the butter.
+1. Mix well.
+
+### Crumble 
+
+1. Heat the oven to 200°C/180°C fan.
+1. Butter a large ceramic baking dish.
+1. Combine the pears, sugar, lemon juice, cinnamon and knob of butter in a medium pan, then set over a low heat.
+1. Cook for 4-5 mins, gently stirring, until the pears have released some juice and are slightly softened, but not falling apart.
+1. Remove from the heat and tip into the dish along with half the cooking juices released into the pan.
+1. Dot the blackberries among the filling.
+1. Scatter the crumble topping all over the filling, then bake for 25-30 mins until golden, crisp and bubbling at the edges.
+1. Leave to stand for 10 mins before serving with the custard, alongside the remaining pan juices.
+
+## Recipe
+
+![Pear Blackberry Crumble with Bay Leaf Custard Recipe](/public/images/Pear-&-Blackberry-Crumble-With-Bay-Leaf-Custard.png)
+
