@@ -43,7 +43,7 @@ const scrapeUrl = function (url, callback) {
 const newRecipeFromUrl = function (url, directory, callback) {
   // Get html from url
   scrapeUrl(url, function (html) {
-    const parser = new urlParser.BbcGoodFoodParser()
+    const parser = urlParser.parserFactory(url)
 
     parser.parseRecipe(url, html, function (markdown) {
       const name = parser.parseTitle(url)

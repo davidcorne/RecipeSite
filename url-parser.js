@@ -82,4 +82,8 @@ class BbcGoodFoodParser {
   }
 }
 
-module.exports.BbcGoodFoodParser = BbcGoodFoodParser
+const parserFactory = function (url) {
+  return new BbcGoodFoodParser()
+}
+
+module.exports.parserFactory = parserFactory
