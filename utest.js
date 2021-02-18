@@ -898,10 +898,33 @@ describe('New Recipe', function () {
 describe('Parser', function () {
   const BbcGoodFoodParser = urlParserModule.__get__('BbcGoodFoodParser')
   const parserFactory = urlParserModule.__get__('parserFactory')
+  const markdownTemplate = urlParserModule.__get__('markdownTemplate')
   it('BBC Good Food Title', function () {
     const parser = new BbcGoodFoodParser()
     const title = parser.parseTitle('www.bbcgoodfood.com/recipes/crispy-chilli-beef')
     assert.strictEqual(title, 'Crispy Chilli Beef')
+  })
+  it('Markdown template', function () {
+    const md = markdownTemplate(
+      'A Title',
+      'some alt text',
+      'www.recipe-site.gov',
+      ['1 tsp rubbish', 'a thumb sized piece of ginger'],
+      ['Add all the ingredients, make a well in the middle', 'mix well', 'serve with rice']
+    )
+    assert.include(md, '# A Title #')
+    assert.include(md, '[some alt text](www.recipe-site.gov)')
+    assert.include(md, '- 1 tsp rubbish')
+    assert.include(md, '- a thumb sized piece of ginger')
+    assert.include(md, '1. Add all the ingredients, make a well in the middle')
+    assert.include(md, '1. serve with rice')
+    // Ensure that the lists start the line, no leading spaces.
+    const ulStartLine = /\n- /g
+    // Should have two bullet points starting lines
+    assert.strictEqual(2, md.match(ulStartLine).length)
+    const olStartLine = /\n1. /g
+    // Should have three ordered list items
+    assert.strictEqual(3, md.match(olStartLine).length)
   })
   it('Parser factory', function () {
     const parser = parserFactory('www.bbcgoodfood.com/')
