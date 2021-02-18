@@ -18,6 +18,7 @@ const workerModule = rewire('./worker.js')
 const metadataModule = rewire('./metadata.js')
 const fileListModule = rewire('./file-list.js')
 const newRecipeModule = rewire('./new_recipe.js')
+const urlParserModule = rewire('./url-parser.js')
 
 console.log('Running Unit Tests')
 
@@ -884,12 +885,15 @@ describe('Metadata', function () {
 })
 describe('New Recipe', function () {
   const recipeFileName = newRecipeModule.__get__('recipeFileName')
-  const parseBbcGoodFoodTitle = newRecipeModule.__get__('parseBbcGoodFoodTitle')
   it('Recipe file name', function () {
     assert.strictEqual('hi.md', recipeFileName('hi'))
   })
+})
+describe('Parser', function () {
+  const BbcGoodFoodParser = urlParserModule.__get__('BbcGoodFoodParser')
   it('BBC Good Food Title', function () {
-    const title = parseBbcGoodFoodTitle('www.bbcgoodfood.com/recipes/crispy-chilli-beef')
+    const parser = new BbcGoodFoodParser()
+    const title = parser.parseTitle('www.bbcgoodfood.com/recipes/crispy-chilli-beef')
     assert.strictEqual(title, 'Crispy Chilli Beef')
   })
 })

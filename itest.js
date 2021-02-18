@@ -16,6 +16,7 @@ const metadata = require('./metadata')
 
 const metadataModule = rewire('./metadata.js')
 const newRecipeModule = rewire('./new_recipe.js')
+const urlParserModule = rewire('./url-parser.js')
 
 // Turn off application logging
 winston.level = 'silent'
@@ -341,9 +342,10 @@ describe('New Recipe', function () {
       if (error) {
         throw error
       }
-      const parseBbcGoodFoodRecipe = newRecipeModule.__get__('parseBbcGoodFoodRecipe')
+      const BbcGoodFoodParser = urlParserModule.__get__('BbcGoodFoodParser')
+      const parser = new BbcGoodFoodParser()
       const url = 'www.bbcgoodfood.com/recipes/crispy-chilli-beef'
-      parseBbcGoodFoodRecipe(url, data, function (markdown) {
+      parser.parseRecipe(url, data, function (markdown) {
         assert.include(markdown, url)
         const ingredients = [
           '350g thin-cut minute steak, very thinly sliced into strips',

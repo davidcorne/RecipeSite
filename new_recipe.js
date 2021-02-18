@@ -1,9 +1,8 @@
 const fs = require('fs')
 const path = require('path')
-const cheerio = require('cheerio')
 const request = require('request')
 
-const utils = require('./utils')
+const urlParser = require('./url-parser')
 
 const recipeFileName = function (name) {
   return name + '.md'
@@ -32,84 +31,6 @@ const newRecipe = function (name, directory, callback) {
   fs.writeFile(recipeFilePath(directory, name), md, callback)
 }
 
-const parseBbcGoodFoodIngredients = function ($) {
-  const ingredientHTML = $('.recipe__ingredients')[0].lastChild.firstChild.children
-  const ingredients = []
-  for (const li of ingredientHTML) {
-    const ingredientArray = []
-    const appendIngredient = function (i) {
-      const trimmed = i.trim()
-      if (trimmed) {
-        ingredientArray.push(trimmed)
-      }
-    }
-    for (const sub of li.children) {
-      if (sub.nodeValue) {
-        appendIngredient(sub.nodeValue)
-      } else {
-        appendIngredient(sub.firstChild.nodeValue)
-      }
-    }
-    ingredients.push(ingredientArray.join(' '))
-  }
-  return ingredients
-}
-
-const parseBbcGoodFoodMethod = function ($) {
-  const methodUL = $('.recipe__method-steps')[0].children[1].firstChild
-  const methodArray = []
-  for (const li of methodUL.children) {
-    const content = li.lastChild.firstChild
-    const stepArray = []
-    const appendMethod = function (part) {
-      const trimmed = part.trim()
-      if (trimmed) {
-        stepArray.push(trimmed)
-      }
-    }
-    for (const sub of content.children) {
-      if (sub.nodeValue) {
-        appendMethod(sub.nodeValue)
-      } else {
-        appendMethod(sub.firstChild.nodeValue)
-      }
-    }
-    methodArray.push(stepArray.join(' '))
-  }
-  return methodArray
-}
-
-const parseBbcGoodFoodTitle = function (url) {
-  const position = url.lastIndexOf('/') + 1
-  const name = url.substr(position, url.length)
-  return utils.titleCase(name.split('-').join(' '))
-}
-
-const parseBbcGoodFoodRecipe = function (url, html, callback) {
-  const $ = cheerio.load(html)
-  const ingredients = parseBbcGoodFoodIngredients($).map(
-    i => `- ${i}
-`).join('')
-  const title = parseBbcGoodFoodTitle(url)
-  const method = parseBbcGoodFoodMethod($).map(
-    step => `1. ${step}
-`).join('')
-  const markdown = `# ${title} #
-
-This is a [BBC Good Food](${url}) recipe.
-
-## Ingredients ## 
-
-${ingredients}
-
-## Method ## 
-
-${method}
-
-`
-  callback(markdown)
-}
-
 const scrapeUrl = function (url, callback) {
   request(url, {}, (error, response, body) => {
     if (error) {
@@ -122,9 +43,10 @@ const scrapeUrl = function (url, callback) {
 const newRecipeFromUrl = function (url, directory, callback) {
   // Get html from url
   scrapeUrl(url, function (html) {
-    const name = parseBbcGoodFoodTitle(url)
-    // Parse the html
-    parseBbcGoodFoodRecipe(url, html, function (markdown) {
+    const parser = new urlParser.BbcGoodFoodParser()
+
+    parser.parseRecipe(url, html, function (markdown) {
+      const name = parser.parseTitle(url)
       fs.writeFile(recipeFilePath(directory, name), markdown, callback)
     })
   })
