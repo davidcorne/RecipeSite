@@ -910,7 +910,7 @@ describe('Parser', function () {
       'some alt text',
       'www.recipe-site.gov',
       ['1 tsp rubbish', 'a thumb sized piece of ginger'],
-      ['Add all the ingredients, make a well in the middle', 'serve with rice']
+      ['Add all the ingredients, make a well in the middle', 'mix well', 'serve with rice']
     )
     assert.include(md, '# A Title #')
     assert.include(md, '[some alt text](www.recipe-site.gov)')
@@ -918,6 +918,13 @@ describe('Parser', function () {
     assert.include(md, '- a thumb sized piece of ginger')
     assert.include(md, '1. Add all the ingredients, make a well in the middle')
     assert.include(md, '1. serve with rice')
+    // Ensure that the lists start the line, no leading spaces.
+    const ulStartLine = /\n- /g
+    // Should have two bullet points starting lines
+    assert.strictEqual(2, md.match(ulStartLine).length)
+    const olStartLine = /\n1. /g
+    // Should have three ordered list items
+    assert.strictEqual(3, md.match(olStartLine).length)
   })
   it('Parser factory', function () {
     const parser = parserFactory('www.bbcgoodfood.com/')
