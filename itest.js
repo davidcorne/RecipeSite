@@ -397,8 +397,7 @@ describe('New Recipe', function () {
       parser.parseRecipe(url, data, function (markdown) {
         // Used to give the error "Uncaught TypeError: li.children is not iterable"
         assert.isNotNull(markdown)
-      }
-      )
+      })
     })
   })
 })
