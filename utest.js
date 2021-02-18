@@ -897,10 +897,15 @@ describe('New Recipe', function () {
 })
 describe('Parser', function () {
   const BbcGoodFoodParser = urlParserModule.__get__('BbcGoodFoodParser')
+  const parserFactory = urlParserModule.__get__('parserFactory')
   it('BBC Good Food Title', function () {
     const parser = new BbcGoodFoodParser()
     const title = parser.parseTitle('www.bbcgoodfood.com/recipes/crispy-chilli-beef')
     assert.strictEqual(title, 'Crispy Chilli Beef')
+  })
+  it('Parser factory', function () {
+    const parser = parserFactory('www.bbcgoodfood.com/')
+    assert.strictEqual('BbcGoodFoodParser', parser.constructor.name)
   })
 })
 describe('File List', function () {

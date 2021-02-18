@@ -43,12 +43,16 @@ const scrapeUrl = function (url, callback) {
 const newRecipeFromUrl = function (url, directory, callback) {
   // Get html from url
   scrapeUrl(url, function (html) {
-    const parser = urlParser.parserFactory(url)
+    try {
+      const parser = urlParser.parserFactory(url)
 
-    parser.parseRecipe(url, html, function (markdown) {
-      const name = parser.parseTitle(url)
-      fs.writeFile(recipeFilePath(directory, name), markdown, callback)
-    })
+      parser.parseRecipe(url, html, function (markdown) {
+        const name = parser.parseTitle(url)
+        fs.writeFile(recipeFilePath(directory, name), markdown, callback)
+      })
+    } catch (error) {
+      console.error(error.message)
+    }
   })
 }
 

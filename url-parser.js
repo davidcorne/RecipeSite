@@ -82,8 +82,17 @@ class BbcGoodFoodParser {
   }
 }
 
+const PARSER_MAP = {
+  'bbcgoodfood.com': BbcGoodFoodParser
+}
+
 const parserFactory = function (url) {
-  return new BbcGoodFoodParser()
+  const domain = utils.domainName(url)
+  const ParserClass = PARSER_MAP[domain]
+  if (ParserClass) {
+    return new ParserClass()
+  }
+  throw new Error(`Not a known domain: ${domain}`)
 }
 
 module.exports.parserFactory = parserFactory
