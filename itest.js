@@ -239,24 +239,24 @@ describe('Recipes', function () {
       done()
     })
   })
-  it('Ensure script includes', function (done) {
-    // This isn't relevant any more
-    done()
-    // This ensures that in each html recipe, I'm including strapdown first
+  it('Ensure actual markdown', function (done) {
+    // This ensures that in each markdown recipe, it isn't actually html
     const paths = walkSync('./public/recipes')
     // This will check each file twice, but it's not slow
     const test = function (path, callback) {
-      if (isTextRecipe(path) && !path.includes('Purine Levels.html')) {
+      if (path.endsWith('.md')) {
         const content = fs.readFileSync(path, 'utf8')
-        const strapdown = '<script src="/public/resources/strapdown.js"></script>'
-        const recipeFormatting = '<script src="/public/resources/recipe-formatting.js"></script>'
-        // The html must include these scripts
-        assert.include(content, strapdown)
-        assert.include(content, recipeFormatting)
-        // strapdown must come first
-        const strapdownIndex = content.indexOf(strapdown)
-        const recipeFormattingIndex = content.indexOf(recipeFormatting)
-        assert.isBelow(strapdownIndex, recipeFormattingIndex, 'Strapdown must appear first in recipes')
+        const htmlToExclude = [
+          '<html>',
+          '<!DOCTYPE html>',
+          '<script',
+          '<xmp'
+        ]
+        // The markdown must not include any of these these html snippets
+        console.log(path)
+        for (const snippet of htmlToExclude) {
+          assert.notInclude(content, snippet)
+        }
       }
       callback()
     }
