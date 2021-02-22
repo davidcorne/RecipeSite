@@ -253,10 +253,33 @@ describe('Recipes', function () {
           '<xmp'
         ]
         // The markdown must not include any of these these html snippets
-        console.log(path)
         for (const snippet of htmlToExclude) {
           assert.notInclude(content, snippet)
         }
+      }
+      callback()
+    }
+    async.each(paths, test, function (error) {
+      assert.isNull(error)
+      done()
+    })
+  })
+  it('Ensure not indented', function (done) {
+    // This ensures that in each markdown recipe, it doesn't start with 2+ spaces for each line
+    const paths = walkSync('./public/recipes')
+    // This will check each file twice, but it's not slow
+    const test = function (path, callback) {
+      if (path.endsWith('.md')) {
+        const content = fs.readFileSync(path, 'utf8').split('\n')
+        let indented = true
+        const indentRegex = /^ {2}/
+        for (const line of content) {
+          if (!line.match(indentRegex)) {
+            indented = false
+            break
+          }
+        }
+        assert.isFalse(indented, `Markdown file all indented: ${path}`)
       }
       callback()
     }
