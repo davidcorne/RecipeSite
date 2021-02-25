@@ -338,8 +338,8 @@ describe('Metadata', function () {
   })
 })
 describe('New Recipe', function () {
+  const newRecipe = newRecipeModule.__get__('newRecipe')
   it('Build new recipe', function (done) {
-    const newRecipe = newRecipeModule.__get__('newRecipe')
     const recipeFileName = newRecipeModule.__get__('recipeFileName')
     const name = 'This is a new recipe'
     const fileName = recipeFileName(name)
@@ -351,6 +351,28 @@ describe('New Recipe', function () {
 
         // The recipe should have the recipe name as a header
         assert.include(content, '# ' + name + ' #')
+
+        // Clean up after the test, then we're done
+        fs.unlink(fileName, function (error) {
+          assert.isNull(error)
+          done()
+        })
+      })
+    })
+  })
+  it('New recipe from image', function (done) {
+    const newRecipeFromImage = newRecipeModule.__get__('newRecipeFromImage')
+    const name = 'New-Recipe-from-Image-Test'
+    newRecipeFromImage(`test_data/new_recipe/${name}.png`, '.', function (error) {
+      assert.isNull(error)
+      const fileName = 'New Recipe from Image Test.md'
+      assert.isTrue(fs.statSync(fileName).isFile())
+      fs.readFile(fileName, function (error, buffer) {
+        assert.isNull(error)
+        const content = buffer.toString('utf8')
+
+        // The recipe should have the recipe name as a header
+        assert.include(content, '# New Recipe from Image Test #')
 
         // Clean up after the test, then we're done
         fs.unlink(fileName, function (error) {

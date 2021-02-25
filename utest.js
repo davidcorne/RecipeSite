@@ -891,8 +891,17 @@ describe('Metadata', function () {
 })
 describe('New Recipe', function () {
   const recipeFileName = newRecipeModule.__get__('recipeFileName')
+  const recipeTitleFromImagePath = newRecipeModule.__get__('recipeTitleFromImagePath')
   it('Recipe file name', function () {
     assert.strictEqual('hi.md', recipeFileName('hi'))
+  })
+  it('Recipe title from image', function () {
+    const testCases = [
+      ['this-is-a-recipe.jpg', 'this is a recipe']
+    ]
+    for (const testCase of testCases) {
+      assert.strictEqual(recipeTitleFromImagePath(testCase[0]), testCase[1])
+    }
   })
 })
 describe('Parser', function () {
