@@ -175,7 +175,7 @@ const imageFromRecipe = function (content) {
  */
 const readImageFromRecipeSync = function (recipePath) {
   const extension = path.extname(recipePath)
-  if (extension === '.html') {
+  if (extension === '.html' || extension === '.md') {
     const content = fs.readFileSync(recipePath)
     return imageFromRecipe(String(content))
   }
