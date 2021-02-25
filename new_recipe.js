@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const request = require('request')
 
+const utils = require('./utils')
 const urlParser = require('./url-parser')
 
 const recipeFileName = function (name) {
@@ -56,11 +57,39 @@ const newRecipeFromUrl = function (url, directory, callback) {
   })
 }
 
+const recipeTitleFromImagePath = function (imagePath) {
+  const basename = path.basename(imagePath)
+  const spacified = basename.split('-').join(' ')
+  return utils.changeExtension(spacified, '')
+}
+
+const newRecipeFromImage = function (imagePath, directory, callback) {
+  const title = recipeTitleFromImagePath(imagePath)
+  const md = `# ${title} #
+
+## Ingredients ## 
+
+
+## Method ## 
+
+
+## Recipe Image ##
+
+![${title}](${imagePath})
+
+°C ½ ¼
+
+`
+  const fileName = recipeFileName(title)
+  fs.writeFile(fileName, md, callback)
+}
+
 const main = function () {
   const program = require('commander')
   program
     .version('1.0.0')
     .option('-u, --url <url>', 'Create a recipe from that URL')
+    .option('-i, --image <image>', 'Create a recipe from that image')
     .parse(process.argv)
   const url = program.opts().url
   if (url) {
@@ -69,6 +98,15 @@ const main = function () {
         throw error
       }
       console.log('Wrote recipe from', url)
+    })
+  }
+  const image = program.opts().image
+  if (image) {
+    newRecipeFromImage(image, '.', function (error) {
+      if (error) {
+        throw error
+      }
+      console.log('Wrote recipe from', image)
     })
   }
   program.args.forEach(recipe => {
