@@ -75,7 +75,7 @@ const newRecipeFromImage = function (imagePath, directory, callback) {
 
 ## Recipe Image ##
 
-![${title}](${imagePath})
+![${title}](/${imagePath})
 
 °C ½ ¼
 

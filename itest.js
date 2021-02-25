@@ -374,6 +374,7 @@ describe('New Recipe', function () {
         // The recipe should have the recipe name as a header
         assert.include(content, '# New Recipe from Image Test #')
 
+        assert.include(content, `(/test_data/new_recipe/${name}.png`)
         // Clean up after the test, then we're done
         fs.unlink(fileName, function (error) {
           assert.isNull(error)
