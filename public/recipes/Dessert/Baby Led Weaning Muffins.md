@@ -1,0 +1,54 @@
+# Baby Led Weaning Muffins # 
+
+This is a baby safe muffin and icing recipe from [here](https://mykidslickthebowl.com/baby-led-weaning-muffins-apple-banana-carrot/) and [here](https://www.yummytoddlerfood.com/recipes/desserts/best-smash-cake-with-yogurt-frosting/). This is half the recipe as that was enough for us.
+
+![Iced Baby Muffin](/public/images/Baby-Muffins.jpg)
+
+## Ingredients ## 
+
+### Muffins
+
+- 75g Apple peeled, cored and diced, (medium eating apple)
+- 50g carrot (1 small-medium)
+- 50g Banana (equiv of small bobby banana)
+- 1 eggs
+- 1 teaspoon vanilla
+- 25g melted butter or oil (optional)
+- 80g standard flour (1 ¼ cup)
+- 1 tsp baking powder
+
+### Icing
+
+- 1½ cups whole milk yogurt
+- 2-3 tablespoons maple syrup
+- ¼ teaspoon vanilla extract.
+
+## Method ## 
+
+### Muffins
+
+1. Peel and grate carrot, place apple and carrot in a pot with a little water, pop a lid on and 1. simmer until apple soft. Usually 5-6 mins.
+1. While apple and carrot cooking, place banana in a large bowl, mash with a fork.
+1. Add eggs, vanilla, and butter/oil.
+1. Puree the cooked apple and carrot, I use a stick blender.
+1. Add apple and carrot to the other wet ingredients.
+1. Beat these wet ingredients together with a hand-held beater, should become smooth, yellow and a 1. little frothy.
+1. Add the flour and baking powder.
+1. Beat for a further 30-60 seconds to make a well-mixed batter.
+1. Portion into an oiled muffin tin (I use a non-stick silicon tray sprayed with oil) Mix makes 15 mini muffins.
+1. Bake at 180°C for 15 mins
+1. Cool the muffins
+
+### Icing
+
+1. Place 1½ cups whole milk yogurt in a sieve or fine-mesh strainer lined with a paper towel with a bowl underneath.
+1. Let sit for 30 minutes or up to overnight.
+1. Transfer the yogurt to a bowl and stir in 2-3 tablespoons maple syrup and ¼ teaspoon vanilla extract.
+1. Refrigerate until ready to use.
+
+1. These muffins can be stored in an airtight container for 3 days, or they can be frozen.
+
+## Notes
+
+This recipe is successful without the butter/oil, but you getter a softer muffin with it, and they remain softer for longer with the added butter or oil
+To make the recipe dairy free, substitute the melted butter for a mild tasting vegetable oil. 
