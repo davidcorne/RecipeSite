@@ -155,6 +155,16 @@ const recipeFile = function (file) {
   return ext !== '.cache' && ext !== '.metadata'
 }
 
+/** Function that identifies a file as a text recipe file
+ * @param {String} file               The file path
+ *
+ * @return {Boolean} Returns if the file is a text recipe.
+ */
+const textRecipe = function (file) {
+  const ext = path.extname(file)
+  return ext === '.html' || ext === '.md'
+}
+
 /** Function to get an image path from a search item
  *
  * @param {SearchItem} item
@@ -174,8 +184,7 @@ const imageFromRecipe = function (content) {
  * @returns {String} image, can be empty
  */
 const readImageFromRecipeSync = function (recipePath) {
-  const extension = path.extname(recipePath)
-  if (extension === '.html') {
+  if (textRecipe(recipePath)) {
     const content = fs.readFileSync(recipePath)
     return imageFromRecipe(String(content))
   }
