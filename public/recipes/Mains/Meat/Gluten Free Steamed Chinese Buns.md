@@ -2,6 +2,8 @@
 
 These were a good start on a bun recipe, it didn't work quite as well as I hoped but I would make them again. It's from [gluten free on a shoestring](https://glutenfreeonashoestring.com/gluten-free-steamed-chinese-meat-buns/).
 
+![Gluten Free Steamed Buns](/public/images/Steamed-Buns.jpg)
+
 ## Ingredients ## 
 
 ### For the Dough
@@ -69,10 +71,10 @@ These were a good start on a bun recipe, it didn't work quite as well as I hoped
 
 ### Steam the Buns
 
-Place the steamer, still covered, over just enough simmering water on the stovetop that the water nearly touches the bottom of the steamer, but does not.
-Steam over high heat for 8 minutes, replenishing the steaming water as it evaporates.
-Turn off the heat and allow the steamer to sit, covered, for another 2 to 4 minutes or until the buns are fluffy but relatively firm to the touch.
-Scatter a few chopped scallions on the top of each bun, and serve warm with a side of tamari or gluten free soy sauce.
+1. Place the steamer, still covered, over just enough simmering water on the stovetop that the water nearly touches the bottom of the steamer, but does not.
+1. Steam over high heat for 8 minutes, replenishing the steaming water as it evaporates.
+1. Turn off the heat and allow the steamer to sit, covered, for another 2 to 4 minutes or until the buns are fluffy but relatively firm to the touch.
+1. Scatter a few chopped scallions on the top of each bun, and serve warm with a side of tamari or gluten free soy sauce.
 
 ## Make ahead option
 

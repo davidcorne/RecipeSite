@@ -4,13 +4,13 @@ This is a gluten free pizza recipe from [here](https://glutenfreeonashoestring.c
 
 ## Ingredients ## 
 
-420g all purpose gluten free flour, plus more for sprinkling*
-2¼ teaspoons xanthan gum (omit if your blend already contains it)
-9g instant yeast
-6g sugar
-9g kosher salt
-265ml ounces warm water
-65g extra-virgin olive oil (plus more for brushing)
+- 420g all purpose gluten free flour, plus more for sprinkling*
+- 2¼ teaspoons xanthan gum (omit if your blend already contains it)
+- 9g instant yeast
+- 6g sugar
+- 9g kosher salt
+- 265ml ounces warm water
+- 65g extra-virgin olive oil (plus more for brushing)
 
 ## Method ## 
 

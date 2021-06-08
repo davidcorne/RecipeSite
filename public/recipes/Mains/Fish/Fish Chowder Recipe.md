@@ -2,6 +2,8 @@
 
 This is a very good recipe based on the [Serious Eats Chowder](https://www.seriouseats.com/easy-creamy-one-pot-weeknight-salmon-chowder-recipe). My main changes are swapping fish stock for clam juice, and swapping the amounts of clam juice and milk.
 
+![Fish Chowder](/public/images/Fish-Chowder.jpg)
+
 ## Ingredients ## 
 
 - 225g pound salt pork or bacon, cut into ½-inch pieces
