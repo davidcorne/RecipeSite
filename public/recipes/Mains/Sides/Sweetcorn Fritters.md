@@ -1,0 +1,24 @@
+# Sweetcorn Fritters # 
+
+This is a nice sweetcorn fritter recipe which is easily made child safe, originally from the [Hairy Bikers](https://www.bbc.co.uk/food/recipes/sweetcorn_fritters_46558).
+
+## Ingredients ## 
+
+- 300g sweetcorn
+- 3 spring onions, very finely chopped
+- 3 free-range eggs
+- 30ml milk
+- 75g plain flour
+- vegetable oil, for frying
+- freshly ground black pepper
+
+## Method ## 
+
+1. To make the fritters, put the sweetcorn and spring onions in a bowl.
+1. Beat the eggs with the milk.
+1. Pour this mixture over the sweetcorn and mix well.
+1. Season with pepper.
+1. Sieve the flour with the cayenne pepper and then stir into the sweetcorn mixture.
+1. Heat the oil in a large frying pan then test by adding a tiny bit of the batter – it should immediately start bubbling around the edges when it hits the oil.
+1. Using a small ladle, drop batter onto the oil – you need around 2 tbsp of mixture per fritter. You should be able to fry 4–5 at any one time. Fry for a couple of minutes on one side until light brown then turn over and cook for a further minute.
+1. Turn out onto kitchen paper to remove any excess oil and keep warm in a low oven. Continue until you have used all the batter.

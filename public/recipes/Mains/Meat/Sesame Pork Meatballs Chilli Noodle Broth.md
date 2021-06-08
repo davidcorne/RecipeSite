@@ -1,0 +1,31 @@
+# Sesame Pork Meatballs Chilli Noodle Broth #
+
+This is a [BBC Good Food](https://www.bbcgoodfood.com/recipes/sesame-pork-meatballs-chilli-noodle-broth) recipe.
+
+## Ingredients ##
+
+- 500g pack pork mince
+- 3 red chillies, deseeded, 1 finely chopped, 2 sliced
+- 2 tbsp soy sauce
+- 2 tbsp hoisin sauce
+- 50g sesame seeds
+- small pack coriander , stalks finely chopped, leaves picked
+- 1 tbsp sesame oil
+- 25g ginger (peeled weight), finely grated
+- 500ml chicken stock
+- 250g dried egg noodles
+- 1 large head of broccoli , cut into small florets
+
+
+## Method ##
+
+1. Heat oven to 180°C/160°C fan.
+1. Mix the pork, finely chopped chilli, 1 tbsp soy sauce, 1 tbsp hoisin sauce, two-thirds of the sesame seeds and the coriander stalks.
+1. Roll into 16 meatballs.
+1. Place on a baking-parchment-lined tray and bake for 15 mins until cooked through.
+1. Meanwhile, heat the oil in a large saucepan.
+1. Add the sliced chilli and the ginger, and cook for 1 min.
+1. Add the chicken stock, remaining hoisin and soy sauces, and bring to the boil.
+1. Tip in the noodles and cook for 3 mins.
+1. Add the broccoli and simmer for 3-4 mins until just cooked.
+1. Top with the meatballs and sprinkle with the remaining sesame seeds and the coriander leaves to serve.
