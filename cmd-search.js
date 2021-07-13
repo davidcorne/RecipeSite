@@ -3,7 +3,7 @@
 const commander = require('commander')
 const search = require('./search')
 
-let INDEX = []
+const INDEX = []
 
 const runSearch = function (query) {
   const results = search.search(query, INDEX)

@@ -82,7 +82,7 @@ describe('Caches', function () {
   const cacheFile = buildCacheModule.__get__('cacheFile')
   it('HTML cache', function (done) {
     getHtmlCacheContent('test_data/generic/test_recipe.html', (content) => {
-      var expected = `Test Recipe Title
+      const expected = `Test Recipe Title
 # Test Recipe #
 
 ## Ingredients
@@ -195,19 +195,19 @@ describe('Search', function () {
     const search = searchModule.__get__('search')
     const index = []
     index.push({
-      'file': path.join('A', 'B', 'c.path'),
-      'content': 'This is found',
-      'tags': []
+      file: path.join('A', 'B', 'c.path'),
+      content: 'This is found',
+      tags: []
     })
     index.push({
-      'file': path.join('A', 'C', 'd.path'),
-      'content': 'This is FOUND, but more found!',
-      'tags': []
+      file: path.join('A', 'C', 'd.path'),
+      content: 'This is FOUND, but more found!',
+      tags: []
     })
     index.push({
-      'file': 'c',
-      'content': 'This is foand',
-      'tags': []
+      file: 'c',
+      content: 'This is foand',
+      tags: []
     })
 
     const results = search('found', index)
@@ -246,14 +246,14 @@ describe('Search', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
-        'file': 'apple',
-        'content': 'title not included',
-        'tags': []
+        file: 'apple',
+        content: 'title not included',
+        tags: []
       },
       {
-        'file': 'title not in data',
-        'content': 'but it does have apple',
-        'tags': []
+        file: 'title not in data',
+        content: 'but it does have apple',
+        tags: []
       }
     ]
     const results = search('apple', index)
@@ -266,14 +266,14 @@ describe('Search', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
-        'file': '1',
-        'content': 'This recipe is of type TAG, it is a TAG recipe.',
-        'tags': []
+        file: '1',
+        content: 'This recipe is of type TAG, it is a TAG recipe.',
+        tags: []
       },
       {
-        'file': '2',
-        'content': 'but it does have apple',
-        'tags': ['tag']
+        file: '2',
+        content: 'but it does have apple',
+        tags: ['tag']
       }
     ]
     const results = search('TAG', index)
@@ -286,14 +286,14 @@ describe('Search', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
-        'file': '1',
-        'content': 'Nothing',
-        'tags': []
+        file: '1',
+        content: 'Nothing',
+        tags: []
       },
       {
-        'file': '2',
-        'content': 'but it does have apple',
-        'tags': ['tag']
+        file: '2',
+        content: 'but it does have apple',
+        tags: ['tag']
       }
     ]
     const results = search('ag', index)
@@ -302,7 +302,7 @@ describe('Search', function () {
   })
   it('Build index', function (done) {
     const buildIndex = searchModule.__get__('buildIndex')
-    let index = []
+    const index = []
     buildIndex('test_data/build_index_root', index)
     const testIndex = function () {
       assert.strictEqual(index.length, 1)
@@ -327,20 +327,20 @@ describe('Search', function () {
     try {
       const index = [
         {
-          'file': '1',
-          'content': 'Nothing',
-          'tags': []
+          file: '1',
+          content: 'Nothing',
+          tags: []
         },
         {
-          'file': '2',
-          'content': 'but it does have apple',
-          'tags': ['tag']
+          file: '2',
+          content: 'but it does have apple',
+          tags: ['tag']
         }
       ]
       workerModule.__set__('INDEX', index)
       const searchIndex = workerModule.__get__('searchIndex')
 
-      let data = {'query': 'nothing', 'page': 1}
+      const data = { query: 'nothing', page: 1 }
       searchIndex(data)
       assert.isNotNull(data.key)
       assert.isNotNull(data.suggestions)
@@ -362,24 +362,24 @@ describe('Search', function () {
     const search = searchModule.__get__('search')
     const index = []
     index.push({
-      'file': 'one',
-      'content': 'lorum keyword ipsum\nother other stuff',
-      'tags': []
+      file: 'one',
+      content: 'lorum keyword ipsum\nother other stuff',
+      tags: []
     })
     index.push({
-      'file': 'two',
-      'content': 'keyword other\nlorum ipsum',
-      'tags': []
+      file: 'two',
+      content: 'keyword other\nlorum ipsum',
+      tags: []
     })
     index.push({
-      'file': 'three',
-      'content': 'keyword',
-      'tags': []
+      file: 'three',
+      content: 'keyword',
+      tags: []
     })
     index.push({
-      'file': 'four',
-      'content': 'No match here',
-      'tags': []
+      file: 'four',
+      content: 'No match here',
+      tags: []
     })
     const results = search('keyword other', index)
     assert.strictEqual(results.length, 3)
@@ -394,19 +394,19 @@ describe('Search', function () {
     const search = searchModule.__get__('search')
     const index = []
     index.push({
-      'file': 'one',
-      'content': 'aa cc',
-      'tags': []
+      file: 'one',
+      content: 'aa cc',
+      tags: []
     })
     index.push({
-      'file': 'two',
-      'content': 'bb bb bb cc',
-      'tags': []
+      file: 'two',
+      content: 'bb bb bb cc',
+      tags: []
     })
     index.push({
-      'file': 'three',
-      'content': 'bb aa cc',
-      'tags': []
+      file: 'three',
+      content: 'bb aa cc',
+      tags: []
     })
     const results = search('aa bb', index)
     assert.strictEqual(results.length, 3)
@@ -419,14 +419,14 @@ describe('Search', function () {
     const search = searchModule.__get__('search')
     const index = []
     index.push({
-      'file': 'one',
-      'content': 'There is no sensible result here',
-      'tags': []
+      file: 'one',
+      content: 'There is no sensible result here',
+      tags: []
     })
     index.push({
-      'file': 'two',
-      'content': 'More random strings',
-      'tags': []
+      file: 'two',
+      content: 'More random strings',
+      tags: []
     })
     {
       // Trailing
@@ -453,9 +453,9 @@ describe('Search', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
-        'file': 'one',
-        'content': 'This is an original creme brulee',
-        'tags': []
+        file: 'one',
+        content: 'This is an original creme brulee',
+        tags: []
       }
     ]
     {
@@ -468,9 +468,9 @@ describe('Search', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
-        'file': 'Gruyère Chips',
-        'content': 'These are some chips made of cheese!',
-        'tags': []
+        file: 'Gruyère Chips',
+        content: 'These are some chips made of cheese!',
+        tags: []
       }
     ]
     {
@@ -479,9 +479,9 @@ describe('Search', function () {
       assert.strictEqual(results.length, 1)
     }
     index.push({
-      'file': 'Other Cheese',
-      'content': 'This recipe contains Gruyere',
-      'tags': []
+      file: 'Other Cheese',
+      content: 'This recipe contains Gruyere',
+      tags: []
     })
     {
       // Ensure that the title is weighted correctly.
@@ -495,14 +495,14 @@ describe('Search', function () {
     const search = searchModule.__get__('search')
     const index = [
       {
-        'file': '1',
-        'content': 'Maximum maximum',
-        'tags': []
+        file: '1',
+        content: 'Maximum maximum',
+        tags: []
       },
       {
-        'file': '2',
-        'content': 'mum',
-        'tags': []
+        file: '2',
+        content: 'mum',
+        tags: []
       }
     ]
 
@@ -591,9 +591,9 @@ describe('Routing', function () {
     const app = workerModule.__get__('APP')
     const index = [
       {
-        'file': 'test 1',
-        'content': 'never found',
-        'tags': []
+        file: 'test 1',
+        content: 'never found',
+        tags: []
       }
     ]
     workerModule.__set__('INDEX', index)
@@ -626,14 +626,14 @@ describe('Routing', function () {
     const app = workerModule.__get__('APP')
     const index = [
       {
-        'file': 'test 1',
-        'content': 'The context of this bean\nNot this line though.',
-        'tags': []
+        file: 'test 1',
+        content: 'The context of this bean\nNot this line though.',
+        tags: []
       },
       {
-        'file': 'test 2',
-        'content': 'this baen.',
-        'tags': []
+        file: 'test 2',
+        content: 'this baen.',
+        tags: []
       }
     ]
     workerModule.__set__('INDEX', index)
@@ -697,9 +697,9 @@ describe('Routing', function () {
     const loadDictionary = workerModule.__get__('loadDictionary')
     const index = [
       {
-        'file': 'test',
-        'content': 'irrelevant',
-        'tags': []
+        file: 'test',
+        content: 'irrelevant',
+        tags: []
       }
     ]
     workerModule.__set__('INDEX', index)
@@ -730,14 +730,14 @@ describe('Routing', function () {
     const loadDictionary = workerModule.__get__('loadDictionary')
     const index = [
       {
-        'file': 'A',
-        'content': 'Some content',
-        'tags': []
+        file: 'A',
+        content: 'Some content',
+        tags: []
       },
       {
-        'file': 'B',
-        'content': 'Some more content',
-        'tags': []
+        file: 'B',
+        content: 'Some more content',
+        tags: []
       }
     ]
     workerModule.__set__('INDEX', index)
@@ -772,22 +772,22 @@ describe('Routing', function () {
     const thirdRecipe = 'a6533d2b-4733-4f86-9225-e7c84eac06f5'
     const index = [
       {
-        'file': thirdRecipe,
-        'content': 'Some content',
-        'tags': [],
-        'date': 1
+        file: thirdRecipe,
+        content: 'Some content',
+        tags: [],
+        date: 1
       },
       {
-        'file': secondRecipe,
-        'content': 'Some more content',
-        'tags': [],
-        'date': 2
+        file: secondRecipe,
+        content: 'Some more content',
+        tags: [],
+        date: 2
       },
       {
-        'file': firstRecipe,
-        'content': 'Even more content!',
-        'tags': [],
-        'date': 3
+        file: firstRecipe,
+        content: 'Even more content!',
+        tags: [],
+        date: 3
       }
     ]
     workerModule.__set__('INDEX', index)
@@ -825,30 +825,30 @@ describe('Metadata', function () {
     const validMetadata = metadataModule.__get__('validMetadata')
     // Some valid options
     let t = {
-      'tags': ['vegan', 'gout'],
-      'date': 'a date',
-      'image': 'an image'
+      tags: ['vegan', 'gout'],
+      date: 'a date',
+      image: 'an image'
     }
     assert.isTrue(validMetadata(t))
     t = {
-      'tags': [],
-      'date': 'a date'
+      tags: [],
+      date: 'a date'
     }
     // Incorrect data
     t = {
-      'diet': [],
-      'cuisine': [4],
-      'type': 'recipe'
+      diet: [],
+      cuisine: [4],
+      type: 'recipe'
     }
     assert.isFalse(validMetadata(t))
 
     t = {
-      'tags': [1]
+      tags: [1]
     }
     assert.isFalse(validMetadata(t))
 
     t = {
-      'tags': 'vegan'
+      tags: 'vegan'
     }
     assert.isFalse(validMetadata(t))
     assert.isFalse(validMetadata(undefined))
@@ -856,14 +856,14 @@ describe('Metadata', function () {
   it('Reading sync', function () {
     const readMetadataSync = metadataModule.__get__('readMetadataSync')
     const t = readMetadataSync('test_data/generic/test.html')
-    const recipeTags = t['tags']
+    const recipeTags = t.tags
     assert.strictEqual(recipeTags.length, 5)
     assert.isTrue(recipeTags.includes('gout'))
     assert.isTrue(recipeTags.includes('vegan'))
     assert.isTrue(recipeTags.includes('FODMAP'))
     assert.isTrue(recipeTags.includes('fusion'))
     assert.isTrue(recipeTags.includes('italian'))
-    assert.strictEqual(t['date'], 'someday')
+    assert.strictEqual(t.date, 'someday')
   })
   it('Reading', function (done) {
     const readMetadata = metadataModule.__get__('readMetadata')
@@ -875,7 +875,7 @@ describe('Metadata', function () {
       assert.isTrue(tags.includes('FODMAP'))
       assert.isTrue(tags.includes('fusion'))
       assert.isTrue(tags.includes('italian'))
-      assert.strictEqual(allTags['date'], 'someday')
+      assert.strictEqual(allTags.date, 'someday')
       done()
     })
   })
@@ -951,24 +951,24 @@ describe('File List', function () {
     const filterNewRecipes = fileListModule.__get__('filterNewRecipes')
     const index = []
     index.push({
-      'file': '2',
-      'content': '2',
-      'date': '2'
+      file: '2',
+      content: '2',
+      date: '2'
     })
     index.push({
-      'file': '4',
-      'content': '4',
-      'date': '4'
+      file: '4',
+      content: '4',
+      date: '4'
     })
     index.push({
-      'file': '3',
-      'content': '3',
-      'date': '3'
+      file: '3',
+      content: '3',
+      date: '3'
     })
     index.push({
-      'file': '1',
-      'content': '1',
-      'date': '1'
+      file: '1',
+      content: '1',
+      date: '1'
     })
     const orderedRecipes = filterNewRecipes(index)
     assert.strictEqual(orderedRecipes.length, 4)
@@ -982,19 +982,19 @@ describe('File List', function () {
     const filterNewRecipes = fileListModule.__get__('filterNewRecipes')
     const index = []
     index.push({
-      'file': '2',
-      'content': '2',
-      'date': '2'
+      file: '2',
+      content: '2',
+      date: '2'
     })
     index.push({
-      'file': '4',
-      'content': '4',
-      'date': '2'
+      file: '4',
+      content: '4',
+      date: '2'
     })
     index.push({
-      'file': '3',
-      'content': '3',
-      'date': '2'
+      file: '3',
+      content: '3',
+      date: '2'
     })
     // This should sort by date, then by name
     for (let i = 0; i < 100; ++i) {

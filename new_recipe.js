@@ -10,7 +10,7 @@ const recipeFileName = function (name) {
 }
 
 const recipeMd = function (name) {
-  const md = `# ` + name + ` # 
+  const md = '# ' + name + ` # 
 
 ## Ingredients ## 
 
