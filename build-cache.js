@@ -2,7 +2,7 @@
 const fs = require('graceful-fs')
 const path = require('path')
 const PDFParser = require('pdf2json')
-const jsdom = require('jsdom')
+// const jsdom = require('jsdom')
 const md5 = require('md5-file')
 const firstline = require('firstline')
 
@@ -16,21 +16,21 @@ const getHtmlCacheContent = function (file, callback) {
     if (error) {
       throw error
     }
-    jsdom.env(content, function (error, window) {
-      if (error) {
-        throw error
-      }
-      let markdown = ''
-      const title = window.document.getElementsByTagName('title')[0]
-      markdown += title.innerHTML
-      const xmp = window.document.getElementsByTagName('xmp')[0]
-      // Some are just HTML, they won't have a markdown element.
-      if (xmp) {
-        markdown += xmp.innerHTML
-      }
-      window.close()
-      callback(markdown)
-    })
+    // jsdom.env(content, function (error, window) {
+    //   if (error) {
+    //     throw error
+    //   }
+    //   let markdown = ''
+    //   const title = window.document.getElementsByTagName('title')[0]
+    //   markdown += title.innerHTML
+    //   const xmp = window.document.getElementsByTagName('xmp')[0]
+    //   // Some are just HTML, they won't have a markdown element.
+    //   if (xmp) {
+    //     markdown += xmp.innerHTML
+    //   }
+    //   window.close()
+    //   callback(markdown)
+    // })
   })
 }
 
