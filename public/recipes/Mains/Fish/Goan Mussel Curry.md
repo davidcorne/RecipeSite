@@ -5,7 +5,7 @@ This is a [BBC Good Food](https://www.bbcgoodfood.com/recipes/goan-mussels) reci
 
 ![Mussel Curry on Spiced Rice](/public/images/Mussel-Curry-on-Spiced-Rice.jpg)
 
-As pictured, this goes well with <a href="/public/recipes/Mains/Sides/Spiced%20Rice.html">Spiced Rice</a>.
+As pictured, this goes well with <a href="/public/recipes/Mains/Sides/Spiced%20Rice.md">Spiced Rice</a>.
 
 ## Ingredients ## 
 
