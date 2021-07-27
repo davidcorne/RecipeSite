@@ -2,7 +2,7 @@
 
 This is a Nigella recipe from [here](https://www.nigella.com/recipes/sweet-potato-macaroni-cheese), which works really well. You can easily make it child safe by omitting the feta, or make separate portions some with and some without feta.
 
-![Sweet Potato Macaroni Cheese]
+![Sweet Potato Macaroni Cheese](Sweet-Potato-Macaroni-Cheese.jpg)
 
 ## Ingredients ## 
 
