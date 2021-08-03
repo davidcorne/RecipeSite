@@ -1,0 +1,38 @@
+# Sweet Potato Macaroni Cheese # 
+
+This is a Nigella recipe from [here](https://www.nigella.com/recipes/sweet-potato-macaroni-cheese), which works really well. You can easily make it child safe by omitting the feta, or make separate portions some with and some without feta.
+
+![Sweet Potato Macaroni Cheese](/public/images/Sweet-Potato-Macaroni-Cheese.jpg)
+
+## Ingredients ## 
+
+- 500g sweet potatoes (cut roughly into 2–3cm/1 inch pieces)
+- 300g pennette (or other small, short pasta)
+- 4 tablespoons soft unsalted butter
+- 3 tablespoons plain flour
+- 500 millilitres full fat milk
+- 1 teaspoon english mustard
+- ¼ teaspoon paprika (plus another quarter teaspoon to sprinkle on top)
+- 75g feta cheese
+- 125g mature cheddar (plus 25g to sprinkle on top)
+- 4 fresh sage leaves
+- salt (to taste)
+- pepper (to taste)
+
+## Method ## 
+
+1. Preheat the oven to 200°C/180°C Fan.
+1. Put on a large-ish pan of water to boil, with the lid on to make it come to the boil faster.
+1. When the water’s boiling, add salt to taste, and then the sweet potato pieces, and cook them for about 10 minutes or until they are soft.
+1. Scoop them out of the water into a bowl – using a ”spider” or slotted spoon – and lightly mash with a fork, without turning them into a purée. Don’t get rid of this water, as you 1. will need it to cook your pasta in later.
+1. In another saucepan, gently melt the butter and add the flour, whisking to form a roux, then take the pan off the heat, slowly whisk in the milk and, when it’s all combined and smooth, put back on the heat.
+1. Exchange your whisk for a wooden spoon, and continue to stir until your gently bubbling sauce has lost any floury taste and has thickened.
+1. Add the mustard and the ¼ teaspoon of paprika.
+1. Season to taste, but do remember that you will be adding Cheddar and salty feta later, so underdo it for now.
+1. Cook the pasta in the sweet-potato water, starting to check 2 minutes earlier than packet instructions dictate, as you want to make sure it doesn’t lose its bite entirely.
+1. Drain (reserving some of the pasta cooking water first) and then add the pasta to the mashed sweet potato, and fold in to combine; the heat of the pasta will make the mash easier to mix in.
+1. Add the feta cheese to the sweet potato and pasta mixture, crumbling it in so that it is easier to disperse evenly, then fold in the white sauce, adding the 125g grated Cheddar as you go.
+1. Add some of the pasta cooking water, should you feel it needs loosening up at all.
+1. Check for seasoning again, then, when you’re happy, spoon the brightly sauced macaroni cheese into 4 small ovenproof dishes (or 1 large rectangular dish measuring).
+1. Sprinkle the remaining Cheddar over each one, dust with the remaining ¼ teaspoon of paprika, then shred the sage leaves and scatter the skinny green ribbons over the top, too.
+1. Put the pots on a baking tray, pop into the oven and bake for 20 minutes (or, if you’re making this in a larger dish, bake for 30–35 minutes), by which time they will be piping hot and bubbling, and begging you to eat them.

@@ -292,7 +292,8 @@ describe('Recipes', function () {
 describe('Images', function () {
   it('Referenced', function (done) {
     // This checks that each image in public/images is referenced in a recipe
-    fs.readdir('public/images', function (error, images) {
+    const root = 'public/images'
+    fs.readdir(root, function (error, images) {
       if (error) {
         throw error
       }
@@ -302,7 +303,7 @@ describe('Images', function () {
         // Iterate through the images backwards so we can remove elements
         let i = images.length
         while (i--) {
-          const image = images[i]
+          const image = '/' + root + '/' + images[i]
           if (content.includes(image)) {
             images.splice(i, 1)
           }

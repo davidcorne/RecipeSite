@@ -1,0 +1,53 @@
+# Courgette Broad Bean Risotto Basil Pesto #
+
+This is a [BBC Good Food](https://www.bbcgoodfood.com/recipes/courgette-broad-bean-risotto-basil-pesto) recipe. This also works well with store bought pesto.
+
+## Ingredients ##
+
+- 3 tbsp olive oil
+- 1 tsp butter
+- 2 medium courgettes (about 350g), cut into 1-2cm dice
+- pinch of chilli flakes
+- pinch of grated nutmeg
+- 2 spring onions, finely sliced
+- ½ lemon, zested
+- 150g risotto rice
+- 75ml dry white wine or vermouth
+- 750g warm vegetable or chicken stock
+- 80g broad beans, blanched and peeled
+- courgette flowers, stamen removed and petals torn (optional)
+- 20g parmesan or vegetarian alternative, grated, plus extra to serve
+
+### For the pesto
+
+- 1 garlic clove
+- 1 tbsp toasted pine nuts
+- large handful of basil leaves , plus extra to serve
+- handful of mint leaves
+- 1 tbsp olive oil
+- 1 tbsp grated parmesan or vegetarian alternative
+
+## Method ##
+
+### Pesto 
+
+1. To make the pesto, crush the garlic to a paste with a pinch of salt using a pestle and mortar.
+1. Add the pine nuts and pound to a coarse paste, then tear in the basil and mint, pounding again until they’ve broken down.
+1. Stir in the oil and cheese, then taste for seasoning – add more cheese if you like.
+
+### Risotto
+
+1. Heat the oil and butter in a large non-stick frying pan over a medium heat.
+1. Add the courgettes, sprinkle in the chilli flakes and nutmeg, and season with salt and pepper.
+1. Fry for 3-5 mins until the courgettes are golden and softened.
+1. Add the spring onions and lemon zest, and stir for a minute or two.
+1. Tip in the rice and stir to coat in the oil until translucent, about 2 mins.
+1. Pour in the wine, then cook for a couple of minutes until it’s mostly evaporated.
+1. Add a ladleful of the stock and stir for a few minutes until it’s absorbed.
+1. Continue adding a ladleful at a time for 20-30 mins, stirring continually, until all of the stock is absorbed.
+1. Stir in the blanched broad beans and flowers, if using, and warm through for 2 mins.
+1. Remove from the heat and stir through the parmesan.
+1. Allow to sit for about 5 mins, then swirl through half of the pesto.
+1. Any remaining pesto will keep chilled for up to two days.
+1. Divide the risotto between bowls and scatter with the extra basil leaves, extra cheese and another spoonful of the pesto, if you like.
+
