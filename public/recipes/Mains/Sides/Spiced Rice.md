@@ -5,7 +5,7 @@ This is a good side dish for any curry, from [BBC Good Food](https://www.bbcgood
 
 ![Mussel Curry on Spiced Rice](/public/images/Mussel-Curry-on-Spiced-Rice.jpg)
 
-As pictured, this goes well with <a href="/public/recipes/Mains/Fish/Goan%20Mussel%20Curry.html">Goad Mussel Curry</a>.
+As pictured, this goes well with <a href="/public/recipes/Mains/Fish/Goan%20Mussel%20Curry.md">Goan Mussel Curry</a>.
 
 
 ## Ingredients ## 
