@@ -34,7 +34,7 @@
     "cheerio": "^1.0.0-rc.5",
     "commander": "^3.0.2",
     "mocha": "^3.2.0",
-    "nodemon": "^1.11.0",
+    "nodemon": "^2.0.12",
     "request": "^2.88.2",
     "rewire": "^2.5.2",
     "standard": "^11.0.1",
