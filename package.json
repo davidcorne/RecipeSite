@@ -15,7 +15,7 @@
   "dependencies": {
     "character-parser": "^3.1.0",
     "dictionary-en-gb": "^2.0.0",
-    "express": "*",
+    "express": "^4.17.1",
     "firstline": "^1.2.1",
     "graceful-fs": "^4.1.11",
     "jsdom": "^9.9.1",
@@ -23,7 +23,7 @@
     "md5-file": "^3.2.3",
     "nspell": "^2.1.0",
     "pdf2json": "^1.1.7",
-    "pug": "^3.0.1",
+    "pug": "^3.0.2",
     "urldecode": "^1.0.1",
     "winston": "^2.3.0"
   },
