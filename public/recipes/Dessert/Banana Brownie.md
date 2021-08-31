@@ -10,7 +10,7 @@ This is a good looking child safe brownie recipe from [here](https://kirbiecravi
 ### Chocolate Frosting (Optional)
 
 - 2 tbsp coconut oil melted
-- 1/4 cup unsweetened cocoa powder or cacao powder
+- ¼ cup unsweetened cocoa powder or cacao powder
 - 2 tbsp maple syrup
 
 ## Method
