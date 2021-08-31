@@ -1,0 +1,38 @@
+# Coconut Kale Fish Curry #
+
+This is a [BBC Good Food](https://www.bbcgoodfood.com/recipes/coconut-kale-fish-curry) recipe.
+
+![Coconut Kale Fish Curry](/public/images/Coconut-Kale-Fish-Curry.jpg)
+
+## Ingredients ##
+
+- 1 tbsp rapeseed oil
+- 1 onion , sliced
+- thumb-sized piece ginger , sliced into matchsticks
+- 1 tsp turmeric
+- 3-4 tbsp mild curry paste (Keralan works well)
+- 150g cherry tomatoes , halved
+- 150g kale , chopped
+- 1 red chilli , halved
+- 325ml low-fat  coconut milk
+- 300ml low-salt stock
+- 250g brown rice
+- 100g frozen  king prawns
+- 2 cod fillets, cut into chunks
+- 2 limes , juiced
+- ½ small bunch coriander , chopped
+- handful of toasted coconut flakes (optional)
+
+
+## Method ##
+
+1. Heat the oil in a casserole dish.
+1. Cook the onion with a pinch of salt for 10 mins until it starts to caramalise.
+1. Stir through the ginger, turmeric and curry paste, and cook for 2 mins.
+1. Add the tomatoes, kale and chilli, and pour in the coconut milk and stock.
+1. Simmer for 10-15 mins or until the tomatoes begin to soften. Scoop out the chilli and discard.
+1. Cook the rice following pack instructions.
+1. Gently stir the prawns and cod through the curry, then cook for another 3-5 mins.
+1. Squeeze over the lime and stir through half of the coriander.
+1. To serve, scatter over the remaining coriander and the coconut flakes, if you like.
+1. Serve with the rice.
