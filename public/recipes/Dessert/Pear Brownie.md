@@ -1,5 +1,7 @@
 # Pear Brownie # 
 
+This is a good recipe for fudgy brownie that we made to use up some overripe pears. It comes originally from [Food to Love](https://www.foodtolove.co.nz/recipes/fudgy-pear-and-chocolate-brownie-8372).
+
 ## Ingredients ## 
 
 - 220g butter, cut into cubes
