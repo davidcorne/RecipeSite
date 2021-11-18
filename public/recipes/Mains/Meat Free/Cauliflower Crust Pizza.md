@@ -2,6 +2,8 @@
 
 This is a [BBC Good Food](https://www.bbcgoodfood.com/recipes/cauliflower-crust-pizza) recipe.
 
+![Cauliflower Crust Pizza](/public/images/Cauliflower-Crust-Pizza.jpg)
+
 ## Ingredients ##
 
 - 1 cauliflower (about 750g)

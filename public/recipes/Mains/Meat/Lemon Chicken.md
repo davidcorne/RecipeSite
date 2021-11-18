@@ -2,14 +2,16 @@
 
 This is a good takeaway style lemon chicken recipe from [Tasty](https://tasty.co/recipe/chinese-take-away-style-lemon-chicken). I've not included the instructions on breading and cooking chicken, and I've doubled the recipe.
 
+![Lemon Chicken on Rice](/public/images/Lemon-Chicken.jpg)
+
 ## Ingredients ## 
 
-120ml chicken stock
-1 lemon zested
-2 lemons, juiced
-8 tablespoons sugar
-2 tablespoons water
-1 tablespoon corn flour
+- 120ml chicken stock
+- 1 lemon zested
+- 2 lemons, juiced
+- 8 tablespoons sugar
+- 2 tablespoons water
+- 1 tablespoon corn flour
 
 ## Method ## 
 
