@@ -905,13 +905,16 @@ describe('New Recipe', function () {
   })
 })
 describe('Parser', function () {
-  const BbcGoodFoodParser = urlParserModule.__get__('BbcGoodFoodParser')
   const parserFactory = urlParserModule.__get__('parserFactory')
+  const parseTitle = urlParserModule.__get__('parseTitle')
   const markdownTemplate = urlParserModule.__get__('markdownTemplate')
   it('BBC Good Food Title', function () {
-    const parser = new BbcGoodFoodParser()
-    const title = parser.parseTitle('www.bbcgoodfood.com/recipes/crispy-chilli-beef')
+    const title = parseTitle('www.bbcgoodfood.com/recipes/crispy-chilli-beef')
     assert.strictEqual(title, 'Crispy Chilli Beef')
+  })
+  it('Other Reicpe Title', function () {
+    const title = parseTitle('https://rebeccawilson.com/recipe/baby-meatloaf/')
+    assert.strictEqual(title, 'Baby Meatloaf')
   })
   it('Markdown template', function () {
     const md = markdownTemplate(

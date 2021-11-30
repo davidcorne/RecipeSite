@@ -32,6 +32,18 @@ ${method}
 `
 }
 
+const parseTitle = function (url) {
+  const urlArray = url.split('/')
+  let name = ''
+  for (let i = urlArray.length - 1; i >= 0; i--) {
+    if (urlArray[i]) {
+      name = urlArray[i]
+      break
+    }
+  }
+  return utils.titleCase(name.split('-').join(' '))
+}
+
 class BbcGoodFoodParser {
   parseMethod ($) {
     const methodUL = $('.recipe__method-steps')[0].children[1].firstChild
@@ -83,9 +95,7 @@ class BbcGoodFoodParser {
   }
 
   parseTitle (url) {
-    const position = url.lastIndexOf('/') + 1
-    const name = url.substr(position, url.length)
-    return utils.titleCase(name.split('-').join(' '))
+    return parseTitle(url)
   }
 
   markdown (title, url, ingredients, method) {
@@ -102,6 +112,20 @@ class BbcGoodFoodParser {
   }
 }
 
+class DefaultParser {
+  parseTitle (url) {
+    return parseTitle(url)
+  }
+
+  parseRecipe (url, html, callback) {
+    const title = parseTitle(url)
+    const ingredients = []
+    const method = []
+    const markdown = markdownTemplate(title, title, url, ingredients, method)
+    callback(markdown)
+  }
+}
+
 const PARSER_MAP = {
   'bbcgoodfood.com': BbcGoodFoodParser
 }
@@ -111,8 +135,9 @@ const parserFactory = function (url) {
   const ParserClass = PARSER_MAP[domain]
   if (ParserClass) {
     return new ParserClass()
+  } else {
+    return new DefaultParser()
   }
-  throw new Error(`Not a known domain: ${domain}`)
 }
 
 module.exports.parserFactory = parserFactory
