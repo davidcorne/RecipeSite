@@ -13,20 +13,20 @@ const configuration = require('./configuration')
 const search = require('./search')
 const fileList = require('./file-list')
 
-let INDEX = []
+const INDEX = []
 const RECIPE_ROOT = 'public/recipes'
 
 let SPELL = null
 
 // Compile a function
 const TEMPLATES = {
-  'index': pug.compileFile('template/index.pug'),
-  'images': pug.compileFile('template/images.pug'),
-  'search': pug.compileFile('template/search.pug'),
-  'new': pug.compileFile('template/new.pug'),
+  index: pug.compileFile('template/index.pug'),
+  images: pug.compileFile('template/images.pug'),
+  search: pug.compileFile('template/search.pug'),
+  new: pug.compileFile('template/new.pug'),
   'new-not-ready': pug.compileFile('template/new-not-ready.pug'),
   'search-not-ready': pug.compileFile('template/search-not-ready.pug'),
-  '404': pug.compileFile('template/404.pug')
+  404: pug.compileFile('template/404.pug')
 }
 
 const APP = express()
@@ -141,7 +141,7 @@ APP.get('/images', function (request, response) {
     if (error) {
       handle404(request, response, 'Internal error: images not found')
     } else {
-      sendTemplate(request, response, 'images', {imagePaths: files})
+      sendTemplate(request, response, 'images', { imagePaths: files })
     }
   })
 })
@@ -156,22 +156,22 @@ const searchIndex = function (data) {
   const timer = utils.timer().start()
   const results = search.search(data.query, INDEX)
   timer.stop()
-  data['key'] = 'search'
+  data.key = 'search'
   // See if it's well spelled, as long as we've loaded a spellchecker
   let suggestions = []
   if (SPELL) {
     suggestions = SPELL.suggest(data.query)
   }
-  data['suggestions'] = suggestions
-  data['results_length'] = results.length
-  data['time'] = timer.milliseconds
+  data.suggestions = suggestions
+  data.results_length = results.length
+  data.time = timer.milliseconds
   // slice the search data by the page
   const bottom = (data.page - 1) * 20
   const top = Math.min(data.page * 20, results.length)
-  data['results'] = results.slice(bottom, top)
+  data.results = results.slice(bottom, top)
   // For display add 1, as they're not array indices.
-  data['bottom'] = bottom + 1
-  data['top'] = top
+  data.bottom = bottom + 1
+  data.top = top
 }
 
 APP.get('/search', function (request, response) {
@@ -212,7 +212,7 @@ const start = function () {
 const handle404 = function (request, response, reason) {
   onRequest(request)
   response.status(404)
-  sendTemplate(request, response, '404', {'reason': reason, 'path': request.path})
+  sendTemplate(request, response, '404', { reason, path: request.path })
 }
 
 // Note: This should always be the last route, as otherwise it'll override the other routes.

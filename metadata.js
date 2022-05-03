@@ -6,27 +6,27 @@ const log = require('./log')
 const utils = require('./utils')
 
 const SCHEMA = {
-  'id': '/RecipeMetadata',
-  'type': 'object',
-  'properties': {
-    'tags': {
-      'type': 'array',
-      'items': {'type': 'string'}
+  id: '/RecipeMetadata',
+  type: 'object',
+  properties: {
+    tags: {
+      type: 'array',
+      items: { type: 'string' }
     },
-    'date': {
-      'type': 'string' // format YYYY-MM-DD
+    date: {
+      type: 'string' // format YYYY-MM-DD
     },
-    'image': {
-      'type': 'string'
+    image: {
+      type: 'string'
     }
   },
-  'required': ['tags', 'date', 'image']
+  required: ['tags', 'date', 'image']
 }
 
 const DEFAULT_METADATA = {
-  'tags': [],
-  'date': '',
-  'image': ''
+  tags: [],
+  date: '',
+  image: ''
 }
 
 const metadataPath = function (recipePath) {
