@@ -172,7 +172,8 @@ const textRecipe = function (file) {
  * @returns {String} path to an image to display
  */
 const imageFromRecipe = function (content) {
-  const markdownImage = /!\\[.*\\]\\((.*)\\)/
+  // I can't work out how to get this to work with a literal regexp
+  const markdownImage = new RegExp('!\\[.*\\]\\((.*)\\)') // eslint-disable-line prefer-regex-literals
   const matches = content.match(markdownImage)
   return matches ? matches[1] : ''
 }

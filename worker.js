@@ -13,7 +13,8 @@ const configuration = require('./configuration')
 const search = require('./search')
 const fileList = require('./file-list')
 
-const INDEX = []
+// non const for rewire
+let INDEX = [] // eslint-disable-line prefer-const
 const RECIPE_ROOT = 'public/recipes'
 
 let SPELL = null
