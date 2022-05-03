@@ -23,7 +23,7 @@
     "jsonschema": "^1.2.4",
     "md5-file": "^3.2.3",
     "nspell": "^2.1.0",
-    "pdf2json": "^1.1.7",
+    "pdf2json": "^2.0.1",
     "pug": "^3.0.2",
     "urldecode": "^1.0.1",
     "winston": "^2.3.0"
