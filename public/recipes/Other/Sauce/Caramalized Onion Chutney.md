@@ -20,7 +20,7 @@ This is a work in progress, as I made some in November 2017 and didn't note whic
 3. Cook gently over a low heat for about 20 minutes.
 4. When the onions are dark and sticky, add the sugar, the vinegars and mustard seeds.
 5. Simmer for about 30 minutes, until the chutney is thick and dark. Stirring at intervals so the chutney does not stick to the pan.
-6. While this is happening sterilise some jars, following the instructions [here](/public/recipes/Other/Guides/Sterilise%20Jars.html)
+6. While this is happening sterilise some jars, following the instructions [here](/public/recipes/Other/Guides/Sterilise%20Jars.md)
 7. Pour the chutney into the hot, sterilised jars seal and let chutney cool.
 8. Should ideally be left for a month or maybe even more for the flavours to blend and mature, but certainly try it now!
 
