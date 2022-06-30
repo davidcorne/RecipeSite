@@ -2,11 +2,7 @@
   "name": "recipe-site",
   "version": "0.0.1",
   "description": "A website for easily viewing my recipes.",
-  "engines": {
-    "node": "18.x",
-    "npm": "8.x"
-  },
-  "scripts": {
+    "scripts": {
     "start": "node server.js",
     "test": "standard && mocha --exit utest.js && mocha itest.js",
     "itest": "mocha itest.js",
