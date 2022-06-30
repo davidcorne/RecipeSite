@@ -311,7 +311,6 @@ describe('Recipes', function () {
             `)
           }
         }
-        
       }
       callback()
     }
