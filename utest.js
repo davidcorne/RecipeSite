@@ -563,7 +563,8 @@ describe('Routing', function () {
 
     // Responds to all the routes.
     const test404 = function (route, callback) {
-      request(server).get(route).expect(404, callback)
+      // Non existing pages should redirect to /404 (can't seem to assert where they go)
+      request(server).get(route).expect(302, callback)
     }
     async.each([
       '/adsadsahdjasvdb',
@@ -572,7 +573,13 @@ describe('Routing', function () {
       if (error) {
         throw error
       }
-      server.close(done)
+      // Now test that going to 404 will return a 404 status
+      request(server).get('/404').expect(404, (error) => {
+        if (error) {
+          throw error
+        }
+        server.close(done)
+      })
     })
   })
   it('Search not ready', function (done) {
