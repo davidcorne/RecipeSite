@@ -11,7 +11,7 @@ const logFunction = function (level) {
   // Return a log function for that level
   return function (string, extra) {
     extra = extra || {}
-    extra['process'] = process.pid
+    extra.process = process.pid
     winston.log(level, string, extra)
   }
 }

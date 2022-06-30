@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "A website for easily viewing my recipes.",
   "engines": {
-    "node": "10.x",
-    "npm": "6.x"
+    "node": "17.x",
+    "npm": "8.x"
   },
   "scripts": {
     "start": "node server.js",
@@ -23,7 +23,7 @@
     "jsonschema": "^1.2.4",
     "md5-file": "^3.2.3",
     "nspell": "^2.1.0",
-    "pdf2json": "^1.1.7",
+    "pdf2json": "^2.0.1",
     "pug": "^3.0.2",
     "urldecode": "^1.0.1",
     "winston": "^2.3.0"
@@ -38,7 +38,7 @@
     "nodemon": "^2.0.12",
     "request": "^2.88.2",
     "rewire": "^2.5.2",
-    "standard": "^11.0.1",
+    "standard": "^17.0.0",
     "supertest": "^3.0.0"
   },
   "standard": {

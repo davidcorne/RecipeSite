@@ -55,7 +55,7 @@ describe('Cache', function () {
   // This can be pretty long running, especially if the files aren't in the disk cache. 1 minute should be more than enough.
   this.timeout(60000)
   it('Up to date', function (done) {
-    let paths = []
+    const paths = []
     foreachRecipeSync(function (path) {
       paths.push(path)
     })
@@ -159,8 +159,8 @@ describe('Recipes', function () {
 
     // I want to match [0-9]/[0-9] but that matches quite a few URLs
     // so use 2 regexes and match space before and after
-    const nonUnicodeFractionSpaceBefore = new RegExp('\\s[0-9]/[0-9]')
-    const nonUnicodeFractionSpaceAfter = new RegExp('[0-9]/[0-9]\\s')
+    const nonUnicodeFractionSpaceBefore = /\\s[0-9]\/[0-9]/
+    const nonUnicodeFractionSpaceAfter = /[0-9]\/[0-9]\\s/
     const test = function (path, callback) {
       if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')
@@ -186,11 +186,11 @@ describe('Recipes', function () {
     // This will check each file twice, but it's not slow
 
     // The regex excludes %NN as encoded URLs will have %20 as a space
-    const noDegreesCelcius = new RegExp('[^%][0-9][0-9]C')
+    const noDegreesCelcius = /[^%][0-9][0-9]C/
     const test = function (path, callback) {
       if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')
-        let matches = content.match(noDegreesCelcius)
+        const matches = content.match(noDegreesCelcius)
         if (matches) console.log(matches)
         assert.isNull(matches, 'A recipe should contain a degrees symbol. file: ' + path)
       }
@@ -206,11 +206,11 @@ describe('Recipes', function () {
     const paths = walkSync('./public/recipes')
     // This will check each file twice, but it's not slow
 
-    const noGrams = new RegExp(' g ')
+    const noGrams = / g /
     const test = function (path, callback) {
       if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')
-        let matches = content.match(noGrams)
+        const matches = content.match(noGrams)
         if (matches) console.log(matches)
         assert.isNull(matches, 'A recipe shouldn\'t have floating gram symbols. file: ' + path)
       }
@@ -224,7 +224,7 @@ describe('Recipes', function () {
   it('Ensure removed boilerplate', function (done) {
     const paths = walkSync('./public/recipes')
 
-    const boilerplate = new RegExp('°C ½ ¼')
+    const boilerplate = /°C ½ ¼/
     const test = function (path, callback) {
       if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')

@@ -8,7 +8,7 @@ const configuration = require('./configuration')
 let GIT_COMMIT_SHA
 
 const startWorkers = function () {
-  let currentWorkers = Object.keys(cluster.workers).length
+  const currentWorkers = Object.keys(cluster.workers).length
   // currentWorkers should always be 0, but it's worth checking.
   const workersToSetup = configuration.numberOfWorkers - currentWorkers
   log.info('Master cluster setting up ' + workersToSetup + ' workers')
@@ -20,7 +20,7 @@ const startWorkers = function () {
 const setupCallbacks = function () {
   cluster.on('online', function (worker) {
     log.info('Worker ' + worker.process.pid + ' is online.')
-    worker.send({git_commit_sha: GIT_COMMIT_SHA})
+    worker.send({ git_commit_sha: GIT_COMMIT_SHA })
   })
   cluster.on('exit', function (worker, code, signal) {
     // You only get one of code and signal, only display one.

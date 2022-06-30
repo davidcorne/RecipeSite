@@ -55,7 +55,7 @@ const domainName = function (url) {
  */
 const titleCase = function (str) {
   str = str.toLowerCase().split(' ')
-  for (var i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1)
   }
   return str.join(' ')
@@ -95,7 +95,7 @@ function occurrences (string, subString, allowOverlapping) {
 
   let n = 0
   let pos = 0
-  let step = allowOverlapping ? 1 : subString.length
+  const step = allowOverlapping ? 1 : subString.length
 
   while (true) {
     pos = string.indexOf(subString, pos)
@@ -172,7 +172,8 @@ const textRecipe = function (file) {
  * @returns {String} path to an image to display
  */
 const imageFromRecipe = function (content) {
-  const markdownImage = new RegExp('!\\[.*\\]\\((.*)\\)')
+  // I can't work out how to get this to work with a literal regexp
+  const markdownImage = new RegExp('!\\[.*\\]\\((.*)\\)') // eslint-disable-line prefer-regex-literals
   const matches = content.match(markdownImage)
   return matches ? matches[1] : ''
 }
