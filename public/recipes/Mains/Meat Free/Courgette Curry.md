@@ -1,0 +1,33 @@
+# Courgette Curry
+
+This is a BBC Good Food magazine recipe from June 2022. Scoop out the seeds before slicing and frying the courgettes to achieve a firmer texture in this curry. Nothing is wasted - the seeds bulk out the sauce when added towards the end of cooking.
+
+## Ingredients ## 
+
+- 3 medium courgettes
+- 2-3 tbsp sunflower oil
+- 1 red onion, halved and finely sliced
+- 1-2 red chillies (depending on your preference), finely chopped
+- 40g ginger, peeled and finely grated 4 garlic cloves, finely grated
+- 2 tsp garam masala
+- 1 tsp ground cumin
+- 1 tsp ground turmeric
+- 400g can chickpeas, drained
+- 400g can chopped tomatoes
+- 400g can coconut milk cooked basmati rice, to serve
+
+## Method ## 
+
+1. Trim the ends of the courgettes, halve them lengthways and, using a teaspoon, scrape out the watery seeds in the centre (it's fine if you don't get all of them).
+1. Roughly slice the courgette halves, then roughly chop the seeds and reserve for later.
+1. Heat 2 tbsp oil in a large frying pan over a medium heat and fry the sliced courgettes until golden, about 8-10 mins.
+1. Remove from the pan, leaving the oil behind, then add the onion and a further tablespoon of oil if necessary, along with a good pinch each of salt and pepper. 
+1. Fry for 6-8 mins until soft and just starting to turn a light brown, then tip in the chillies, ginger and garlic, and cook for 2 mins until starting to soften. 
+1. Stir in the spices and cook for another 30 seconds.
+1. Scatter in the chickpeas and pour in the tomatoes, coconut milk and reserved courgette seeds.
+1. Simmer over a medium-low heat for 10 mins before adding the courgettes back to the pan and cooking for a further 8-10 mins.
+1. Serve with basmati rice and sides of your choice.
+
+## Recipe Image
+
+![recipe image](/public/images/Courgette-Curry.png)
