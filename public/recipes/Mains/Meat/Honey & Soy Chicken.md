@@ -1,47 +1,37 @@
-Honey & soy chicken
+# Honey & Soy Chicken
+
+This is a BBC Good Food magazine recipe from June 2022. 
 
 Caramelised honey, darkened with soy sauce, is the base marinade for this crowd-pleasing dish. It's great for family meals, buffets and picnics, too. I often make an extra batch for the freezer - first put the chicken thighs on a tray lined with baking parchment to stop them from sticking, and once frozen, transfer to a bag where they will keep for at least three months.
 
-SERVES 4 PREP
+## Ingredients ## 
 
-15 mins plus
+- 8 skin-on chicken thighs (about 1kg)
+- 4 tbsp honey
+- 4 tbsp dark soy sauce
+- 4 tbsp lemon juice
+- 4 tbsp tomato ketchup
+- 30g ginger, peeled and finely grated
+- 4 garlic cloves, crushed
+- ½ tsp red chilli flakes
+- 2 tsp fennel seeds, toasted and ground using a pestle and mortar or spice grinder
+- 1 tbsp sunflower oil
+- spring onions, rice and salad or greens, to serve
 
-at least 2 hrs marinating
+## Method ## 
 
-COOK 30 mins EASY®
+1. Using a sharp knife, score the chicken thighs twice through the skin, season and transfer to a bowl.
+1. Whisk the honey with the soy, lemon juice, ketchup, ginger, garlic, chilli flakes and fennel seeds.
+1. Pour this over the chicken, making sure that each piece is coated, then cover and marinate in the fridge for at least 2-3 hrs, or overnight if you have time.
+1. Heat the oven to 200°C/180°C fan.
+1. Line a large roasting tin with foil and put in the oven to heat up for 10 mins. 
+1. Gently shake the excess marinade off the chicken thighs, reserving the bowl of leftover marinade, then carefully arrange in a single layer in the hot tin. Drizzle with the oil and roast for 10 mins.
+1. Meanwhile, pour the reserved marinade into a small pan and bring to the boil over a medium-low heat, stirring often. Cook for 7-10 mins, or until thick and syrupy.
+1. Remove the chicken from the oven and carefully pour any juices from the tin into the pan with the syrupy sauce and continue to cook for 5 mins until the sauce is the consistency of double cream.
+1. Spoon the sauce over the chicken, then return the roasting tin to the oven for 10-15 mins more, or until the thighs are sticky and tender, and the juices run clear when pierced with a knife.
+1. Slice some spring onions along their length and scrape a knife along the shreds to curl them, if you like, then scatter over the chicken.
+1. Serve warm or at room temperature with rice and salad or steamed greens.
 
-8 skin-on chicken thighs (about 1kg)
+## Recipe Image
 
-4 tbsp honey
-
-4 tbsp dark soy sauce
-
-4 tbsp lemon juice
-
-4 tbsp tomato ketchup
-
-30g ginger, peeled and finely grated
-
-4 garlic cloves, crushed
-
-½ tsp red chilli flakes
-
-2 tsp fennel seeds, toasted and ground using a pestle and
-
-mortar or spice grinder
-
-1 tbsp sunflower oil spring onions, rice and salad or
-
-greens, to serve
-
-1 Using a sharp knife, score the chicken thighs twice through the skin, season and transfer to a bowl.
-
-2 Whisk the honey with the soy, lemon juice, ketchup, ginger, garlic, chilli flakes and fennel seeds. Pour this over the chicken, making sure that each piece is coated, then cover and marinate in the fridge for at least 2-3 hrs, or overnight if you have time.
-
-3 Heat the oven to 200C/180C fan/ gas 6. Line a large roasting tin with foil and put in the oven to heat up for 10 mins. Gently shake the excess marinade off the chicken thighs, reserving the bowl of leftover marinade, then carefully arrange in a single layer in the hot tin. Drizzle with the oil and roast for 10 mins.
-
-4 Meanwhile, pour the reserved marinade into a small pan and bring to the boil over a medium-low heat, stirring often. Cook for 7-10 mins, or until thick and syrupy.
-
-5 Remove the chicken from the oven and carefully pour any juices from the tin into the pan with the syrupy sauce and continue to cook for 5 mins until the sauce is the consistency of double cream.
-
-6 Spoon the sauce over the chicken, then return the roasting tin to the oven for 10-15 mins more, or until the thighs are sticky and tender, and the juices run clear when pierced with a knife. Slice some spring onions along their length and scrape a knife along the shreds to curl them, if you like, then scatter over the chicken. Serve warm or at room temperature with rice and salad or steamed greens.
+![recipe image](/public/images/Honey-and-Soy-Chicken.png)
