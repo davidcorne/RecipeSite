@@ -26,7 +26,6 @@ const getHtmlCacheContent = function (file, callback) {
     if (xmp) {
       markdown += xmp.innerHTML
     }
-    // window.close()
     callback(markdown)
   })
 }
