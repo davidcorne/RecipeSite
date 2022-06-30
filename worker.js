@@ -212,13 +212,13 @@ const start = function () {
 
 const handle404 = function (request, response, reason) {
   onRequest(request)
-  response.status(404)
   response.redirect(`/404?reason=${reason}`)
 }
 
 APP.get('/404', function (request, response) {
   onRequest(request)
-  sendTemplate(request, response, '404', {reason: request.query.reason, path: request.path})
+  response.status(404)
+  sendTemplate(request, response, '404', { reason: request.query.reason, path: request.path })
 })
 
 // Note: This should always be the last route, as otherwise it'll override the other routes.
