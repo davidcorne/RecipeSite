@@ -19,7 +19,7 @@
     "express": "^4.17.1",
     "firstline": "^1.2.1",
     "graceful-fs": "^4.1.11",
-    "jsdom": "^9.9.1",
+    "jsdom": "^16.5.0",
     "jsonschema": "^1.2.4",
     "md5-file": "^3.2.3",
     "nspell": "^2.1.0",
