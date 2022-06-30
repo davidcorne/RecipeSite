@@ -10,18 +10,18 @@ const initialiseAllMetadata = function () {
     const ignoreErrors = true
     const t = metadata.readMetadataSync(recipePath, ignoreErrors)
     if (recipePath.search('Vegan') !== -1) {
-      const recipeTags = t['tags']
+      const recipeTags = t.tags
       if (!recipeTags.includes('vegan')) {
         recipeTags.push('vegan')
       }
     }
-    if (!t['date']) {
+    if (!t.date) {
       // New recipe with no date, write one now
       const date = new Date()
-      t['date'] = utils.formatDate(date)
+      t.date = utils.formatDate(date)
     }
-    if (!t['image']) {
-      t['image'] = utils.readImageFromRecipeSync(recipePath)
+    if (!t.image) {
+      t.image = utils.readImageFromRecipeSync(recipePath)
     }
     metadata.writeMetadataSync(recipePath, t)
   })
@@ -33,7 +33,7 @@ if (require.main === module) {
     if (metadata.metadataExists(recipePath)) {
       const ignoreErrors = true
       const t = metadata.readMetadataSync(recipePath, ignoreErrors)
-      t['image'] = ''
+      t.image = ''
       metadata.writeMetadataSync(recipePath, t)
     }
   })

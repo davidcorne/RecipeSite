@@ -56,7 +56,7 @@ search.displayStyleChildren = function (children, displayStyle) {
 
 search.addCollapseListeners = function () {
   const searchContexts = document.getElementsByClassName('search-context')
-  for (let context of searchContexts) {
+  for (const context of searchContexts) {
     const children = context.childNodes
     if (children.length > 10) {
       // This is a large search, only show 10 children and show it's collapse button

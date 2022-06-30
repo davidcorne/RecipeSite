@@ -91,8 +91,8 @@ const searchContext = function (query, content) {
     match.allUsed = true
   }
   return {
-    context: context,
-    match: match
+    context,
+    match
   }
 }
 
@@ -165,9 +165,9 @@ const buildIndex = function (path, index) {
         index.push({
           file,
           content,
-          'tags': metadata.tags,
-          'date': metadata.date,
-          'image': metadata.image
+          tags: metadata.tags,
+          date: metadata.date,
+          image: metadata.image
         })
       })
     })
