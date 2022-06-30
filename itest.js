@@ -9,6 +9,7 @@ const firstline = require('firstline')
 const path = require('path')
 const winston = require('winston')
 const rewire = require('rewire')
+const decode = require('urldecode')
 
 const utils = require('./utils')
 const buildCache = require('./build-cache')
@@ -280,6 +281,37 @@ describe('Recipes', function () {
           }
         }
         assert.isFalse(indented, `Markdown file all indented: ${path}`)
+      }
+      callback()
+    }
+    async.each(paths, test, function (error) {
+      assert.isNull(error)
+      done()
+    })
+  })
+  it('Ensure no broken links', function (done) {
+    // This ensures that in each markdown recipe, the internal links aren't broken
+    const paths = walkSync('./public/recipes')
+    // This will check each file twice, but it's not slow
+    const test = function (path, callback) {
+      if (path.endsWith('.md')) {
+        const content = fs.readFileSync(path, 'utf8')
+        // Read a string of the form [](/public/{URL}), i.e. a markdown link
+        // and extract the public/{PATH} part
+        const link = /\[.*\]\(\/(public[^)]*)\)/g
+        const matches = content.matchAll(link)
+        if (matches) {
+          for (const match of matches) {
+            const internalUrl = match[1]
+            const fileName = decode(internalUrl)
+            const isValidFile = fs.existsSync(fileName) && fs.statSync(fileName).isFile()
+            assert.isTrue(isValidFile, `Broken link in recipe.
+            recipe: ${path}
+            link: ${fileName}
+            `)
+          }
+        }
+        
       }
       callback()
     }
