@@ -1,0 +1,84 @@
+# Bibimbap # 
+
+This is a form of Korean rice bowl, with a variety of components you can add/remove baed on what you want. The recipe I use comes from [serious eats](https://www.seriouseats.com/bibimbap) and I found it by reading **Every Night Is Pizza Night** by *J. Kenji Lopez-Alt*. The sauce on this is so good and versatile that we make it in large amounts and store it in the fridge (normally x5 because that's how much gochujang we buy at a time). This also makes impromtu bibimbap possible, which is an absolute delight.
+
+![bibimbap bowl with sauce](/public/images/Bibimbap-with-Sauce.jpg)
+
+![bibimbap bowl with beef](/public/images/Bibimbap-with-beef.jpg)
+
+## Ingredients ## 
+
+### For the Sauce
+
+- 2 tablespoons (30ml) gochujang
+- 2 teaspoons (10ml) roasted sesame oil
+- 1 tablespoon (3g) toasted sesame seeds (gold, black, or a mix)
+- 2 teaspoons (10ml) honey
+- 2 teaspoons (10ml) rice vinegar
+
+### For the Toppings:
+
+- Roasted sesame oil, for sautéing and dressing as needed
+- Toasted sesame seeds, as needed
+- Minced garlic, as needed (optional)
+- Thinly sliced scallions, as needed (optional)
+- Soy sauce, as needed
+- Kosher salt
+- 2 cups (about 5 ounces) soy bean or mung bean sprouts
+- 2 cups (about 3 ounces) packed fresh spinach leaves
+- 1 medium carrot, peeled, split in half lengthwise, and cut on a bias into thin slices
+- 1 kirby or Japanese cucumber (or ½ an American cucumber), peeled, split lengthwise, and cut into half moons
+- 4 ounces shiitake mushroom caps, thinly sliced
+- 4 ounces ground beef or thinly sliced beef (such as beef you’d find for shabu shabu or bulgogi at an Asian supermarket, thinly sliced Philly cheesesteak beef)
+- 2 teaspoons honey
+
+### To Serve
+
+- 4 cups cooked white short-grain rice
+- Raw egg yolks or sunny-side up fried eggs, as desired
+
+## Method ## 
+
+### For the Sauce
+
+- Combine all the sauce ingredients in a small bowl and stir together with a fork.
+- This can be stored in the fridge.
+
+### Toppings
+
+1. Set up your topping station by putting out bottles and containers of sesame oil, sesame seeds, garlic, scallions, and soy sauce on the counter.
+1. Set up either 6 bowls or a large container. This can be kept in a low oven/warming drawer to keep the components warm.
+
+### Boiling 
+
+1. In a wok or a small saucepan, bring 2 cups of water to a simmer.
+1. Add the bean sprouts and cook for 3 minutes.
+1. Fish them out with a slotted spoon, run them under cold water until you can handle them easily, then squeeze out excess moisture or spin them dry in a salad spinner (either of these is a great activity for kids). Place them in one of the small bowls.
+1. Add the spinach to the simmering water and cook for 1 minute.
+1. Repeat the draining, cooling, and squeezing process and place the spinach in a second bowl.
+
+### Stir-Frying
+
+1. Empty out the wok, and return it to medium-high heat, allowing it to dry fully.
+1. Add 2 teaspoons of sesame oil and heat until shimmering, then add the carrots and stir-fry until heated through and lightly softened, about 1 minute.
+1. Transfer to a third small bowl.
+1. Return the wok to medium-high heat.
+1. Add 2 teaspoons sesame oil and heat until shimmering, then add the cucumber and stir-fry until heated through and lightly softened, about 1 minute.
+1. Transfer to a fourth small bowl.
+1. Return the wok to medium-high heat.
+1. Add 2 teaspoons of sesame oil and heat until shimmering, then add the mushrooms and stir-fry until lightly browned, about 3 minutes.
+1. Transfer to a fifth small bowl.
+1. Season the beef with 2 teaspoons soy sauce, 2 teaspoons honey, 1 teaspoon sesame oil, some minced garlic (if using), and a sprinkle of sesame seeds.
+1. Return the wok to medium-high heat.
+1. Add 2 teaspoons sesame oil and heat until shimmering, then add the beef and stir-fry until lightly browned, about 3 minutes.
+1. Transfer to a sixth small bowl.
+1. Now season all of the vegetables to taste with about 1 teaspoon of sesame oil, a sprinkle of sesame seeds, a dash of soy sauce, and some minced garlic and/or scallions.
+
+### Serving
+
+1. Serve steamed rice in individual bowls at the table, allowing diners to pick and choose their toppings, and finishing off each bowl with a fried egg or a raw egg yolk (if desired), and a drizzle of as much or as little sauce as you’d like (even if that’s none).
+1. Mix it all up, or eat it all separately: It’s your food, you decide.
+
+## Notes
+
+I've also served this with tofu, which worked well marinated in the same way as the beef.
