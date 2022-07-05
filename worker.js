@@ -149,7 +149,7 @@ APP.get('/images', function (request, response) {
 
 APP.get('/influences', function (request, response) {
   onRequest(request)
-  response.redirect('/public/Influences.html')
+  response.redirect('/public/Influences.md')
 })
 
 const searchIndex = function (data) {
