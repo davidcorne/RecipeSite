@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  
-  <title>Influences</title>
-  
-  <xmp theme="cerulean" style="display:none;">
 # Influences # 
 
 This is a generally ordered list of my cooking influences, with links to where they keep their recipes.
@@ -29,10 +20,3 @@ There are a number of great gluten free cooking sites I use, here are a good num
 
 - [The Loopy Whisk](https://theloopywhisk.com/diet/gluten-free/) I used her GF pasta recipe and it works really well. Well described, talks about the flour she uses but uses a small number of ingredients well rather than making her own flour mixture.
 - [Dove Farm](https://www.dovesfarm.co.uk/recipes/freee) they're the makers of the flour I tend to use, they have some great and reliable recipes too. And you're more reassured that they'll work with the flour they produce.
-</xmp>
-  
-  <script src="/public/resources/strapdown.js"></script>
-  <script src="/public/resources/recipe-formatting.js"></script>
-</html>
-  
-  
