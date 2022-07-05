@@ -282,6 +282,29 @@ summary{
 }
 
 /*===========================================================================*/
+/* Dropdown style */
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    float: none;
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+/*===========================================================================*/
 /* Debug style */
 .debug {
     color: red;
