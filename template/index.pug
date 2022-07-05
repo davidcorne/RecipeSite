@@ -1,5 +1,8 @@
 extends layout.pug
 
+block scripts
+    script(src="/public/resources/themes.js")
+
 mixin directory(item)
   h2
     a(id=item.id, class="inactiveLink") #{item.label}
