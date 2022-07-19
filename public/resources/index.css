@@ -191,7 +191,7 @@ summary {
     float: left;
 }
 
-#navigation-bar a:link, #navigation-bar a:visited {
+#navigation-bar a, #navigation-bar a:visited {
     display: block;
     width: 120px;
     font-weight: bold;
