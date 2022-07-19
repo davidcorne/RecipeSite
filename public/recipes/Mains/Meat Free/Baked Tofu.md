@@ -13,8 +13,8 @@ This is a recipe for savoury tofu from [tastmade](https://www.tastemade.com/reci
 - 80 grams ground pork
 - Green onions, chopped
 - 1 teaspoon ginger, grated
-- 1/2 teaspoon garlic, grated
-- 1/2 teaspoon chili bean paste (doubanjiang)
+- ½ teaspoon garlic, grated
+- ½ teaspoon chili bean paste (doubanjiang)
 - 1 tablespoon soy sauce
 - 1 tablespoon sugar
 - 1 tablespoon sweet soybean paste (hoisin sauce)

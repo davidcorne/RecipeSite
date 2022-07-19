@@ -7,7 +7,7 @@ This is a traditional Peruvian recipe, from [Simply](https://www.simplyrecipes.c
 ### Chicken
 
 - 3 tablespoons extra virgin olive oil
-- 1 broiler-fryer chicken, about 2 1/2-3 pounds, cut into serving pieces, or 2 1/2 to 3 pounds chicken thighs or breasts, bone-in, with skin on, rinsed and patted dry
+- 1 broiler-fryer chicken, about 2 ½-3 pounds, cut into serving pieces, or 2 ½ to 3 pounds chicken thighs or breasts, bone-in, with skin on, rinsed and patted dry
 - ½ cup flour, for dredging
 - Kosher salt
 - Freshly ground black pepper
