@@ -160,8 +160,8 @@ describe('Recipes', function () {
 
     // I want to match [0-9]/[0-9] but that matches quite a few URLs
     // so use 2 regexes and match space before and after
-    const nonUnicodeFractionSpaceBefore = /\\s[0-9]\/[0-9]/
-    const nonUnicodeFractionSpaceAfter = /[0-9]\/[0-9]\\s/
+    const nonUnicodeFractionSpaceBefore = /\s[0-9]\/[0-9]/
+    const nonUnicodeFractionSpaceAfter = /[0-9]\/[0-9]\s/
     const test = function (path, callback) {
       if (isTextRecipe(path)) {
         const content = fs.readFileSync(path, 'utf8')
