@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A website for easily viewing my recipes.",
   "engines": {
-    "node": "17.x",
+    "node": "18.x",
     "npm": "8.x"
   },
   "scripts": {
