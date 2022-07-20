@@ -108,6 +108,7 @@ const routeFile = function (filePath, response) {
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="/public/resources/index.css">
 </head>
 
 <title>${utils.pathToLabel(filePath)}</title>
@@ -117,6 +118,7 @@ ${content}
 </xmp>
 <script src="/public/resources/strapdown.js"></script>
 <script src="/public/resources/recipe-formatting.js"></script>
+<script src="/public/resources/themes.js"></script>
 `)
     })
   } else {

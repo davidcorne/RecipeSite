@@ -210,7 +210,7 @@ summary {
 /* Dropdown style */
 .dropdown {
     float: left;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
   .dropdown-content {
