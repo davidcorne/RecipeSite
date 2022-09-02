@@ -1,13 +1,18 @@
-FROM node:10
+FROM node:17 as base
 
 WORKDIR /usr/src/RecipeSite
 
 COPY package.json .
+COPY package-lock.json package-lock.json
 
-RUN npm install
-
+FROM base as test
+RUN npm ci
 COPY . .
+RUN npm test
 
+FROM base as production
+RUN npm ci --production
+COPY . .
 EXPOSE 8080
 ENV PORT=8080
 
