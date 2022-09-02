@@ -1,4 +1,4 @@
-FROM node:17 as base
+FROM node:18 as base
 
 WORKDIR /usr/src/RecipeSite
 
