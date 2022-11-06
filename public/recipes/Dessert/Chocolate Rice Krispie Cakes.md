@@ -1,0 +1,25 @@
+# Chocolate Rice Krispie Cakes #
+
+This is a [BBC Good Food](https://www.bbcgoodfood.com/recipes/chocolate-rice-krispie-cakes) recipe, it's a good recipe for children.
+
+## Ingredients ##
+
+- 100g milk chocolate, broken up
+- 50g dark chocolate, broken up
+- 100g butter
+- 4 tbsp golden syrup
+- 100g puffed rice
+
+### To decorate
+
+- 50g milk chocolate, melted
+- sprinkles, mini marshmallows, nuts, Smarties, dried fruit or white chocolate buttons
+
+## Method ##
+
+1. Put the chocolate in a heatproof bowl with the butter and golden syrup and gently melt in 10-second bursts in the microwave, or melt it over a pan of simmering water, making sure the bowl doesn’t touch the water.
+1. Stir until smooth, then take off the heat and stir in the puffed rice, coating them gently with the chocolate until they are all completely covered.
+1. Divide the mixture between nine cupcake or 12 fairy cake paper cases – it’s easier if you slide these into a muffin tin as it will help them hold their shape. 
+1. Leave to set. If you want them to set faster, put in the fridge for 1 hr.
+1. Drizzle with a little melted chocolate and decorate with sweets, dried fruit or nuts while they are still wet enough to stick them on.
+1. Will keep in an airtight container for five days.
