@@ -76,6 +76,7 @@ describe('Utils', function () {
   })
 })
 describe('Caches', function () {
+  this.timeout(5000)
   const getHtmlCacheContent = buildCacheModule.__get__('getHtmlCacheContent')
   const getPdfCacheContent = buildCacheModule.__get__('getPdfCacheContent')
   const getOtherCacheContent = buildCacheModule.__get__('getOtherCacheContent')
@@ -515,6 +516,7 @@ describe('Search', function () {
 })
 
 describe('Routing', function () {
+  this.timeout(5000)
   this.afterEach(function () {
     workerModule.__set__('INDEX', [])
   })

@@ -321,6 +321,7 @@ describe('Recipes', function () {
   })
 })
 describe('Images', function () {
+  this.timeout(60000)
   it('Referenced', function (done) {
     // This checks that each image in public/images is referenced in a recipe
     const root = 'public/images'
@@ -349,6 +350,7 @@ describe('Images', function () {
   })
 })
 describe('Metadata', function () {
+  this.timeout(5000)
   const metadataPath = metadataModule.__get__('metadataPath')
   const validMetadata = metadataModule.__get__('validMetadata')
   it('Present', function () {
@@ -370,6 +372,7 @@ describe('Metadata', function () {
   })
 })
 describe('New Recipe', function () {
+  this.timeout(5000)
   const newRecipe = newRecipeModule.__get__('newRecipe')
   it('Build new recipe', function (done) {
     const recipeFileName = newRecipeModule.__get__('recipeFileName')
