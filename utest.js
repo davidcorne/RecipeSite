@@ -13,6 +13,7 @@ const utils = require('./utils')
 
 const utilsModule = rewire('./utils.js')
 const searchModule = rewire('./search.js')
+
 const buildCacheModule = rewire('./build-cache.js')
 const workerModule = rewire('./worker.js')
 const metadataModule = rewire('./metadata.js')
