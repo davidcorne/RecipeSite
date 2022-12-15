@@ -10,4 +10,4 @@ block content
       - var image = '/public/images/' + path
       - var altText = path.replace(/-/g, ' ').replace(/\..*/, '')
       a(href=image, target="_blank")
-        img(src=image, alt=altText, title=altText)
+        img(src=image, alt=altText, title=altText, loading='lazy')

@@ -16,7 +16,7 @@ div
     p.debug Match: #{JSON.stringify(item.matchVerbose)}
     p.debug Date: #{item.date}
   if item.image
-    img(src=item.image).preview-image
+    img(src=item.image, loading='lazy').preview-image
   div.search-context
     each line in item.context
       p.line #{line}
