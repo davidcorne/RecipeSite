@@ -1,5 +1,6 @@
 'use strict'
 const cluster = require('cluster')
+const child_process = require('child_process')
 const fs = require('fs')
 const log = require('./log')
 
@@ -17,11 +18,27 @@ const startWorkers = function () {
   }
 }
 
-const setupCallbacks = function () {
-  cluster.on('online', function (worker) {
-    log.info('Worker ' + worker.process.pid + ' is online.')
-    worker.send({ git_commit_sha: GIT_COMMIT_SHA })
+const update = function () {
+  child_process.exec('git pull', function (error, stdout, stderr) {
+    log.error(stderr)
+    log.info(stdout)
+    if (error) {
+      // If something goes wrong updating git it should be fatal.
+      log.error()
+      throw error
+    }
+    // Now kill all of the workers, and new ones will be made with the new code.
+    stopWorkers()
   })
+}
+
+const stopWorkers = function () {
+  for (const id in cluster.workers) {
+    cluster.workers[id].kill()
+  }
+}
+
+const setupExitCallback = function () {
   cluster.on('exit', function (worker, code, signal) {
     // You only get one of code and signal, only display one.
     log.info(
@@ -34,6 +51,14 @@ const setupCallbacks = function () {
     log.info('Starting a new worker.')
     cluster.fork()
   })
+}
+
+const setupCallbacks = function () {
+  cluster.on('online', function (worker) {
+    log.info('Worker ' + worker.process.pid + ' is online.')
+    worker.send({ git_commit_sha: GIT_COMMIT_SHA })
+  })
+  setupExitCallback()
 }
 
 const getGitCommitShaSync = function () {
