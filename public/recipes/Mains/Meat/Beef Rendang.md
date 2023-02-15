@@ -2,6 +2,8 @@
 
 This is a [BBC Good Food](https://www.bbcgoodfood.com/recipes/beef-rendang-turmeric-rice) recipe. I served it with the yellow rice from the [Halal Cart Chicken and Rice](/public/recipes/Mains/Meat/Halal%20Cart-Style%20Chicken%20and%20Rice.md), rather than the tumeric rice recipe in that link.
 
+![Beef Rendang](/public/images/Beef-Rendang.jpg)
+
 ## Ingredients ##
 
 - 3 tbsp vegetable oil
