@@ -1,6 +1,6 @@
 'use strict'
 const cluster = require('cluster')
-const child_process = require('child_process')
+const childProcess = require('child_process')
 const fs = require('fs')
 const log = require('./log')
 
@@ -8,7 +8,7 @@ const configuration = require('./configuration')
 
 let GIT_COMMIT_SHA
 
-const newWorker = function() {
+const newWorker = function () {
   const worker = cluster.fork()
   worker.on('message', (message) => {
     log.debug(`Message ${JSON.stringify(message)}`)
@@ -29,7 +29,7 @@ const startWorkers = function () {
 }
 
 const update = function () {
-  child_process.exec('git pull', function (error, stdout, stderr) {
+  childProcess.exec('git pull', function (error, stdout, stderr) {
     if (stderr) {
       log.error(stderr)
     }

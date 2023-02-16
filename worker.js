@@ -76,7 +76,9 @@ APP.post('/update', function (request, response) {
   onRequest(request)
   const updateSecret = request.body.SECRET
   if (updateSecret === configuration.updateSecret) {
-    process.send({message: 'update'})
+    process.send(
+      { message: 'update' }
+    )
   }
   response.send()
 })
