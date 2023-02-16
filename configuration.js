@@ -7,7 +7,8 @@ const configuration = {
   numberOfWorkers: (process.env.WORKERS || os.cpus().length),
   logLevel: (process.env.LOG_LEVEL || 'info'),
   herokuSlugCommit: process.env.HEROKU_SLUG_COMMIT,
-  port: (process.env.PORT || 3000)
+  port: (process.env.PORT || 3000),
+  updateSecret: process.env.UPDATE_SECRET
 }
 
 // Override those properties with the user config
