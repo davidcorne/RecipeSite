@@ -6,6 +6,7 @@ const path = require('path')
 const fs = require('fs')
 const dictionary = require('dictionary-en-gb')
 const nspell = require('nspell')
+const bodyParser = require('body-parser')
 
 const utils = require('./utils')
 const log = require('./log')
@@ -34,6 +35,8 @@ const APP = express()
 const HTTP = require('http').Server(APP)
 
 APP.set('port', configuration.port)
+APP.use(bodyParser.json())
+APP.use(bodyParser.urlencoded({ extended: false }))
 
 let DEBUG_VIEW = false
 let GIT_COMMIT_SHA = ''
@@ -68,6 +71,15 @@ const sendTemplate = function (request, response, key, data) {
   data.git_commit_sha = GIT_COMMIT_SHA
   response.send(TEMPLATES[key](data))
 }
+
+APP.post('/update', function (request, response) {
+  onRequest(request)
+  const updateSecret = request.body.SECRET
+  if (updateSecret === configuration.updateSecret) {
+    
+  }
+  response.send()
+})
 
 APP.get('/', function (request, response) {
   onRequest(request)
