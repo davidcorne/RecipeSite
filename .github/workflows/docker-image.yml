@@ -36,4 +36,4 @@ jobs:
       with:
         url: http://94.173.28.54:3000/update
         method: 'POST'
-        data: '{"SECRET": ${{ secrets.UPDATE_SECRET }} }'
+        data: 'SECRET=${{ secrets.UPDATE_SECRET }}'
