@@ -34,6 +34,6 @@ jobs:
       if: github.ref == 'refs/heads/main'
       uses: fjogeleit/http-request-action@v1
       with:
-        url: ${{ secrets.UPDATE_URL }}
+        url: http://94.173.28.54:3000/update
         method: 'POST'
         data: '{"SECRET": ${{ secrets.UPDATE_SECRET }} }'
