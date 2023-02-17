@@ -29,12 +29,11 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/recipesite:latest
-# Not set up my deployment server yet
-#    - name: Deploy
-#      id: deploy
-#      if: github.ref == 'refs/heads/main'
-#      uses: fjogeleit/http-request-action@v1
-#      with:
-#        url: 'http://80.192.196.161:55555/update'
-#        method: 'POST'
-        
+    - name: Deploy
+      id: deploy
+      if: github.ref == 'refs/heads/main'
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: ${{ secrets.UPDATE_URL }}
+        method: 'POST'
+        data: '{"SECRET": ${{ secrets.UPDATE_SECRET }} }'
