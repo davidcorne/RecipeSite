@@ -1,0 +1,22 @@
+# Chocolate Buttercream # 
+
+This is a nice milk chocolate buttercream, which goes well on chocolate cupcakes. It's from [Charlottes Lively Kitchen](https://charlotteslivelykitchen.com/chocolate-buttercream/#skip).
+
+This is enough icing for 12 cupcakes or to fill and coat a 2-layer 20cm round cake.
+
+## Ingredients ## 
+
+- 250g unsalted butter - soft at room temperature
+- 250g icing sugar
+- 150g milk chocolate - choose a chocolate from the baking aisle as this won’t go grainy when it’s melted
+- 40g cocoa powder
+- ¼ tsp vanilla extract
+- A little milk (optional)
+
+## Method ## 
+
+1. Break the chocolate (150g) into pieces and melt it (either using short bursts in the microwave – stirring regularly, over the lowest possible heat in a saucepan – stirring constantly, or in a bain marie – stirring constantly).
+1. Once melted remove from the heat and pour into another bowl (this will help it to cool as it needs to be back to room temperature before mixing with the buttercream).
+1. Beat the butter (250g) until soft then add the vanilla extract (¼ tsp), cocoa powder (40g) and icing sugar (250g) and beat until fully combined (it’s easier to avoid the cocoa powder and sugar flying everywhere if you add it a spoonful at a time).
+1. Once the chocolate has cooled to room temperature (DO NOT add the chocolate when it’s still warm as it’ll melt the butter and your buttercream will end up too runny) pour it into the buttercream and beat until fully combined. You should find that the buttercream is soft and spreadable. If it is a little stiff then add milk a tsp at a time until it is the right consistency.
+1. Your buttercream is now ready to use.
