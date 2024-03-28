@@ -15,7 +15,7 @@
   "dependencies": {
     "character-parser": "^3.1.0",
     "dictionary-en-gb": "^2.0.0",
-    "express": "^4.17.1",
+    "express": "^4.19.2",
     "firstline": "^1.2.1",
     "graceful-fs": "^4.1.11",
     "jsdom": "^16.5.0",
