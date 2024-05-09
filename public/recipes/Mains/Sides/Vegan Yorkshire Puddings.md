@@ -4,8 +4,8 @@ This is a good recipe from [Healthy Living James](https://healthylivingjames.co.
 
 ## Ingredients ## 
 
-- 75 g gluten free self raising flour
-- 75 g Corn Flour
+- 75g gluten free self raising flour
+- 75g Corn Flour
 - 2 heaped tsp baking powder
 - 200 ml unsweetened vegan milk (I used gluten free oat milk)
 - 6 teaspoon sunflower oil
