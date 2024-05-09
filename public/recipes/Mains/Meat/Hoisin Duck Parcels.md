@@ -1,0 +1,26 @@
+# Hoisin Duck Parcels # 
+
+This is a nice simple and delicious duck recipe from [Gressingham](https://www.gressinghamduck.co.uk/recipes/hoisin-duck-parcels/).
+
+## Ingredients ## 
+
+- 2 Gressingham duck legs
+- 1 lime, zest and juice
+- 2 spring onions, finely chopped rings
+- 3 tablespoons hoi sin sauce
+- Small bunch coriander, washed, leaves removed and roughly chopped
+- 12 mint leaves, middle stem removed, finely chopped
+- Salt and pepper
+- 10 little gem lettuce leaves
+
+## Method ## 
+
+1. Pre heat oven to 190°C, 170°C fan, gas mark 5.
+1. Prick the skin of the duck legs with a skewer or fork and season both the skin and meat.
+1. Place in a baking tray and cook for approx 1 hour 15mins.
+1. Remove from the oven, pour off the excess fat and allow to cool.
+1. While it is cooling mix together all of the remaining ingredients.
+1. When the legs are cool enough to handle, remove the skin and either discard or eat as a treat!
+1. Take the duck meat off the bone, roughly dice and place in a mixing bowl. Be careful to look out for any small bones as you do this.
+1. Add in the lime, spring onions hoi sin and herbs. Mix well, check for seasoning, adjust as necessary.
+1. Spoon a small amount into each lettuce leaf and serve.
