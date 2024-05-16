@@ -1,0 +1,50 @@
+# Aubergine Chilli Stir-Fry
+
+This is a pretty heavily modified version of Fish Fragrant Aubergine that I learned on a Knife Skills cooking course at [Loaf](https://loaf.coop/). It’s best served with rice as aubergines soak up a lot of oil and sauce.
+
+![Aubergine Chilli Stir-Fry](/public/images/Aubergine-Chilli-Stir-Fry.jpg)
+
+## Ingredients
+
+- 4 + 1 tbsp neutral oil such as rapeseed
+- 1 aubergine
+- 1 bunch of spring onions
+- 1 thumb of ginger
+- 5 cloves of garlic
+- 3 onions
+- 2 bell peppers
+- 1 red chilli
+
+### Sauce
+
+I didn’t note down how much of these ingredients I used, so these are approximate.
+
+- ½ of a 368g jar of chilli and garlic sauce (I used Lee Kum Kee sauce)
+- 2 tbsp tamari (substitute for light soy sauce if you don’t need it gluten free)
+- 1 tbsp sesame oil
+- 1 tbsp rice vinegar
+- ½ tsp maple syrup
+
+## Method
+
+1. Prep the vegetables:
+   1. 1 Aubergine: peeled, halved horizontally, cut into fingers (6-8 per half)
+   2. Bunch of spring onions: remove tops and bottoms, chop as thinly as you can horizontally
+   3. 5 cloves of garlic and thumb of ginger: smash, add salt and grid to a paste
+   4. 3 onions and 2 peppers: cut into strips
+   5. 1 red chilli: deseed and cut into strips
+2. Heat a large pan/wok with the 4 tbsp of neutral oil to a medium-high heat.
+3. In 2+ batches, fry off the aubergine fingers until they are browned and getting soft. About 80% cooked, as we’ll finish them in the sauce later)
+4. Remove from the pan.
+5. Heat the remaining 1 tbsp of oil.
+6. Fry the the spring onions for a small amount of time (< 1 minute).
+7. Add the garlic and ginger paste and fry until it’s very fragrant, 2-3 minutes.
+8. Cook the onion and pepper strips for ~3 minutes.
+9. Add the red chilli and cook for a further 2 minutes.
+10. Add all of the sauce ingredients, and cook for a minute to combine. Adjust with the sauce ingredients to taste.
+11. Add the fried aubergine and cook for another couple of minutes. Ensure you don’t stir too vigorously to not smash the aubergines.
+12. Serve with rice.
+
+## Notes
+
+You can often add salt with the vegetables, but it’s not needed in this recipe due to the soy/tamari and chilli and garlic sauce.
